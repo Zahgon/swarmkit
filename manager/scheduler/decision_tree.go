@@ -1,9 +1,5 @@
 package scheduler
 
-import (
-	"container/heap"
-)
-
 type decisionTree struct {
 	// Count of tasks for the service scheduled to this subtree
 	tasks int
@@ -22,31 +18,16 @@ type decisionTree struct {
 //
 // The caller may modify the nodes in the returned slice.
 func (dt *decisionTree) orderedNodes(meetsConstraints func(*NodeInfo) bool, _ func(*NodeInfo, *NodeInfo) bool) []NodeInfo {
-	if dt.nodeHeap.length != len(dt.nodeHeap.nodes) {
-		// We already collapsed the heap into a sorted slice, so
-		// re-heapify. There may have been modifications to the nodes
-		// so we can't return dt.nodeHeap.nodes as-is. We also need to
-		// reevaluate constraints because of the possible modifications.
-		for i := 0; i < len(dt.nodeHeap.nodes); {
-			if meetsConstraints(&dt.nodeHeap.nodes[i]) {
-				i++
-			} else {
-				last := len(dt.nodeHeap.nodes) - 1
-				dt.nodeHeap.nodes[i] = dt.nodeHeap.nodes[last]
-				dt.nodeHeap.nodes = dt.nodeHeap.nodes[:last]
-			}
-		}
-		dt.nodeHeap.length = len(dt.nodeHeap.nodes)
-		heap.Init(&dt.nodeHeap)
-	}
-
-	// Popping every element orders the nodes from best to worst. The
-	// first pop gets the worst node (since this a max-heap), and puts it
-	// at position n-1. Then the next pop puts the next-worst at n-2, and
-	// so on.
-	for dt.nodeHeap.Len() > 0 {
-		heap.Pop(&dt.nodeHeap)
-	}
-
-	return dt.nodeHeap.nodes
+	_ = "STUB: not implemented"
+	return nil
 }
+
+// We already collapsed the heap into a sorted slice, so
+// re-heapify. There may have been modifications to the nodes
+// so we can't return dt.nodeHeap.nodes as-is. We also need to
+// reevaluate constraints because of the possible modifications.
+
+// Popping every element orders the nodes from best to worst. The
+// first pop gets the worst node (since this a max-heap), and puts it
+// at position n-1. Then the next pop puts the next-worst at n-2, and
+// so on.

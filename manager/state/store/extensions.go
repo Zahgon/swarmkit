@@ -1,9 +1,6 @@
 package store
 
 import (
-	"errors"
-	"strings"
-
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/moby/swarmkit/v2/api"
 )
@@ -67,122 +64,95 @@ type extensionEntry struct {
 }
 
 func (e extensionEntry) CopyStoreObject() api.StoreObject {
-	return extensionEntry{Extension: e.Extension.Copy()}
+	_ = "STUB: not implemented"
+	return *new(api.StoreObject)
 }
 
 // ensure that when update events are emitted, we unwrap extensionEntry
 func (e extensionEntry) EventUpdate(oldObject api.StoreObject) api.Event {
-	if oldObject != nil {
-		return api.EventUpdateExtension{Extension: e.Extension, OldExtension: oldObject.(extensionEntry).Extension}
-	}
-	return api.EventUpdateExtension{Extension: e.Extension}
+	_ = "STUB: not implemented"
+	return *new(api.Event)
 }
 
 // CreateExtension adds a new extension to the store.
 // Returns ErrExist if the ID is already taken.
 func CreateExtension(tx Tx, e *api.Extension) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is not already in use.
-	if tx.lookup(tableExtension, indexName, strings.ToLower(e.Annotations.Name)) != nil {
-		return ErrNameConflict
-	}
-
-	// It can't conflict with built-in kinds either.
-	if _, ok := schema.Tables[e.Annotations.Name]; ok {
-		return ErrNameConflict
-	}
-
-	return tx.create(tableExtension, extensionEntry{e})
+	return nil
 }
+
+// It can't conflict with built-in kinds either.
 
 // UpdateExtension updates an existing extension in the store.
 // Returns ErrNotExist if the object doesn't exist.
 func UpdateExtension(_ Tx, _ *api.Extension) error {
+	_ = "STUB: not implemented"
 	// TODO(aaronl): For the moment, extensions are immutable
-	return errors.New("extensions are immutable")
+	return nil
 }
 
 // DeleteExtension removes an extension from the store.
 // Returns ErrNotExist if the object doesn't exist.
-func DeleteExtension(tx Tx, id string) error {
-	e := tx.get(tableExtension, id)
-	if e == nil {
-		return ErrNotExist
-	}
-
-	resources, err := FindResources(tx, ByKind(e.(extensionEntry).Annotations.Name))
-	if err != nil {
-		return err
-	}
-
-	if len(resources) != 0 {
-		return errors.New("cannot delete extension because objects of this type exist in the data store")
-	}
-
-	return tx.delete(tableExtension, id)
-}
+func DeleteExtension(tx Tx, id string) error { _ = "STUB: not implemented"; return nil }
 
 // GetExtension looks up an extension by ID.
 // Returns nil if the object doesn't exist.
-func GetExtension(tx ReadTx, id string) *api.Extension {
-	e := tx.get(tableExtension, id)
-	if e == nil {
-		return nil
-	}
-	return e.(extensionEntry).Extension
-}
+func GetExtension(tx ReadTx, id string) *api.Extension { _ = "STUB: not implemented"; return nil }
 
 // FindExtensions selects a set of extensions and returns them.
 func FindExtensions(tx ReadTx, by By) ([]*api.Extension, error) {
-	checkType := func(by By) error {
-		switch by.(type) {
-		case byIDPrefix, byName, byCustom, byCustomPrefix:
-			return nil
-		default:
-			return ErrInvalidFindBy
-		}
-	}
-
-	extensionList := []*api.Extension{}
-	appendResult := func(o api.StoreObject) {
-		extensionList = append(extensionList, o.(extensionEntry).Extension)
-	}
-
-	err := tx.find(tableExtension, by, checkType, appendResult)
-	return extensionList, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type extensionIndexerByID struct{}
 
 func (indexer extensionIndexerByID) FromArgs(args ...interface{}) ([]byte, error) {
-	return api.ExtensionIndexerByID{}.FromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (indexer extensionIndexerByID) PrefixFromArgs(args ...interface{}) ([]byte, error) {
-	return api.ExtensionIndexerByID{}.PrefixFromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (indexer extensionIndexerByID) FromObject(obj interface{}) (bool, []byte, error) {
-	return api.ExtensionIndexerByID{}.FromObject(obj.(extensionEntry).Extension)
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
 type extensionIndexerByName struct{}
 
 func (indexer extensionIndexerByName) FromArgs(args ...interface{}) ([]byte, error) {
-	return api.ExtensionIndexerByName{}.FromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (indexer extensionIndexerByName) PrefixFromArgs(args ...interface{}) ([]byte, error) {
-	return api.ExtensionIndexerByName{}.PrefixFromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (indexer extensionIndexerByName) FromObject(obj interface{}) (bool, []byte, error) {
-	return api.ExtensionIndexerByName{}.FromObject(obj.(extensionEntry).Extension)
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
 type extensionCustomIndexer struct{}
 
 func (indexer extensionCustomIndexer) FromArgs(args ...interface{}) ([]byte, error) {
-	return api.ExtensionCustomIndexer{}.FromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (indexer extensionCustomIndexer) PrefixFromArgs(args ...interface{}) ([]byte, error) {
-	return api.ExtensionCustomIndexer{}.PrefixFromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (indexer extensionCustomIndexer) FromObject(obj interface{}) (bool, [][]byte, error) {
-	return api.ExtensionCustomIndexer{}.FromObject(obj.(extensionEntry).Extension)
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }

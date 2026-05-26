@@ -5,8 +5,6 @@ import (
 	"time"
 
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/moby/swarmkit/v2/api/genericresource"
-	"github.com/moby/swarmkit/v2/log"
 )
 
 // hostPortSpec specifies a used host port.
@@ -44,178 +42,36 @@ type NodeInfo struct {
 }
 
 func newNodeInfo(n *api.Node, tasks map[string]*api.Task, availableResources api.Resources) NodeInfo {
-	nodeInfo := NodeInfo{
-		Node:                      n,
-		Tasks:                     make(map[string]*api.Task),
-		ActiveTasksCountByService: make(map[string]int),
-		AvailableResources:        availableResources.Copy(),
-		usedHostPorts:             make(map[hostPortSpec]struct{}),
-		recentFailures:            make(map[versionedService][]time.Time),
-		lastCleanup:               time.Now(),
-	}
-
-	for _, t := range tasks {
-		nodeInfo.addTask(t)
-	}
-
-	return nodeInfo
+	_ = "STUB: not implemented"
+	return *new(NodeInfo)
 }
 
 // removeTask removes a task from nodeInfo if it's tracked there, and returns true
 // if nodeInfo was modified.
-func (nodeInfo *NodeInfo) removeTask(t *api.Task) bool {
-	oldTask, ok := nodeInfo.Tasks[t.ID]
-	if !ok {
-		return false
-	}
-
-	delete(nodeInfo.Tasks, t.ID)
-	if oldTask.DesiredState <= api.TaskStateCompleted {
-		nodeInfo.ActiveTasksCount--
-		nodeInfo.ActiveTasksCountByService[t.ServiceID]--
-	}
-
-	if t.Endpoint != nil {
-		for _, port := range t.Endpoint.Ports {
-			if port.PublishMode == api.PublishModeHost && port.PublishedPort != 0 {
-				portSpec := hostPortSpec{protocol: port.Protocol, publishedPort: port.PublishedPort}
-				delete(nodeInfo.usedHostPorts, portSpec)
-			}
-		}
-	}
-
-	reservations := taskReservations(t.Spec)
-	resources := nodeInfo.AvailableResources
-
-	resources.MemoryBytes += reservations.MemoryBytes
-	resources.NanoCPUs += reservations.NanoCPUs
-
-	if nodeInfo.Description == nil || nodeInfo.Description.Resources == nil ||
-		nodeInfo.Description.Resources.Generic == nil {
-		return true
-	}
-
-	taskAssigned := t.AssignedGenericResources
-	nodeAvailableResources := &resources.Generic
-	nodeRes := nodeInfo.Description.Resources.Generic
-	genericresource.Reclaim(nodeAvailableResources, taskAssigned, nodeRes)
-
-	return true
-}
+func (nodeInfo *NodeInfo) removeTask(t *api.Task) bool { _ = "STUB: not implemented"; return false }
 
 // addTask adds or updates a task on nodeInfo, and returns true if nodeInfo was
 // modified.
-func (nodeInfo *NodeInfo) addTask(t *api.Task) bool {
-	oldTask, ok := nodeInfo.Tasks[t.ID]
-	if ok {
-		if t.DesiredState <= api.TaskStateCompleted && oldTask.DesiredState > api.TaskStateCompleted {
-			nodeInfo.Tasks[t.ID] = t
-			nodeInfo.ActiveTasksCount++
-			nodeInfo.ActiveTasksCountByService[t.ServiceID]++
-			return true
-		} else if t.DesiredState > api.TaskStateCompleted && oldTask.DesiredState <= api.TaskStateCompleted {
-			nodeInfo.Tasks[t.ID] = t
-			nodeInfo.ActiveTasksCount--
-			nodeInfo.ActiveTasksCountByService[t.ServiceID]--
-			return true
-		}
-		return false
-	}
+func (nodeInfo *NodeInfo) addTask(t *api.Task) bool { _ = "STUB: not implemented"; return false }
 
-	nodeInfo.Tasks[t.ID] = t
-
-	reservations := taskReservations(t.Spec)
-	resources := nodeInfo.AvailableResources
-
-	resources.MemoryBytes -= reservations.MemoryBytes
-	resources.NanoCPUs -= reservations.NanoCPUs
-
-	// minimum size required
-	t.AssignedGenericResources = make([]*api.GenericResource, 0, len(resources.Generic))
-	taskAssigned := &t.AssignedGenericResources
-
-	genericresource.Claim(&resources.Generic, taskAssigned, reservations.Generic)
-
-	if t.Endpoint != nil {
-		for _, port := range t.Endpoint.Ports {
-			if port.PublishMode == api.PublishModeHost && port.PublishedPort != 0 {
-				portSpec := hostPortSpec{protocol: port.Protocol, publishedPort: port.PublishedPort}
-				nodeInfo.usedHostPorts[portSpec] = struct{}{}
-			}
-		}
-	}
-
-	if t.DesiredState <= api.TaskStateCompleted {
-		nodeInfo.ActiveTasksCount++
-		nodeInfo.ActiveTasksCountByService[t.ServiceID]++
-	}
-
-	return true
-}
+// minimum size required
 
 func taskReservations(spec api.TaskSpec) (reservations api.Resources) {
-	if spec.Resources != nil && spec.Resources.Reservations != nil {
-		reservations = *spec.Resources.Reservations
-	}
-	return
+	_ = "STUB: not implemented"
+	return *new(api.Resources)
 }
 
-func (nodeInfo *NodeInfo) cleanupFailures(now time.Time) {
-entriesLoop:
-	for key, failuresEntry := range nodeInfo.recentFailures {
-		for _, timestamp := range failuresEntry {
-			if now.Sub(timestamp) < monitorFailures {
-				continue entriesLoop
-			}
-		}
-		delete(nodeInfo.recentFailures, key)
-	}
-	nodeInfo.lastCleanup = now
-}
+func (nodeInfo *NodeInfo) cleanupFailures(now time.Time) { _ = "STUB: not implemented"; return }
 
 // taskFailed records a task failure from a given service.
 func (nodeInfo *NodeInfo) taskFailed(ctx context.Context, t *api.Task) {
-	expired := 0
-	now := time.Now()
-
-	if now.Sub(nodeInfo.lastCleanup) >= monitorFailures {
-		nodeInfo.cleanupFailures(now)
-	}
-
-	versionedService := versionedService{serviceID: t.ServiceID}
-	if t.SpecVersion != nil {
-		versionedService.specVersion = *t.SpecVersion
-	}
-
-	for _, timestamp := range nodeInfo.recentFailures[versionedService] {
-		if now.Sub(timestamp) < monitorFailures {
-			break
-		}
-		expired++
-	}
-
-	if len(nodeInfo.recentFailures[versionedService])-expired == maxFailures-1 {
-		log.G(ctx).Warnf("underweighting node %s for service %s because it experienced %d failures or rejections within %s", nodeInfo.ID, t.ServiceID, maxFailures, monitorFailures.String())
-	}
-
-	nodeInfo.recentFailures[versionedService] = append(nodeInfo.recentFailures[versionedService][expired:], now)
+	_ = "STUB: not implemented"
+	return
 }
 
 // countRecentFailures returns the number of times the service has failed on
 // this node within the lookback window monitorFailures.
 func (nodeInfo *NodeInfo) countRecentFailures(now time.Time, t *api.Task) int {
-	versionedService := versionedService{serviceID: t.ServiceID}
-	if t.SpecVersion != nil {
-		versionedService.specVersion = *t.SpecVersion
-	}
-
-	recentFailureCount := len(nodeInfo.recentFailures[versionedService])
-	for i := recentFailureCount - 1; i >= 0; i-- {
-		if now.Sub(nodeInfo.recentFailures[versionedService][i]) > monitorFailures {
-			recentFailureCount -= i + 1
-			break
-		}
-	}
-
-	return recentFailureCount
+	_ = "STUB: not implemented"
+	return 0
 }

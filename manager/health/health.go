@@ -12,8 +12,6 @@ import (
 	"sync"
 
 	"github.com/moby/swarmkit/v2/api"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 )
 
 // Server represents a Health Check server to check
@@ -25,34 +23,19 @@ type Server struct {
 }
 
 // NewHealthServer creates a new health check server for grpc services.
-func NewHealthServer() *Server {
-	return &Server{
-		statusMap: make(map[string]api.HealthCheckResponse_ServingStatus),
-	}
-}
+func NewHealthServer() *Server { _ = "STUB: not implemented"; return nil }
 
 // Check checks if the grpc server is healthy and running.
 func (s *Server) Check(_ context.Context, in *api.HealthCheckRequest) (*api.HealthCheckResponse, error) {
-	s.mu.Lock()
-	defer s.mu.Unlock()
-	if in.Service == "" {
-		// check the server overall health status.
-		return &api.HealthCheckResponse{
-			Status: api.HealthCheckResponse_SERVING,
-		}, nil
-	}
-	if status, ok := s.statusMap[in.Service]; ok {
-		return &api.HealthCheckResponse{
-			Status: status,
-		}, nil
-	}
-	return nil, status.Errorf(codes.NotFound, "unknown service")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// check the server overall health status.
 
 // SetServingStatus is called when need to reset the serving status of a service
 // or insert a new service entry into the statusMap.
 func (s *Server) SetServingStatus(service string, status api.HealthCheckResponse_ServingStatus) {
-	s.mu.Lock()
-	s.statusMap[service] = status
-	s.mu.Unlock()
+	_ = "STUB: not implemented"
+	return
 }

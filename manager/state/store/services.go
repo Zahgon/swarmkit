@@ -1,11 +1,8 @@
 package store
 
 import (
-	"strings"
-
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/moby/swarmkit/v2/api/naming"
 )
 
 const tableService = "service"
@@ -85,154 +82,88 @@ func init() {
 // CreateService adds a new service to the store.
 // Returns ErrExist if the ID is already taken.
 func CreateService(tx Tx, s *api.Service) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is not already in use.
-	if tx.lookup(tableService, indexName, strings.ToLower(s.Spec.Annotations.Name)) != nil {
-		return ErrNameConflict
-	}
-
-	return tx.create(tableService, s)
+	return nil
 }
 
 // UpdateService updates an existing service in the store.
 // Returns ErrNotExist if the service doesn't exist.
 func UpdateService(tx Tx, s *api.Service) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is either not in use or already used by this same Service.
-	if existing := tx.lookup(tableService, indexName, strings.ToLower(s.Spec.Annotations.Name)); existing != nil {
-		if existing.GetID() != s.ID {
-			return ErrNameConflict
-		}
-	}
-
-	return tx.update(tableService, s)
+	return nil
 }
 
 // DeleteService removes a service from the store.
 // Returns ErrNotExist if the service doesn't exist.
-func DeleteService(tx Tx, id string) error {
-	return tx.delete(tableService, id)
-}
+func DeleteService(tx Tx, id string) error { _ = "STUB: not implemented"; return nil }
 
 // GetService looks up a service by ID.
 // Returns nil if the service doesn't exist.
-func GetService(tx ReadTx, id string) *api.Service {
-	s := tx.get(tableService, id)
-	if s == nil {
-		return nil
-	}
-	return s.(*api.Service)
-}
+func GetService(tx ReadTx, id string) *api.Service { _ = "STUB: not implemented"; return nil }
 
 // FindServices selects a set of services and returns them.
 func FindServices(tx ReadTx, by By) ([]*api.Service, error) {
-	checkType := func(by By) error {
-		switch by.(type) {
-		case byName, byNamePrefix, byIDPrefix, byRuntime, byReferencedNetworkID, byReferencedSecretID, byReferencedConfigID, byCustom, byCustomPrefix, byAll:
-			return nil
-		default:
-			return ErrInvalidFindBy
-		}
-	}
-
-	serviceList := []*api.Service{}
-	appendResult := func(o api.StoreObject) {
-		serviceList = append(serviceList, o.(*api.Service))
-	}
-
-	err := tx.find(tableService, by, checkType, appendResult)
-	return serviceList, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type serviceIndexerByRuntime struct{}
 
 func (si serviceIndexerByRuntime) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (si serviceIndexerByRuntime) FromObject(obj interface{}) (bool, []byte, error) {
-	s := obj.(*api.Service)
-	r, err := naming.Runtime(s.Spec.Task)
-	if err != nil {
-		return false, nil, nil
-	}
-	return true, []byte(r + "\x00"), nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
 func (si serviceIndexerByRuntime) PrefixFromArgs(args ...interface{}) ([]byte, error) {
-	return prefixFromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type serviceIndexerByNetwork struct{}
 
 func (si serviceIndexerByNetwork) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (si serviceIndexerByNetwork) FromObject(obj interface{}) (bool, [][]byte, error) {
-	s := obj.(*api.Service)
-
-	var networkIDs [][]byte
-
-	specNetworks := s.Spec.Task.Networks
-
-	if len(specNetworks) == 0 {
-		specNetworks = s.Spec.Networks
-	}
-
-	for _, na := range specNetworks {
-		// Add the null character as a terminator
-		networkIDs = append(networkIDs, []byte(na.Target+"\x00"))
-	}
-
-	return len(networkIDs) != 0, networkIDs, nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
+
+// Add the null character as a terminator
 
 type serviceIndexerBySecret struct{}
 
 func (si serviceIndexerBySecret) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (si serviceIndexerBySecret) FromObject(obj interface{}) (bool, [][]byte, error) {
-	s := obj.(*api.Service)
-
-	container := s.Spec.Task.GetContainer()
-	if container == nil {
-		return false, nil, nil
-	}
-
-	var secretIDs [][]byte
-
-	for _, secretRef := range container.Secrets {
-		// Add the null character as a terminator
-		secretIDs = append(secretIDs, []byte(secretRef.SecretID+"\x00"))
-	}
-
-	return len(secretIDs) != 0, secretIDs, nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
+
+// Add the null character as a terminator
 
 type serviceIndexerByConfig struct{}
 
 func (si serviceIndexerByConfig) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (si serviceIndexerByConfig) FromObject(obj interface{}) (bool, [][]byte, error) {
-	s, ok := obj.(*api.Service)
-	if !ok {
-		panic("unexpected type passed to FromObject")
-	}
-
-	container := s.Spec.Task.GetContainer()
-	if container == nil {
-		return false, nil, nil
-	}
-
-	var configIDs [][]byte
-
-	for _, configRef := range container.Configs {
-		// Add the null character as a terminator
-		configIDs = append(configIDs, []byte(configRef.ConfigID+"\x00"))
-	}
-
-	return len(configIDs) != 0, configIDs, nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
+
+// Add the null character as a terminator

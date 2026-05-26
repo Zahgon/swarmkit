@@ -6,21 +6,12 @@ package api
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/gogo/protobuf/proto"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	raftpb "go.etcd.io/raft/v3/raftpb"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -59,13 +50,9 @@ var StoreActionKind_value = map[string]int32{
 	"STORE_ACTION_REMOVE": 3,
 }
 
-func (x StoreActionKind) String() string {
-	return proto.EnumName(StoreActionKind_name, int32(x))
-}
+func (x StoreActionKind) String() string { _ = "STUB: not implemented"; return "" }
 
-func (StoreActionKind) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{0}
-}
+func (StoreActionKind) EnumDescriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 type RaftMember struct {
 	// RaftID specifies the internal ID used by the manager in a raft context, it can never be modified
@@ -79,35 +66,22 @@ type RaftMember struct {
 	Status RaftMemberStatus `protobuf:"bytes,4,opt,name=status,proto3" json:"status"`
 }
 
-func (m *RaftMember) Reset()      { *m = RaftMember{} }
-func (*RaftMember) ProtoMessage() {}
-func (*RaftMember) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{0}
-}
-func (m *RaftMember) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *RaftMember) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RaftMember) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RaftMember) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RaftMember) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RaftMember) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RaftMember.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RaftMember) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RaftMember.Merge(m, src)
-}
-func (m *RaftMember) XXX_Size() int {
-	return m.Size()
-}
-func (m *RaftMember) XXX_DiscardUnknown() {
-	xxx_messageInfo_RaftMember.DiscardUnknown(m)
-}
+
+func (m *RaftMember) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RaftMember) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RaftMember) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RaftMember proto.InternalMessageInfo
 
@@ -116,35 +90,22 @@ type JoinRequest struct {
 	Addr string `protobuf:"bytes,1,opt,name=addr,proto3" json:"addr,omitempty"`
 }
 
-func (m *JoinRequest) Reset()      { *m = JoinRequest{} }
-func (*JoinRequest) ProtoMessage() {}
-func (*JoinRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{1}
-}
-func (m *JoinRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *JoinRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*JoinRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*JoinRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *JoinRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *JoinRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_JoinRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *JoinRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_JoinRequest.Merge(m, src)
-}
-func (m *JoinRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *JoinRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_JoinRequest.DiscardUnknown(m)
-}
+
+func (m *JoinRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *JoinRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *JoinRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_JoinRequest proto.InternalMessageInfo
 
@@ -158,35 +119,22 @@ type JoinResponse struct {
 	RemovedMembers []uint64 `protobuf:"varint,3,rep,name=removed_members,json=removedMembers,proto3" json:"removed_members,omitempty"`
 }
 
-func (m *JoinResponse) Reset()      { *m = JoinResponse{} }
-func (*JoinResponse) ProtoMessage() {}
-func (*JoinResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{2}
-}
-func (m *JoinResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *JoinResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*JoinResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*JoinResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *JoinResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *JoinResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_JoinResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *JoinResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_JoinResponse.Merge(m, src)
-}
-func (m *JoinResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *JoinResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_JoinResponse.DiscardUnknown(m)
-}
+
+func (m *JoinResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *JoinResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *JoinResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_JoinResponse proto.InternalMessageInfo
 
@@ -194,70 +142,44 @@ type LeaveRequest struct {
 	Node *RaftMember `protobuf:"bytes,1,opt,name=node,proto3" json:"node,omitempty"`
 }
 
-func (m *LeaveRequest) Reset()      { *m = LeaveRequest{} }
-func (*LeaveRequest) ProtoMessage() {}
-func (*LeaveRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{3}
-}
-func (m *LeaveRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *LeaveRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*LeaveRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*LeaveRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *LeaveRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *LeaveRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LeaveRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *LeaveRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LeaveRequest.Merge(m, src)
-}
-func (m *LeaveRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *LeaveRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_LeaveRequest.DiscardUnknown(m)
-}
+
+func (m *LeaveRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *LeaveRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *LeaveRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_LeaveRequest proto.InternalMessageInfo
 
 type LeaveResponse struct {
 }
 
-func (m *LeaveResponse) Reset()      { *m = LeaveResponse{} }
-func (*LeaveResponse) ProtoMessage() {}
-func (*LeaveResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{4}
-}
-func (m *LeaveResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *LeaveResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*LeaveResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*LeaveResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *LeaveResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *LeaveResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LeaveResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *LeaveResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LeaveResponse.Merge(m, src)
-}
-func (m *LeaveResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *LeaveResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_LeaveResponse.DiscardUnknown(m)
-}
+
+func (m *LeaveResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *LeaveResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *LeaveResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_LeaveResponse proto.InternalMessageInfo
 
@@ -265,70 +187,59 @@ type ProcessRaftMessageRequest struct {
 	Message *raftpb.Message `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
 }
 
-func (m *ProcessRaftMessageRequest) Reset()      { *m = ProcessRaftMessageRequest{} }
-func (*ProcessRaftMessageRequest) ProtoMessage() {}
+func (m *ProcessRaftMessageRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ProcessRaftMessageRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ProcessRaftMessageRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{5}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ProcessRaftMessageRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ProcessRaftMessageRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ProcessRaftMessageRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ProcessRaftMessageRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ProcessRaftMessageRequest.Merge(m, src)
-}
-func (m *ProcessRaftMessageRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ProcessRaftMessageRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ProcessRaftMessageRequest.DiscardUnknown(m)
-}
+
+func (m *ProcessRaftMessageRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ProcessRaftMessageRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ProcessRaftMessageRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ProcessRaftMessageRequest proto.InternalMessageInfo
 
 type ProcessRaftMessageResponse struct {
 }
 
-func (m *ProcessRaftMessageResponse) Reset()      { *m = ProcessRaftMessageResponse{} }
-func (*ProcessRaftMessageResponse) ProtoMessage() {}
+func (m *ProcessRaftMessageResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ProcessRaftMessageResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ProcessRaftMessageResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{6}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ProcessRaftMessageResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ProcessRaftMessageResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ProcessRaftMessageResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ProcessRaftMessageResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ProcessRaftMessageResponse.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ProcessRaftMessageResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ProcessRaftMessageResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ProcessRaftMessageResponse.DiscardUnknown(m)
-}
+
+func (m *ProcessRaftMessageResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ProcessRaftMessageResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ProcessRaftMessageResponse proto.InternalMessageInfo
 
@@ -337,35 +248,28 @@ type StreamRaftMessageRequest struct {
 	Message *raftpb.Message `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
 }
 
-func (m *StreamRaftMessageRequest) Reset()      { *m = StreamRaftMessageRequest{} }
-func (*StreamRaftMessageRequest) ProtoMessage() {}
+func (m *StreamRaftMessageRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*StreamRaftMessageRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*StreamRaftMessageRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{7}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *StreamRaftMessageRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *StreamRaftMessageRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_StreamRaftMessageRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *StreamRaftMessageRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_StreamRaftMessageRequest.Merge(m, src)
-}
-func (m *StreamRaftMessageRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *StreamRaftMessageRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_StreamRaftMessageRequest.DiscardUnknown(m)
-}
+
+func (m *StreamRaftMessageRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *StreamRaftMessageRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *StreamRaftMessageRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_StreamRaftMessageRequest proto.InternalMessageInfo
 
@@ -373,35 +277,28 @@ var xxx_messageInfo_StreamRaftMessageRequest proto.InternalMessageInfo
 type StreamRaftMessageResponse struct {
 }
 
-func (m *StreamRaftMessageResponse) Reset()      { *m = StreamRaftMessageResponse{} }
-func (*StreamRaftMessageResponse) ProtoMessage() {}
+func (m *StreamRaftMessageResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*StreamRaftMessageResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*StreamRaftMessageResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{8}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *StreamRaftMessageResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *StreamRaftMessageResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_StreamRaftMessageResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *StreamRaftMessageResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_StreamRaftMessageResponse.Merge(m, src)
-}
-func (m *StreamRaftMessageResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *StreamRaftMessageResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_StreamRaftMessageResponse.DiscardUnknown(m)
-}
+
+func (m *StreamRaftMessageResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *StreamRaftMessageResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *StreamRaftMessageResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_StreamRaftMessageResponse proto.InternalMessageInfo
 
@@ -410,35 +307,28 @@ type ResolveAddressRequest struct {
 	RaftID uint64 `protobuf:"varint,1,opt,name=raft_id,json=raftId,proto3" json:"raft_id,omitempty"`
 }
 
-func (m *ResolveAddressRequest) Reset()      { *m = ResolveAddressRequest{} }
-func (*ResolveAddressRequest) ProtoMessage() {}
+func (m *ResolveAddressRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ResolveAddressRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ResolveAddressRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{9}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ResolveAddressRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ResolveAddressRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ResolveAddressRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ResolveAddressRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ResolveAddressRequest.Merge(m, src)
-}
-func (m *ResolveAddressRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ResolveAddressRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ResolveAddressRequest.DiscardUnknown(m)
-}
+
+func (m *ResolveAddressRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ResolveAddressRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ResolveAddressRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ResolveAddressRequest proto.InternalMessageInfo
 
@@ -447,35 +337,28 @@ type ResolveAddressResponse struct {
 	Addr string `protobuf:"bytes,1,opt,name=addr,proto3" json:"addr,omitempty"`
 }
 
-func (m *ResolveAddressResponse) Reset()      { *m = ResolveAddressResponse{} }
-func (*ResolveAddressResponse) ProtoMessage() {}
+func (m *ResolveAddressResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ResolveAddressResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ResolveAddressResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{10}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ResolveAddressResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ResolveAddressResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ResolveAddressResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ResolveAddressResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ResolveAddressResponse.Merge(m, src)
-}
-func (m *ResolveAddressResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ResolveAddressResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ResolveAddressResponse.DiscardUnknown(m)
-}
+
+func (m *ResolveAddressResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ResolveAddressResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ResolveAddressResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ResolveAddressResponse proto.InternalMessageInfo
 
@@ -487,35 +370,25 @@ type InternalRaftRequest struct {
 	Action []StoreAction `protobuf:"bytes,2,rep,name=action,proto3" json:"action"`
 }
 
-func (m *InternalRaftRequest) Reset()      { *m = InternalRaftRequest{} }
-func (*InternalRaftRequest) ProtoMessage() {}
+func (m *InternalRaftRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*InternalRaftRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*InternalRaftRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{11}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *InternalRaftRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *InternalRaftRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *InternalRaftRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_InternalRaftRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *InternalRaftRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_InternalRaftRequest.Merge(m, src)
-}
-func (m *InternalRaftRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *InternalRaftRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_InternalRaftRequest.DiscardUnknown(m)
-}
+
+func (m *InternalRaftRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *InternalRaftRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *InternalRaftRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_InternalRaftRequest proto.InternalMessageInfo
 
@@ -536,35 +409,22 @@ type StoreAction struct {
 	Target isStoreAction_Target `protobuf_oneof:"target"`
 }
 
-func (m *StoreAction) Reset()      { *m = StoreAction{} }
-func (*StoreAction) ProtoMessage() {}
-func (*StoreAction) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d2c32e1e3c930c15, []int{12}
-}
-func (m *StoreAction) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *StoreAction) Reset()                    { _ = "STUB: not implemented"; return }
+func (*StoreAction) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*StoreAction) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *StoreAction) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *StoreAction) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_StoreAction.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *StoreAction) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_StoreAction.Merge(m, src)
-}
-func (m *StoreAction) XXX_Size() int {
-	return m.Size()
-}
-func (m *StoreAction) XXX_DiscardUnknown() {
-	xxx_messageInfo_StoreAction.DiscardUnknown(m)
-}
+
+func (m *StoreAction) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *StoreAction) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *StoreAction) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_StoreAction proto.InternalMessageInfo
 
@@ -605,109 +465,44 @@ type StoreAction_Volume struct {
 	Volume *Volume `protobuf:"bytes,11,opt,name=volume,proto3,oneof" json:"volume,omitempty"`
 }
 
-func (*StoreAction_Node) isStoreAction_Target()      {}
-func (*StoreAction_Service) isStoreAction_Target()   {}
-func (*StoreAction_Task) isStoreAction_Target()      {}
-func (*StoreAction_Network) isStoreAction_Target()   {}
-func (*StoreAction_Cluster) isStoreAction_Target()   {}
-func (*StoreAction_Secret) isStoreAction_Target()    {}
-func (*StoreAction_Resource) isStoreAction_Target()  {}
-func (*StoreAction_Extension) isStoreAction_Target() {}
-func (*StoreAction_Config) isStoreAction_Target()    {}
-func (*StoreAction_Volume) isStoreAction_Target()    {}
+func (*StoreAction_Node) isStoreAction_Target()      { _ = "STUB: not implemented"; return }
+func (*StoreAction_Service) isStoreAction_Target()   { _ = "STUB: not implemented"; return }
+func (*StoreAction_Task) isStoreAction_Target()      { _ = "STUB: not implemented"; return }
+func (*StoreAction_Network) isStoreAction_Target()   { _ = "STUB: not implemented"; return }
+func (*StoreAction_Cluster) isStoreAction_Target()   { _ = "STUB: not implemented"; return }
+func (*StoreAction_Secret) isStoreAction_Target()    { _ = "STUB: not implemented"; return }
+func (*StoreAction_Resource) isStoreAction_Target()  { _ = "STUB: not implemented"; return }
+func (*StoreAction_Extension) isStoreAction_Target() { _ = "STUB: not implemented"; return }
+func (*StoreAction_Config) isStoreAction_Target()    { _ = "STUB: not implemented"; return }
+func (*StoreAction_Volume) isStoreAction_Target()    { _ = "STUB: not implemented"; return }
 
 func (m *StoreAction) GetTarget() isStoreAction_Target {
-	if m != nil {
-		return m.Target
-	}
-	return nil
+	_ = "STUB: not implemented"
+	return *new(isStoreAction_Target)
 }
 
-func (m *StoreAction) GetNode() *Node {
-	if x, ok := m.GetTarget().(*StoreAction_Node); ok {
-		return x.Node
-	}
-	return nil
-}
+func (m *StoreAction) GetNode() *Node { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetService() *Service {
-	if x, ok := m.GetTarget().(*StoreAction_Service); ok {
-		return x.Service
-	}
-	return nil
-}
+func (m *StoreAction) GetService() *Service { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetTask() *Task {
-	if x, ok := m.GetTarget().(*StoreAction_Task); ok {
-		return x.Task
-	}
-	return nil
-}
+func (m *StoreAction) GetTask() *Task { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetNetwork() *Network {
-	if x, ok := m.GetTarget().(*StoreAction_Network); ok {
-		return x.Network
-	}
-	return nil
-}
+func (m *StoreAction) GetNetwork() *Network { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetCluster() *Cluster {
-	if x, ok := m.GetTarget().(*StoreAction_Cluster); ok {
-		return x.Cluster
-	}
-	return nil
-}
+func (m *StoreAction) GetCluster() *Cluster { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetSecret() *Secret {
-	if x, ok := m.GetTarget().(*StoreAction_Secret); ok {
-		return x.Secret
-	}
-	return nil
-}
+func (m *StoreAction) GetSecret() *Secret { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetResource() *Resource {
-	if x, ok := m.GetTarget().(*StoreAction_Resource); ok {
-		return x.Resource
-	}
-	return nil
-}
+func (m *StoreAction) GetResource() *Resource { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetExtension() *Extension {
-	if x, ok := m.GetTarget().(*StoreAction_Extension); ok {
-		return x.Extension
-	}
-	return nil
-}
+func (m *StoreAction) GetExtension() *Extension { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetConfig() *Config {
-	if x, ok := m.GetTarget().(*StoreAction_Config); ok {
-		return x.Config
-	}
-	return nil
-}
+func (m *StoreAction) GetConfig() *Config { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreAction) GetVolume() *Volume {
-	if x, ok := m.GetTarget().(*StoreAction_Volume); ok {
-		return x.Volume
-	}
-	return nil
-}
+func (m *StoreAction) GetVolume() *Volume { _ = "STUB: not implemented"; return nil }
 
 // XXX_OneofWrappers is for the internal use of the proto package.
-func (*StoreAction) XXX_OneofWrappers() []interface{} {
-	return []interface{}{
-		(*StoreAction_Node)(nil),
-		(*StoreAction_Service)(nil),
-		(*StoreAction_Task)(nil),
-		(*StoreAction_Network)(nil),
-		(*StoreAction_Cluster)(nil),
-		(*StoreAction_Secret)(nil),
-		(*StoreAction_Resource)(nil),
-		(*StoreAction_Extension)(nil),
-		(*StoreAction_Config)(nil),
-		(*StoreAction_Volume)(nil),
-	}
-}
+func (*StoreAction) XXX_OneofWrappers() []interface{} { _ = "STUB: not implemented"; return nil }
 
 func init() {
 	proto.RegisterEnum("docker.swarmkit.v1.StoreActionKind", StoreActionKind_name, StoreActionKind_value)
@@ -806,34 +601,23 @@ type authenticatedWrapperRaftServer struct {
 }
 
 func NewAuthenticatedWrapperRaftServer(local RaftServer, authorize func(context.Context, []string) error) RaftServer {
-	return &authenticatedWrapperRaftServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(RaftServer)
 }
 
 func (p *authenticatedWrapperRaftServer) ProcessRaftMessage(ctx context.Context, r *ProcessRaftMessageRequest) (*ProcessRaftMessageResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ProcessRaftMessage(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperRaftServer) StreamRaftMessage(stream Raft_StreamRaftMessageServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.StreamRaftMessage(stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *authenticatedWrapperRaftServer) ResolveAddress(ctx context.Context, r *ResolveAddressRequest) (*ResolveAddressResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ResolveAddress(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type authenticatedWrapperRaftMembershipServer struct {
@@ -842,267 +626,72 @@ type authenticatedWrapperRaftMembershipServer struct {
 }
 
 func NewAuthenticatedWrapperRaftMembershipServer(local RaftMembershipServer, authorize func(context.Context, []string) error) RaftMembershipServer {
-	return &authenticatedWrapperRaftMembershipServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(RaftMembershipServer)
 }
 
 func (p *authenticatedWrapperRaftMembershipServer) Join(ctx context.Context, r *JoinRequest) (*JoinResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.Join(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperRaftMembershipServer) Leave(ctx context.Context, r *LeaveRequest) (*LeaveResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.Leave(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *RaftMember) Copy() *RaftMember {
-	if m == nil {
-		return nil
-	}
-	o := &RaftMember{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RaftMember) Copy() *RaftMember { _ = "STUB: not implemented"; return nil }
 
-func (m *RaftMember) CopyFrom(src interface{}) {
+func (m *RaftMember) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*RaftMember)
-	*m = *o
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Status, &o.Status)
-}
+func (m *JoinRequest) Copy() *JoinRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *JoinRequest) Copy() *JoinRequest {
-	if m == nil {
-		return nil
-	}
-	o := &JoinRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *JoinRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *JoinRequest) CopyFrom(src interface{}) {
+func (m *JoinResponse) Copy() *JoinResponse { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*JoinRequest)
-	*m = *o
-}
+func (m *JoinResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *JoinResponse) Copy() *JoinResponse {
-	if m == nil {
-		return nil
-	}
-	o := &JoinResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *LeaveRequest) Copy() *LeaveRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *JoinResponse) CopyFrom(src interface{}) {
+func (m *LeaveRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*JoinResponse)
-	*m = *o
-	if o.Members != nil {
-		m.Members = make([]*RaftMember, len(o.Members))
-		for i := range m.Members {
-			m.Members[i] = &RaftMember{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Members[i], o.Members[i])
-		}
-	}
+func (m *LeaveResponse) Copy() *LeaveResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.RemovedMembers != nil {
-		m.RemovedMembers = make([]uint64, len(o.RemovedMembers))
-		copy(m.RemovedMembers, o.RemovedMembers)
-	}
-
-}
-
-func (m *LeaveRequest) Copy() *LeaveRequest {
-	if m == nil {
-		return nil
-	}
-	o := &LeaveRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *LeaveRequest) CopyFrom(src interface{}) {
-
-	o := src.(*LeaveRequest)
-	*m = *o
-	if o.Node != nil {
-		m.Node = &RaftMember{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Node, o.Node)
-	}
-}
-
-func (m *LeaveResponse) Copy() *LeaveResponse {
-	if m == nil {
-		return nil
-	}
-	o := &LeaveResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *LeaveResponse) CopyFrom(src interface{}) {}
+func (m *LeaveResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 func (m *ProcessRaftMessageResponse) Copy() *ProcessRaftMessageResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ProcessRaftMessageResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ProcessRaftMessageResponse) CopyFrom(src interface{}) {}
+func (m *ProcessRaftMessageResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 func (m *StreamRaftMessageResponse) Copy() *StreamRaftMessageResponse {
-	if m == nil {
-		return nil
-	}
-	o := &StreamRaftMessageResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *StreamRaftMessageResponse) CopyFrom(src interface{}) {}
+func (m *StreamRaftMessageResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 func (m *ResolveAddressRequest) Copy() *ResolveAddressRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ResolveAddressRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ResolveAddressRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ResolveAddressRequest)
-	*m = *o
-}
+func (m *ResolveAddressRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ResolveAddressResponse) Copy() *ResolveAddressResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ResolveAddressResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ResolveAddressResponse) CopyFrom(src interface{}) {
+func (m *ResolveAddressResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ResolveAddressResponse)
-	*m = *o
-}
+func (m *InternalRaftRequest) Copy() *InternalRaftRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *InternalRaftRequest) Copy() *InternalRaftRequest {
-	if m == nil {
-		return nil
-	}
-	o := &InternalRaftRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *InternalRaftRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *InternalRaftRequest) CopyFrom(src interface{}) {
+func (m *StoreAction) Copy() *StoreAction { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*InternalRaftRequest)
-	*m = *o
-	if o.Action != nil {
-		m.Action = make([]StoreAction, len(o.Action))
-		for i := range m.Action {
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Action[i], &o.Action[i])
-		}
-	}
-
-}
-
-func (m *StoreAction) Copy() *StoreAction {
-	if m == nil {
-		return nil
-	}
-	o := &StoreAction{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *StoreAction) CopyFrom(src interface{}) {
-
-	o := src.(*StoreAction)
-	*m = *o
-	if o.Target != nil {
-		switch o.Target.(type) {
-		case *StoreAction_Node:
-			v := StoreAction_Node{
-				Node: &Node{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Node, o.GetNode())
-			m.Target = &v
-		case *StoreAction_Service:
-			v := StoreAction_Service{
-				Service: &Service{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Service, o.GetService())
-			m.Target = &v
-		case *StoreAction_Task:
-			v := StoreAction_Task{
-				Task: &Task{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Task, o.GetTask())
-			m.Target = &v
-		case *StoreAction_Network:
-			v := StoreAction_Network{
-				Network: &Network{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Network, o.GetNetwork())
-			m.Target = &v
-		case *StoreAction_Cluster:
-			v := StoreAction_Cluster{
-				Cluster: &Cluster{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Cluster, o.GetCluster())
-			m.Target = &v
-		case *StoreAction_Secret:
-			v := StoreAction_Secret{
-				Secret: &Secret{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Secret, o.GetSecret())
-			m.Target = &v
-		case *StoreAction_Resource:
-			v := StoreAction_Resource{
-				Resource: &Resource{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Resource, o.GetResource())
-			m.Target = &v
-		case *StoreAction_Extension:
-			v := StoreAction_Extension{
-				Extension: &Extension{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Extension, o.GetExtension())
-			m.Target = &v
-		case *StoreAction_Config:
-			v := StoreAction_Config{
-				Config: &Config{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Config, o.GetConfig())
-			m.Target = &v
-		case *StoreAction_Volume:
-			v := StoreAction_Volume{
-				Volume: &Volume{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Volume, o.GetVolume())
-			m.Target = &v
-		}
-	}
-
-}
+func (m *StoreAction) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
@@ -1134,25 +723,18 @@ type raftClient struct {
 }
 
 func NewRaftClient(cc *grpc.ClientConn) RaftClient {
-	return &raftClient{cc}
+	_ = "STUB: not implemented"
+	return *new(RaftClient)
 }
 
 func (c *raftClient) ProcessRaftMessage(ctx context.Context, in *ProcessRaftMessageRequest, opts ...grpc.CallOption) (*ProcessRaftMessageResponse, error) {
-	out := new(ProcessRaftMessageResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Raft/ProcessRaftMessage", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *raftClient) StreamRaftMessage(ctx context.Context, opts ...grpc.CallOption) (Raft_StreamRaftMessageClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Raft_serviceDesc.Streams[0], "/docker.swarmkit.v1.Raft/StreamRaftMessage", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &raftStreamRaftMessageClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Raft_StreamRaftMessageClient), nil
 }
 
 type Raft_StreamRaftMessageClient interface {
@@ -1166,27 +748,18 @@ type raftStreamRaftMessageClient struct {
 }
 
 func (x *raftStreamRaftMessageClient) Send(m *StreamRaftMessageRequest) error {
-	return x.ClientStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *raftStreamRaftMessageClient) CloseAndRecv() (*StreamRaftMessageResponse, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(StreamRaftMessageResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *raftClient) ResolveAddress(ctx context.Context, in *ResolveAddressRequest, opts ...grpc.CallOption) (*ResolveAddressResponse, error) {
-	out := new(ResolveAddressResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Raft/ResolveAddress", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // RaftServer is the server API for Raft service.
@@ -1209,39 +782,30 @@ type UnimplementedRaftServer struct {
 }
 
 func (*UnimplementedRaftServer) ProcessRaftMessage(ctx context.Context, req *ProcessRaftMessageRequest) (*ProcessRaftMessageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ProcessRaftMessage not implemented")
-}
-func (*UnimplementedRaftServer) StreamRaftMessage(srv Raft_StreamRaftMessageServer) error {
-	return status.Errorf(codes.Unimplemented, "method StreamRaftMessage not implemented")
-}
-func (*UnimplementedRaftServer) ResolveAddress(ctx context.Context, req *ResolveAddressRequest) (*ResolveAddressResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResolveAddress not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func RegisterRaftServer(s *grpc.Server, srv RaftServer) {
-	s.RegisterService(&_Raft_serviceDesc, srv)
+func (*UnimplementedRaftServer) StreamRaftMessage(srv Raft_StreamRaftMessageServer) error {
+	_ = "STUB: not implemented"
+	return nil
 }
+
+func (*UnimplementedRaftServer) ResolveAddress(ctx context.Context, req *ResolveAddressRequest) (*ResolveAddressResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func RegisterRaftServer(s *grpc.Server, srv RaftServer) { _ = "STUB: not implemented"; return }
 
 func _Raft_ProcessRaftMessage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ProcessRaftMessageRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RaftServer).ProcessRaftMessage(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Raft/ProcessRaftMessage",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RaftServer).ProcessRaftMessage(ctx, req.(*ProcessRaftMessageRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Raft_StreamRaftMessage_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RaftServer).StreamRaftMessage(&raftStreamRaftMessageServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Raft_StreamRaftMessageServer interface {
@@ -1255,33 +819,18 @@ type raftStreamRaftMessageServer struct {
 }
 
 func (x *raftStreamRaftMessageServer) SendAndClose(m *StreamRaftMessageResponse) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *raftStreamRaftMessageServer) Recv() (*StreamRaftMessageRequest, error) {
-	m := new(StreamRaftMessageRequest)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Raft_ResolveAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ResolveAddressRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RaftServer).ResolveAddress(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Raft/ResolveAddress",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RaftServer).ResolveAddress(ctx, req.(*ResolveAddressRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _Raft_serviceDesc = grpc.ServiceDesc{
@@ -1322,25 +871,18 @@ type raftMembershipClient struct {
 }
 
 func NewRaftMembershipClient(cc *grpc.ClientConn) RaftMembershipClient {
-	return &raftMembershipClient{cc}
+	_ = "STUB: not implemented"
+	return *new(RaftMembershipClient)
 }
 
 func (c *raftMembershipClient) Join(ctx context.Context, in *JoinRequest, opts ...grpc.CallOption) (*JoinResponse, error) {
-	out := new(JoinResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.RaftMembership/Join", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *raftMembershipClient) Leave(ctx context.Context, in *LeaveRequest, opts ...grpc.CallOption) (*LeaveResponse, error) {
-	out := new(LeaveResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.RaftMembership/Leave", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // RaftMembershipServer is the server API for RaftMembership service.
@@ -1356,50 +898,28 @@ type UnimplementedRaftMembershipServer struct {
 }
 
 func (*UnimplementedRaftMembershipServer) Join(ctx context.Context, req *JoinRequest) (*JoinResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Join not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (*UnimplementedRaftMembershipServer) Leave(ctx context.Context, req *LeaveRequest) (*LeaveResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Leave not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func RegisterRaftMembershipServer(s *grpc.Server, srv RaftMembershipServer) {
-	s.RegisterService(&_RaftMembership_serviceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _RaftMembership_Join_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(JoinRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RaftMembershipServer).Join(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.RaftMembership/Join",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RaftMembershipServer).Join(ctx, req.(*JoinRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _RaftMembership_Leave_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LeaveRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RaftMembershipServer).Leave(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.RaftMembership/Leave",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RaftMembershipServer).Leave(ctx, req.(*LeaveRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _RaftMembership_serviceDesc = grpc.ServiceDesc{
@@ -1419,669 +939,290 @@ var _RaftMembership_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/docker/swarmkit/api/raft.proto",
 }
 
-func (m *RaftMember) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *RaftMember) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *RaftMember) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *RaftMember) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *RaftMember) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	{
-		size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintRaft(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x22
-	if len(m.Addr) > 0 {
-		i -= len(m.Addr)
-		copy(dAtA[i:], m.Addr)
-		i = encodeVarintRaft(dAtA, i, uint64(len(m.Addr)))
-		i--
-		dAtA[i] = 0x1a
-	}
-	if len(m.NodeID) > 0 {
-		i -= len(m.NodeID)
-		copy(dAtA[i:], m.NodeID)
-		i = encodeVarintRaft(dAtA, i, uint64(len(m.NodeID)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.RaftID != 0 {
-		i = encodeVarintRaft(dAtA, i, uint64(m.RaftID))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *JoinRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *JoinRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *JoinRequest) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *JoinRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Addr) > 0 {
-		i -= len(m.Addr)
-		copy(dAtA[i:], m.Addr)
-		i = encodeVarintRaft(dAtA, i, uint64(len(m.Addr)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *JoinResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *JoinResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *JoinResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.RemovedMembers) > 0 {
-		for iNdEx := len(m.RemovedMembers) - 1; iNdEx >= 0; iNdEx-- {
-			i = encodeVarintRaft(dAtA, i, uint64(m.RemovedMembers[iNdEx]))
-			i--
-			dAtA[i] = 0x18
-		}
-	}
-	if len(m.Members) > 0 {
-		for iNdEx := len(m.Members) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Members[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintRaft(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if m.RaftID != 0 {
-		i = encodeVarintRaft(dAtA, i, uint64(m.RaftID))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *LeaveRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *LeaveRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *LeaveRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Node != nil {
-		{
-			size, err := m.Node.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *LeaveResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *LeaveResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *LeaveResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ProcessRaftMessageRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ProcessRaftMessageRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ProcessRaftMessageRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Message != nil {
-		{
-			size, err := m.Message.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ProcessRaftMessageResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ProcessRaftMessageResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ProcessRaftMessageResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StreamRaftMessageRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *StreamRaftMessageRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StreamRaftMessageRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Message != nil {
-		{
-			size, err := m.Message.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StreamRaftMessageResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *StreamRaftMessageResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StreamRaftMessageResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ResolveAddressRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ResolveAddressRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ResolveAddressRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.RaftID != 0 {
-		i = encodeVarintRaft(dAtA, i, uint64(m.RaftID))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ResolveAddressResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ResolveAddressResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ResolveAddressResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Addr) > 0 {
-		i -= len(m.Addr)
-		copy(dAtA[i:], m.Addr)
-		i = encodeVarintRaft(dAtA, i, uint64(len(m.Addr)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *InternalRaftRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *InternalRaftRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *InternalRaftRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Action) > 0 {
-		for iNdEx := len(m.Action) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Action[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintRaft(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if m.ID != 0 {
-		i = encodeVarintRaft(dAtA, i, uint64(m.ID))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *StoreAction) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *StoreAction) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *StoreAction) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Target != nil {
-		{
-			size := m.Target.Size()
-			i -= size
-			if _, err := m.Target.MarshalTo(dAtA[i:]); err != nil {
-				return 0, err
-			}
-		}
-	}
-	if m.Action != 0 {
-		i = encodeVarintRaft(dAtA, i, uint64(m.Action))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Node) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Node) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Node != nil {
-		{
-			size, err := m.Node.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Service) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Service) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Service != nil {
-		{
-			size, err := m.Service.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Task) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Task) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Task != nil {
-		{
-			size, err := m.Task.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Network) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Network) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Network != nil {
-		{
-			size, err := m.Network.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Cluster) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Cluster) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Cluster != nil {
-		{
-			size, err := m.Cluster.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Secret) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Secret) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Secret != nil {
-		{
-			size, err := m.Secret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Resource) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Resource) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Resource != nil {
-		{
-			size, err := m.Resource.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x42
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Extension) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Extension) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Extension != nil {
-		{
-			size, err := m.Extension.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x4a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Config) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Config) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Config != nil {
-		{
-			size, err := m.Config.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x52
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *StoreAction_Volume) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreAction_Volume) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Volume != nil {
-		{
-			size, err := m.Volume.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintRaft(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x5a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
-func encodeVarintRaft(dAtA []byte, offset int, v uint64) int {
-	offset -= sovRaft(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
-}
+
+func encodeVarintRaft(dAtA []byte, offset int, v uint64) int { _ = "STUB: not implemented"; return 0 }
 
 type raftProxyRaftServer struct {
 	local                       RaftServer
@@ -2090,104 +1231,23 @@ type raftProxyRaftServer struct {
 }
 
 func NewRaftProxyRaftServer(local RaftServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) RaftServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyRaftServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(RaftServer)
 }
+
 func (p *raftProxyRaftServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyRaftServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyRaftServer) ProcessRaftMessage(ctx context.Context, r *ProcessRaftMessageRequest) (*ProcessRaftMessageResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ProcessRaftMessage(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewRaftClient(conn).ProcessRaftMessage(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ProcessRaftMessage(ctx, r)
-			}
-			return nil, err
-		}
-		return NewRaftClient(conn).ProcessRaftMessage(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type Raft_StreamRaftMessageServerWrapper struct {
@@ -2196,90 +1256,18 @@ type Raft_StreamRaftMessageServerWrapper struct {
 }
 
 func (s Raft_StreamRaftMessageServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyRaftServer) StreamRaftMessage(stream Raft_StreamRaftMessageServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := Raft_StreamRaftMessageServerWrapper{
-				Raft_StreamRaftMessageServer: stream,
-				ctx:                          ctx,
-			}
-			return p.local.StreamRaftMessage(streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewRaftClient(conn).StreamRaftMessage(ctx)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := stream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := clientStream.Send(msg); err != nil {
-			return err
-		}
-	}
-
-	reply, err := clientStream.CloseAndRecv()
-	if err != nil {
-		return err
-	}
-
-	return stream.SendAndClose(reply)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *raftProxyRaftServer) ResolveAddress(ctx context.Context, r *ResolveAddressRequest) (*ResolveAddressResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ResolveAddress(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewRaftClient(conn).ResolveAddress(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ResolveAddress(ctx, r)
-			}
-			return nil, err
-		}
-		return NewRaftClient(conn).ResolveAddress(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type raftProxyRaftMembershipServer struct {
@@ -2289,2288 +1277,170 @@ type raftProxyRaftMembershipServer struct {
 }
 
 func NewRaftProxyRaftMembershipServer(local RaftMembershipServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) RaftMembershipServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyRaftMembershipServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(RaftMembershipServer)
 }
+
 func (p *raftProxyRaftMembershipServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyRaftMembershipServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyRaftMembershipServer) Join(ctx context.Context, r *JoinRequest) (*JoinResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.Join(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewRaftMembershipClient(conn).Join(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.Join(ctx, r)
-			}
-			return nil, err
-		}
-		return NewRaftMembershipClient(conn).Join(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyRaftMembershipServer) Leave(ctx context.Context, r *LeaveRequest) (*LeaveResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.Leave(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewRaftMembershipClient(conn).Leave(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.Leave(ctx, r)
-			}
-			return nil, err
-		}
-		return NewRaftMembershipClient(conn).Leave(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *RaftMember) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.RaftID != 0 {
-		n += 1 + sovRaft(uint64(m.RaftID))
-	}
-	l = len(m.NodeID)
-	if l > 0 {
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	l = len(m.Addr)
-	if l > 0 {
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	l = m.Status.Size()
-	n += 1 + l + sovRaft(uint64(l))
-	return n
-}
+func (m *RaftMember) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *JoinRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Addr)
-	if l > 0 {
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
+func (m *JoinRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *JoinResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.RaftID != 0 {
-		n += 1 + sovRaft(uint64(m.RaftID))
-	}
-	if len(m.Members) > 0 {
-		for _, e := range m.Members {
-			l = e.Size()
-			n += 1 + l + sovRaft(uint64(l))
-		}
-	}
-	if len(m.RemovedMembers) > 0 {
-		for _, e := range m.RemovedMembers {
-			n += 1 + sovRaft(uint64(e))
-		}
-	}
-	return n
-}
+func (m *JoinResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *LeaveRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Node != nil {
-		l = m.Node.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
+func (m *LeaveRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *LeaveResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *LeaveResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ProcessRaftMessageRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Message != nil {
-		l = m.Message.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
+func (m *ProcessRaftMessageRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ProcessRaftMessageResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *ProcessRaftMessageResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *StreamRaftMessageRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Message != nil {
-		l = m.Message.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
+func (m *StreamRaftMessageRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *StreamRaftMessageResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *StreamRaftMessageResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ResolveAddressRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.RaftID != 0 {
-		n += 1 + sovRaft(uint64(m.RaftID))
-	}
-	return n
-}
+func (m *ResolveAddressRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ResolveAddressResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Addr)
-	if l > 0 {
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
+func (m *ResolveAddressResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *InternalRaftRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.ID != 0 {
-		n += 1 + sovRaft(uint64(m.ID))
-	}
-	if len(m.Action) > 0 {
-		for _, e := range m.Action {
-			l = e.Size()
-			n += 1 + l + sovRaft(uint64(l))
-		}
-	}
-	return n
-}
+func (m *InternalRaftRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *StoreAction) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Action != 0 {
-		n += 1 + sovRaft(uint64(m.Action))
-	}
-	if m.Target != nil {
-		n += m.Target.Size()
-	}
-	return n
-}
+func (m *StoreAction) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *StoreAction_Node) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Node != nil {
-		l = m.Node.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Service) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Service != nil {
-		l = m.Service.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Task) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Task != nil {
-		l = m.Task.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Network) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Network != nil {
-		l = m.Network.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Cluster) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Cluster != nil {
-		l = m.Cluster.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Secret) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Secret != nil {
-		l = m.Secret.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Resource) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Resource != nil {
-		l = m.Resource.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Extension) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Extension != nil {
-		l = m.Extension.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Config) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Config != nil {
-		l = m.Config.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
-func (m *StoreAction_Volume) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Volume != nil {
-		l = m.Volume.Size()
-		n += 1 + l + sovRaft(uint64(l))
-	}
-	return n
-}
+func (m *StoreAction_Node) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovRaft(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozRaft(x uint64) (n int) {
-	return sovRaft(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *RaftMember) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RaftMember{`,
-		`RaftID:` + fmt.Sprintf("%v", this.RaftID) + `,`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`Status:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Status), "RaftMemberStatus", "RaftMemberStatus", 1), `&`, ``, 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *JoinRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&JoinRequest{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *JoinResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForMembers := "[]*RaftMember{"
-	for _, f := range this.Members {
-		repeatedStringForMembers += strings.Replace(f.String(), "RaftMember", "RaftMember", 1) + ","
-	}
-	repeatedStringForMembers += "}"
-	s := strings.Join([]string{`&JoinResponse{`,
-		`RaftID:` + fmt.Sprintf("%v", this.RaftID) + `,`,
-		`Members:` + repeatedStringForMembers + `,`,
-		`RemovedMembers:` + fmt.Sprintf("%v", this.RemovedMembers) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *LeaveRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&LeaveRequest{`,
-		`Node:` + strings.Replace(this.Node.String(), "RaftMember", "RaftMember", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *LeaveResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&LeaveResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ProcessRaftMessageRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ProcessRaftMessageRequest{`,
-		`Message:` + strings.Replace(fmt.Sprintf("%v", this.Message), "Message", "raftpb.Message", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ProcessRaftMessageResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ProcessRaftMessageResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StreamRaftMessageRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StreamRaftMessageRequest{`,
-		`Message:` + strings.Replace(fmt.Sprintf("%v", this.Message), "Message", "raftpb.Message", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StreamRaftMessageResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StreamRaftMessageResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ResolveAddressRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ResolveAddressRequest{`,
-		`RaftID:` + fmt.Sprintf("%v", this.RaftID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ResolveAddressResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ResolveAddressResponse{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *InternalRaftRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForAction := "[]StoreAction{"
-	for _, f := range this.Action {
-		repeatedStringForAction += strings.Replace(strings.Replace(f.String(), "StoreAction", "StoreAction", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForAction += "}"
-	s := strings.Join([]string{`&InternalRaftRequest{`,
-		`ID:` + fmt.Sprintf("%v", this.ID) + `,`,
-		`Action:` + repeatedStringForAction + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction{`,
-		`Action:` + fmt.Sprintf("%v", this.Action) + `,`,
-		`Target:` + fmt.Sprintf("%v", this.Target) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Node) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Node{`,
-		`Node:` + strings.Replace(fmt.Sprintf("%v", this.Node), "Node", "Node", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Service) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Service{`,
-		`Service:` + strings.Replace(fmt.Sprintf("%v", this.Service), "Service", "Service", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Task) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Task{`,
-		`Task:` + strings.Replace(fmt.Sprintf("%v", this.Task), "Task", "Task", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Network) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Network{`,
-		`Network:` + strings.Replace(fmt.Sprintf("%v", this.Network), "Network", "Network", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Cluster) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Cluster{`,
-		`Cluster:` + strings.Replace(fmt.Sprintf("%v", this.Cluster), "Cluster", "Cluster", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Secret) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Secret{`,
-		`Secret:` + strings.Replace(fmt.Sprintf("%v", this.Secret), "Secret", "Secret", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Resource) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Resource{`,
-		`Resource:` + strings.Replace(fmt.Sprintf("%v", this.Resource), "Resource", "Resource", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Extension) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Extension{`,
-		`Extension:` + strings.Replace(fmt.Sprintf("%v", this.Extension), "Extension", "Extension", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Config) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Config{`,
-		`Config:` + strings.Replace(fmt.Sprintf("%v", this.Config), "Config", "Config", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreAction_Volume) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreAction_Volume{`,
-		`Volume:` + strings.Replace(fmt.Sprintf("%v", this.Volume), "Volume", "Volume", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringRaft(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *RaftMember) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RaftMember: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RaftMember: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RaftID", wireType)
-			}
-			m.RaftID = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.RaftID |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Addr", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Addr = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *StoreAction_Service) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *JoinRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: JoinRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: JoinRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Addr", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Addr = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *StoreAction_Task) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *JoinResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: JoinResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: JoinResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RaftID", wireType)
-			}
-			m.RaftID = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.RaftID |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Members", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Members = append(m.Members, &RaftMember{})
-			if err := m.Members[len(m.Members)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType == 0 {
-				var v uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowRaft
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.RemovedMembers = append(m.RemovedMembers, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowRaft
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthRaft
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthRaft
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				var count int
-				for _, integer := range dAtA[iNdEx:postIndex] {
-					if integer < 128 {
-						count++
-					}
-				}
-				elementCount = count
-				if elementCount != 0 && len(m.RemovedMembers) == 0 {
-					m.RemovedMembers = make([]uint64, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowRaft
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.RemovedMembers = append(m.RemovedMembers, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field RemovedMembers", wireType)
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *StoreAction_Network) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LeaveRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LeaveRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LeaveRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Node", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Node == nil {
-				m.Node = &RaftMember{}
-			}
-			if err := m.Node.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *StoreAction_Cluster) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LeaveResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LeaveResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LeaveResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *StoreAction_Secret) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *StoreAction_Resource) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *StoreAction_Extension) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *StoreAction_Config) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *StoreAction_Volume) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sovRaft(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sozRaft(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (this *RaftMember) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *JoinRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *JoinResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *LeaveRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *LeaveResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ProcessRaftMessageRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ProcessRaftMessageResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StreamRaftMessageRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StreamRaftMessageResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ResolveAddressRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ResolveAddressResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *InternalRaftRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Node) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Service) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Task) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Network) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Cluster) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Secret) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Resource) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Extension) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Config) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreAction_Volume) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringRaft(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *RaftMember) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *JoinRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *JoinResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *LeaveRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *LeaveResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ProcessRaftMessageRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ProcessRaftMessageRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ProcessRaftMessageRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Message", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Message == nil {
-				m.Message = &raftpb.Message{}
-			}
-			if err := m.Message.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *ProcessRaftMessageResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ProcessRaftMessageResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ProcessRaftMessageResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *StreamRaftMessageRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: StreamRaftMessageRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: StreamRaftMessageRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Message", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Message == nil {
-				m.Message = &raftpb.Message{}
-			}
-			if err := m.Message.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *StreamRaftMessageResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: StreamRaftMessageResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: StreamRaftMessageResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ResolveAddressRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ResolveAddressRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ResolveAddressRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RaftID", wireType)
-			}
-			m.RaftID = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.RaftID |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ResolveAddressRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ResolveAddressResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ResolveAddressResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ResolveAddressResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Addr", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Addr = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *InternalRaftRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: InternalRaftRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: InternalRaftRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
-			}
-			m.ID = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.ID |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Action", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Action = append(m.Action, StoreAction{})
-			if err := m.Action[len(m.Action)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *StoreAction) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: StoreAction: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: StoreAction: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Action", wireType)
-			}
-			m.Action = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Action |= StoreActionKind(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Node", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Node{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Node{v}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Service", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Service{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Service{v}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Task", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Task{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Task{v}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Network", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Network{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Network{v}
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Cluster", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Cluster{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Cluster{v}
-			iNdEx = postIndex
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secret", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Secret{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Secret{v}
-			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Resource", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Resource{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Resource{v}
-			iNdEx = postIndex
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Extension", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Extension{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Extension{v}
-			iNdEx = postIndex
-		case 10:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Config", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Config{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Config{v}
-			iNdEx = postIndex
-		case 11:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volume", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthRaft
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Volume{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Target = &StoreAction_Volume{v}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipRaft(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthRaft
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *InternalRaftRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipRaft(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowRaft
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowRaft
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthRaft
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupRaft
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthRaft
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (m *StoreAction) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipRaft(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthRaft        = fmt.Errorf("proto: negative length found during unmarshaling")

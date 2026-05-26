@@ -6,22 +6,13 @@ package api
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	_ "github.com/moby/swarmkit/v2/protobuf/plugin"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -39,35 +30,31 @@ type NodeCertificateStatusRequest struct {
 	NodeID string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
 }
 
-func (m *NodeCertificateStatusRequest) Reset()      { *m = NodeCertificateStatusRequest{} }
-func (*NodeCertificateStatusRequest) ProtoMessage() {}
+func (m *NodeCertificateStatusRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*NodeCertificateStatusRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*NodeCertificateStatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *NodeCertificateStatusRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *NodeCertificateStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_NodeCertificateStatusRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *NodeCertificateStatusRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_NodeCertificateStatusRequest.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *NodeCertificateStatusRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *NodeCertificateStatusRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_NodeCertificateStatusRequest.DiscardUnknown(m)
-}
+
+func (m *NodeCertificateStatusRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *NodeCertificateStatusRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_NodeCertificateStatusRequest proto.InternalMessageInfo
 
@@ -76,35 +63,31 @@ type NodeCertificateStatusResponse struct {
 	Certificate *Certificate    `protobuf:"bytes,2,opt,name=certificate,proto3" json:"certificate,omitempty"`
 }
 
-func (m *NodeCertificateStatusResponse) Reset()      { *m = NodeCertificateStatusResponse{} }
-func (*NodeCertificateStatusResponse) ProtoMessage() {}
+func (m *NodeCertificateStatusResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*NodeCertificateStatusResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*NodeCertificateStatusResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{1}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *NodeCertificateStatusResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *NodeCertificateStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_NodeCertificateStatusResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *NodeCertificateStatusResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_NodeCertificateStatusResponse.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *NodeCertificateStatusResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *NodeCertificateStatusResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_NodeCertificateStatusResponse.DiscardUnknown(m)
-}
+
+func (m *NodeCertificateStatusResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *NodeCertificateStatusResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_NodeCertificateStatusResponse proto.InternalMessageInfo
 
@@ -120,35 +103,31 @@ type IssueNodeCertificateRequest struct {
 	Availability NodeSpec_Availability `protobuf:"varint,4,opt,name=availability,proto3,enum=docker.swarmkit.v1.NodeSpec_Availability" json:"availability,omitempty"`
 }
 
-func (m *IssueNodeCertificateRequest) Reset()      { *m = IssueNodeCertificateRequest{} }
-func (*IssueNodeCertificateRequest) ProtoMessage() {}
+func (m *IssueNodeCertificateRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*IssueNodeCertificateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*IssueNodeCertificateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{2}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *IssueNodeCertificateRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *IssueNodeCertificateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_IssueNodeCertificateRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *IssueNodeCertificateRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IssueNodeCertificateRequest.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *IssueNodeCertificateRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *IssueNodeCertificateRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_IssueNodeCertificateRequest.DiscardUnknown(m)
-}
+
+func (m *IssueNodeCertificateRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *IssueNodeCertificateRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_IssueNodeCertificateRequest proto.InternalMessageInfo
 
@@ -157,70 +136,62 @@ type IssueNodeCertificateResponse struct {
 	NodeMembership NodeSpec_Membership `protobuf:"varint,2,opt,name=node_membership,json=nodeMembership,proto3,enum=docker.swarmkit.v1.NodeSpec_Membership" json:"node_membership,omitempty"`
 }
 
-func (m *IssueNodeCertificateResponse) Reset()      { *m = IssueNodeCertificateResponse{} }
-func (*IssueNodeCertificateResponse) ProtoMessage() {}
+func (m *IssueNodeCertificateResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*IssueNodeCertificateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*IssueNodeCertificateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{3}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *IssueNodeCertificateResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *IssueNodeCertificateResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_IssueNodeCertificateResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *IssueNodeCertificateResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IssueNodeCertificateResponse.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *IssueNodeCertificateResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *IssueNodeCertificateResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_IssueNodeCertificateResponse.DiscardUnknown(m)
-}
+
+func (m *IssueNodeCertificateResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *IssueNodeCertificateResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_IssueNodeCertificateResponse proto.InternalMessageInfo
 
 type GetRootCACertificateRequest struct {
 }
 
-func (m *GetRootCACertificateRequest) Reset()      { *m = GetRootCACertificateRequest{} }
-func (*GetRootCACertificateRequest) ProtoMessage() {}
+func (m *GetRootCACertificateRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*GetRootCACertificateRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*GetRootCACertificateRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{4}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *GetRootCACertificateRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *GetRootCACertificateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetRootCACertificateRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *GetRootCACertificateRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetRootCACertificateRequest.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *GetRootCACertificateRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetRootCACertificateRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetRootCACertificateRequest.DiscardUnknown(m)
-}
+
+func (m *GetRootCACertificateRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetRootCACertificateRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetRootCACertificateRequest proto.InternalMessageInfo
 
@@ -228,70 +199,56 @@ type GetRootCACertificateResponse struct {
 	Certificate []byte `protobuf:"bytes,1,opt,name=certificate,proto3" json:"certificate,omitempty"`
 }
 
-func (m *GetRootCACertificateResponse) Reset()      { *m = GetRootCACertificateResponse{} }
-func (*GetRootCACertificateResponse) ProtoMessage() {}
+func (m *GetRootCACertificateResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*GetRootCACertificateResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*GetRootCACertificateResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{5}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *GetRootCACertificateResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *GetRootCACertificateResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetRootCACertificateResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *GetRootCACertificateResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetRootCACertificateResponse.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *GetRootCACertificateResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetRootCACertificateResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetRootCACertificateResponse.DiscardUnknown(m)
-}
+
+func (m *GetRootCACertificateResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetRootCACertificateResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetRootCACertificateResponse proto.InternalMessageInfo
 
 type GetUnlockKeyRequest struct {
 }
 
-func (m *GetUnlockKeyRequest) Reset()      { *m = GetUnlockKeyRequest{} }
-func (*GetUnlockKeyRequest) ProtoMessage() {}
+func (m *GetUnlockKeyRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*GetUnlockKeyRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*GetUnlockKeyRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{6}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetUnlockKeyRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *GetUnlockKeyRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetUnlockKeyRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetUnlockKeyRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetUnlockKeyRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetUnlockKeyRequest.Merge(m, src)
-}
-func (m *GetUnlockKeyRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetUnlockKeyRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetUnlockKeyRequest.DiscardUnknown(m)
-}
+
+func (m *GetUnlockKeyRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetUnlockKeyRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetUnlockKeyRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetUnlockKeyRequest proto.InternalMessageInfo
 
@@ -300,35 +257,25 @@ type GetUnlockKeyResponse struct {
 	Version   Version `protobuf:"bytes,2,opt,name=version,proto3" json:"version"`
 }
 
-func (m *GetUnlockKeyResponse) Reset()      { *m = GetUnlockKeyResponse{} }
-func (*GetUnlockKeyResponse) ProtoMessage() {}
+func (m *GetUnlockKeyResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*GetUnlockKeyResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*GetUnlockKeyResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_64a8db18191af608, []int{7}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetUnlockKeyResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *GetUnlockKeyResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetUnlockKeyResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetUnlockKeyResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetUnlockKeyResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetUnlockKeyResponse.Merge(m, src)
-}
-func (m *GetUnlockKeyResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetUnlockKeyResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetUnlockKeyResponse.DiscardUnknown(m)
-}
+
+func (m *GetUnlockKeyResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetUnlockKeyResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetUnlockKeyResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetUnlockKeyResponse proto.InternalMessageInfo
 
@@ -398,23 +345,18 @@ type authenticatedWrapperCAServer struct {
 }
 
 func NewAuthenticatedWrapperCAServer(local CAServer, authorize func(context.Context, []string) error) CAServer {
-	return &authenticatedWrapperCAServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(CAServer)
 }
 
 func (p *authenticatedWrapperCAServer) GetRootCACertificate(ctx context.Context, r *GetRootCACertificateRequest) (*GetRootCACertificateResponse, error) {
-
-	return p.local.GetRootCACertificate(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperCAServer) GetUnlockKey(ctx context.Context, r *GetUnlockKeyRequest) (*GetUnlockKeyResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetUnlockKey(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type authenticatedWrapperNodeCAServer struct {
@@ -423,152 +365,70 @@ type authenticatedWrapperNodeCAServer struct {
 }
 
 func NewAuthenticatedWrapperNodeCAServer(local NodeCAServer, authorize func(context.Context, []string) error) NodeCAServer {
-	return &authenticatedWrapperNodeCAServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(NodeCAServer)
 }
 
 func (p *authenticatedWrapperNodeCAServer) IssueNodeCertificate(ctx context.Context, r *IssueNodeCertificateRequest) (*IssueNodeCertificateResponse, error) {
-
-	return p.local.IssueNodeCertificate(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperNodeCAServer) NodeCertificateStatus(ctx context.Context, r *NodeCertificateStatusRequest) (*NodeCertificateStatusResponse, error) {
-
-	return p.local.NodeCertificateStatus(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *NodeCertificateStatusRequest) Copy() *NodeCertificateStatusRequest {
-	if m == nil {
-		return nil
-	}
-	o := &NodeCertificateStatusRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *NodeCertificateStatusRequest) CopyFrom(src interface{}) {
-
-	o := src.(*NodeCertificateStatusRequest)
-	*m = *o
-}
+func (m *NodeCertificateStatusRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *NodeCertificateStatusResponse) Copy() *NodeCertificateStatusResponse {
-	if m == nil {
-		return nil
-	}
-	o := &NodeCertificateStatusResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (m *NodeCertificateStatusResponse) CopyFrom(src interface{}) {
-
-	o := src.(*NodeCertificateStatusResponse)
-	*m = *o
-	if o.Status != nil {
-		m.Status = &IssuanceStatus{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Status, o.Status)
-	}
-	if o.Certificate != nil {
-		m.Certificate = &Certificate{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Certificate, o.Certificate)
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
 func (m *IssueNodeCertificateRequest) Copy() *IssueNodeCertificateRequest {
-	if m == nil {
-		return nil
-	}
-	o := &IssueNodeCertificateRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *IssueNodeCertificateRequest) CopyFrom(src interface{}) {
-
-	o := src.(*IssueNodeCertificateRequest)
-	*m = *o
-	if o.CSR != nil {
-		m.CSR = make([]byte, len(o.CSR))
-		copy(m.CSR, o.CSR)
-	}
-}
+func (m *IssueNodeCertificateRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *IssueNodeCertificateResponse) Copy() *IssueNodeCertificateResponse {
-	if m == nil {
-		return nil
-	}
-	o := &IssueNodeCertificateResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *IssueNodeCertificateResponse) CopyFrom(src interface{}) {
-
-	o := src.(*IssueNodeCertificateResponse)
-	*m = *o
-}
+func (m *IssueNodeCertificateResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *GetRootCACertificateRequest) Copy() *GetRootCACertificateRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetRootCACertificateRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *GetRootCACertificateRequest) CopyFrom(src interface{}) {}
+func (m *GetRootCACertificateRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 func (m *GetRootCACertificateResponse) Copy() *GetRootCACertificateResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetRootCACertificateResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *GetRootCACertificateResponse) CopyFrom(src interface{}) {
+func (m *GetRootCACertificateResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*GetRootCACertificateResponse)
-	*m = *o
-	if o.Certificate != nil {
-		m.Certificate = make([]byte, len(o.Certificate))
-		copy(m.Certificate, o.Certificate)
-	}
-}
+func (m *GetUnlockKeyRequest) Copy() *GetUnlockKeyRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetUnlockKeyRequest) Copy() *GetUnlockKeyRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetUnlockKeyRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetUnlockKeyRequest) CopyFrom(src interface{})     { _ = "STUB: not implemented"; return }
+func (m *GetUnlockKeyResponse) Copy() *GetUnlockKeyResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *GetUnlockKeyRequest) CopyFrom(src interface{}) {}
-func (m *GetUnlockKeyResponse) Copy() *GetUnlockKeyResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetUnlockKeyResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetUnlockKeyResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetUnlockKeyResponse)
-	*m = *o
-	if o.UnlockKey != nil {
-		m.UnlockKey = make([]byte, len(o.UnlockKey))
-		copy(m.UnlockKey, o.UnlockKey)
-	}
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Version, &o.Version)
-}
+func (m *GetUnlockKeyResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
@@ -592,26 +452,16 @@ type cAClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewCAClient(cc *grpc.ClientConn) CAClient {
-	return &cAClient{cc}
-}
+func NewCAClient(cc *grpc.ClientConn) CAClient { _ = "STUB: not implemented"; return *new(CAClient) }
 
 func (c *cAClient) GetRootCACertificate(ctx context.Context, in *GetRootCACertificateRequest, opts ...grpc.CallOption) (*GetRootCACertificateResponse, error) {
-	out := new(GetRootCACertificateResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.CA/GetRootCACertificate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *cAClient) GetUnlockKey(ctx context.Context, in *GetUnlockKeyRequest, opts ...grpc.CallOption) (*GetUnlockKeyResponse, error) {
-	out := new(GetUnlockKeyResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.CA/GetUnlockKey", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // CAServer is the server API for CA service.
@@ -627,50 +477,25 @@ type UnimplementedCAServer struct {
 }
 
 func (*UnimplementedCAServer) GetRootCACertificate(ctx context.Context, req *GetRootCACertificateRequest) (*GetRootCACertificateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRootCACertificate not implemented")
-}
-func (*UnimplementedCAServer) GetUnlockKey(ctx context.Context, req *GetUnlockKeyRequest) (*GetUnlockKeyResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetUnlockKey not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func RegisterCAServer(s *grpc.Server, srv CAServer) {
-	s.RegisterService(&_CA_serviceDesc, srv)
+func (*UnimplementedCAServer) GetUnlockKey(ctx context.Context, req *GetUnlockKeyRequest) (*GetUnlockKeyResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+func RegisterCAServer(s *grpc.Server, srv CAServer) { _ = "STUB: not implemented"; return }
 
 func _CA_GetRootCACertificate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRootCACertificateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CAServer).GetRootCACertificate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.CA/GetRootCACertificate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CAServer).GetRootCACertificate(ctx, req.(*GetRootCACertificateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _CA_GetUnlockKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUnlockKeyRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CAServer).GetUnlockKey(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.CA/GetUnlockKey",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CAServer).GetUnlockKey(ctx, req.(*GetUnlockKeyRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _CA_serviceDesc = grpc.ServiceDesc{
@@ -703,25 +528,18 @@ type nodeCAClient struct {
 }
 
 func NewNodeCAClient(cc *grpc.ClientConn) NodeCAClient {
-	return &nodeCAClient{cc}
+	_ = "STUB: not implemented"
+	return *new(NodeCAClient)
 }
 
 func (c *nodeCAClient) IssueNodeCertificate(ctx context.Context, in *IssueNodeCertificateRequest, opts ...grpc.CallOption) (*IssueNodeCertificateResponse, error) {
-	out := new(IssueNodeCertificateResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.NodeCA/IssueNodeCertificate", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *nodeCAClient) NodeCertificateStatus(ctx context.Context, in *NodeCertificateStatusRequest, opts ...grpc.CallOption) (*NodeCertificateStatusResponse, error) {
-	out := new(NodeCertificateStatusResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.NodeCA/NodeCertificateStatus", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // NodeCAServer is the server API for NodeCA service.
@@ -735,50 +553,25 @@ type UnimplementedNodeCAServer struct {
 }
 
 func (*UnimplementedNodeCAServer) IssueNodeCertificate(ctx context.Context, req *IssueNodeCertificateRequest) (*IssueNodeCertificateResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method IssueNodeCertificate not implemented")
-}
-func (*UnimplementedNodeCAServer) NodeCertificateStatus(ctx context.Context, req *NodeCertificateStatusRequest) (*NodeCertificateStatusResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NodeCertificateStatus not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func RegisterNodeCAServer(s *grpc.Server, srv NodeCAServer) {
-	s.RegisterService(&_NodeCA_serviceDesc, srv)
+func (*UnimplementedNodeCAServer) NodeCertificateStatus(ctx context.Context, req *NodeCertificateStatusRequest) (*NodeCertificateStatusResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+func RegisterNodeCAServer(s *grpc.Server, srv NodeCAServer) { _ = "STUB: not implemented"; return }
 
 func _NodeCA_IssueNodeCertificate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(IssueNodeCertificateRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NodeCAServer).IssueNodeCertificate(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.NodeCA/IssueNodeCertificate",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NodeCAServer).IssueNodeCertificate(ctx, req.(*IssueNodeCertificateRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _NodeCA_NodeCertificateStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(NodeCertificateStatusRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NodeCAServer).NodeCertificateStatus(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.NodeCA/NodeCertificateStatus",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NodeCAServer).NodeCertificateStatus(ctx, req.(*NodeCertificateStatusRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _NodeCA_serviceDesc = grpc.ServiceDesc{
@@ -799,291 +592,126 @@ var _NodeCA_serviceDesc = grpc.ServiceDesc{
 }
 
 func (m *NodeCertificateStatusRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *NodeCertificateStatusRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *NodeCertificateStatusRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NodeID) > 0 {
-		i -= len(m.NodeID)
-		copy(dAtA[i:], m.NodeID)
-		i = encodeVarintCa(dAtA, i, uint64(len(m.NodeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *NodeCertificateStatusResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *NodeCertificateStatusResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *NodeCertificateStatusResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Certificate != nil {
-		{
-			size, err := m.Certificate.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintCa(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Status != nil {
-		{
-			size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintCa(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *IssueNodeCertificateRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *IssueNodeCertificateRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *IssueNodeCertificateRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Availability != 0 {
-		i = encodeVarintCa(dAtA, i, uint64(m.Availability))
-		i--
-		dAtA[i] = 0x20
-	}
-	if len(m.Token) > 0 {
-		i -= len(m.Token)
-		copy(dAtA[i:], m.Token)
-		i = encodeVarintCa(dAtA, i, uint64(len(m.Token)))
-		i--
-		dAtA[i] = 0x1a
-	}
-	if len(m.CSR) > 0 {
-		i -= len(m.CSR)
-		copy(dAtA[i:], m.CSR)
-		i = encodeVarintCa(dAtA, i, uint64(len(m.CSR)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Role != 0 {
-		i = encodeVarintCa(dAtA, i, uint64(m.Role))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *IssueNodeCertificateResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *IssueNodeCertificateResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *IssueNodeCertificateResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.NodeMembership != 0 {
-		i = encodeVarintCa(dAtA, i, uint64(m.NodeMembership))
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.NodeID) > 0 {
-		i -= len(m.NodeID)
-		copy(dAtA[i:], m.NodeID)
-		i = encodeVarintCa(dAtA, i, uint64(len(m.NodeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetRootCACertificateRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetRootCACertificateRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetRootCACertificateRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetRootCACertificateResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetRootCACertificateResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetRootCACertificateResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Certificate) > 0 {
-		i -= len(m.Certificate)
-		copy(dAtA[i:], m.Certificate)
-		i = encodeVarintCa(dAtA, i, uint64(len(m.Certificate)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetUnlockKeyRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetUnlockKeyRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetUnlockKeyRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetUnlockKeyResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetUnlockKeyResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetUnlockKeyResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	{
-		size, err := m.Version.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintCa(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
-	if len(m.UnlockKey) > 0 {
-		i -= len(m.UnlockKey)
-		copy(dAtA[i:], m.UnlockKey)
-		i = encodeVarintCa(dAtA, i, uint64(len(m.UnlockKey)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func encodeVarintCa(dAtA []byte, offset int, v uint64) int {
-	offset -= sovCa(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
-}
+func encodeVarintCa(dAtA []byte, offset int, v uint64) int { _ = "STUB: not implemented"; return 0 }
 
 type raftProxyCAServer struct {
 	local                       CAServer
@@ -1092,139 +720,28 @@ type raftProxyCAServer struct {
 }
 
 func NewRaftProxyCAServer(local CAServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) CAServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyCAServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(CAServer)
 }
+
 func (p *raftProxyCAServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyCAServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyCAServer) GetRootCACertificate(ctx context.Context, r *GetRootCACertificateRequest) (*GetRootCACertificateResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetRootCACertificate(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewCAClient(conn).GetRootCACertificate(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetRootCACertificate(ctx, r)
-			}
-			return nil, err
-		}
-		return NewCAClient(conn).GetRootCACertificate(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyCAServer) GetUnlockKey(ctx context.Context, r *GetUnlockKeyRequest) (*GetUnlockKeyResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetUnlockKey(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewCAClient(conn).GetUnlockKey(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetUnlockKey(ctx, r)
-			}
-			return nil, err
-		}
-		return NewCAClient(conn).GetUnlockKey(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type raftProxyNodeCAServer struct {
@@ -1234,1192 +751,103 @@ type raftProxyNodeCAServer struct {
 }
 
 func NewRaftProxyNodeCAServer(local NodeCAServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) NodeCAServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyNodeCAServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(NodeCAServer)
 }
+
 func (p *raftProxyNodeCAServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyNodeCAServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyNodeCAServer) IssueNodeCertificate(ctx context.Context, r *IssueNodeCertificateRequest) (*IssueNodeCertificateResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.IssueNodeCertificate(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewNodeCAClient(conn).IssueNodeCertificate(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.IssueNodeCertificate(ctx, r)
-			}
-			return nil, err
-		}
-		return NewNodeCAClient(conn).IssueNodeCertificate(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyNodeCAServer) NodeCertificateStatus(ctx context.Context, r *NodeCertificateStatusRequest) (*NodeCertificateStatusResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.NodeCertificateStatus(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewNodeCAClient(conn).NodeCertificateStatus(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.NodeCertificateStatus(ctx, r)
-			}
-			return nil, err
-		}
-		return NewNodeCAClient(conn).NodeCertificateStatus(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *NodeCertificateStatusRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.NodeID)
-	if l > 0 {
-		n += 1 + l + sovCa(uint64(l))
-	}
-	return n
-}
+func (m *NodeCertificateStatusRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *NodeCertificateStatusResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Status != nil {
-		l = m.Status.Size()
-		n += 1 + l + sovCa(uint64(l))
-	}
-	if m.Certificate != nil {
-		l = m.Certificate.Size()
-		n += 1 + l + sovCa(uint64(l))
-	}
-	return n
-}
+func (m *NodeCertificateStatusResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *IssueNodeCertificateRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Role != 0 {
-		n += 1 + sovCa(uint64(m.Role))
-	}
-	l = len(m.CSR)
-	if l > 0 {
-		n += 1 + l + sovCa(uint64(l))
-	}
-	l = len(m.Token)
-	if l > 0 {
-		n += 1 + l + sovCa(uint64(l))
-	}
-	if m.Availability != 0 {
-		n += 1 + sovCa(uint64(m.Availability))
-	}
-	return n
-}
+func (m *IssueNodeCertificateRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *IssueNodeCertificateResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.NodeID)
-	if l > 0 {
-		n += 1 + l + sovCa(uint64(l))
-	}
-	if m.NodeMembership != 0 {
-		n += 1 + sovCa(uint64(m.NodeMembership))
-	}
-	return n
-}
+func (m *IssueNodeCertificateResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetRootCACertificateRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *GetRootCACertificateRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetRootCACertificateResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Certificate)
-	if l > 0 {
-		n += 1 + l + sovCa(uint64(l))
-	}
-	return n
-}
+func (m *GetRootCACertificateResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetUnlockKeyRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *GetUnlockKeyRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetUnlockKeyResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.UnlockKey)
-	if l > 0 {
-		n += 1 + l + sovCa(uint64(l))
-	}
-	l = m.Version.Size()
-	n += 1 + l + sovCa(uint64(l))
-	return n
-}
+func (m *GetUnlockKeyResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovCa(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozCa(x uint64) (n int) {
-	return sovCa(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *NodeCertificateStatusRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&NodeCertificateStatusRequest{`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *NodeCertificateStatusResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&NodeCertificateStatusResponse{`,
-		`Status:` + strings.Replace(fmt.Sprintf("%v", this.Status), "IssuanceStatus", "IssuanceStatus", 1) + `,`,
-		`Certificate:` + strings.Replace(fmt.Sprintf("%v", this.Certificate), "Certificate", "Certificate", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *IssueNodeCertificateRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&IssueNodeCertificateRequest{`,
-		`Role:` + fmt.Sprintf("%v", this.Role) + `,`,
-		`CSR:` + fmt.Sprintf("%v", this.CSR) + `,`,
-		`Token:` + fmt.Sprintf("%v", this.Token) + `,`,
-		`Availability:` + fmt.Sprintf("%v", this.Availability) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *IssueNodeCertificateResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&IssueNodeCertificateResponse{`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`NodeMembership:` + fmt.Sprintf("%v", this.NodeMembership) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetRootCACertificateRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetRootCACertificateRequest{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetRootCACertificateResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetRootCACertificateResponse{`,
-		`Certificate:` + fmt.Sprintf("%v", this.Certificate) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetUnlockKeyRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetUnlockKeyRequest{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetUnlockKeyResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetUnlockKeyResponse{`,
-		`UnlockKey:` + fmt.Sprintf("%v", this.UnlockKey) + `,`,
-		`Version:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Version), "Version", "Version", 1), `&`, ``, 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringCa(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
+func sovCa(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sozCa(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (this *NodeCertificateStatusRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *NodeCertificateStatusResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *IssueNodeCertificateRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *IssueNodeCertificateResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetRootCACertificateRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetRootCACertificateResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetUnlockKeyRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetUnlockKeyResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringCa(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
 func (m *NodeCertificateStatusRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: NodeCertificateStatusRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: NodeCertificateStatusRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *NodeCertificateStatusResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: NodeCertificateStatusResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: NodeCertificateStatusResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Status == nil {
-				m.Status = &IssuanceStatus{}
-			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Certificate", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Certificate == nil {
-				m.Certificate = &Certificate{}
-			}
-			if err := m.Certificate.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *IssueNodeCertificateRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: IssueNodeCertificateRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: IssueNodeCertificateRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Role", wireType)
-			}
-			m.Role = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Role |= NodeRole(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CSR", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.CSR = append(m.CSR[:0], dAtA[iNdEx:postIndex]...)
-			if m.CSR == nil {
-				m.CSR = []byte{}
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Token", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Token = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 4:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Availability", wireType)
-			}
-			m.Availability = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Availability |= NodeSpec_Availability(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *IssueNodeCertificateResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: IssueNodeCertificateResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: IssueNodeCertificateResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeMembership", wireType)
-			}
-			m.NodeMembership = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.NodeMembership |= NodeSpec_Membership(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *GetRootCACertificateRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetRootCACertificateRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetRootCACertificateRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *GetRootCACertificateResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetRootCACertificateResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetRootCACertificateResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Certificate", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Certificate = append(m.Certificate[:0], dAtA[iNdEx:postIndex]...)
-			if m.Certificate == nil {
-				m.Certificate = []byte{}
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *GetUnlockKeyRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetUnlockKeyRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetUnlockKeyRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetUnlockKeyResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetUnlockKeyResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetUnlockKeyResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field UnlockKey", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.UnlockKey = append(m.UnlockKey[:0], dAtA[iNdEx:postIndex]...)
-			if m.UnlockKey == nil {
-				m.UnlockKey = []byte{}
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Version", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthCa
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthCa
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Version.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipCa(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthCa
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetUnlockKeyRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipCa(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowCa
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowCa
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthCa
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupCa
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthCa
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (m *GetUnlockKeyResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipCa(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthCa        = fmt.Errorf("proto: negative length found during unmarshaling")

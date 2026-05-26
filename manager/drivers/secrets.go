@@ -1,11 +1,7 @@
 package drivers
 
 import (
-	"errors"
-	"fmt"
-
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/moby/swarmkit/v2/api/naming"
 	"github.com/moby/swarmkit/v2/node/plugin"
 )
 
@@ -23,69 +19,18 @@ type SecretDriver struct {
 }
 
 // NewSecretDriver creates a new driver that provides third party secrets
-func NewSecretDriver(plugin plugin.Plugin) *SecretDriver {
-	return &SecretDriver{plugin: plugin}
-}
+func NewSecretDriver(plugin plugin.Plugin) *SecretDriver { _ = "STUB: not implemented"; return nil }
 
 // Get gets a secret from the secret provider. The function returns: the secret value;
 // a bool indicating whether the value should be reused across different tasks (defaults to false);
 // and an error if either the spec or task are nil, if calling the driver returns an error, or if
 // the driver returns an error in the payload.
 func (d *SecretDriver) Get(spec *api.SecretSpec, task *api.Task) ([]byte, bool, error) {
-	if spec == nil {
-		return nil, false, fmt.Errorf("secret spec is nil")
-	}
-	if task == nil {
-		return nil, false, fmt.Errorf("task is nil")
-	}
-
-	var secretResp SecretsProviderResponse
-	secretReq := &SecretsProviderRequest{
-		SecretName:    spec.Annotations.Name,
-		SecretLabels:  spec.Annotations.Labels,
-		ServiceID:     task.ServiceID,
-		ServiceName:   task.ServiceAnnotations.Name,
-		ServiceLabels: task.ServiceAnnotations.Labels,
-		TaskID:        task.ID,
-		TaskName:      naming.Task(task),
-		TaskImage:     task.Spec.GetContainer().Image,
-		NodeID:        task.NodeID,
-	}
-	container := task.Spec.GetContainer()
-	if container != nil {
-		secretReq.ServiceHostname = container.Hostname
-	}
-
-	if task.Endpoint != nil && task.Endpoint.Spec != nil {
-		secretReq.ServiceEndpointSpec = &EndpointSpec{
-			Mode: int32(task.Endpoint.Spec.Mode),
-		}
-		for _, p := range task.Endpoint.Spec.Ports {
-			if p == nil {
-				continue
-			}
-			secretReq.ServiceEndpointSpec.Ports =
-				append(secretReq.ServiceEndpointSpec.Ports,
-					PortConfig{
-						Name:          p.Name,
-						Protocol:      int32(p.Protocol),
-						PublishedPort: p.PublishedPort,
-						TargetPort:    p.TargetPort,
-						PublishMode:   int32(p.PublishMode),
-					})
-		}
-	}
-
-	err := d.plugin.Client().Call(SecretsProviderAPI, secretReq, &secretResp)
-	if err != nil {
-		return nil, false, err
-	}
-	if secretResp.Err != "" {
-		return nil, secretResp.DoNotReuse, errors.New(secretResp.Err)
-	}
-	// Assign the secret value
-	return secretResp.Value, secretResp.DoNotReuse, nil
+	_ = "STUB: not implemented"
+	return nil, false, nil
 }
+
+// Assign the secret value
 
 // SecretsProviderRequest is the secrets provider request.
 type SecretsProviderRequest struct {

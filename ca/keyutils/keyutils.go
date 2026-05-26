@@ -6,13 +6,8 @@ package keyutils
 
 import (
 	"crypto"
-	cryptorand "crypto/rand"
-	"crypto/x509"
 	"encoding/pem"
 	"errors"
-
-	"github.com/cloudflare/cfssl/helpers"
-	"github.com/moby/swarmkit/v2/ca/pkcs8"
 )
 
 // Formatter provides an interface for converting keys to the right format, and encrypting and decrypting keys
@@ -37,65 +32,28 @@ type utils struct {
 }
 
 // IsPKCS8 returns true if the provided der bytes is encrypted/unencrypted PKCS#8 key
-func IsPKCS8(derBytes []byte) bool {
-	if _, err := x509.ParsePKCS8PrivateKey(derBytes); err == nil {
-		return true
-	}
-
-	return pkcs8.IsEncryptedPEMBlock(&pem.Block{
-		Type:    "PRIVATE KEY",
-		Headers: nil,
-		Bytes:   derBytes,
-	})
-}
+func IsPKCS8(derBytes []byte) bool { _ = "STUB: not implemented"; return false }
 
 // IsEncryptedPEMBlock checks if a PKCS#1 or PKCS#8 PEM-block is encrypted or not
-func IsEncryptedPEMBlock(block *pem.Block) bool {
-	return pkcs8.IsEncryptedPEMBlock(block) || x509.IsEncryptedPEMBlock(block)
-}
+func IsEncryptedPEMBlock(block *pem.Block) bool { _ = "STUB: not implemented"; return false }
 
 // ParsePrivateKeyPEMWithPassword parses an encrypted or a decrypted PKCS#1 or PKCS#8 PEM to crypto.Signer.
 // It returns an error in FIPS mode if PKCS#1 PEM bytes are passed.
 func (u *utils) ParsePrivateKeyPEMWithPassword(pemBytes, password []byte) (crypto.Signer, error) {
-	block, _ := pem.Decode(pemBytes)
-	if block == nil {
-		return nil, errors.New("Could not parse PEM")
-	}
-
-	if IsPKCS8(block.Bytes) {
-		return pkcs8.ParsePrivateKeyPEMWithPassword(pemBytes, password)
-	} else if u.fips {
-		return nil, ErrFIPSUnsupportedKeyFormat
-	}
-
-	return helpers.ParsePrivateKeyPEMWithPassword(pemBytes, password)
+	_ = "STUB: not implemented"
+	return *new(crypto.Signer), nil
 }
 
 // DecryptPEMBlock requires PKCS#1 or PKCS#8 PEM Block and password to decrypt and return unencrypted der []byte
 // It returns an error in FIPS mode when PKCS#1 PEM Block is passed.
 func (u *utils) DecryptPEMBlock(block *pem.Block, password []byte) ([]byte, error) {
-	if IsPKCS8(block.Bytes) {
-		return pkcs8.DecryptPEMBlock(block, password)
-	} else if u.fips {
-		return nil, ErrFIPSUnsupportedKeyFormat
-	}
-
-	return x509.DecryptPEMBlock(block, password)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // EncryptPEMBlock takes DER-format bytes and password to return an encrypted PKCS#1 or PKCS#8 PEM-block
 // It returns an error in FIPS mode when PKCS#1 PEM bytes are passed.
 func (u *utils) EncryptPEMBlock(data, password []byte) (*pem.Block, error) {
-	if IsPKCS8(data) {
-		return pkcs8.EncryptPEMBlock(data, password)
-	} else if u.fips {
-		return nil, ErrFIPSUnsupportedKeyFormat
-	}
-
-	cipherType := x509.PEMCipherAES256
-	return x509.EncryptPEMBlock(cryptorand.Reader,
-		"EC PRIVATE KEY",
-		data,
-		password,
-		cipherType)
+	_ = "STUB: not implemented"
+	return nil, nil
 }

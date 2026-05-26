@@ -6,22 +6,13 @@ package api
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	_ "github.com/moby/swarmkit/v2/protobuf/plugin"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -40,35 +31,25 @@ type AttachNetworkRequest struct {
 	ContainerID string                   `protobuf:"bytes,2,opt,name=container_id,json=containerId,proto3" json:"container_id,omitempty"`
 }
 
-func (m *AttachNetworkRequest) Reset()      { *m = AttachNetworkRequest{} }
-func (*AttachNetworkRequest) ProtoMessage() {}
+func (m *AttachNetworkRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*AttachNetworkRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*AttachNetworkRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_909455b1b868ddb9, []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *AttachNetworkRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *AttachNetworkRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *AttachNetworkRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_AttachNetworkRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *AttachNetworkRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AttachNetworkRequest.Merge(m, src)
-}
-func (m *AttachNetworkRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *AttachNetworkRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_AttachNetworkRequest.DiscardUnknown(m)
-}
+
+func (m *AttachNetworkRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *AttachNetworkRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *AttachNetworkRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_AttachNetworkRequest proto.InternalMessageInfo
 
@@ -76,35 +57,28 @@ type AttachNetworkResponse struct {
 	AttachmentID string `protobuf:"bytes,1,opt,name=attachment_id,json=attachmentId,proto3" json:"attachment_id,omitempty"`
 }
 
-func (m *AttachNetworkResponse) Reset()      { *m = AttachNetworkResponse{} }
-func (*AttachNetworkResponse) ProtoMessage() {}
+func (m *AttachNetworkResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*AttachNetworkResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*AttachNetworkResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_909455b1b868ddb9, []int{1}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *AttachNetworkResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *AttachNetworkResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_AttachNetworkResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *AttachNetworkResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AttachNetworkResponse.Merge(m, src)
-}
-func (m *AttachNetworkResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *AttachNetworkResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_AttachNetworkResponse.DiscardUnknown(m)
-}
+
+func (m *AttachNetworkResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *AttachNetworkResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *AttachNetworkResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_AttachNetworkResponse proto.InternalMessageInfo
 
@@ -112,70 +86,53 @@ type DetachNetworkRequest struct {
 	AttachmentID string `protobuf:"bytes,1,opt,name=attachment_id,json=attachmentId,proto3" json:"attachment_id,omitempty"`
 }
 
-func (m *DetachNetworkRequest) Reset()      { *m = DetachNetworkRequest{} }
-func (*DetachNetworkRequest) ProtoMessage() {}
+func (m *DetachNetworkRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*DetachNetworkRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*DetachNetworkRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_909455b1b868ddb9, []int{2}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *DetachNetworkRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *DetachNetworkRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *DetachNetworkRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_DetachNetworkRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *DetachNetworkRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DetachNetworkRequest.Merge(m, src)
-}
-func (m *DetachNetworkRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *DetachNetworkRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_DetachNetworkRequest.DiscardUnknown(m)
-}
+
+func (m *DetachNetworkRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *DetachNetworkRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *DetachNetworkRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_DetachNetworkRequest proto.InternalMessageInfo
 
 type DetachNetworkResponse struct {
 }
 
-func (m *DetachNetworkResponse) Reset()      { *m = DetachNetworkResponse{} }
-func (*DetachNetworkResponse) ProtoMessage() {}
+func (m *DetachNetworkResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*DetachNetworkResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*DetachNetworkResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_909455b1b868ddb9, []int{3}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *DetachNetworkResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *DetachNetworkResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_DetachNetworkResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *DetachNetworkResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DetachNetworkResponse.Merge(m, src)
-}
-func (m *DetachNetworkResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *DetachNetworkResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_DetachNetworkResponse.DiscardUnknown(m)
-}
+
+func (m *DetachNetworkResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *DetachNetworkResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *DetachNetworkResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_DetachNetworkResponse proto.InternalMessageInfo
 
@@ -226,89 +183,47 @@ type authenticatedWrapperResourceAllocatorServer struct {
 }
 
 func NewAuthenticatedWrapperResourceAllocatorServer(local ResourceAllocatorServer, authorize func(context.Context, []string) error) ResourceAllocatorServer {
-	return &authenticatedWrapperResourceAllocatorServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(ResourceAllocatorServer)
 }
 
 func (p *authenticatedWrapperResourceAllocatorServer) AttachNetwork(ctx context.Context, r *AttachNetworkRequest) (*AttachNetworkResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.AttachNetwork(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperResourceAllocatorServer) DetachNetwork(ctx context.Context, r *DetachNetworkRequest) (*DetachNetworkResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.DetachNetwork(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *AttachNetworkRequest) Copy() *AttachNetworkRequest {
-	if m == nil {
-		return nil
-	}
-	o := &AttachNetworkRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *AttachNetworkRequest) Copy() *AttachNetworkRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *AttachNetworkRequest) CopyFrom(src interface{}) {
-
-	o := src.(*AttachNetworkRequest)
-	*m = *o
-	if o.Config != nil {
-		m.Config = &NetworkAttachmentConfig{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Config, o.Config)
-	}
-}
+func (m *AttachNetworkRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *AttachNetworkResponse) Copy() *AttachNetworkResponse {
-	if m == nil {
-		return nil
-	}
-	o := &AttachNetworkResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *AttachNetworkResponse) CopyFrom(src interface{}) {
+func (m *AttachNetworkResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*AttachNetworkResponse)
-	*m = *o
-}
+func (m *DetachNetworkRequest) Copy() *DetachNetworkRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *DetachNetworkRequest) Copy() *DetachNetworkRequest {
-	if m == nil {
-		return nil
-	}
-	o := &DetachNetworkRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *DetachNetworkRequest) CopyFrom(src interface{}) {
-
-	o := src.(*DetachNetworkRequest)
-	*m = *o
-}
+func (m *DetachNetworkRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *DetachNetworkResponse) Copy() *DetachNetworkResponse {
-	if m == nil {
-		return nil
-	}
-	o := &DetachNetworkResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *DetachNetworkResponse) CopyFrom(src interface{}) {}
+func (m *DetachNetworkResponse) CopyFrom(src interface{}) {
+	_ = "STUB: not implemented"
 
-// Reference imports to suppress errors if they are not otherwise used.
+	// Reference imports to suppress errors if they are not otherwise used.
+	return
+}
+
 var _ context.Context
 var _ grpc.ClientConn
 
@@ -329,25 +244,18 @@ type resourceAllocatorClient struct {
 }
 
 func NewResourceAllocatorClient(cc *grpc.ClientConn) ResourceAllocatorClient {
-	return &resourceAllocatorClient{cc}
+	_ = "STUB: not implemented"
+	return *new(ResourceAllocatorClient)
 }
 
 func (c *resourceAllocatorClient) AttachNetwork(ctx context.Context, in *AttachNetworkRequest, opts ...grpc.CallOption) (*AttachNetworkResponse, error) {
-	out := new(AttachNetworkResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.ResourceAllocator/AttachNetwork", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *resourceAllocatorClient) DetachNetwork(ctx context.Context, in *DetachNetworkRequest, opts ...grpc.CallOption) (*DetachNetworkResponse, error) {
-	out := new(DetachNetworkResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.ResourceAllocator/DetachNetwork", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ResourceAllocatorServer is the server API for ResourceAllocator service.
@@ -361,50 +269,28 @@ type UnimplementedResourceAllocatorServer struct {
 }
 
 func (*UnimplementedResourceAllocatorServer) AttachNetwork(ctx context.Context, req *AttachNetworkRequest) (*AttachNetworkResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AttachNetwork not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (*UnimplementedResourceAllocatorServer) DetachNetwork(ctx context.Context, req *DetachNetworkRequest) (*DetachNetworkResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DetachNetwork not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func RegisterResourceAllocatorServer(s *grpc.Server, srv ResourceAllocatorServer) {
-	s.RegisterService(&_ResourceAllocator_serviceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _ResourceAllocator_AttachNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AttachNetworkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ResourceAllocatorServer).AttachNetwork(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.ResourceAllocator/AttachNetwork",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ResourceAllocatorServer).AttachNetwork(ctx, req.(*AttachNetworkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _ResourceAllocator_DetachNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DetachNetworkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ResourceAllocatorServer).DetachNetwork(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.ResourceAllocator/DetachNetwork",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ResourceAllocatorServer).DetachNetwork(ctx, req.(*DetachNetworkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _ResourceAllocator_serviceDesc = grpc.ServiceDesc{
@@ -425,140 +311,68 @@ var _ResourceAllocator_serviceDesc = grpc.ServiceDesc{
 }
 
 func (m *AttachNetworkRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *AttachNetworkRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AttachNetworkRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ContainerID) > 0 {
-		i -= len(m.ContainerID)
-		copy(dAtA[i:], m.ContainerID)
-		i = encodeVarintResource(dAtA, i, uint64(len(m.ContainerID)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Config != nil {
-		{
-			size, err := m.Config.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintResource(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AttachNetworkResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *AttachNetworkResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AttachNetworkResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.AttachmentID) > 0 {
-		i -= len(m.AttachmentID)
-		copy(dAtA[i:], m.AttachmentID)
-		i = encodeVarintResource(dAtA, i, uint64(len(m.AttachmentID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *DetachNetworkRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *DetachNetworkRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *DetachNetworkRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.AttachmentID) > 0 {
-		i -= len(m.AttachmentID)
-		copy(dAtA[i:], m.AttachmentID)
-		i = encodeVarintResource(dAtA, i, uint64(len(m.AttachmentID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *DetachNetworkResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *DetachNetworkResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *DetachNetworkResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func encodeVarintResource(dAtA []byte, offset int, v uint64) int {
-	offset -= sovResource(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
+	_ = "STUB: not implemented"
+	return 0
 }
 
 type raftProxyResourceAllocatorServer struct {
@@ -568,657 +382,61 @@ type raftProxyResourceAllocatorServer struct {
 }
 
 func NewRaftProxyResourceAllocatorServer(local ResourceAllocatorServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) ResourceAllocatorServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyResourceAllocatorServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(ResourceAllocatorServer)
 }
+
 func (p *raftProxyResourceAllocatorServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyResourceAllocatorServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyResourceAllocatorServer) AttachNetwork(ctx context.Context, r *AttachNetworkRequest) (*AttachNetworkResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.AttachNetwork(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewResourceAllocatorClient(conn).AttachNetwork(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.AttachNetwork(ctx, r)
-			}
-			return nil, err
-		}
-		return NewResourceAllocatorClient(conn).AttachNetwork(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyResourceAllocatorServer) DetachNetwork(ctx context.Context, r *DetachNetworkRequest) (*DetachNetworkResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.DetachNetwork(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewResourceAllocatorClient(conn).DetachNetwork(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.DetachNetwork(ctx, r)
-			}
-			return nil, err
-		}
-		return NewResourceAllocatorClient(conn).DetachNetwork(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *AttachNetworkRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Config != nil {
-		l = m.Config.Size()
-		n += 1 + l + sovResource(uint64(l))
-	}
-	l = len(m.ContainerID)
-	if l > 0 {
-		n += 1 + l + sovResource(uint64(l))
-	}
-	return n
-}
+func (m *AttachNetworkRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *AttachNetworkResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.AttachmentID)
-	if l > 0 {
-		n += 1 + l + sovResource(uint64(l))
-	}
-	return n
-}
+func (m *AttachNetworkResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *DetachNetworkRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.AttachmentID)
-	if l > 0 {
-		n += 1 + l + sovResource(uint64(l))
-	}
-	return n
-}
+func (m *DetachNetworkRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *DetachNetworkResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *DetachNetworkResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovResource(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozResource(x uint64) (n int) {
-	return sovResource(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *AttachNetworkRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AttachNetworkRequest{`,
-		`Config:` + strings.Replace(fmt.Sprintf("%v", this.Config), "NetworkAttachmentConfig", "NetworkAttachmentConfig", 1) + `,`,
-		`ContainerID:` + fmt.Sprintf("%v", this.ContainerID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *AttachNetworkResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AttachNetworkResponse{`,
-		`AttachmentID:` + fmt.Sprintf("%v", this.AttachmentID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *DetachNetworkRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&DetachNetworkRequest{`,
-		`AttachmentID:` + fmt.Sprintf("%v", this.AttachmentID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *DetachNetworkResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&DetachNetworkResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringResource(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *AttachNetworkRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowResource
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: AttachNetworkRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: AttachNetworkRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Config", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowResource
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthResource
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthResource
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Config == nil {
-				m.Config = &NetworkAttachmentConfig{}
-			}
-			if err := m.Config.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ContainerID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowResource
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthResource
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthResource
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ContainerID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipResource(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthResource
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func sovResource(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *AttachNetworkResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowResource
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: AttachNetworkResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: AttachNetworkResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AttachmentID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowResource
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthResource
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthResource
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.AttachmentID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipResource(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthResource
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func sozResource(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *DetachNetworkRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowResource
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: DetachNetworkRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: DetachNetworkRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AttachmentID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowResource
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthResource
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthResource
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.AttachmentID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipResource(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthResource
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *AttachNetworkRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *DetachNetworkResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowResource
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: DetachNetworkResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: DetachNetworkResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipResource(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthResource
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *AttachNetworkResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipResource(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowResource
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowResource
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowResource
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthResource
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupResource
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthResource
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (this *DetachNetworkRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *DetachNetworkResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringResource(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *AttachNetworkRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *AttachNetworkResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *DetachNetworkRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *DetachNetworkResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipResource(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthResource        = fmt.Errorf("proto: negative length found during unmarshaling")

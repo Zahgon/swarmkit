@@ -10,7 +10,6 @@ import (
 	"github.com/moby/swarmkit/swarmd/cmd/swarmctl/secret"
 	"github.com/moby/swarmkit/swarmd/cmd/swarmctl/service"
 	"github.com/moby/swarmkit/swarmd/cmd/swarmctl/task"
-	"github.com/moby/swarmkit/swarmd/internal/defaults"
 	"github.com/moby/swarmkit/v2/version"
 	"github.com/spf13/cobra"
 	"google.golang.org/grpc/status"
@@ -38,13 +37,7 @@ var (
 	}
 )
 
-func defaultSocket() string {
-	swarmSocket := os.Getenv("SWARM_SOCKET")
-	if swarmSocket != "" {
-		return swarmSocket
-	}
-	return defaults.ControlAPISocket
-}
+func defaultSocket() string { _ = "STUB: not implemented"; return "" }
 
 func init() {
 	mainCmd.PersistentFlags().StringP("socket", "s", defaultSocket(), "Socket to connect to the Swarm manager")

@@ -1,9 +1,6 @@
 package store
 
 import (
-	"strconv"
-	"strings"
-
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/moby/swarmkit/v2/api"
 )
@@ -73,94 +70,68 @@ func init() {
 
 // CreateNode adds a new node to the store.
 // Returns ErrExist if the ID is already taken.
-func CreateNode(tx Tx, n *api.Node) error {
-	return tx.create(tableNode, n)
-}
+func CreateNode(tx Tx, n *api.Node) error { _ = "STUB: not implemented"; return nil }
 
 // UpdateNode updates an existing node in the store.
 // Returns ErrNotExist if the node doesn't exist.
-func UpdateNode(tx Tx, n *api.Node) error {
-	return tx.update(tableNode, n)
-}
+func UpdateNode(tx Tx, n *api.Node) error { _ = "STUB: not implemented"; return nil }
 
 // DeleteNode removes a node from the store.
 // Returns ErrNotExist if the node doesn't exist.
-func DeleteNode(tx Tx, id string) error {
-	return tx.delete(tableNode, id)
-}
+func DeleteNode(tx Tx, id string) error { _ = "STUB: not implemented"; return nil }
 
 // GetNode looks up a node by ID.
 // Returns nil if the node doesn't exist.
-func GetNode(tx ReadTx, id string) *api.Node {
-	n := tx.get(tableNode, id)
-	if n == nil {
-		return nil
-	}
-	return n.(*api.Node)
-}
+func GetNode(tx ReadTx, id string) *api.Node { _ = "STUB: not implemented"; return nil }
 
 // FindNodes selects a set of nodes and returns them.
-func FindNodes(tx ReadTx, by By) ([]*api.Node, error) {
-	checkType := func(by By) error {
-		switch by.(type) {
-		case byName, byNamePrefix, byIDPrefix, byRole, byMembership, byCustom, byCustomPrefix:
-			return nil
-		default:
-			return ErrInvalidFindBy
-		}
-	}
-
-	nodeList := []*api.Node{}
-	appendResult := func(o api.StoreObject) {
-		nodeList = append(nodeList, o.(*api.Node))
-	}
-
-	err := tx.find(tableNode, by, checkType, appendResult)
-	return nodeList, err
-}
+func FindNodes(tx ReadTx, by By) ([]*api.Node, error) { _ = "STUB: not implemented"; return nil, nil }
 
 type nodeIndexerByHostname struct{}
 
 func (ni nodeIndexerByHostname) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (ni nodeIndexerByHostname) FromObject(obj interface{}) (bool, []byte, error) {
-	n := obj.(*api.Node)
-
-	if n.Description == nil {
-		return false, nil, nil
-	}
-	// Add the null character as a terminator
-	return true, []byte(strings.ToLower(n.Description.Hostname) + "\x00"), nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
+// Add the null character as a terminator
+
 func (ni nodeIndexerByHostname) PrefixFromArgs(args ...interface{}) ([]byte, error) {
-	return prefixFromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type nodeIndexerByRole struct{}
 
 func (ni nodeIndexerByRole) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (ni nodeIndexerByRole) FromObject(obj interface{}) (bool, []byte, error) {
-	n := obj.(*api.Node)
+	_ = "STUB: not implemented"
+	return false,
 
-	// Add the null character as a terminator
-	return true, []byte(strconv.FormatInt(int64(n.Role), 10) + "\x00"), nil
+		// Add the null character as a terminator
+		nil, nil
 }
 
 type nodeIndexerByMembership struct{}
 
 func (ni nodeIndexerByMembership) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (ni nodeIndexerByMembership) FromObject(obj interface{}) (bool, []byte, error) {
-	n := obj.(*api.Node)
+	_ = "STUB: not implemented"
+	return false,
 
-	// Add the null character as a terminator
-	return true, []byte(strconv.FormatInt(int64(n.Spec.Membership), 10) + "\x00"), nil
+		// Add the null character as a terminator
+		nil, nil
 }

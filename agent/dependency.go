@@ -1,10 +1,7 @@
 package agent
 
 import (
-	"github.com/moby/swarmkit/v2/agent/configs"
-	"github.com/moby/swarmkit/v2/agent/csi"
 	"github.com/moby/swarmkit/v2/agent/exec"
-	"github.com/moby/swarmkit/v2/agent/secrets"
 	"github.com/moby/swarmkit/v2/api"
 	"github.com/moby/swarmkit/v2/node/plugin"
 )
@@ -18,24 +15,23 @@ type dependencyManager struct {
 // NewDependencyManager creates a dependency manager object that wraps
 // objects which provide access to various dependency types.
 func NewDependencyManager(pg plugin.Getter) exec.DependencyManager {
-	d := &dependencyManager{
-		secrets: secrets.NewManager(),
-		configs: configs.NewManager(),
-	}
-	d.volumes = csi.NewManager(pg, d.secrets)
-	return d
+	_ = "STUB: not implemented"
+	return *new(exec.DependencyManager)
 }
 
 func (d *dependencyManager) Secrets() exec.SecretsManager {
-	return d.secrets
+	_ = "STUB: not implemented"
+	return *new(exec.SecretsManager)
 }
 
 func (d *dependencyManager) Configs() exec.ConfigsManager {
-	return d.configs
+	_ = "STUB: not implemented"
+	return *new(exec.ConfigsManager)
 }
 
 func (d *dependencyManager) Volumes() exec.VolumesManager {
-	return d.volumes
+	_ = "STUB: not implemented"
+	return *new(exec.VolumesManager)
 }
 
 type dependencyGetter struct {
@@ -45,23 +41,24 @@ type dependencyGetter struct {
 }
 
 func (d *dependencyGetter) Secrets() exec.SecretGetter {
-	return d.secrets
+	_ = "STUB: not implemented"
+	return *new(exec.SecretGetter)
 }
 
 func (d *dependencyGetter) Configs() exec.ConfigGetter {
-	return d.configs
+	_ = "STUB: not implemented"
+	return *new(exec.ConfigGetter)
 }
 
 func (d *dependencyGetter) Volumes() exec.VolumeGetter {
-	return d.volumes
+	_ = "STUB: not implemented"
+
+	// Restrict provides getters that only allows access to the dependencies
+	// referenced by the task.
+	return *new(exec.VolumeGetter)
 }
 
-// Restrict provides getters that only allows access to the dependencies
-// referenced by the task.
 func Restrict(dependencies exec.DependencyManager, t *api.Task) exec.DependencyGetter {
-	return &dependencyGetter{
-		secrets: secrets.Restrict(dependencies.Secrets(), t),
-		configs: configs.Restrict(dependencies.Configs(), t),
-		volumes: csi.Restrict(dependencies.Volumes(), t),
-	}
+	_ = "STUB: not implemented"
+	return *new(exec.DependencyGetter)
 }

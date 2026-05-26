@@ -1,13 +1,7 @@
 package storage
 
 import (
-	"os"
-	"path/filepath"
-	"sort"
-	"strings"
-
 	"github.com/moby/swarmkit/v2/manager/encryption"
-	"github.com/pkg/errors"
 	"go.etcd.io/etcd/server/v3/etcdserver/api/snap"
 	"go.etcd.io/raft/v3/raftpb"
 )
@@ -43,29 +37,13 @@ type wrappedSnap struct {
 // SaveSnap encrypts the snapshot data (if an encrypter is exists) before passing it onto the
 // wrapped snap.Snapshotter's SaveSnap function.
 func (s *wrappedSnap) SaveSnap(snapshot raftpb.Snapshot) error {
-	toWrite := snapshot
-	var err error
-	toWrite.Data, err = encryption.Encrypt(snapshot.Data, s.encrypter)
-	if err != nil {
-		return err
-	}
-	return s.Snapshotter.SaveSnap(toWrite)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Load decrypts the snapshot data (if a decrypter is exists) after reading it using the
 // wrapped snap.Snapshotter's Load function.
-func (s *wrappedSnap) Load() (*raftpb.Snapshot, error) {
-	snapshot, err := s.Snapshotter.Load()
-	if err != nil {
-		return nil, err
-	}
-	snapshot.Data, err = encryption.Decrypt(snapshot.Data, s.decrypter)
-	if err != nil {
-		return nil, err
-	}
-
-	return snapshot, nil
-}
+func (s *wrappedSnap) Load() (*raftpb.Snapshot, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // snapCryptor is an object that provides the same functions as `etcd/wal`
 // and `etcd/snap` that we need to open a WAL object or Snapshotter object
@@ -77,25 +55,21 @@ type snapCryptor struct {
 // NewSnapFactory returns a new object that can read from and write to encrypted
 // snapshots on disk
 func NewSnapFactory(encrypter encryption.Encrypter, decrypter encryption.Decrypter) SnapFactory {
-	return snapCryptor{
-		encrypter: encrypter,
-		decrypter: decrypter,
-	}
+	_ = "STUB: not implemented"
+	return *new(SnapFactory)
 }
 
 // NewSnapshotter returns a new Snapshotter with the given encrypters and decrypters
 func (sc snapCryptor) New(dirpath string) Snapshotter {
-	return &wrappedSnap{
-		Snapshotter: snap.New(nil, dirpath),
-		encrypter:   sc.encrypter,
-		decrypter:   sc.decrypter,
-	}
+	_ = "STUB: not implemented"
+	return *new(Snapshotter)
 }
 
 type originalSnap struct{}
 
 func (o originalSnap) New(dirpath string) Snapshotter {
-	return snap.New(nil, dirpath)
+	_ = "STUB: not implemented"
+	return *new(Snapshotter)
 }
 
 // OriginalSnap is the original `snap` package as an implementation of the SnapFactory interface
@@ -104,51 +78,17 @@ var OriginalSnap SnapFactory = originalSnap{}
 // MigrateSnapshot reads the latest existing snapshot from one directory, encoded one way, and writes
 // it to a new directory, encoded a different way
 func MigrateSnapshot(oldDir, newDir string, oldFactory, newFactory SnapFactory) error {
+	_ = "STUB: not implemented"
 	// use temporary snapshot directory so initialization appears atomic
-	oldSnapshotter := oldFactory.New(oldDir)
-	snapshot, err := oldSnapshotter.Load()
-	switch err {
-	case snap.ErrNoSnapshot: // if there's no snapshot, the migration succeeded
-		return nil
-	case nil:
-		break
-	default:
-		return err
-	}
-
-	tmpdirpath := filepath.Clean(newDir) + ".tmp"
-	if err := os.RemoveAll(tmpdirpath); err != nil {
-		return errors.Wrap(err, "could not remove temporary snapshot directory")
-	}
-	if err := os.MkdirAll(tmpdirpath, 0o700); err != nil {
-		return errors.Wrap(err, "could not create temporary snapshot directory")
-	}
-	tmpSnapshotter := newFactory.New(tmpdirpath)
-
-	// write the new snapshot to the temporary location
-	if err = tmpSnapshotter.SaveSnap(*snapshot); err != nil {
-		return err
-	}
-
-	return os.Rename(tmpdirpath, newDir)
+	return nil
 }
+
+// if there's no snapshot, the migration succeeded
+
+// write the new snapshot to the temporary location
 
 // ListSnapshots lists all the snapshot files in a particular directory and returns
 // the snapshot files in reverse lexical order (newest first)
-func ListSnapshots(dirpath string) ([]string, error) {
-	dirents, err := os.ReadDir(dirpath)
-	if err != nil {
-		return nil, err
-	}
+func ListSnapshots(dirpath string) ([]string, error) { _ = "STUB: not implemented"; return nil, nil }
 
-	var snapshots []string
-	for _, dirent := range dirents {
-		if strings.HasSuffix(dirent.Name(), ".snap") {
-			snapshots = append(snapshots, dirent.Name())
-		}
-	}
-
-	// Sort snapshot filenames in reverse lexical order
-	sort.Sort(sort.Reverse(sort.StringSlice(snapshots)))
-	return snapshots, nil
-}
+// Sort snapshot filenames in reverse lexical order

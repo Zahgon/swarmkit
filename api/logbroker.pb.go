@@ -6,23 +6,14 @@ package api
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	types "github.com/gogo/protobuf/types"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	_ "github.com/moby/swarmkit/v2/protobuf/plugin"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -57,13 +48,9 @@ var LogStream_value = map[string]int32{
 	"LOG_STREAM_STDERR":  2,
 }
 
-func (x LogStream) String() string {
-	return proto.EnumName(LogStream_name, int32(x))
-}
+func (x LogStream) String() string { _ = "STUB: not implemented"; return "" }
 
-func (LogStream) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{0}
-}
+func (LogStream) EnumDescriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 type LogSubscriptionOptions struct {
 	// Streams defines which log streams should be sent from the task source.
@@ -94,35 +81,28 @@ type LogSubscriptionOptions struct {
 	Since *types.Timestamp `protobuf:"bytes,4,opt,name=since,proto3" json:"since,omitempty"`
 }
 
-func (m *LogSubscriptionOptions) Reset()      { *m = LogSubscriptionOptions{} }
-func (*LogSubscriptionOptions) ProtoMessage() {}
+func (m *LogSubscriptionOptions) Reset()      { _ = "STUB: not implemented"; return }
+func (*LogSubscriptionOptions) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*LogSubscriptionOptions) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *LogSubscriptionOptions) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *LogSubscriptionOptions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LogSubscriptionOptions.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *LogSubscriptionOptions) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LogSubscriptionOptions.Merge(m, src)
-}
-func (m *LogSubscriptionOptions) XXX_Size() int {
-	return m.Size()
-}
-func (m *LogSubscriptionOptions) XXX_DiscardUnknown() {
-	xxx_messageInfo_LogSubscriptionOptions.DiscardUnknown(m)
-}
+
+func (m *LogSubscriptionOptions) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *LogSubscriptionOptions) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *LogSubscriptionOptions) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_LogSubscriptionOptions proto.InternalMessageInfo
 
@@ -137,35 +117,22 @@ type LogSelector struct {
 	TaskIDs    []string `protobuf:"bytes,3,rep,name=task_ids,json=taskIds,proto3" json:"task_ids,omitempty"`
 }
 
-func (m *LogSelector) Reset()      { *m = LogSelector{} }
-func (*LogSelector) ProtoMessage() {}
-func (*LogSelector) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{1}
-}
-func (m *LogSelector) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *LogSelector) Reset()                    { _ = "STUB: not implemented"; return }
+func (*LogSelector) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*LogSelector) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *LogSelector) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *LogSelector) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LogSelector.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *LogSelector) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LogSelector.Merge(m, src)
-}
-func (m *LogSelector) XXX_Size() int {
-	return m.Size()
-}
-func (m *LogSelector) XXX_DiscardUnknown() {
-	xxx_messageInfo_LogSelector.DiscardUnknown(m)
-}
+
+func (m *LogSelector) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *LogSelector) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *LogSelector) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_LogSelector proto.InternalMessageInfo
 
@@ -176,35 +143,22 @@ type LogContext struct {
 	TaskID    string `protobuf:"bytes,3,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
 }
 
-func (m *LogContext) Reset()      { *m = LogContext{} }
-func (*LogContext) ProtoMessage() {}
-func (*LogContext) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{2}
-}
-func (m *LogContext) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *LogContext) Reset()                    { _ = "STUB: not implemented"; return }
+func (*LogContext) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*LogContext) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *LogContext) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *LogContext) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LogContext.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *LogContext) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LogContext.Merge(m, src)
-}
-func (m *LogContext) XXX_Size() int {
-	return m.Size()
-}
-func (m *LogContext) XXX_DiscardUnknown() {
-	xxx_messageInfo_LogContext.DiscardUnknown(m)
-}
+
+func (m *LogContext) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *LogContext) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *LogContext) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_LogContext proto.InternalMessageInfo
 
@@ -214,35 +168,22 @@ type LogAttr struct {
 	Value string `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 }
 
-func (m *LogAttr) Reset()      { *m = LogAttr{} }
-func (*LogAttr) ProtoMessage() {}
-func (*LogAttr) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{3}
-}
-func (m *LogAttr) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *LogAttr) Reset()                    { _ = "STUB: not implemented"; return }
+func (*LogAttr) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*LogAttr) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *LogAttr) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *LogAttr) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LogAttr.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *LogAttr) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LogAttr.Merge(m, src)
-}
-func (m *LogAttr) XXX_Size() int {
-	return m.Size()
-}
-func (m *LogAttr) XXX_DiscardUnknown() {
-	xxx_messageInfo_LogAttr.DiscardUnknown(m)
-}
+
+func (m *LogAttr) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *LogAttr) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *LogAttr) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_LogAttr proto.InternalMessageInfo
 
@@ -262,35 +203,22 @@ type LogMessage struct {
 	Attrs []LogAttr `protobuf:"bytes,5,rep,name=attrs,proto3" json:"attrs"`
 }
 
-func (m *LogMessage) Reset()      { *m = LogMessage{} }
-func (*LogMessage) ProtoMessage() {}
-func (*LogMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{4}
-}
-func (m *LogMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *LogMessage) Reset()                    { _ = "STUB: not implemented"; return }
+func (*LogMessage) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*LogMessage) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *LogMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *LogMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_LogMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *LogMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LogMessage.Merge(m, src)
-}
-func (m *LogMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *LogMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_LogMessage.DiscardUnknown(m)
-}
+
+func (m *LogMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *LogMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *LogMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_LogMessage proto.InternalMessageInfo
 
@@ -300,35 +228,25 @@ type SubscribeLogsRequest struct {
 	Options  *LogSubscriptionOptions `protobuf:"bytes,2,opt,name=options,proto3" json:"options,omitempty"`
 }
 
-func (m *SubscribeLogsRequest) Reset()      { *m = SubscribeLogsRequest{} }
-func (*SubscribeLogsRequest) ProtoMessage() {}
+func (m *SubscribeLogsRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*SubscribeLogsRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*SubscribeLogsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{5}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SubscribeLogsRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *SubscribeLogsRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SubscribeLogsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SubscribeLogsRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SubscribeLogsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SubscribeLogsRequest.Merge(m, src)
-}
-func (m *SubscribeLogsRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *SubscribeLogsRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_SubscribeLogsRequest.DiscardUnknown(m)
-}
+
+func (m *SubscribeLogsRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SubscribeLogsRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SubscribeLogsRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SubscribeLogsRequest proto.InternalMessageInfo
 
@@ -336,35 +254,25 @@ type SubscribeLogsMessage struct {
 	Messages []LogMessage `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages"`
 }
 
-func (m *SubscribeLogsMessage) Reset()      { *m = SubscribeLogsMessage{} }
-func (*SubscribeLogsMessage) ProtoMessage() {}
+func (m *SubscribeLogsMessage) Reset()      { _ = "STUB: not implemented"; return }
+func (*SubscribeLogsMessage) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*SubscribeLogsMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{6}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SubscribeLogsMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *SubscribeLogsMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SubscribeLogsMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SubscribeLogsMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SubscribeLogsMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SubscribeLogsMessage.Merge(m, src)
-}
-func (m *SubscribeLogsMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *SubscribeLogsMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_SubscribeLogsMessage.DiscardUnknown(m)
-}
+
+func (m *SubscribeLogsMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SubscribeLogsMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SubscribeLogsMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SubscribeLogsMessage proto.InternalMessageInfo
 
@@ -373,35 +281,31 @@ var xxx_messageInfo_SubscribeLogsMessage proto.InternalMessageInfo
 type ListenSubscriptionsRequest struct {
 }
 
-func (m *ListenSubscriptionsRequest) Reset()      { *m = ListenSubscriptionsRequest{} }
-func (*ListenSubscriptionsRequest) ProtoMessage() {}
+func (m *ListenSubscriptionsRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListenSubscriptionsRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListenSubscriptionsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{7}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListenSubscriptionsRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListenSubscriptionsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListenSubscriptionsRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListenSubscriptionsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListenSubscriptionsRequest.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListenSubscriptionsRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListenSubscriptionsRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListenSubscriptionsRequest.DiscardUnknown(m)
-}
+
+func (m *ListenSubscriptionsRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListenSubscriptionsRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListenSubscriptionsRequest proto.InternalMessageInfo
 
@@ -421,35 +325,25 @@ type SubscriptionMessage struct {
 	Close bool `protobuf:"varint,4,opt,name=close,proto3" json:"close,omitempty"`
 }
 
-func (m *SubscriptionMessage) Reset()      { *m = SubscriptionMessage{} }
-func (*SubscriptionMessage) ProtoMessage() {}
+func (m *SubscriptionMessage) Reset()      { _ = "STUB: not implemented"; return }
+func (*SubscriptionMessage) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*SubscriptionMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{8}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SubscriptionMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *SubscriptionMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SubscriptionMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SubscriptionMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SubscriptionMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SubscriptionMessage.Merge(m, src)
-}
-func (m *SubscriptionMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *SubscriptionMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_SubscriptionMessage.DiscardUnknown(m)
-}
+
+func (m *SubscriptionMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SubscriptionMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SubscriptionMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SubscriptionMessage proto.InternalMessageInfo
 
@@ -466,70 +360,47 @@ type PublishLogsMessage struct {
 	Close bool `protobuf:"varint,3,opt,name=close,proto3" json:"close,omitempty"`
 }
 
-func (m *PublishLogsMessage) Reset()      { *m = PublishLogsMessage{} }
-func (*PublishLogsMessage) ProtoMessage() {}
-func (*PublishLogsMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{9}
-}
-func (m *PublishLogsMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *PublishLogsMessage) Reset()                    { _ = "STUB: not implemented"; return }
+func (*PublishLogsMessage) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*PublishLogsMessage) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *PublishLogsMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *PublishLogsMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_PublishLogsMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *PublishLogsMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PublishLogsMessage.Merge(m, src)
-}
-func (m *PublishLogsMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *PublishLogsMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_PublishLogsMessage.DiscardUnknown(m)
-}
+
+func (m *PublishLogsMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *PublishLogsMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *PublishLogsMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_PublishLogsMessage proto.InternalMessageInfo
 
 type PublishLogsResponse struct {
 }
 
-func (m *PublishLogsResponse) Reset()      { *m = PublishLogsResponse{} }
-func (*PublishLogsResponse) ProtoMessage() {}
+func (m *PublishLogsResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*PublishLogsResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*PublishLogsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_d5aa8d24ac30376c, []int{10}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *PublishLogsResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *PublishLogsResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *PublishLogsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_PublishLogsResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *PublishLogsResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PublishLogsResponse.Merge(m, src)
-}
-func (m *PublishLogsResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *PublishLogsResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_PublishLogsResponse.DiscardUnknown(m)
-}
+
+func (m *PublishLogsResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *PublishLogsResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *PublishLogsResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_PublishLogsResponse proto.InternalMessageInfo
 
@@ -624,18 +495,13 @@ type authenticatedWrapperLogsServer struct {
 }
 
 func NewAuthenticatedWrapperLogsServer(local LogsServer, authorize func(context.Context, []string) error) LogsServer {
-	return &authenticatedWrapperLogsServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(LogsServer)
 }
 
 func (p *authenticatedWrapperLogsServer) SubscribeLogs(r *SubscribeLogsRequest, stream Logs_SubscribeLogsServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.SubscribeLogs(r, stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type authenticatedWrapperLogBrokerServer struct {
@@ -644,255 +510,74 @@ type authenticatedWrapperLogBrokerServer struct {
 }
 
 func NewAuthenticatedWrapperLogBrokerServer(local LogBrokerServer, authorize func(context.Context, []string) error) LogBrokerServer {
-	return &authenticatedWrapperLogBrokerServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(LogBrokerServer)
 }
 
 func (p *authenticatedWrapperLogBrokerServer) ListenSubscriptions(r *ListenSubscriptionsRequest, stream LogBroker_ListenSubscriptionsServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.ListenSubscriptions(r, stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *authenticatedWrapperLogBrokerServer) PublishLogs(stream LogBroker_PublishLogsServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.PublishLogs(stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (m *LogSubscriptionOptions) Copy() *LogSubscriptionOptions {
-	if m == nil {
-		return nil
-	}
-	o := &LogSubscriptionOptions{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *LogSubscriptionOptions) CopyFrom(src interface{}) {
+func (m *LogSubscriptionOptions) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*LogSubscriptionOptions)
-	*m = *o
-	if o.Streams != nil {
-		m.Streams = make([]LogStream, len(o.Streams))
-		copy(m.Streams, o.Streams)
-	}
+func (m *LogSelector) Copy() *LogSelector { _ = "STUB: not implemented"; return nil }
 
-	if o.Since != nil {
-		m.Since = &types.Timestamp{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Since, o.Since)
-	}
-}
+func (m *LogSelector) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *LogSelector) Copy() *LogSelector {
-	if m == nil {
-		return nil
-	}
-	o := &LogSelector{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *LogContext) Copy() *LogContext { _ = "STUB: not implemented"; return nil }
 
-func (m *LogSelector) CopyFrom(src interface{}) {
+func (m *LogContext) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*LogSelector)
-	*m = *o
-	if o.ServiceIDs != nil {
-		m.ServiceIDs = make([]string, len(o.ServiceIDs))
-		copy(m.ServiceIDs, o.ServiceIDs)
-	}
+func (m *LogAttr) Copy() *LogAttr { _ = "STUB: not implemented"; return nil }
 
-	if o.NodeIDs != nil {
-		m.NodeIDs = make([]string, len(o.NodeIDs))
-		copy(m.NodeIDs, o.NodeIDs)
-	}
+func (m *LogAttr) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.TaskIDs != nil {
-		m.TaskIDs = make([]string, len(o.TaskIDs))
-		copy(m.TaskIDs, o.TaskIDs)
-	}
+func (m *LogMessage) Copy() *LogMessage { _ = "STUB: not implemented"; return nil }
 
-}
+func (m *LogMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *LogContext) Copy() *LogContext {
-	if m == nil {
-		return nil
-	}
-	o := &LogContext{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *SubscribeLogsRequest) Copy() *SubscribeLogsRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *LogContext) CopyFrom(src interface{}) {
+func (m *SubscribeLogsRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*LogContext)
-	*m = *o
-}
+func (m *SubscribeLogsMessage) Copy() *SubscribeLogsMessage { _ = "STUB: not implemented"; return nil }
 
-func (m *LogAttr) Copy() *LogAttr {
-	if m == nil {
-		return nil
-	}
-	o := &LogAttr{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *LogAttr) CopyFrom(src interface{}) {
-
-	o := src.(*LogAttr)
-	*m = *o
-}
-
-func (m *LogMessage) Copy() *LogMessage {
-	if m == nil {
-		return nil
-	}
-	o := &LogMessage{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *LogMessage) CopyFrom(src interface{}) {
-
-	o := src.(*LogMessage)
-	*m = *o
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Context, &o.Context)
-	if o.Timestamp != nil {
-		m.Timestamp = &types.Timestamp{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Timestamp, o.Timestamp)
-	}
-	if o.Data != nil {
-		m.Data = make([]byte, len(o.Data))
-		copy(m.Data, o.Data)
-	}
-	if o.Attrs != nil {
-		m.Attrs = make([]LogAttr, len(o.Attrs))
-		for i := range m.Attrs {
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Attrs[i], &o.Attrs[i])
-		}
-	}
-
-}
-
-func (m *SubscribeLogsRequest) Copy() *SubscribeLogsRequest {
-	if m == nil {
-		return nil
-	}
-	o := &SubscribeLogsRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *SubscribeLogsRequest) CopyFrom(src interface{}) {
-
-	o := src.(*SubscribeLogsRequest)
-	*m = *o
-	if o.Selector != nil {
-		m.Selector = &LogSelector{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Selector, o.Selector)
-	}
-	if o.Options != nil {
-		m.Options = &LogSubscriptionOptions{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Options, o.Options)
-	}
-}
-
-func (m *SubscribeLogsMessage) Copy() *SubscribeLogsMessage {
-	if m == nil {
-		return nil
-	}
-	o := &SubscribeLogsMessage{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *SubscribeLogsMessage) CopyFrom(src interface{}) {
-
-	o := src.(*SubscribeLogsMessage)
-	*m = *o
-	if o.Messages != nil {
-		m.Messages = make([]LogMessage, len(o.Messages))
-		for i := range m.Messages {
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Messages[i], &o.Messages[i])
-		}
-	}
-
-}
+func (m *SubscribeLogsMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListenSubscriptionsRequest) Copy() *ListenSubscriptionsRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListenSubscriptionsRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListenSubscriptionsRequest) CopyFrom(src interface{}) {}
-func (m *SubscriptionMessage) Copy() *SubscriptionMessage {
-	if m == nil {
-		return nil
-	}
-	o := &SubscriptionMessage{}
-	o.CopyFrom(m)
-	return o
+func (m *ListenSubscriptionsRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *SubscriptionMessage) Copy() *SubscriptionMessage      { _ = "STUB: not implemented"; return nil }
+
+func (m *SubscriptionMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+
+func (m *PublishLogsMessage) Copy() *PublishLogsMessage { _ = "STUB: not implemented"; return nil }
+
+func (m *PublishLogsMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+
+func (m *PublishLogsResponse) Copy() *PublishLogsResponse { _ = "STUB: not implemented"; return nil }
+
+func (m *PublishLogsResponse) CopyFrom(src interface{}) {
+	_ = "STUB: not implemented"
+
+	// Reference imports to suppress errors if they are not otherwise used.
+	return
 }
 
-func (m *SubscriptionMessage) CopyFrom(src interface{}) {
-
-	o := src.(*SubscriptionMessage)
-	*m = *o
-	if o.Selector != nil {
-		m.Selector = &LogSelector{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Selector, o.Selector)
-	}
-	if o.Options != nil {
-		m.Options = &LogSubscriptionOptions{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Options, o.Options)
-	}
-}
-
-func (m *PublishLogsMessage) Copy() *PublishLogsMessage {
-	if m == nil {
-		return nil
-	}
-	o := &PublishLogsMessage{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *PublishLogsMessage) CopyFrom(src interface{}) {
-
-	o := src.(*PublishLogsMessage)
-	*m = *o
-	if o.Messages != nil {
-		m.Messages = make([]LogMessage, len(o.Messages))
-		for i := range m.Messages {
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Messages[i], &o.Messages[i])
-		}
-	}
-
-}
-
-func (m *PublishLogsResponse) Copy() *PublishLogsResponse {
-	if m == nil {
-		return nil
-	}
-	o := &PublishLogsResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *PublishLogsResponse) CopyFrom(src interface{}) {}
-
-// Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
 var _ grpc.ClientConn
 
@@ -918,22 +603,13 @@ type logsClient struct {
 }
 
 func NewLogsClient(cc *grpc.ClientConn) LogsClient {
-	return &logsClient{cc}
+	_ = "STUB: not implemented"
+	return *new(LogsClient)
 }
 
 func (c *logsClient) SubscribeLogs(ctx context.Context, in *SubscribeLogsRequest, opts ...grpc.CallOption) (Logs_SubscribeLogsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Logs_serviceDesc.Streams[0], "/docker.swarmkit.v1.Logs/SubscribeLogs", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &logsSubscribeLogsClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Logs_SubscribeLogsClient), nil
 }
 
 type Logs_SubscribeLogsClient interface {
@@ -946,11 +622,8 @@ type logsSubscribeLogsClient struct {
 }
 
 func (x *logsSubscribeLogsClient) Recv() (*SubscribeLogsMessage, error) {
-	m := new(SubscribeLogsMessage)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // LogsServer is the server API for Logs service.
@@ -969,19 +642,15 @@ type UnimplementedLogsServer struct {
 }
 
 func (*UnimplementedLogsServer) SubscribeLogs(req *SubscribeLogsRequest, srv Logs_SubscribeLogsServer) error {
-	return status.Errorf(codes.Unimplemented, "method SubscribeLogs not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func RegisterLogsServer(s *grpc.Server, srv LogsServer) {
-	s.RegisterService(&_Logs_serviceDesc, srv)
-}
+func RegisterLogsServer(s *grpc.Server, srv LogsServer) { _ = "STUB: not implemented"; return }
 
 func _Logs_SubscribeLogs_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(SubscribeLogsRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(LogsServer).SubscribeLogs(m, &logsSubscribeLogsServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Logs_SubscribeLogsServer interface {
@@ -994,7 +663,8 @@ type logsSubscribeLogsServer struct {
 }
 
 func (x *logsSubscribeLogsServer) Send(m *SubscribeLogsMessage) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var _Logs_serviceDesc = grpc.ServiceDesc{
@@ -1031,22 +701,13 @@ type logBrokerClient struct {
 }
 
 func NewLogBrokerClient(cc *grpc.ClientConn) LogBrokerClient {
-	return &logBrokerClient{cc}
+	_ = "STUB: not implemented"
+	return *new(LogBrokerClient)
 }
 
 func (c *logBrokerClient) ListenSubscriptions(ctx context.Context, in *ListenSubscriptionsRequest, opts ...grpc.CallOption) (LogBroker_ListenSubscriptionsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_LogBroker_serviceDesc.Streams[0], "/docker.swarmkit.v1.LogBroker/ListenSubscriptions", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &logBrokerListenSubscriptionsClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(LogBroker_ListenSubscriptionsClient), nil
 }
 
 type LogBroker_ListenSubscriptionsClient interface {
@@ -1059,20 +720,13 @@ type logBrokerListenSubscriptionsClient struct {
 }
 
 func (x *logBrokerListenSubscriptionsClient) Recv() (*SubscriptionMessage, error) {
-	m := new(SubscriptionMessage)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *logBrokerClient) PublishLogs(ctx context.Context, opts ...grpc.CallOption) (LogBroker_PublishLogsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_LogBroker_serviceDesc.Streams[1], "/docker.swarmkit.v1.LogBroker/PublishLogs", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &logBrokerPublishLogsClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(LogBroker_PublishLogsClient), nil
 }
 
 type LogBroker_PublishLogsClient interface {
@@ -1086,18 +740,13 @@ type logBrokerPublishLogsClient struct {
 }
 
 func (x *logBrokerPublishLogsClient) Send(m *PublishLogsMessage) error {
-	return x.ClientStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *logBrokerPublishLogsClient) CloseAndRecv() (*PublishLogsResponse, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(PublishLogsResponse)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // LogBrokerServer is the server API for LogBroker service.
@@ -1118,22 +767,23 @@ type UnimplementedLogBrokerServer struct {
 }
 
 func (*UnimplementedLogBrokerServer) ListenSubscriptions(req *ListenSubscriptionsRequest, srv LogBroker_ListenSubscriptionsServer) error {
-	return status.Errorf(codes.Unimplemented, "method ListenSubscriptions not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (*UnimplementedLogBrokerServer) PublishLogs(srv LogBroker_PublishLogsServer) error {
-	return status.Errorf(codes.Unimplemented, "method PublishLogs not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func RegisterLogBrokerServer(s *grpc.Server, srv LogBrokerServer) {
-	s.RegisterService(&_LogBroker_serviceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _LogBroker_ListenSubscriptions_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(ListenSubscriptionsRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(LogBrokerServer).ListenSubscriptions(m, &logBrokerListenSubscriptionsServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type LogBroker_ListenSubscriptionsServer interface {
@@ -1146,11 +796,13 @@ type logBrokerListenSubscriptionsServer struct {
 }
 
 func (x *logBrokerListenSubscriptionsServer) Send(m *SubscriptionMessage) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func _LogBroker_PublishLogs_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(LogBrokerServer).PublishLogs(&logBrokerPublishLogsServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type LogBroker_PublishLogsServer interface {
@@ -1164,15 +816,13 @@ type logBrokerPublishLogsServer struct {
 }
 
 func (x *logBrokerPublishLogsServer) SendAndClose(m *PublishLogsResponse) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *logBrokerPublishLogsServer) Recv() (*PublishLogsMessage, error) {
-	m := new(PublishLogsMessage)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _LogBroker_serviceDesc = grpc.ServiceDesc{
@@ -1195,522 +845,152 @@ var _LogBroker_serviceDesc = grpc.ServiceDesc{
 }
 
 func (m *LogSubscriptionOptions) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *LogSubscriptionOptions) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *LogSubscriptionOptions) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Since != nil {
-		{
-			size, err := m.Since.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintLogbroker(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	if m.Tail != 0 {
-		i = encodeVarintLogbroker(dAtA, i, uint64(m.Tail))
-		i--
-		dAtA[i] = 0x18
-	}
-	if m.Follow {
-		i--
-		if m.Follow {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.Streams) > 0 {
-		for iNdEx := len(m.Streams) - 1; iNdEx >= 0; iNdEx-- {
-			i = encodeVarintLogbroker(dAtA, i, uint64(m.Streams[iNdEx]))
-			i--
-			dAtA[i] = 0x8
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *LogSelector) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *LogSelector) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *LogSelector) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *LogSelector) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.TaskIDs) > 0 {
-		for iNdEx := len(m.TaskIDs) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.TaskIDs[iNdEx])
-			copy(dAtA[i:], m.TaskIDs[iNdEx])
-			i = encodeVarintLogbroker(dAtA, i, uint64(len(m.TaskIDs[iNdEx])))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.NodeIDs) > 0 {
-		for iNdEx := len(m.NodeIDs) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NodeIDs[iNdEx])
-			copy(dAtA[i:], m.NodeIDs[iNdEx])
-			i = encodeVarintLogbroker(dAtA, i, uint64(len(m.NodeIDs[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.ServiceIDs) > 0 {
-		for iNdEx := len(m.ServiceIDs) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.ServiceIDs[iNdEx])
-			copy(dAtA[i:], m.ServiceIDs[iNdEx])
-			i = encodeVarintLogbroker(dAtA, i, uint64(len(m.ServiceIDs[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *LogContext) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *LogContext) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *LogContext) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *LogContext) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *LogContext) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.TaskID) > 0 {
-		i -= len(m.TaskID)
-		copy(dAtA[i:], m.TaskID)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.TaskID)))
-		i--
-		dAtA[i] = 0x1a
-	}
-	if len(m.NodeID) > 0 {
-		i -= len(m.NodeID)
-		copy(dAtA[i:], m.NodeID)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.NodeID)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.ServiceID) > 0 {
-		i -= len(m.ServiceID)
-		copy(dAtA[i:], m.ServiceID)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.ServiceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *LogAttr) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *LogAttr) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *LogAttr) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *LogAttr) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *LogAttr) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Value) > 0 {
-		i -= len(m.Value)
-		copy(dAtA[i:], m.Value)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.Value)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Key) > 0 {
-		i -= len(m.Key)
-		copy(dAtA[i:], m.Key)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.Key)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *LogMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *LogMessage) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *LogMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *LogMessage) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *LogMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Attrs) > 0 {
-		for iNdEx := len(m.Attrs) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Attrs[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintLogbroker(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x2a
-		}
-	}
-	if len(m.Data) > 0 {
-		i -= len(m.Data)
-		copy(dAtA[i:], m.Data)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.Data)))
-		i--
-		dAtA[i] = 0x22
-	}
-	if m.Stream != 0 {
-		i = encodeVarintLogbroker(dAtA, i, uint64(m.Stream))
-		i--
-		dAtA[i] = 0x18
-	}
-	if m.Timestamp != nil {
-		{
-			size, err := m.Timestamp.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintLogbroker(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	{
-		size, err := m.Context.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintLogbroker(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SubscribeLogsRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *SubscribeLogsRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SubscribeLogsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Options != nil {
-		{
-			size, err := m.Options.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintLogbroker(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Selector != nil {
-		{
-			size, err := m.Selector.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintLogbroker(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SubscribeLogsMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *SubscribeLogsMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SubscribeLogsMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Messages) > 0 {
-		for iNdEx := len(m.Messages) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Messages[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintLogbroker(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListenSubscriptionsRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListenSubscriptionsRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListenSubscriptionsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SubscriptionMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *SubscriptionMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SubscriptionMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Close {
-		i--
-		if m.Close {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x20
-	}
-	if m.Options != nil {
-		{
-			size, err := m.Options.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintLogbroker(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.Selector != nil {
-		{
-			size, err := m.Selector.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintLogbroker(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.ID) > 0 {
-		i -= len(m.ID)
-		copy(dAtA[i:], m.ID)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.ID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *PublishLogsMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *PublishLogsMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *PublishLogsMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Close {
-		i--
-		if m.Close {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x18
-	}
-	if len(m.Messages) > 0 {
-		for iNdEx := len(m.Messages) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Messages[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintLogbroker(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.SubscriptionID) > 0 {
-		i -= len(m.SubscriptionID)
-		copy(dAtA[i:], m.SubscriptionID)
-		i = encodeVarintLogbroker(dAtA, i, uint64(len(m.SubscriptionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *PublishLogsResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *PublishLogsResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *PublishLogsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func encodeVarintLogbroker(dAtA []byte, offset int, v uint64) int {
-	offset -= sovLogbroker(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
+	_ = "STUB: not implemented"
+	return 0
 }
 
 type raftProxyLogsServer struct {
@@ -1720,69 +1000,18 @@ type raftProxyLogsServer struct {
 }
 
 func NewRaftProxyLogsServer(local LogsServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) LogsServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyLogsServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(LogsServer)
 }
+
 func (p *raftProxyLogsServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyLogsServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type Logs_SubscribeLogsServerWrapper struct {
@@ -1791,48 +1020,12 @@ type Logs_SubscribeLogsServerWrapper struct {
 }
 
 func (s Logs_SubscribeLogsServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyLogsServer) SubscribeLogs(r *SubscribeLogsRequest, stream Logs_SubscribeLogsServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := Logs_SubscribeLogsServerWrapper{
-				Logs_SubscribeLogsServer: stream,
-				ctx:                      ctx,
-			}
-			return p.local.SubscribeLogs(r, streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewLogsClient(conn).SubscribeLogs(ctx, r)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1843,69 +1036,18 @@ type raftProxyLogBrokerServer struct {
 }
 
 func NewRaftProxyLogBrokerServer(local LogBrokerServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) LogBrokerServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyLogBrokerServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(LogBrokerServer)
 }
+
 func (p *raftProxyLogBrokerServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyLogBrokerServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type LogBroker_ListenSubscriptionsServerWrapper struct {
@@ -1914,48 +1056,12 @@ type LogBroker_ListenSubscriptionsServerWrapper struct {
 }
 
 func (s LogBroker_ListenSubscriptionsServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyLogBrokerServer) ListenSubscriptions(r *ListenSubscriptionsRequest, stream LogBroker_ListenSubscriptionsServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := LogBroker_ListenSubscriptionsServerWrapper{
-				LogBroker_ListenSubscriptionsServer: stream,
-				ctx:                                 ctx,
-			}
-			return p.local.ListenSubscriptions(r, streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewLogBrokerClient(conn).ListenSubscriptions(ctx, r)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1965,1925 +1071,94 @@ type LogBroker_PublishLogsServerWrapper struct {
 }
 
 func (s LogBroker_PublishLogsServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyLogBrokerServer) PublishLogs(stream LogBroker_PublishLogsServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := LogBroker_PublishLogsServerWrapper{
-				LogBroker_PublishLogsServer: stream,
-				ctx:                         ctx,
-			}
-			return p.local.PublishLogs(streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewLogBrokerClient(conn).PublishLogs(ctx)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := stream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := clientStream.Send(msg); err != nil {
-			return err
-		}
-	}
-
-	reply, err := clientStream.CloseAndRecv()
-	if err != nil {
-		return err
-	}
-
-	return stream.SendAndClose(reply)
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *LogSubscriptionOptions) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Streams) > 0 {
-		for _, e := range m.Streams {
-			n += 1 + sovLogbroker(uint64(e))
-		}
-	}
-	if m.Follow {
-		n += 2
-	}
-	if m.Tail != 0 {
-		n += 1 + sovLogbroker(uint64(m.Tail))
-	}
-	if m.Since != nil {
-		l = m.Since.Size()
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	return n
-}
+func (m *LogSubscriptionOptions) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *LogSelector) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.ServiceIDs) > 0 {
-		for _, s := range m.ServiceIDs {
-			l = len(s)
-			n += 1 + l + sovLogbroker(uint64(l))
-		}
-	}
-	if len(m.NodeIDs) > 0 {
-		for _, s := range m.NodeIDs {
-			l = len(s)
-			n += 1 + l + sovLogbroker(uint64(l))
-		}
-	}
-	if len(m.TaskIDs) > 0 {
-		for _, s := range m.TaskIDs {
-			l = len(s)
-			n += 1 + l + sovLogbroker(uint64(l))
-		}
-	}
-	return n
-}
+func (m *LogSelector) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *LogContext) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ServiceID)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	l = len(m.NodeID)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	l = len(m.TaskID)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	return n
-}
+func (m *LogContext) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *LogAttr) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Key)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	l = len(m.Value)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	return n
-}
+func (m *LogAttr) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *LogMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = m.Context.Size()
-	n += 1 + l + sovLogbroker(uint64(l))
-	if m.Timestamp != nil {
-		l = m.Timestamp.Size()
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	if m.Stream != 0 {
-		n += 1 + sovLogbroker(uint64(m.Stream))
-	}
-	l = len(m.Data)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	if len(m.Attrs) > 0 {
-		for _, e := range m.Attrs {
-			l = e.Size()
-			n += 1 + l + sovLogbroker(uint64(l))
-		}
-	}
-	return n
-}
+func (m *LogMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *SubscribeLogsRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Selector != nil {
-		l = m.Selector.Size()
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	if m.Options != nil {
-		l = m.Options.Size()
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	return n
-}
+func (m *SubscribeLogsRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *SubscribeLogsMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Messages) > 0 {
-		for _, e := range m.Messages {
-			l = e.Size()
-			n += 1 + l + sovLogbroker(uint64(l))
-		}
-	}
-	return n
-}
+func (m *SubscribeLogsMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListenSubscriptionsRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *ListenSubscriptionsRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *SubscriptionMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ID)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	if m.Selector != nil {
-		l = m.Selector.Size()
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	if m.Options != nil {
-		l = m.Options.Size()
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	if m.Close {
-		n += 2
-	}
-	return n
-}
+func (m *SubscriptionMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *PublishLogsMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SubscriptionID)
-	if l > 0 {
-		n += 1 + l + sovLogbroker(uint64(l))
-	}
-	if len(m.Messages) > 0 {
-		for _, e := range m.Messages {
-			l = e.Size()
-			n += 1 + l + sovLogbroker(uint64(l))
-		}
-	}
-	if m.Close {
-		n += 2
-	}
-	return n
-}
+func (m *PublishLogsMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *PublishLogsResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *PublishLogsResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovLogbroker(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozLogbroker(x uint64) (n int) {
-	return sovLogbroker(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *LogSubscriptionOptions) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&LogSubscriptionOptions{`,
-		`Streams:` + fmt.Sprintf("%v", this.Streams) + `,`,
-		`Follow:` + fmt.Sprintf("%v", this.Follow) + `,`,
-		`Tail:` + fmt.Sprintf("%v", this.Tail) + `,`,
-		`Since:` + strings.Replace(fmt.Sprintf("%v", this.Since), "Timestamp", "types.Timestamp", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *LogSelector) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&LogSelector{`,
-		`ServiceIDs:` + fmt.Sprintf("%v", this.ServiceIDs) + `,`,
-		`NodeIDs:` + fmt.Sprintf("%v", this.NodeIDs) + `,`,
-		`TaskIDs:` + fmt.Sprintf("%v", this.TaskIDs) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *LogContext) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&LogContext{`,
-		`ServiceID:` + fmt.Sprintf("%v", this.ServiceID) + `,`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`TaskID:` + fmt.Sprintf("%v", this.TaskID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *LogAttr) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&LogAttr{`,
-		`Key:` + fmt.Sprintf("%v", this.Key) + `,`,
-		`Value:` + fmt.Sprintf("%v", this.Value) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *LogMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForAttrs := "[]LogAttr{"
-	for _, f := range this.Attrs {
-		repeatedStringForAttrs += strings.Replace(strings.Replace(f.String(), "LogAttr", "LogAttr", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForAttrs += "}"
-	s := strings.Join([]string{`&LogMessage{`,
-		`Context:` + strings.Replace(strings.Replace(this.Context.String(), "LogContext", "LogContext", 1), `&`, ``, 1) + `,`,
-		`Timestamp:` + strings.Replace(fmt.Sprintf("%v", this.Timestamp), "Timestamp", "types.Timestamp", 1) + `,`,
-		`Stream:` + fmt.Sprintf("%v", this.Stream) + `,`,
-		`Data:` + fmt.Sprintf("%v", this.Data) + `,`,
-		`Attrs:` + repeatedStringForAttrs + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SubscribeLogsRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SubscribeLogsRequest{`,
-		`Selector:` + strings.Replace(this.Selector.String(), "LogSelector", "LogSelector", 1) + `,`,
-		`Options:` + strings.Replace(this.Options.String(), "LogSubscriptionOptions", "LogSubscriptionOptions", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SubscribeLogsMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForMessages := "[]LogMessage{"
-	for _, f := range this.Messages {
-		repeatedStringForMessages += strings.Replace(strings.Replace(f.String(), "LogMessage", "LogMessage", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForMessages += "}"
-	s := strings.Join([]string{`&SubscribeLogsMessage{`,
-		`Messages:` + repeatedStringForMessages + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListenSubscriptionsRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListenSubscriptionsRequest{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SubscriptionMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SubscriptionMessage{`,
-		`ID:` + fmt.Sprintf("%v", this.ID) + `,`,
-		`Selector:` + strings.Replace(this.Selector.String(), "LogSelector", "LogSelector", 1) + `,`,
-		`Options:` + strings.Replace(this.Options.String(), "LogSubscriptionOptions", "LogSubscriptionOptions", 1) + `,`,
-		`Close:` + fmt.Sprintf("%v", this.Close) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *PublishLogsMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForMessages := "[]LogMessage{"
-	for _, f := range this.Messages {
-		repeatedStringForMessages += strings.Replace(strings.Replace(f.String(), "LogMessage", "LogMessage", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForMessages += "}"
-	s := strings.Join([]string{`&PublishLogsMessage{`,
-		`SubscriptionID:` + fmt.Sprintf("%v", this.SubscriptionID) + `,`,
-		`Messages:` + repeatedStringForMessages + `,`,
-		`Close:` + fmt.Sprintf("%v", this.Close) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *PublishLogsResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&PublishLogsResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringLogbroker(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
+func sovLogbroker(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sozLogbroker(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (this *LogSubscriptionOptions) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *LogSelector) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *LogContext) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *LogAttr) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *LogMessage) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SubscribeLogsRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SubscribeLogsMessage) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListenSubscriptionsRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SubscriptionMessage) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *PublishLogsMessage) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *PublishLogsResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringLogbroker(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
 func (m *LogSubscriptionOptions) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LogSubscriptionOptions: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LogSubscriptionOptions: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType == 0 {
-				var v LogStream
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowLogbroker
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= LogStream(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.Streams = append(m.Streams, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowLogbroker
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthLogbroker
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthLogbroker
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				if elementCount != 0 && len(m.Streams) == 0 {
-					m.Streams = make([]LogStream, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v LogStream
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowLogbroker
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= LogStream(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.Streams = append(m.Streams, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field Streams", wireType)
-			}
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Follow", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Follow = bool(v != 0)
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tail", wireType)
-			}
-			m.Tail = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Tail |= int64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Since", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Since == nil {
-				m.Since = &types.Timestamp{}
-			}
-			if err := m.Since.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *LogSelector) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LogSelector: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LogSelector: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceIDs", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceIDs = append(m.ServiceIDs, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeIDs", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeIDs = append(m.NodeIDs, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field TaskIDs", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.TaskIDs = append(m.TaskIDs, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LogContext) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LogContext: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LogContext: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field TaskID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.TaskID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *LogSelector) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LogAttr) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LogAttr: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LogAttr: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Key", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Key = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Value", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Value = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *LogContext) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *LogMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: LogMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: LogMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Context", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Context.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Timestamp", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Timestamp == nil {
-				m.Timestamp = &types.Timestamp{}
-			}
-			if err := m.Timestamp.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Stream", wireType)
-			}
-			m.Stream = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Stream |= LogStream(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Data", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Data = append(m.Data[:0], dAtA[iNdEx:postIndex]...)
-			if m.Data == nil {
-				m.Data = []byte{}
-			}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Attrs", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Attrs = append(m.Attrs, LogAttr{})
-			if err := m.Attrs[len(m.Attrs)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *LogAttr) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *SubscribeLogsRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SubscribeLogsRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SubscribeLogsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Selector", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Selector == nil {
-				m.Selector = &LogSelector{}
-			}
-			if err := m.Selector.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Options", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Options == nil {
-				m.Options = &LogSubscriptionOptions{}
-			}
-			if err := m.Options.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *LogMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *SubscribeLogsMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SubscribeLogsMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SubscribeLogsMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Messages", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Messages = append(m.Messages, LogMessage{})
-			if err := m.Messages[len(m.Messages)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *SubscribeLogsRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *SubscribeLogsMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListenSubscriptionsRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListenSubscriptionsRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListenSubscriptionsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *SubscriptionMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SubscriptionMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SubscriptionMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Selector", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Selector == nil {
-				m.Selector = &LogSelector{}
-			}
-			if err := m.Selector.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Options", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Options == nil {
-				m.Options = &LogSubscriptionOptions{}
-			}
-			if err := m.Options.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Close", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Close = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *PublishLogsMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: PublishLogsMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PublishLogsMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SubscriptionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SubscriptionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Messages", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Messages = append(m.Messages, LogMessage{})
-			if err := m.Messages[len(m.Messages)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Close", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Close = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *SubscriptionMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *PublishLogsResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: PublishLogsResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: PublishLogsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipLogbroker(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthLogbroker
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *PublishLogsMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipLogbroker(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowLogbroker
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowLogbroker
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthLogbroker
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupLogbroker
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthLogbroker
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (m *PublishLogsResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipLogbroker(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthLogbroker        = fmt.Errorf("proto: negative length found during unmarshaling")

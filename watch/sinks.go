@@ -18,26 +18,9 @@ type timeoutSink struct {
 	sink    events.Sink
 }
 
-func (s timeoutSink) Write(event events.Event) error {
-	errChan := make(chan error)
-	go func(c chan<- error) {
-		c <- s.sink.Write(event)
-	}(errChan)
+func (s timeoutSink) Write(event events.Event) error { _ = "STUB: not implemented"; return nil }
 
-	timer := time.NewTimer(s.timeout)
-	select {
-	case err := <-errChan:
-		timer.Stop()
-		return err
-	case <-timer.C:
-		s.sink.Close()
-		return ErrSinkTimeout
-	}
-}
-
-func (s timeoutSink) Close() error {
-	return s.sink.Close()
-}
+func (s timeoutSink) Close() error { _ = "STUB: not implemented"; return nil }
 
 // dropErrClosed is a sink that suppresses ErrSinkClosed from Write, to avoid
 // debug log messages that may be confusing. It is possible that the queue
@@ -50,25 +33,17 @@ type dropErrClosed struct {
 	sink events.Sink
 }
 
-func (s dropErrClosed) Write(event events.Event) error {
-	err := s.sink.Write(event)
-	if err == events.ErrSinkClosed {
-		return nil
-	}
-	return err
-}
+func (s dropErrClosed) Write(event events.Event) error { _ = "STUB: not implemented"; return nil }
 
-func (s dropErrClosed) Close() error {
-	return s.sink.Close()
-}
+func (s dropErrClosed) Close() error { _ = "STUB: not implemented"; return nil }
 
 // dropErrClosedChanGen is a ChannelSinkGenerator for dropErrClosed sinks wrapping
 // unbuffered channels.
 type dropErrClosedChanGen struct{}
 
 func (s *dropErrClosedChanGen) NewChannelSink() (events.Sink, *events.Channel) {
-	ch := events.NewChannel(0)
-	return dropErrClosed{sink: ch}, ch
+	_ = "STUB: not implemented"
+	return *new(events.Sink), nil
 }
 
 // TimeoutDropErrChanGen is a ChannelSinkGenerator that creates a channel,
@@ -79,17 +54,13 @@ type TimeoutDropErrChanGen struct {
 
 // NewChannelSink creates a new sink chain of timeoutSink->dropErrClosed->Channel
 func (s *TimeoutDropErrChanGen) NewChannelSink() (events.Sink, *events.Channel) {
-	ch := events.NewChannel(0)
-	return timeoutSink{
-		timeout: s.timeout,
-		sink: dropErrClosed{
-			sink: ch,
-		},
-	}, ch
+	_ = "STUB: not implemented"
+	return *new(events.Sink), nil
 }
 
 // NewTimeoutDropErrSinkGen returns a generator of timeoutSinks wrapping dropErrClosed
 // sinks, wrapping unbuffered channel sinks.
 func NewTimeoutDropErrSinkGen(timeout time.Duration) ChannelSinkGenerator {
-	return &TimeoutDropErrChanGen{timeout: timeout}
+	_ = "STUB: not implemented"
+	return *new(ChannelSinkGenerator)
 }

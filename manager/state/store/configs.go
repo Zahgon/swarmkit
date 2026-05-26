@@ -1,8 +1,6 @@
 package store
 
 import (
-	"strings"
-
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/moby/swarmkit/v2/api"
 )
@@ -64,59 +62,29 @@ func init() {
 // CreateConfig adds a new config to the store.
 // Returns ErrExist if the ID is already taken.
 func CreateConfig(tx Tx, c *api.Config) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is not already in use.
-	if tx.lookup(tableConfig, indexName, strings.ToLower(c.Spec.Annotations.Name)) != nil {
-		return ErrNameConflict
-	}
-
-	return tx.create(tableConfig, c)
+	return nil
 }
 
 // UpdateConfig updates an existing config in the store.
 // Returns ErrNotExist if the config doesn't exist.
 func UpdateConfig(tx Tx, c *api.Config) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is either not in use or already used by this same Config.
-	if existing := tx.lookup(tableConfig, indexName, strings.ToLower(c.Spec.Annotations.Name)); existing != nil {
-		if existing.GetID() != c.ID {
-			return ErrNameConflict
-		}
-	}
-
-	return tx.update(tableConfig, c)
+	return nil
 }
 
 // DeleteConfig removes a config from the store.
 // Returns ErrNotExist if the config doesn't exist.
-func DeleteConfig(tx Tx, id string) error {
-	return tx.delete(tableConfig, id)
-}
+func DeleteConfig(tx Tx, id string) error { _ = "STUB: not implemented"; return nil }
 
 // GetConfig looks up a config by ID.
 // Returns nil if the config doesn't exist.
-func GetConfig(tx ReadTx, id string) *api.Config {
-	c := tx.get(tableConfig, id)
-	if c == nil {
-		return nil
-	}
-	return c.(*api.Config)
-}
+func GetConfig(tx ReadTx, id string) *api.Config { _ = "STUB: not implemented"; return nil }
 
 // FindConfigs selects a set of configs and returns them.
 func FindConfigs(tx ReadTx, by By) ([]*api.Config, error) {
-	checkType := func(by By) error {
-		switch by.(type) {
-		case byName, byNamePrefix, byIDPrefix, byCustom, byCustomPrefix:
-			return nil
-		default:
-			return ErrInvalidFindBy
-		}
-	}
-
-	configList := []*api.Config{}
-	appendResult := func(o api.StoreObject) {
-		configList = append(configList, o.(*api.Config))
-	}
-
-	err := tx.find(tableConfig, by, checkType, appendResult)
-	return configList, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }

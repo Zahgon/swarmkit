@@ -16,19 +16,12 @@ type secretProvider struct {
 }
 
 func NewSecretProvider(s *store.MemoryStore) SecretProvider {
-	return &secretProvider{
-		s: s,
-	}
+	_ = "STUB: not implemented"
+	return *new(SecretProvider)
 }
 
 // GetSecret returns the secret with the given ID, or nil if not found.
 //
 // This method accesses the store, and so should not be called from inside
 // another store transaction
-func (p *secretProvider) GetSecret(id string) *api.Secret {
-	var secret *api.Secret
-	p.s.View(func(tx store.ReadTx) {
-		secret = store.GetSecret(tx, id)
-	})
-	return secret
-}
+func (p *secretProvider) GetSecret(id string) *api.Secret { _ = "STUB: not implemented"; return nil }

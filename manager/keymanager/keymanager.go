@@ -7,15 +7,11 @@ package keymanager
 // plane information. It can also be used to encrypt overlay data traffic.
 import (
 	"context"
-	cryptorand "crypto/rand"
-	"encoding/binary"
 	"sync"
 	"time"
 
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/moby/swarmkit/v2/log"
 	"github.com/moby/swarmkit/v2/manager/state/store"
-	"github.com/pkg/errors"
 )
 
 const (
@@ -69,171 +65,31 @@ type KeyManager struct {
 }
 
 // DefaultConfig provides the default config for keymanager
-func DefaultConfig() *Config {
-	return &Config{
-		ClusterName:      store.DefaultClusterName,
-		Keylen:           DefaultKeyLen,
-		RotationInterval: DefaultKeyRotationInterval,
-		Subsystems:       []string{SubsystemGossip, SubsystemIPSec},
-	}
-}
+func DefaultConfig() *Config { _ = "STUB: not implemented"; return nil }
 
 // New creates an instance of keymanager with the given config
 func New(store *store.MemoryStore, config *Config) *KeyManager {
-	for _, subsys := range config.Subsystems {
-		if subsys != SubsystemGossip && subsys != SubsystemIPSec {
-			return nil
-		}
-	}
-	return &KeyManager{
-		config:  config,
-		store:   store,
-		keyRing: &keyRing{lClock: genSkew()},
-	}
-}
-
-func (k *KeyManager) allocateKey(_ context.Context, subsys string) *api.EncryptionKey {
-	key := make([]byte, k.config.Keylen)
-
-	_, err := cryptorand.Read(key)
-	if err != nil {
-		panic(errors.Wrap(err, "key generated failed"))
-	}
-	k.keyRing.lClock++
-
-	return &api.EncryptionKey{
-		Subsystem:   subsys,
-		Algorithm:   subsysToAlgo[subsys],
-		Key:         key,
-		LamportTime: k.keyRing.lClock,
-	}
-}
-
-func (k *KeyManager) updateKey(cluster *api.Cluster) error {
-	return k.store.Update(func(tx store.Tx) error {
-		cluster = store.GetCluster(tx, cluster.ID)
-		if cluster == nil {
-			return nil
-		}
-		cluster.EncryptionKeyLamportClock = k.keyRing.lClock
-		cluster.NetworkBootstrapKeys = k.keyRing.keys
-		return store.UpdateCluster(tx, cluster)
-	})
-}
-
-func (k *KeyManager) rotateKey(ctx context.Context) error {
-	var (
-		clusters []*api.Cluster
-		err      error
-	)
-	k.store.View(func(readTx store.ReadTx) {
-		clusters, err = store.FindClusters(readTx, store.ByName(k.config.ClusterName))
-	})
-
-	if err != nil {
-		log.G(ctx).Errorf("reading cluster config failed, %v", err)
-		return err
-	}
-
-	cluster := clusters[0]
-	if len(cluster.NetworkBootstrapKeys) == 0 {
-		panic(errors.New("no key in the cluster config"))
-	}
-
-	subsysKeys := map[string][]*api.EncryptionKey{}
-	for _, key := range k.keyRing.keys {
-		subsysKeys[key.Subsystem] = append(subsysKeys[key.Subsystem], key)
-	}
-	k.keyRing.keys = []*api.EncryptionKey{}
-
-	// We maintain the latest key and the one before in the key ring to allow
-	// agents to communicate without disruption on key change.
-	for subsys, keys := range subsysKeys {
-		if len(keys) == keyringSize {
-			min := 0
-			for i, key := range keys[1:] {
-				if key.LamportTime < keys[min].LamportTime {
-					min = i
-				}
-			}
-			keys = append(keys[0:min], keys[min+1:]...)
-		}
-		keys = append(keys, k.allocateKey(ctx, subsys))
-		subsysKeys[subsys] = keys
-	}
-
-	for _, keys := range subsysKeys {
-		k.keyRing.keys = append(k.keyRing.keys, keys...)
-	}
-
-	return k.updateKey(cluster)
-}
-
-// Run starts the keymanager, it doesn't return
-func (k *KeyManager) Run(ctx context.Context) error {
-	k.mu.Lock()
-	ctx = log.WithModule(ctx, "keymanager")
-	var (
-		clusters []*api.Cluster
-		err      error
-	)
-	k.store.View(func(readTx store.ReadTx) {
-		clusters, err = store.FindClusters(readTx, store.ByName(k.config.ClusterName))
-	})
-
-	if err != nil {
-		log.G(ctx).Errorf("reading cluster config failed, %v", err)
-		k.mu.Unlock()
-		return err
-	}
-
-	cluster := clusters[0]
-	if len(cluster.NetworkBootstrapKeys) == 0 {
-		for _, subsys := range k.config.Subsystems {
-			for i := 0; i < keyringSize; i++ {
-				k.keyRing.keys = append(k.keyRing.keys, k.allocateKey(ctx, subsys))
-			}
-		}
-		if err := k.updateKey(cluster); err != nil {
-			log.G(ctx).Errorf("store update failed %v", err)
-		}
-	} else {
-		k.keyRing.lClock = cluster.EncryptionKeyLamportClock
-		k.keyRing.keys = cluster.NetworkBootstrapKeys
-	}
-
-	ticker := time.NewTicker(k.config.RotationInterval)
-	defer ticker.Stop()
-
-	k.ctx, k.cancel = context.WithCancel(ctx)
-	k.mu.Unlock()
-
-	for {
-		select {
-		case <-ticker.C:
-			k.rotateKey(ctx)
-		case <-k.ctx.Done():
-			return nil
-		}
-	}
-}
-
-// Stop stops the running instance of key manager
-func (k *KeyManager) Stop() error {
-	k.mu.Lock()
-	defer k.mu.Unlock()
-	if k.cancel == nil {
-		return errors.New("keymanager is not started")
-	}
-	k.cancel()
+	_ = "STUB: not implemented"
 	return nil
 }
 
-// genSkew generates a random uint64 number between 0 and 65535
-func genSkew() uint64 {
-	b := make([]byte, 2)
-	if _, err := cryptorand.Read(b); err != nil {
-		panic(err)
-	}
-	return uint64(binary.BigEndian.Uint16(b))
+func (k *KeyManager) allocateKey(_ context.Context, subsys string) *api.EncryptionKey {
+	_ = "STUB: not implemented"
+	return nil
 }
+
+func (k *KeyManager) updateKey(cluster *api.Cluster) error { _ = "STUB: not implemented"; return nil }
+
+func (k *KeyManager) rotateKey(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
+
+// We maintain the latest key and the one before in the key ring to allow
+// agents to communicate without disruption on key change.
+
+// Run starts the keymanager, it doesn't return
+func (k *KeyManager) Run(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
+
+// Stop stops the running instance of key manager
+func (k *KeyManager) Stop() error { _ = "STUB: not implemented"; return nil }
+
+// genSkew generates a random uint64 number between 0 and 65535
+func genSkew() uint64 { _ = "STUB: not implemented"; return 0 }

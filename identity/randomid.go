@@ -2,9 +2,6 @@ package identity
 
 import (
 	cryptorand "crypto/rand"
-	"fmt"
-	"io"
-	"math/big"
 )
 
 var (
@@ -41,13 +38,6 @@ const (
 // ~129 bits of entropy encoded with base36. Leading padding is added if the
 // string is less 25 bytes. We do not intend to maintain this interface, so
 // identifiers should be treated opaquely.
-func NewID() string {
-	var p [randomIDEntropyBytes]byte
+func NewID() string { _ = "STUB: not implemented"; return "" }
 
-	if _, err := io.ReadFull(idReader, p[:]); err != nil {
-		panic(fmt.Errorf("failed to read random bytes: %v", err))
-	}
-
-	p[0] |= 0x80 // set high bit to avoid the need for padding
-	return (&big.Int{}).SetBytes(p[:]).Text(randomIDBase)[1 : maxRandomIDLength+1]
-}
+// set high bit to avoid the need for padding

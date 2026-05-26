@@ -6,20 +6,11 @@ package test
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	proto "github.com/gogo/protobuf/proto"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -53,12 +44,11 @@ var HealthCheckResponse_ServingStatus_value = map[string]int32{
 	"NOT_SERVING": 2,
 }
 
-func (x HealthCheckResponse_ServingStatus) String() string {
-	return proto.EnumName(HealthCheckResponse_ServingStatus_name, int32(x))
-}
+func (x HealthCheckResponse_ServingStatus) String() string { _ = "STUB: not implemented"; return "" }
 
 func (HealthCheckResponse_ServingStatus) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{6, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Points are represented as latitude-longitude pairs in the E7 representation
@@ -70,35 +60,22 @@ type Point struct {
 	Longitude int32 `protobuf:"varint,2,opt,name=longitude,proto3" json:"longitude,omitempty"`
 }
 
-func (m *Point) Reset()      { *m = Point{} }
-func (*Point) ProtoMessage() {}
-func (*Point) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{0}
-}
-func (m *Point) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *Point) Reset()                    { _ = "STUB: not implemented"; return }
+func (*Point) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*Point) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *Point) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *Point) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Point.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *Point) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Point.Merge(m, src)
-}
-func (m *Point) XXX_Size() int {
-	return m.Size()
-}
-func (m *Point) XXX_DiscardUnknown() {
-	xxx_messageInfo_Point.DiscardUnknown(m)
-}
+
+func (m *Point) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *Point) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *Point) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_Point proto.InternalMessageInfo
 
@@ -111,35 +88,22 @@ type Rectangle struct {
 	Hi *Point `protobuf:"bytes,2,opt,name=hi,proto3" json:"hi,omitempty"`
 }
 
-func (m *Rectangle) Reset()      { *m = Rectangle{} }
-func (*Rectangle) ProtoMessage() {}
-func (*Rectangle) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{1}
-}
-func (m *Rectangle) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *Rectangle) Reset()                    { _ = "STUB: not implemented"; return }
+func (*Rectangle) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*Rectangle) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *Rectangle) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *Rectangle) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Rectangle.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *Rectangle) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Rectangle.Merge(m, src)
-}
-func (m *Rectangle) XXX_Size() int {
-	return m.Size()
-}
-func (m *Rectangle) XXX_DiscardUnknown() {
-	xxx_messageInfo_Rectangle.DiscardUnknown(m)
-}
+
+func (m *Rectangle) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *Rectangle) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *Rectangle) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_Rectangle proto.InternalMessageInfo
 
@@ -153,35 +117,22 @@ type Feature struct {
 	Location *Point `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
 }
 
-func (m *Feature) Reset()      { *m = Feature{} }
-func (*Feature) ProtoMessage() {}
-func (*Feature) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{2}
-}
-func (m *Feature) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *Feature) Reset()                    { _ = "STUB: not implemented"; return }
+func (*Feature) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*Feature) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *Feature) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *Feature) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Feature.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *Feature) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Feature.Merge(m, src)
-}
-func (m *Feature) XXX_Size() int {
-	return m.Size()
-}
-func (m *Feature) XXX_DiscardUnknown() {
-	xxx_messageInfo_Feature.DiscardUnknown(m)
-}
+
+func (m *Feature) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *Feature) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *Feature) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_Feature proto.InternalMessageInfo
 
@@ -193,35 +144,22 @@ type RouteNote struct {
 	Message string `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 }
 
-func (m *RouteNote) Reset()      { *m = RouteNote{} }
-func (*RouteNote) ProtoMessage() {}
-func (*RouteNote) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{3}
-}
-func (m *RouteNote) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *RouteNote) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RouteNote) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RouteNote) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RouteNote) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RouteNote) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RouteNote.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RouteNote) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RouteNote.Merge(m, src)
-}
-func (m *RouteNote) XXX_Size() int {
-	return m.Size()
-}
-func (m *RouteNote) XXX_DiscardUnknown() {
-	xxx_messageInfo_RouteNote.DiscardUnknown(m)
-}
+
+func (m *RouteNote) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RouteNote) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RouteNote) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RouteNote proto.InternalMessageInfo
 
@@ -241,35 +179,22 @@ type RouteSummary struct {
 	ElapsedTime int32 `protobuf:"varint,4,opt,name=elapsed_time,json=elapsedTime,proto3" json:"elapsed_time,omitempty"`
 }
 
-func (m *RouteSummary) Reset()      { *m = RouteSummary{} }
-func (*RouteSummary) ProtoMessage() {}
-func (*RouteSummary) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{4}
-}
-func (m *RouteSummary) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *RouteSummary) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RouteSummary) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RouteSummary) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RouteSummary) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RouteSummary) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RouteSummary.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RouteSummary) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RouteSummary.Merge(m, src)
-}
-func (m *RouteSummary) XXX_Size() int {
-	return m.Size()
-}
-func (m *RouteSummary) XXX_DiscardUnknown() {
-	xxx_messageInfo_RouteSummary.DiscardUnknown(m)
-}
+
+func (m *RouteSummary) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RouteSummary) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RouteSummary) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RouteSummary proto.InternalMessageInfo
 
@@ -277,35 +202,22 @@ type HealthCheckRequest struct {
 	Service string `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
 }
 
-func (m *HealthCheckRequest) Reset()      { *m = HealthCheckRequest{} }
-func (*HealthCheckRequest) ProtoMessage() {}
-func (*HealthCheckRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{5}
-}
-func (m *HealthCheckRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *HealthCheckRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*HealthCheckRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*HealthCheckRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *HealthCheckRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *HealthCheckRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_HealthCheckRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *HealthCheckRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HealthCheckRequest.Merge(m, src)
-}
-func (m *HealthCheckRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *HealthCheckRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_HealthCheckRequest.DiscardUnknown(m)
-}
+
+func (m *HealthCheckRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *HealthCheckRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *HealthCheckRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_HealthCheckRequest proto.InternalMessageInfo
 
@@ -313,35 +225,25 @@ type HealthCheckResponse struct {
 	Status HealthCheckResponse_ServingStatus `protobuf:"varint,1,opt,name=status,proto3,enum=routeguide.HealthCheckResponse_ServingStatus" json:"status,omitempty"`
 }
 
-func (m *HealthCheckResponse) Reset()      { *m = HealthCheckResponse{} }
-func (*HealthCheckResponse) ProtoMessage() {}
+func (m *HealthCheckResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*HealthCheckResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*HealthCheckResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b6ba585df09575a9, []int{6}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *HealthCheckResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *HealthCheckResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *HealthCheckResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_HealthCheckResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *HealthCheckResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HealthCheckResponse.Merge(m, src)
-}
-func (m *HealthCheckResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *HealthCheckResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_HealthCheckResponse.DiscardUnknown(m)
-}
+
+func (m *HealthCheckResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *HealthCheckResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *HealthCheckResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_HealthCheckResponse proto.InternalMessageInfo
 
@@ -410,30 +312,28 @@ type authenticatedWrapperRouteGuideServer struct {
 }
 
 func NewAuthenticatedWrapperRouteGuideServer(local RouteGuideServer, authorize func(context.Context, []string) error) RouteGuideServer {
-	return &authenticatedWrapperRouteGuideServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(RouteGuideServer)
 }
 
 func (p *authenticatedWrapperRouteGuideServer) GetFeature(ctx context.Context, r *Point) (*Feature, error) {
-
-	panic("no authorization information in protobuf")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperRouteGuideServer) ListFeatures(r *Rectangle, stream RouteGuide_ListFeaturesServer) error {
-
-	panic("no authorization information in protobuf")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *authenticatedWrapperRouteGuideServer) RecordRoute(stream RouteGuide_RecordRouteServer) error {
-
-	panic("no authorization information in protobuf")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *authenticatedWrapperRouteGuideServer) RouteChat(stream RouteGuide_RouteChatServer) error {
-
-	panic("no authorization information in protobuf")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type authenticatedWrapperHealthServer struct {
@@ -442,137 +342,42 @@ type authenticatedWrapperHealthServer struct {
 }
 
 func NewAuthenticatedWrapperHealthServer(local HealthServer, authorize func(context.Context, []string) error) HealthServer {
-	return &authenticatedWrapperHealthServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(HealthServer)
 }
 
 func (p *authenticatedWrapperHealthServer) Check(ctx context.Context, r *HealthCheckRequest) (*HealthCheckResponse, error) {
-
-	panic("no authorization information in protobuf")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *Point) Copy() *Point {
-	if m == nil {
-		return nil
-	}
-	o := &Point{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *Point) Copy() *Point { _ = "STUB: not implemented"; return nil }
 
-func (m *Point) CopyFrom(src interface{}) {
+func (m *Point) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*Point)
-	*m = *o
-}
+func (m *Rectangle) Copy() *Rectangle { _ = "STUB: not implemented"; return nil }
 
-func (m *Rectangle) Copy() *Rectangle {
-	if m == nil {
-		return nil
-	}
-	o := &Rectangle{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *Rectangle) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *Rectangle) CopyFrom(src interface{}) {
+func (m *Feature) Copy() *Feature { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*Rectangle)
-	*m = *o
-	if o.Lo != nil {
-		m.Lo = &Point{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Lo, o.Lo)
-	}
-	if o.Hi != nil {
-		m.Hi = &Point{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Hi, o.Hi)
-	}
-}
+func (m *Feature) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *Feature) Copy() *Feature {
-	if m == nil {
-		return nil
-	}
-	o := &Feature{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RouteNote) Copy() *RouteNote { _ = "STUB: not implemented"; return nil }
 
-func (m *Feature) CopyFrom(src interface{}) {
+func (m *RouteNote) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*Feature)
-	*m = *o
-	if o.Location != nil {
-		m.Location = &Point{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Location, o.Location)
-	}
-}
+func (m *RouteSummary) Copy() *RouteSummary { _ = "STUB: not implemented"; return nil }
 
-func (m *RouteNote) Copy() *RouteNote {
-	if m == nil {
-		return nil
-	}
-	o := &RouteNote{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RouteSummary) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *RouteNote) CopyFrom(src interface{}) {
+func (m *HealthCheckRequest) Copy() *HealthCheckRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*RouteNote)
-	*m = *o
-	if o.Location != nil {
-		m.Location = &Point{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Location, o.Location)
-	}
-}
+func (m *HealthCheckRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *RouteSummary) Copy() *RouteSummary {
-	if m == nil {
-		return nil
-	}
-	o := &RouteSummary{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *HealthCheckResponse) Copy() *HealthCheckResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *RouteSummary) CopyFrom(src interface{}) {
-
-	o := src.(*RouteSummary)
-	*m = *o
-}
-
-func (m *HealthCheckRequest) Copy() *HealthCheckRequest {
-	if m == nil {
-		return nil
-	}
-	o := &HealthCheckRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *HealthCheckRequest) CopyFrom(src interface{}) {
-
-	o := src.(*HealthCheckRequest)
-	*m = *o
-}
-
-func (m *HealthCheckResponse) Copy() *HealthCheckResponse {
-	if m == nil {
-		return nil
-	}
-	o := &HealthCheckResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *HealthCheckResponse) CopyFrom(src interface{}) {
-
-	o := src.(*HealthCheckResponse)
-	*m = *o
-}
+func (m *HealthCheckResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
@@ -617,31 +422,18 @@ type routeGuideClient struct {
 }
 
 func NewRouteGuideClient(cc *grpc.ClientConn) RouteGuideClient {
-	return &routeGuideClient{cc}
+	_ = "STUB: not implemented"
+	return *new(RouteGuideClient)
 }
 
 func (c *routeGuideClient) GetFeature(ctx context.Context, in *Point, opts ...grpc.CallOption) (*Feature, error) {
-	out := new(Feature)
-	err := c.cc.Invoke(ctx, "/routeguide.RouteGuide/GetFeature", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *routeGuideClient) ListFeatures(ctx context.Context, in *Rectangle, opts ...grpc.CallOption) (RouteGuide_ListFeaturesClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_RouteGuide_serviceDesc.Streams[0], "/routeguide.RouteGuide/ListFeatures", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &routeGuideListFeaturesClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(RouteGuide_ListFeaturesClient), nil
 }
 
 type RouteGuide_ListFeaturesClient interface {
@@ -654,20 +446,13 @@ type routeGuideListFeaturesClient struct {
 }
 
 func (x *routeGuideListFeaturesClient) Recv() (*Feature, error) {
-	m := new(Feature)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *routeGuideClient) RecordRoute(ctx context.Context, opts ...grpc.CallOption) (RouteGuide_RecordRouteClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_RouteGuide_serviceDesc.Streams[1], "/routeguide.RouteGuide/RecordRoute", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &routeGuideRecordRouteClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(RouteGuide_RecordRouteClient), nil
 }
 
 type RouteGuide_RecordRouteClient interface {
@@ -680,28 +465,16 @@ type routeGuideRecordRouteClient struct {
 	grpc.ClientStream
 }
 
-func (x *routeGuideRecordRouteClient) Send(m *Point) error {
-	return x.ClientStream.SendMsg(m)
-}
+func (x *routeGuideRecordRouteClient) Send(m *Point) error { _ = "STUB: not implemented"; return nil }
 
 func (x *routeGuideRecordRouteClient) CloseAndRecv() (*RouteSummary, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(RouteSummary)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *routeGuideClient) RouteChat(ctx context.Context, opts ...grpc.CallOption) (RouteGuide_RouteChatClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_RouteGuide_serviceDesc.Streams[2], "/routeguide.RouteGuide/RouteChat", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &routeGuideRouteChatClient{stream}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(RouteGuide_RouteChatClient), nil
 }
 
 type RouteGuide_RouteChatClient interface {
@@ -714,16 +487,11 @@ type routeGuideRouteChatClient struct {
 	grpc.ClientStream
 }
 
-func (x *routeGuideRouteChatClient) Send(m *RouteNote) error {
-	return x.ClientStream.SendMsg(m)
-}
+func (x *routeGuideRouteChatClient) Send(m *RouteNote) error { _ = "STUB: not implemented"; return nil }
 
 func (x *routeGuideRouteChatClient) Recv() (*RouteNote, error) {
-	m := new(RouteNote)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // RouteGuideServer is the server API for RouteGuide service.
@@ -759,46 +527,38 @@ type UnimplementedRouteGuideServer struct {
 }
 
 func (*UnimplementedRouteGuideServer) GetFeature(ctx context.Context, req *Point) (*Feature, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetFeature not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (*UnimplementedRouteGuideServer) ListFeatures(req *Rectangle, srv RouteGuide_ListFeaturesServer) error {
-	return status.Errorf(codes.Unimplemented, "method ListFeatures not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (*UnimplementedRouteGuideServer) RecordRoute(srv RouteGuide_RecordRouteServer) error {
-	return status.Errorf(codes.Unimplemented, "method RecordRoute not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (*UnimplementedRouteGuideServer) RouteChat(srv RouteGuide_RouteChatServer) error {
-	return status.Errorf(codes.Unimplemented, "method RouteChat not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func RegisterRouteGuideServer(s *grpc.Server, srv RouteGuideServer) {
-	s.RegisterService(&_RouteGuide_serviceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _RouteGuide_GetFeature_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Point)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(RouteGuideServer).GetFeature(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/routeguide.RouteGuide/GetFeature",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(RouteGuideServer).GetFeature(ctx, req.(*Point))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _RouteGuide_ListFeatures_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(Rectangle)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(RouteGuideServer).ListFeatures(m, &routeGuideListFeaturesServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type RouteGuide_ListFeaturesServer interface {
@@ -811,11 +571,13 @@ type routeGuideListFeaturesServer struct {
 }
 
 func (x *routeGuideListFeaturesServer) Send(m *Feature) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func _RouteGuide_RecordRoute_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RouteGuideServer).RecordRoute(&routeGuideRecordRouteServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type RouteGuide_RecordRouteServer interface {
@@ -829,19 +591,18 @@ type routeGuideRecordRouteServer struct {
 }
 
 func (x *routeGuideRecordRouteServer) SendAndClose(m *RouteSummary) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (x *routeGuideRecordRouteServer) Recv() (*Point, error) {
-	m := new(Point)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _RouteGuide_RouteChat_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(RouteGuideServer).RouteChat(&routeGuideRouteChatServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type RouteGuide_RouteChatServer interface {
@@ -854,16 +615,11 @@ type routeGuideRouteChatServer struct {
 	grpc.ServerStream
 }
 
-func (x *routeGuideRouteChatServer) Send(m *RouteNote) error {
-	return x.ServerStream.SendMsg(m)
-}
+func (x *routeGuideRouteChatServer) Send(m *RouteNote) error { _ = "STUB: not implemented"; return nil }
 
 func (x *routeGuideRouteChatServer) Recv() (*RouteNote, error) {
-	m := new(RouteNote)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _RouteGuide_serviceDesc = grpc.ServiceDesc{
@@ -908,16 +664,13 @@ type healthClient struct {
 }
 
 func NewHealthClient(cc *grpc.ClientConn) HealthClient {
-	return &healthClient{cc}
+	_ = "STUB: not implemented"
+	return *new(HealthClient)
 }
 
 func (c *healthClient) Check(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error) {
-	out := new(HealthCheckResponse)
-	err := c.cc.Invoke(ctx, "/routeguide.Health/Check", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // HealthServer is the server API for Health service.
@@ -930,29 +683,15 @@ type UnimplementedHealthServer struct {
 }
 
 func (*UnimplementedHealthServer) Check(ctx context.Context, req *HealthCheckRequest) (*HealthCheckResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Check not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func RegisterHealthServer(s *grpc.Server, srv HealthServer) {
-	s.RegisterService(&_Health_serviceDesc, srv)
-}
+func RegisterHealthServer(s *grpc.Server, srv HealthServer) { _ = "STUB: not implemented"; return }
 
 func _Health_Check_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HealthCheckRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(HealthServer).Check(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/routeguide.Health/Check",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HealthServer).Check(ctx, req.(*HealthCheckRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _Health_serviceDesc = grpc.ServiceDesc{
@@ -968,281 +707,90 @@ var _Health_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/docker/swarmkit/protobuf/plugin/raftproxy/test/service.proto",
 }
 
-func (m *Point) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *Point) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *Point) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *Point) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *Point) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Longitude != 0 {
-		i = encodeVarintService(dAtA, i, uint64(m.Longitude))
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.Latitude != 0 {
-		i = encodeVarintService(dAtA, i, uint64(m.Latitude))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *Rectangle) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *Rectangle) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *Rectangle) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *Rectangle) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *Rectangle) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Hi != nil {
-		{
-			size, err := m.Hi.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintService(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Lo != nil {
-		{
-			size, err := m.Lo.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintService(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *Feature) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *Feature) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *Feature) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *Feature) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *Feature) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Location != nil {
-		{
-			size, err := m.Location.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintService(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Name) > 0 {
-		i -= len(m.Name)
-		copy(dAtA[i:], m.Name)
-		i = encodeVarintService(dAtA, i, uint64(len(m.Name)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *RouteNote) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *RouteNote) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *RouteNote) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *RouteNote) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *RouteNote) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Message) > 0 {
-		i -= len(m.Message)
-		copy(dAtA[i:], m.Message)
-		i = encodeVarintService(dAtA, i, uint64(len(m.Message)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Location != nil {
-		{
-			size, err := m.Location.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintService(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RouteSummary) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RouteSummary) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RouteSummary) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.ElapsedTime != 0 {
-		i = encodeVarintService(dAtA, i, uint64(m.ElapsedTime))
-		i--
-		dAtA[i] = 0x20
-	}
-	if m.Distance != 0 {
-		i = encodeVarintService(dAtA, i, uint64(m.Distance))
-		i--
-		dAtA[i] = 0x18
-	}
-	if m.FeatureCount != 0 {
-		i = encodeVarintService(dAtA, i, uint64(m.FeatureCount))
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.PointCount != 0 {
-		i = encodeVarintService(dAtA, i, uint64(m.PointCount))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HealthCheckRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *HealthCheckRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HealthCheckRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Service) > 0 {
-		i -= len(m.Service)
-		copy(dAtA[i:], m.Service)
-		i = encodeVarintService(dAtA, i, uint64(len(m.Service)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HealthCheckResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *HealthCheckResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HealthCheckResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Status != 0 {
-		i = encodeVarintService(dAtA, i, uint64(m.Status))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func encodeVarintService(dAtA []byte, offset int, v uint64) int {
-	offset -= sovService(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
+	_ = "STUB: not implemented"
+	return 0
 }
 
 type raftProxyRouteGuideServer struct {
@@ -1252,104 +800,23 @@ type raftProxyRouteGuideServer struct {
 }
 
 func NewRaftProxyRouteGuideServer(local RouteGuideServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) RouteGuideServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyRouteGuideServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(RouteGuideServer)
 }
+
 func (p *raftProxyRouteGuideServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyRouteGuideServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyRouteGuideServer) GetFeature(ctx context.Context, r *Point) (*Feature, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetFeature(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewRouteGuideClient(conn).GetFeature(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetFeature(ctx, r)
-			}
-			return nil, err
-		}
-		return NewRouteGuideClient(conn).GetFeature(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type RouteGuide_ListFeaturesServerWrapper struct {
@@ -1358,48 +825,12 @@ type RouteGuide_ListFeaturesServerWrapper struct {
 }
 
 func (s RouteGuide_ListFeaturesServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyRouteGuideServer) ListFeatures(r *Rectangle, stream RouteGuide_ListFeaturesServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := RouteGuide_ListFeaturesServerWrapper{
-				RouteGuide_ListFeaturesServer: stream,
-				ctx:                           ctx,
-			}
-			return p.local.ListFeatures(r, streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewRouteGuideClient(conn).ListFeatures(ctx, r)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -1409,55 +840,13 @@ type RouteGuide_RecordRouteServerWrapper struct {
 }
 
 func (s RouteGuide_RecordRouteServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyRouteGuideServer) RecordRoute(stream RouteGuide_RecordRouteServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := RouteGuide_RecordRouteServerWrapper{
-				RouteGuide_RecordRouteServer: stream,
-				ctx:                          ctx,
-			}
-			return p.local.RecordRoute(streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewRouteGuideClient(conn).RecordRoute(ctx)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := stream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := clientStream.Send(msg); err != nil {
-			return err
-		}
-	}
-
-	reply, err := clientStream.CloseAndRecv()
-	if err != nil {
-		return err
-	}
-
-	return stream.SendAndClose(reply)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type RouteGuide_RouteChatServerWrapper struct {
@@ -1466,66 +855,13 @@ type RouteGuide_RouteChatServerWrapper struct {
 }
 
 func (s RouteGuide_RouteChatServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyRouteGuideServer) RouteChat(stream RouteGuide_RouteChatServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := RouteGuide_RouteChatServerWrapper{
-				RouteGuide_RouteChatServer: stream,
-				ctx:                        ctx,
-			}
-			return p.local.RouteChat(streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewRouteGuideClient(conn).RouteChat(ctx)
-
-	if err != nil {
-		return err
-	}
-	errc := make(chan error, 1)
-	go func() {
-		msg, err := stream.Recv()
-		if err == io.EOF {
-			close(errc)
-			return
-		}
-		if err != nil {
-			errc <- err
-			return
-		}
-		if err := clientStream.Send(msg); err != nil {
-			errc <- err
-			return
-		}
-	}()
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
-	clientStream.CloseSend()
-	return <-errc
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type raftProxyHealthServer struct {
@@ -1535,1110 +871,74 @@ type raftProxyHealthServer struct {
 }
 
 func NewRaftProxyHealthServer(local HealthServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) HealthServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyHealthServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(HealthServer)
 }
+
 func (p *raftProxyHealthServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyHealthServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyHealthServer) Check(ctx context.Context, r *HealthCheckRequest) (*HealthCheckResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.Check(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewHealthClient(conn).Check(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.Check(ctx, r)
-			}
-			return nil, err
-		}
-		return NewHealthClient(conn).Check(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *Point) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Latitude != 0 {
-		n += 1 + sovService(uint64(m.Latitude))
-	}
-	if m.Longitude != 0 {
-		n += 1 + sovService(uint64(m.Longitude))
-	}
-	return n
-}
+func (m *Point) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *Rectangle) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Lo != nil {
-		l = m.Lo.Size()
-		n += 1 + l + sovService(uint64(l))
-	}
-	if m.Hi != nil {
-		l = m.Hi.Size()
-		n += 1 + l + sovService(uint64(l))
-	}
-	return n
-}
+func (m *Rectangle) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *Feature) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Name)
-	if l > 0 {
-		n += 1 + l + sovService(uint64(l))
-	}
-	if m.Location != nil {
-		l = m.Location.Size()
-		n += 1 + l + sovService(uint64(l))
-	}
-	return n
-}
+func (m *Feature) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RouteNote) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Location != nil {
-		l = m.Location.Size()
-		n += 1 + l + sovService(uint64(l))
-	}
-	l = len(m.Message)
-	if l > 0 {
-		n += 1 + l + sovService(uint64(l))
-	}
-	return n
-}
+func (m *RouteNote) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RouteSummary) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.PointCount != 0 {
-		n += 1 + sovService(uint64(m.PointCount))
-	}
-	if m.FeatureCount != 0 {
-		n += 1 + sovService(uint64(m.FeatureCount))
-	}
-	if m.Distance != 0 {
-		n += 1 + sovService(uint64(m.Distance))
-	}
-	if m.ElapsedTime != 0 {
-		n += 1 + sovService(uint64(m.ElapsedTime))
-	}
-	return n
-}
+func (m *RouteSummary) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *HealthCheckRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Service)
-	if l > 0 {
-		n += 1 + l + sovService(uint64(l))
-	}
-	return n
-}
+func (m *HealthCheckRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *HealthCheckResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Status != 0 {
-		n += 1 + sovService(uint64(m.Status))
-	}
-	return n
-}
+func (m *HealthCheckResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovService(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozService(x uint64) (n int) {
-	return sovService(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *Point) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Point{`,
-		`Latitude:` + fmt.Sprintf("%v", this.Latitude) + `,`,
-		`Longitude:` + fmt.Sprintf("%v", this.Longitude) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Rectangle) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Rectangle{`,
-		`Lo:` + strings.Replace(this.Lo.String(), "Point", "Point", 1) + `,`,
-		`Hi:` + strings.Replace(this.Hi.String(), "Point", "Point", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Feature) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Feature{`,
-		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
-		`Location:` + strings.Replace(this.Location.String(), "Point", "Point", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RouteNote) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RouteNote{`,
-		`Location:` + strings.Replace(this.Location.String(), "Point", "Point", 1) + `,`,
-		`Message:` + fmt.Sprintf("%v", this.Message) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RouteSummary) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RouteSummary{`,
-		`PointCount:` + fmt.Sprintf("%v", this.PointCount) + `,`,
-		`FeatureCount:` + fmt.Sprintf("%v", this.FeatureCount) + `,`,
-		`Distance:` + fmt.Sprintf("%v", this.Distance) + `,`,
-		`ElapsedTime:` + fmt.Sprintf("%v", this.ElapsedTime) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *HealthCheckRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&HealthCheckRequest{`,
-		`Service:` + fmt.Sprintf("%v", this.Service) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *HealthCheckResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&HealthCheckResponse{`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringService(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *Point) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Point: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Point: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Latitude", wireType)
-			}
-			m.Latitude = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Latitude |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Longitude", wireType)
-			}
-			m.Longitude = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Longitude |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipService(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthService
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func sovService(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Rectangle) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Rectangle: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Rectangle: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Lo", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthService
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthService
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Lo == nil {
-				m.Lo = &Point{}
-			}
-			if err := m.Lo.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Hi", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthService
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthService
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Hi == nil {
-				m.Hi = &Point{}
-			}
-			if err := m.Hi.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipService(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthService
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func sozService(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Feature) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Feature: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Feature: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthService
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthService
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Name = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Location", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthService
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthService
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Location == nil {
-				m.Location = &Point{}
-			}
-			if err := m.Location.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipService(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthService
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *Point) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RouteNote) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RouteNote: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RouteNote: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Location", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthService
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthService
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Location == nil {
-				m.Location = &Point{}
-			}
-			if err := m.Location.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Message", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthService
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthService
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Message = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipService(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthService
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *Rectangle) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RouteSummary) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RouteSummary: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RouteSummary: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field PointCount", wireType)
-			}
-			m.PointCount = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.PointCount |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field FeatureCount", wireType)
-			}
-			m.FeatureCount = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.FeatureCount |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Distance", wireType)
-			}
-			m.Distance = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Distance |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 4:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ElapsedTime", wireType)
-			}
-			m.ElapsedTime = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.ElapsedTime |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipService(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthService
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *Feature) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *HealthCheckRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: HealthCheckRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: HealthCheckRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Service", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthService
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthService
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Service = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipService(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthService
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *RouteNote) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *HealthCheckResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: HealthCheckResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: HealthCheckResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			m.Status = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Status |= HealthCheckResponse_ServingStatus(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipService(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthService
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *RouteSummary) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipService(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowService
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowService
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthService
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupService
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthService
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (this *HealthCheckRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *HealthCheckResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringService(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *Point) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *Rectangle) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *Feature) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *RouteNote) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *RouteSummary) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *HealthCheckRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *HealthCheckResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipService(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthService        = fmt.Errorf("proto: negative length found during unmarshaling")

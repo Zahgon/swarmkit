@@ -22,35 +22,10 @@ type Server struct {
 }
 
 // NewServer creates a store API server.
-func NewServer(store *store.MemoryStore) *Server {
-	return &Server{
-		store: store,
-	}
-}
+func NewServer(store *store.MemoryStore) *Server { _ = "STUB: not implemented"; return nil }
 
 // Start starts the watch server.
-func (s *Server) Start(ctx context.Context) error {
-	s.mu.Lock()
-	defer s.mu.Unlock()
-
-	if s.cancelAll != nil {
-		return errAlreadyRunning
-	}
-
-	s.pctx, s.cancelAll = context.WithCancel(ctx)
-	return nil
-}
+func (s *Server) Start(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
 
 // Stop stops the watch server.
-func (s *Server) Stop() error {
-	s.mu.Lock()
-	defer s.mu.Unlock()
-
-	if s.cancelAll == nil {
-		return errNotRunning
-	}
-	s.cancelAll()
-	s.cancelAll = nil
-
-	return nil
-}
+func (s *Server) Stop() error { _ = "STUB: not implemented"; return nil }

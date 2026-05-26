@@ -2,7 +2,6 @@ package plugin
 
 import (
 	"context"
-	"fmt"
 	"sync"
 
 	"github.com/moby/swarmkit/v2/api"
@@ -43,77 +42,38 @@ type pluginManager struct {
 }
 
 func NewManager(pg plugin.Getter, secrets SecretGetter) Manager {
-	return &pluginManager{
-		plugins:           map[string]NodePlugin{},
-		newNodePluginFunc: NewNodePlugin,
-		secrets:           secrets,
-		pg:                pg,
-	}
+	_ = "STUB: not implemented"
+	return *new(Manager)
 }
 
 func (pm *pluginManager) Get(name string) (NodePlugin, error) {
-	pm.pluginsMu.Lock()
-	defer pm.pluginsMu.Unlock()
-
-	plugin, err := pm.getPlugin(name)
-	if err != nil {
-		return nil, fmt.Errorf("cannot get plugin %v: %v", name, err)
-	}
-
-	return plugin, nil
+	_ = "STUB: not implemented"
+	return *new(NodePlugin), nil
 }
 
 func (pm *pluginManager) NodeInfo(ctx context.Context) ([]*api.NodeCSIInfo, error) {
+	_ = "STUB: not implemented"
 	// TODO(dperny): do not acquire this lock for the duration of the the
 	// function call. that's too long and too blocking.
-	pm.pluginsMu.Lock()
-	defer pm.pluginsMu.Unlock()
-
-	// first, we should make sure all of the plugins are initialized. do this
-	// by looking up all the current plugins with DockerCSIPluginCap.
-	plugins := pm.pg.GetAllManagedPluginsByCap(DockerCSIPluginCap)
-	for _, plugin := range plugins {
-		// TODO(dperny): use this opportunity to drop plugins that we're
-		// tracking but which no longer exist.
-
-		// we don't actually need the plugin returned, we just need it loaded
-		// as a side effect.
-		pm.getPlugin(plugin.Name())
-	}
-
-	nodeInfo := []*api.NodeCSIInfo{}
-	for _, plugin := range pm.plugins {
-		info, err := plugin.NodeGetInfo(ctx)
-		if err != nil {
-			// skip any plugin that returns an error
-			continue
-		}
-
-		nodeInfo = append(nodeInfo, info)
-	}
-	return nodeInfo, nil
+	return nil, nil
 }
+
+// first, we should make sure all of the plugins are initialized. do this
+// by looking up all the current plugins with DockerCSIPluginCap.
+
+// TODO(dperny): use this opportunity to drop plugins that we're
+// tracking but which no longer exist.
+
+// we don't actually need the plugin returned, we just need it loaded
+// as a side effect.
+
+// skip any plugin that returns an error
 
 // getPlugin looks up the plugin with the specified name. Loads the plugin if
 // not yet loaded.
 //
 // pm.pluginsMu must be obtained before calling this method.
 func (pm *pluginManager) getPlugin(name string) (NodePlugin, error) {
-	if p, ok := pm.plugins[name]; ok {
-		return p, nil
-	}
-
-	pc, err := pm.pg.Get(name, DockerCSIPluginCap)
-	if err != nil {
-		return nil, err
-	}
-
-	pa, ok := pc.(plugin.AddrPlugin)
-	if !ok {
-		return nil, fmt.Errorf("plugin does not implement PluginAddr interface")
-	}
-
-	p := pm.newNodePluginFunc(name, pa, pm.secrets)
-	pm.plugins[name] = p
-	return p, nil
+	_ = "STUB: not implemented"
+	return *new(NodePlugin), nil
 }

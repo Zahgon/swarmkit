@@ -1,8 +1,6 @@
 package store
 
 import (
-	"strings"
-
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/moby/swarmkit/v2/api"
 )
@@ -64,59 +62,29 @@ func init() {
 // CreateNetwork adds a new network to the store.
 // Returns ErrExist if the ID is already taken.
 func CreateNetwork(tx Tx, n *api.Network) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is not already in use.
-	if tx.lookup(tableNetwork, indexName, strings.ToLower(n.Spec.Annotations.Name)) != nil {
-		return ErrNameConflict
-	}
-
-	return tx.create(tableNetwork, n)
+	return nil
 }
 
 // UpdateNetwork updates an existing network in the store.
 // Returns ErrNotExist if the network doesn't exist.
 func UpdateNetwork(tx Tx, n *api.Network) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is either not in use or already used by this same Network.
-	if existing := tx.lookup(tableNetwork, indexName, strings.ToLower(n.Spec.Annotations.Name)); existing != nil {
-		if existing.GetID() != n.ID {
-			return ErrNameConflict
-		}
-	}
-
-	return tx.update(tableNetwork, n)
+	return nil
 }
 
 // DeleteNetwork removes a network from the store.
 // Returns ErrNotExist if the network doesn't exist.
-func DeleteNetwork(tx Tx, id string) error {
-	return tx.delete(tableNetwork, id)
-}
+func DeleteNetwork(tx Tx, id string) error { _ = "STUB: not implemented"; return nil }
 
 // GetNetwork looks up a network by ID.
 // Returns nil if the network doesn't exist.
-func GetNetwork(tx ReadTx, id string) *api.Network {
-	n := tx.get(tableNetwork, id)
-	if n == nil {
-		return nil
-	}
-	return n.(*api.Network)
-}
+func GetNetwork(tx ReadTx, id string) *api.Network { _ = "STUB: not implemented"; return nil }
 
 // FindNetworks selects a set of networks and returns them.
 func FindNetworks(tx ReadTx, by By) ([]*api.Network, error) {
-	checkType := func(by By) error {
-		switch by.(type) {
-		case byName, byNamePrefix, byIDPrefix, byCustom, byCustomPrefix, byAll:
-			return nil
-		default:
-			return ErrInvalidFindBy
-		}
-	}
-
-	networkList := []*api.Network{}
-	appendResult := func(o api.StoreObject) {
-		networkList = append(networkList, o.(*api.Network))
-	}
-
-	err := tx.find(tableNetwork, by, checkType, appendResult)
-	return networkList, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }

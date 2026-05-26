@@ -12,20 +12,13 @@ type EventCommit struct {
 }
 
 // Matches returns true if this event is a commit event.
-func (e EventCommit) Matches(watchEvent events.Event) bool {
-	_, ok := watchEvent.(EventCommit)
-	return ok
-}
+func (e EventCommit) Matches(watchEvent events.Event) bool { _ = "STUB: not implemented"; return false }
 
 // TaskCheckStateGreaterThan is a TaskCheckFunc for checking task state.
-func TaskCheckStateGreaterThan(t1, t2 *api.Task) bool {
-	return t2.Status.State > t1.Status.State
-}
+func TaskCheckStateGreaterThan(t1, t2 *api.Task) bool { _ = "STUB: not implemented"; return false }
 
 // NodeCheckState is a NodeCheckFunc for matching node state.
-func NodeCheckState(n1, n2 *api.Node) bool {
-	return n1.Status.State == n2.Status.State
-}
+func NodeCheckState(n1, n2 *api.Node) bool { _ = "STUB: not implemented"; return false }
 
 // Watch takes a variable number of events to match against. The subscriber
 // will receive events that match any of the arguments passed to Watch.
@@ -60,20 +53,12 @@ func NodeCheckState(n1, n2 *api.Node) bool {
 //		},
 //	})
 func Watch(queue *watch.Queue, specifiers ...api.Event) (eventq chan events.Event, cancel func()) {
-	if len(specifiers) == 0 {
-		return queue.Watch()
-	}
-	return queue.CallbackWatch(Matcher(specifiers...))
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Matcher returns an events.Matcher that Matches the specifiers with OR logic.
 func Matcher(specifiers ...api.Event) events.MatcherFunc {
-	return events.MatcherFunc(func(event events.Event) bool {
-		for _, s := range specifiers {
-			if s.Matches(event) {
-				return true
-			}
-		}
-		return false
-	})
+	_ = "STUB: not implemented"
+	return *new(events.MatcherFunc)
 }

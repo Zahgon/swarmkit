@@ -5,10 +5,11 @@ type orCombinator struct {
 }
 
 func (b orCombinator) isBy() {
+	_ = "STUB: not implemented"
+
+	// Or returns a combinator that applies OR logic on all the supplied By
+	// arguments.
+	return
 }
 
-// Or returns a combinator that applies OR logic on all the supplied By
-// arguments.
-func Or(bys ...By) By {
-	return orCombinator{bys: bys}
-}
+func Or(bys ...By) By { _ = "STUB: not implemented"; return *new(By) }

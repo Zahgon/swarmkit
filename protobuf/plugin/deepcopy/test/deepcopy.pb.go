@@ -4,15 +4,11 @@
 package test
 
 import (
-	bytes "bytes"
 	fmt "fmt"
+	math "math"
+
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_gogo_protobuf_sortkeys "github.com/gogo/protobuf/sortkeys"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
-	math "math"
-	reflect "reflect"
-	strings "strings"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -44,26 +40,22 @@ type BasicScalar struct {
 	Field15 []byte  `protobuf:"bytes,15,opt,name=Field15,proto3" json:"Field15,omitempty"`
 }
 
-func (m *BasicScalar) Reset()      { *m = BasicScalar{} }
-func (*BasicScalar) ProtoMessage() {}
-func (*BasicScalar) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{0}
-}
-func (m *BasicScalar) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_BasicScalar.Unmarshal(m, b)
-}
+func (m *BasicScalar) Reset()                    { _ = "STUB: not implemented"; return }
+func (*BasicScalar) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*BasicScalar) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *BasicScalar) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *BasicScalar) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_BasicScalar.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *BasicScalar) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_BasicScalar.Merge(m, src)
-}
-func (m *BasicScalar) XXX_Size() int {
-	return xxx_messageInfo_BasicScalar.Size(m)
-}
-func (m *BasicScalar) XXX_DiscardUnknown() {
-	xxx_messageInfo_BasicScalar.DiscardUnknown(m)
-}
+
+func (m *BasicScalar) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *BasicScalar) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *BasicScalar) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_BasicScalar proto.InternalMessageInfo
 
@@ -85,26 +77,22 @@ type RepeatedScalar struct {
 	Field15 [][]byte  `protobuf:"bytes,15,rep,name=Field15,proto3" json:"Field15,omitempty"`
 }
 
-func (m *RepeatedScalar) Reset()      { *m = RepeatedScalar{} }
-func (*RepeatedScalar) ProtoMessage() {}
-func (*RepeatedScalar) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{1}
-}
-func (m *RepeatedScalar) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RepeatedScalar.Unmarshal(m, b)
-}
+func (m *RepeatedScalar) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RepeatedScalar) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RepeatedScalar) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RepeatedScalar) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RepeatedScalar) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RepeatedScalar.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RepeatedScalar) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RepeatedScalar.Merge(m, src)
-}
-func (m *RepeatedScalar) XXX_Size() int {
-	return xxx_messageInfo_RepeatedScalar.Size(m)
-}
-func (m *RepeatedScalar) XXX_DiscardUnknown() {
-	xxx_messageInfo_RepeatedScalar.DiscardUnknown(m)
-}
+
+func (m *RepeatedScalar) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RepeatedScalar) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RepeatedScalar) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RepeatedScalar proto.InternalMessageInfo
 
@@ -124,26 +112,25 @@ type RepeatedScalarPacked struct {
 	Field13 []bool    `protobuf:"varint,13,rep,packed,name=Field13,proto3" json:"Field13,omitempty"`
 }
 
-func (m *RepeatedScalarPacked) Reset()      { *m = RepeatedScalarPacked{} }
-func (*RepeatedScalarPacked) ProtoMessage() {}
+func (m *RepeatedScalarPacked) Reset()      { _ = "STUB: not implemented"; return }
+func (*RepeatedScalarPacked) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RepeatedScalarPacked) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{2}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RepeatedScalarPacked) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RepeatedScalarPacked.Unmarshal(m, b)
-}
+
+func (m *RepeatedScalarPacked) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RepeatedScalarPacked) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RepeatedScalarPacked.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RepeatedScalarPacked) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RepeatedScalarPacked.Merge(m, src)
-}
-func (m *RepeatedScalarPacked) XXX_Size() int {
-	return xxx_messageInfo_RepeatedScalarPacked.Size(m)
-}
-func (m *RepeatedScalarPacked) XXX_DiscardUnknown() {
-	xxx_messageInfo_RepeatedScalarPacked.DiscardUnknown(m)
-}
+
+func (m *RepeatedScalarPacked) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RepeatedScalarPacked) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RepeatedScalarPacked) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RepeatedScalarPacked proto.InternalMessageInfo
 
@@ -153,26 +140,22 @@ type ExternalStruct struct {
 	Field3 *RepeatedScalarPacked `protobuf:"bytes,3,opt,name=Field3,proto3" json:"Field3,omitempty"`
 }
 
-func (m *ExternalStruct) Reset()      { *m = ExternalStruct{} }
-func (*ExternalStruct) ProtoMessage() {}
-func (*ExternalStruct) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{3}
-}
-func (m *ExternalStruct) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ExternalStruct.Unmarshal(m, b)
-}
+func (m *ExternalStruct) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ExternalStruct) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ExternalStruct) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ExternalStruct) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ExternalStruct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ExternalStruct.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ExternalStruct) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ExternalStruct.Merge(m, src)
-}
-func (m *ExternalStruct) XXX_Size() int {
-	return xxx_messageInfo_ExternalStruct.Size(m)
-}
-func (m *ExternalStruct) XXX_DiscardUnknown() {
-	xxx_messageInfo_ExternalStruct.DiscardUnknown(m)
-}
+
+func (m *ExternalStruct) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ExternalStruct) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ExternalStruct) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ExternalStruct proto.InternalMessageInfo
 
@@ -182,26 +165,28 @@ type RepeatedExternalStruct struct {
 	Field3 []*RepeatedScalarPacked `protobuf:"bytes,3,rep,name=Field3,proto3" json:"Field3,omitempty"`
 }
 
-func (m *RepeatedExternalStruct) Reset()      { *m = RepeatedExternalStruct{} }
-func (*RepeatedExternalStruct) ProtoMessage() {}
+func (m *RepeatedExternalStruct) Reset()      { _ = "STUB: not implemented"; return }
+func (*RepeatedExternalStruct) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RepeatedExternalStruct) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{4}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RepeatedExternalStruct) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RepeatedExternalStruct.Unmarshal(m, b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RepeatedExternalStruct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RepeatedExternalStruct.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RepeatedExternalStruct) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RepeatedExternalStruct.Merge(m, src)
-}
-func (m *RepeatedExternalStruct) XXX_Size() int {
-	return xxx_messageInfo_RepeatedExternalStruct.Size(m)
-}
-func (m *RepeatedExternalStruct) XXX_DiscardUnknown() {
-	xxx_messageInfo_RepeatedExternalStruct.DiscardUnknown(m)
-}
+
+func (m *RepeatedExternalStruct) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RepeatedExternalStruct) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RepeatedExternalStruct) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RepeatedExternalStruct proto.InternalMessageInfo
 
@@ -211,26 +196,28 @@ type NonNullableExternalStruct struct {
 	Field3 RepeatedScalarPacked `protobuf:"bytes,3,opt,name=Field3,proto3" json:"Field3"`
 }
 
-func (m *NonNullableExternalStruct) Reset()      { *m = NonNullableExternalStruct{} }
-func (*NonNullableExternalStruct) ProtoMessage() {}
+func (m *NonNullableExternalStruct) Reset()      { _ = "STUB: not implemented"; return }
+func (*NonNullableExternalStruct) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*NonNullableExternalStruct) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{5}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *NonNullableExternalStruct) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_NonNullableExternalStruct.Unmarshal(m, b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *NonNullableExternalStruct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_NonNullableExternalStruct.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *NonNullableExternalStruct) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_NonNullableExternalStruct.Merge(m, src)
-}
-func (m *NonNullableExternalStruct) XXX_Size() int {
-	return xxx_messageInfo_NonNullableExternalStruct.Size(m)
-}
-func (m *NonNullableExternalStruct) XXX_DiscardUnknown() {
-	xxx_messageInfo_NonNullableExternalStruct.DiscardUnknown(m)
-}
+
+func (m *NonNullableExternalStruct) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *NonNullableExternalStruct) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *NonNullableExternalStruct) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_NonNullableExternalStruct proto.InternalMessageInfo
 
@@ -240,26 +227,31 @@ type RepeatedNonNullableExternalStruct struct {
 	Field3 []RepeatedScalarPacked `protobuf:"bytes,3,rep,name=Field3,proto3" json:"Field3"`
 }
 
-func (m *RepeatedNonNullableExternalStruct) Reset()      { *m = RepeatedNonNullableExternalStruct{} }
-func (*RepeatedNonNullableExternalStruct) ProtoMessage() {}
+func (m *RepeatedNonNullableExternalStruct) Reset()      { _ = "STUB: not implemented"; return }
+func (*RepeatedNonNullableExternalStruct) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RepeatedNonNullableExternalStruct) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{6}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RepeatedNonNullableExternalStruct) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RepeatedNonNullableExternalStruct.Unmarshal(m, b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RepeatedNonNullableExternalStruct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RepeatedNonNullableExternalStruct.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RepeatedNonNullableExternalStruct) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RepeatedNonNullableExternalStruct.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *RepeatedNonNullableExternalStruct) XXX_Size() int {
-	return xxx_messageInfo_RepeatedNonNullableExternalStruct.Size(m)
-}
-func (m *RepeatedNonNullableExternalStruct) XXX_DiscardUnknown() {
-	xxx_messageInfo_RepeatedNonNullableExternalStruct.DiscardUnknown(m)
-}
+
+func (m *RepeatedNonNullableExternalStruct) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RepeatedNonNullableExternalStruct) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RepeatedNonNullableExternalStruct proto.InternalMessageInfo
 
@@ -268,26 +260,22 @@ type MapStruct struct {
 	NonnullableMap map[string]BasicScalar  `protobuf:"bytes,2,rep,name=nonnullable_map,json=nonnullableMap,proto3" json:"nonnullable_map" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
-func (m *MapStruct) Reset()      { *m = MapStruct{} }
-func (*MapStruct) ProtoMessage() {}
-func (*MapStruct) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{7}
-}
-func (m *MapStruct) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_MapStruct.Unmarshal(m, b)
-}
+func (m *MapStruct) Reset()                    { _ = "STUB: not implemented"; return }
+func (*MapStruct) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*MapStruct) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *MapStruct) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *MapStruct) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_MapStruct.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *MapStruct) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MapStruct.Merge(m, src)
-}
-func (m *MapStruct) XXX_Size() int {
-	return xxx_messageInfo_MapStruct.Size(m)
-}
-func (m *MapStruct) XXX_DiscardUnknown() {
-	xxx_messageInfo_MapStruct.DiscardUnknown(m)
-}
+
+func (m *MapStruct) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *MapStruct) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *MapStruct) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_MapStruct proto.InternalMessageInfo
 
@@ -311,26 +299,22 @@ type OneOf struct {
 	FieldsTwo isOneOf_FieldsTwo `protobuf_oneof:"fieldsTwo"`
 }
 
-func (m *OneOf) Reset()      { *m = OneOf{} }
-func (*OneOf) ProtoMessage() {}
-func (*OneOf) Descriptor() ([]byte, []int) {
-	return fileDescriptor_32a357b2839a6c60, []int{8}
-}
-func (m *OneOf) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_OneOf.Unmarshal(m, b)
-}
+func (m *OneOf) Reset()                    { _ = "STUB: not implemented"; return }
+func (*OneOf) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*OneOf) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *OneOf) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *OneOf) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_OneOf.Marshal(b, m, deterministic)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *OneOf) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_OneOf.Merge(m, src)
-}
-func (m *OneOf) XXX_Size() int {
-	return xxx_messageInfo_OneOf.Size(m)
-}
-func (m *OneOf) XXX_DiscardUnknown() {
-	xxx_messageInfo_OneOf.DiscardUnknown(m)
-}
+
+func (m *OneOf) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *OneOf) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *OneOf) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_OneOf proto.InternalMessageInfo
 
@@ -377,124 +361,52 @@ type OneOf_Field11 struct {
 	Field11 *RepeatedExternalStruct `protobuf:"bytes,11,opt,name=Field11,proto3,oneof" json:"Field11,omitempty"`
 }
 
-func (*OneOf_Field1) isOneOf_Fields()     {}
-func (*OneOf_Field2) isOneOf_Fields()     {}
-func (*OneOf_Field3) isOneOf_Fields()     {}
-func (*OneOf_Field4) isOneOf_Fields()     {}
-func (*OneOf_Field5) isOneOf_Fields()     {}
-func (*OneOf_Field6) isOneOf_Fields()     {}
-func (*OneOf_Field7) isOneOf_Fields()     {}
-func (*OneOf_Field8) isOneOf_Fields()     {}
-func (*OneOf_Field9) isOneOf_Fields()     {}
-func (*OneOf_Field10) isOneOf_FieldsTwo() {}
-func (*OneOf_Field11) isOneOf_FieldsTwo() {}
+func (*OneOf_Field1) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field2) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field3) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field4) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field5) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field6) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field7) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field8) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field9) isOneOf_Fields()     { _ = "STUB: not implemented"; return }
+func (*OneOf_Field10) isOneOf_FieldsTwo() { _ = "STUB: not implemented"; return }
+func (*OneOf_Field11) isOneOf_FieldsTwo() { _ = "STUB: not implemented"; return }
 
-func (m *OneOf) GetFields() isOneOf_Fields {
-	if m != nil {
-		return m.Fields
-	}
-	return nil
-}
+func (m *OneOf) GetFields() isOneOf_Fields { _ = "STUB: not implemented"; return *new(isOneOf_Fields) }
+
 func (m *OneOf) GetFieldsTwo() isOneOf_FieldsTwo {
-	if m != nil {
-		return m.FieldsTwo
-	}
-	return nil
+	_ = "STUB: not implemented"
+	return *new(isOneOf_FieldsTwo)
 }
 
-func (m *OneOf) GetField1() float64 {
-	if x, ok := m.GetFields().(*OneOf_Field1); ok {
-		return x.Field1
-	}
-	return 0
-}
+func (m *OneOf) GetField1() float64 { _ = "STUB: not implemented"; return 0 }
 
-func (m *OneOf) GetField2() float32 {
-	if x, ok := m.GetFields().(*OneOf_Field2); ok {
-		return x.Field2
-	}
-	return 0
-}
+func (m *OneOf) GetField2() float32 { _ = "STUB: not implemented"; return 0 }
 
-func (m *OneOf) GetField3() int32 {
-	if x, ok := m.GetFields().(*OneOf_Field3); ok {
-		return x.Field3
-	}
-	return 0
-}
+func (m *OneOf) GetField3() int32 { _ = "STUB: not implemented"; return 0 }
 
-func (m *OneOf) GetField4() int64 {
-	if x, ok := m.GetFields().(*OneOf_Field4); ok {
-		return x.Field4
-	}
-	return 0
-}
+func (m *OneOf) GetField4() int64 { _ = "STUB: not implemented"; return 0 }
 
-func (m *OneOf) GetField5() uint32 {
-	if x, ok := m.GetFields().(*OneOf_Field5); ok {
-		return x.Field5
-	}
-	return 0
-}
+func (m *OneOf) GetField5() uint32 { _ = "STUB: not implemented"; return 0 }
 
-func (m *OneOf) GetField6() string {
-	if x, ok := m.GetFields().(*OneOf_Field6); ok {
-		return x.Field6
-	}
-	return ""
-}
+func (m *OneOf) GetField6() string { _ = "STUB: not implemented"; return "" }
 
-func (m *OneOf) GetField7() []byte {
-	if x, ok := m.GetFields().(*OneOf_Field7); ok {
-		return x.Field7
-	}
-	return nil
-}
+func (m *OneOf) GetField7() []byte { _ = "STUB: not implemented"; return nil }
 
-func (m *OneOf) GetField8() *MapStruct {
-	if x, ok := m.GetFields().(*OneOf_Field8); ok {
-		return x.Field8
-	}
-	return nil
-}
+func (m *OneOf) GetField8() *MapStruct { _ = "STUB: not implemented"; return nil }
 
 func (m *OneOf) GetField9() *RepeatedNonNullableExternalStruct {
-	if x, ok := m.GetFields().(*OneOf_Field9); ok {
-		return x.Field9
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (m *OneOf) GetField10() *NonNullableExternalStruct {
-	if x, ok := m.GetFieldsTwo().(*OneOf_Field10); ok {
-		return x.Field10
-	}
-	return nil
-}
+func (m *OneOf) GetField10() *NonNullableExternalStruct { _ = "STUB: not implemented"; return nil }
 
-func (m *OneOf) GetField11() *RepeatedExternalStruct {
-	if x, ok := m.GetFieldsTwo().(*OneOf_Field11); ok {
-		return x.Field11
-	}
-	return nil
-}
+func (m *OneOf) GetField11() *RepeatedExternalStruct { _ = "STUB: not implemented"; return nil }
 
 // XXX_OneofWrappers is for the internal use of the proto package.
-func (*OneOf) XXX_OneofWrappers() []interface{} {
-	return []interface{}{
-		(*OneOf_Field1)(nil),
-		(*OneOf_Field2)(nil),
-		(*OneOf_Field3)(nil),
-		(*OneOf_Field4)(nil),
-		(*OneOf_Field5)(nil),
-		(*OneOf_Field6)(nil),
-		(*OneOf_Field7)(nil),
-		(*OneOf_Field8)(nil),
-		(*OneOf_Field9)(nil),
-		(*OneOf_Field10)(nil),
-		(*OneOf_Field11)(nil),
-	}
-}
+func (*OneOf) XXX_OneofWrappers() []interface{} { _ = "STUB: not implemented"; return nil }
 
 func init() {
 	proto.RegisterType((*BasicScalar)(nil), "test.BasicScalar")
@@ -576,1734 +488,201 @@ var fileDescriptor_32a357b2839a6c60 = []byte{
 	0x0b, 0x00, 0x00,
 }
 
-func (m *BasicScalar) Copy() *BasicScalar {
-	if m == nil {
-		return nil
-	}
-	o := &BasicScalar{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *BasicScalar) Copy() *BasicScalar { _ = "STUB: not implemented"; return nil }
 
-func (m *BasicScalar) CopyFrom(src interface{}) {
+func (m *BasicScalar) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*BasicScalar)
-	*m = *o
-	if o.Field15 != nil {
-		m.Field15 = make([]byte, len(o.Field15))
-		copy(m.Field15, o.Field15)
-	}
-}
+func (m *RepeatedScalar) Copy() *RepeatedScalar { _ = "STUB: not implemented"; return nil }
 
-func (m *RepeatedScalar) Copy() *RepeatedScalar {
-	if m == nil {
-		return nil
-	}
-	o := &RepeatedScalar{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RepeatedScalar) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *RepeatedScalar) CopyFrom(src interface{}) {
+func (m *RepeatedScalarPacked) Copy() *RepeatedScalarPacked { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*RepeatedScalar)
-	*m = *o
-	if o.Field1 != nil {
-		m.Field1 = make([]float64, len(o.Field1))
-		copy(m.Field1, o.Field1)
-	}
+func (m *RepeatedScalarPacked) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Field2 != nil {
-		m.Field2 = make([]float32, len(o.Field2))
-		copy(m.Field2, o.Field2)
-	}
+func (m *ExternalStruct) Copy() *ExternalStruct { _ = "STUB: not implemented"; return nil }
 
-	if o.Field3 != nil {
-		m.Field3 = make([]int32, len(o.Field3))
-		copy(m.Field3, o.Field3)
-	}
-
-	if o.Field4 != nil {
-		m.Field4 = make([]int64, len(o.Field4))
-		copy(m.Field4, o.Field4)
-	}
-
-	if o.Field5 != nil {
-		m.Field5 = make([]uint32, len(o.Field5))
-		copy(m.Field5, o.Field5)
-	}
-
-	if o.Field6 != nil {
-		m.Field6 = make([]uint64, len(o.Field6))
-		copy(m.Field6, o.Field6)
-	}
-
-	if o.Field7 != nil {
-		m.Field7 = make([]int32, len(o.Field7))
-		copy(m.Field7, o.Field7)
-	}
-
-	if o.Field8 != nil {
-		m.Field8 = make([]int64, len(o.Field8))
-		copy(m.Field8, o.Field8)
-	}
-
-	if o.Field9 != nil {
-		m.Field9 = make([]uint32, len(o.Field9))
-		copy(m.Field9, o.Field9)
-	}
-
-	if o.Field10 != nil {
-		m.Field10 = make([]int32, len(o.Field10))
-		copy(m.Field10, o.Field10)
-	}
-
-	if o.Field11 != nil {
-		m.Field11 = make([]uint64, len(o.Field11))
-		copy(m.Field11, o.Field11)
-	}
-
-	if o.Field12 != nil {
-		m.Field12 = make([]int64, len(o.Field12))
-		copy(m.Field12, o.Field12)
-	}
-
-	if o.Field13 != nil {
-		m.Field13 = make([]bool, len(o.Field13))
-		copy(m.Field13, o.Field13)
-	}
-
-	if o.Field14 != nil {
-		m.Field14 = make([]string, len(o.Field14))
-		copy(m.Field14, o.Field14)
-	}
-
-	if o.Field15 != nil {
-		m.Field15 = make([][]byte, len(o.Field15))
-		for i := range m.Field15 {
-			if o.Field15[i] != nil {
-				m.Field15[i] = make([]byte, len(o.Field15[i]))
-				copy(m.Field15[i], o.Field15[i])
-			}
-		}
-	}
-
-}
-
-func (m *RepeatedScalarPacked) Copy() *RepeatedScalarPacked {
-	if m == nil {
-		return nil
-	}
-	o := &RepeatedScalarPacked{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RepeatedScalarPacked) CopyFrom(src interface{}) {
-
-	o := src.(*RepeatedScalarPacked)
-	*m = *o
-	if o.Field1 != nil {
-		m.Field1 = make([]float64, len(o.Field1))
-		copy(m.Field1, o.Field1)
-	}
-
-	if o.Field2 != nil {
-		m.Field2 = make([]float32, len(o.Field2))
-		copy(m.Field2, o.Field2)
-	}
-
-	if o.Field3 != nil {
-		m.Field3 = make([]int32, len(o.Field3))
-		copy(m.Field3, o.Field3)
-	}
-
-	if o.Field4 != nil {
-		m.Field4 = make([]int64, len(o.Field4))
-		copy(m.Field4, o.Field4)
-	}
-
-	if o.Field5 != nil {
-		m.Field5 = make([]uint32, len(o.Field5))
-		copy(m.Field5, o.Field5)
-	}
-
-	if o.Field6 != nil {
-		m.Field6 = make([]uint64, len(o.Field6))
-		copy(m.Field6, o.Field6)
-	}
-
-	if o.Field7 != nil {
-		m.Field7 = make([]int32, len(o.Field7))
-		copy(m.Field7, o.Field7)
-	}
-
-	if o.Field8 != nil {
-		m.Field8 = make([]int64, len(o.Field8))
-		copy(m.Field8, o.Field8)
-	}
-
-	if o.Field9 != nil {
-		m.Field9 = make([]uint32, len(o.Field9))
-		copy(m.Field9, o.Field9)
-	}
-
-	if o.Field10 != nil {
-		m.Field10 = make([]int32, len(o.Field10))
-		copy(m.Field10, o.Field10)
-	}
-
-	if o.Field11 != nil {
-		m.Field11 = make([]uint64, len(o.Field11))
-		copy(m.Field11, o.Field11)
-	}
-
-	if o.Field12 != nil {
-		m.Field12 = make([]int64, len(o.Field12))
-		copy(m.Field12, o.Field12)
-	}
-
-	if o.Field13 != nil {
-		m.Field13 = make([]bool, len(o.Field13))
-		copy(m.Field13, o.Field13)
-	}
-
-}
-
-func (m *ExternalStruct) Copy() *ExternalStruct {
-	if m == nil {
-		return nil
-	}
-	o := &ExternalStruct{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ExternalStruct) CopyFrom(src interface{}) {
-
-	o := src.(*ExternalStruct)
-	*m = *o
-	if o.Field1 != nil {
-		m.Field1 = &BasicScalar{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Field1, o.Field1)
-	}
-	if o.Field2 != nil {
-		m.Field2 = &RepeatedScalar{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Field2, o.Field2)
-	}
-	if o.Field3 != nil {
-		m.Field3 = &RepeatedScalarPacked{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Field3, o.Field3)
-	}
-}
+func (m *ExternalStruct) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RepeatedExternalStruct) Copy() *RepeatedExternalStruct {
-	if m == nil {
-		return nil
-	}
-	o := &RepeatedExternalStruct{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *RepeatedExternalStruct) CopyFrom(src interface{}) {
-
-	o := src.(*RepeatedExternalStruct)
-	*m = *o
-	if o.Field1 != nil {
-		m.Field1 = make([]*BasicScalar, len(o.Field1))
-		for i := range m.Field1 {
-			m.Field1[i] = &BasicScalar{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Field1[i], o.Field1[i])
-		}
-	}
-
-	if o.Field2 != nil {
-		m.Field2 = make([]*RepeatedScalar, len(o.Field2))
-		for i := range m.Field2 {
-			m.Field2[i] = &RepeatedScalar{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Field2[i], o.Field2[i])
-		}
-	}
-
-	if o.Field3 != nil {
-		m.Field3 = make([]*RepeatedScalarPacked, len(o.Field3))
-		for i := range m.Field3 {
-			m.Field3[i] = &RepeatedScalarPacked{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Field3[i], o.Field3[i])
-		}
-	}
-
-}
+func (m *RepeatedExternalStruct) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *NonNullableExternalStruct) Copy() *NonNullableExternalStruct {
-	if m == nil {
-		return nil
-	}
-	o := &NonNullableExternalStruct{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *NonNullableExternalStruct) CopyFrom(src interface{}) {
-
-	o := src.(*NonNullableExternalStruct)
-	*m = *o
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Field1, &o.Field1)
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Field2, &o.Field2)
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Field3, &o.Field3)
-}
+func (m *NonNullableExternalStruct) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RepeatedNonNullableExternalStruct) Copy() *RepeatedNonNullableExternalStruct {
-	if m == nil {
-		return nil
-	}
-	o := &RepeatedNonNullableExternalStruct{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (m *RepeatedNonNullableExternalStruct) CopyFrom(src interface{}) {
-
-	o := src.(*RepeatedNonNullableExternalStruct)
-	*m = *o
-	if o.Field1 != nil {
-		m.Field1 = make([]BasicScalar, len(o.Field1))
-		for i := range m.Field1 {
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Field1[i], &o.Field1[i])
-		}
-	}
-
-	if o.Field2 != nil {
-		m.Field2 = make([]RepeatedScalar, len(o.Field2))
-		for i := range m.Field2 {
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Field2[i], &o.Field2[i])
-		}
-	}
-
-	if o.Field3 != nil {
-		m.Field3 = make([]RepeatedScalarPacked, len(o.Field3))
-		for i := range m.Field3 {
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Field3[i], &o.Field3[i])
-		}
-	}
-
+	_ = "STUB: not implemented"
+	return
 }
 
-func (m *MapStruct) Copy() *MapStruct {
-	if m == nil {
-		return nil
-	}
-	o := &MapStruct{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *MapStruct) Copy() *MapStruct { _ = "STUB: not implemented"; return nil }
 
-func (m *MapStruct) CopyFrom(src interface{}) {
+func (m *MapStruct) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*MapStruct)
-	*m = *o
-	if o.NullableMap != nil {
-		m.NullableMap = make(map[string]*BasicScalar, len(o.NullableMap))
-		for k, v := range o.NullableMap {
-			m.NullableMap[k] = &BasicScalar{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.NullableMap[k], v)
-		}
-	}
+func (m *OneOf) Copy() *OneOf { _ = "STUB: not implemented"; return nil }
 
-	if o.NonnullableMap != nil {
-		m.NonnullableMap = make(map[string]BasicScalar, len(o.NonnullableMap))
-		for k, v := range o.NonnullableMap {
-			n := BasicScalar{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(&n, &v)
-			m.NonnullableMap[k] = n
-		}
-	}
+func (m *OneOf) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (this *BasicScalar) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-func (m *OneOf) Copy() *OneOf {
-	if m == nil {
-		return nil
-	}
-	o := &OneOf{}
-	o.CopyFrom(m)
-	return o
-}
+func (this *RepeatedScalar) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-func (m *OneOf) CopyFrom(src interface{}) {
-
-	o := src.(*OneOf)
-	*m = *o
-	if o.Fields != nil {
-		switch o.Fields.(type) {
-		case *OneOf_Field1:
-			v := OneOf_Field1{
-				Field1: o.GetField1(),
-			}
-			m.Fields = &v
-		case *OneOf_Field2:
-			v := OneOf_Field2{
-				Field2: o.GetField2(),
-			}
-			m.Fields = &v
-		case *OneOf_Field3:
-			v := OneOf_Field3{
-				Field3: o.GetField3(),
-			}
-			m.Fields = &v
-		case *OneOf_Field4:
-			v := OneOf_Field4{
-				Field4: o.GetField4(),
-			}
-			m.Fields = &v
-		case *OneOf_Field5:
-			v := OneOf_Field5{
-				Field5: o.GetField5(),
-			}
-			m.Fields = &v
-		case *OneOf_Field6:
-			v := OneOf_Field6{
-				Field6: o.GetField6(),
-			}
-			m.Fields = &v
-		case *OneOf_Field7:
-			v := OneOf_Field7{
-				Field7: make([]byte, len(o.GetField7())),
-			}
-			if o.GetField7() != nil {
-				v.Field7 = make([]byte, len(o.GetField7()))
-				copy(v.Field7, o.GetField7())
-			}
-			m.Fields = &v
-		case *OneOf_Field8:
-			v := OneOf_Field8{
-				Field8: &MapStruct{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Field8, o.GetField8())
-			m.Fields = &v
-		case *OneOf_Field9:
-			v := OneOf_Field9{
-				Field9: &RepeatedNonNullableExternalStruct{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Field9, o.GetField9())
-			m.Fields = &v
-		}
-	}
-
-	if o.FieldsTwo != nil {
-		switch o.FieldsTwo.(type) {
-		case *OneOf_Field10:
-			v := OneOf_Field10{
-				Field10: &NonNullableExternalStruct{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Field10, o.GetField10())
-			m.FieldsTwo = &v
-		case *OneOf_Field11:
-			v := OneOf_Field11{
-				Field11: &RepeatedExternalStruct{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Field11, o.GetField11())
-			m.FieldsTwo = &v
-		}
-	}
-
-}
-
-func (this *BasicScalar) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*BasicScalar)
-	if !ok {
-		that2, ok := that.(BasicScalar)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Field1 != that1.Field1 {
-		return false
-	}
-	if this.Field2 != that1.Field2 {
-		return false
-	}
-	if this.Field3 != that1.Field3 {
-		return false
-	}
-	if this.Field4 != that1.Field4 {
-		return false
-	}
-	if this.Field5 != that1.Field5 {
-		return false
-	}
-	if this.Field6 != that1.Field6 {
-		return false
-	}
-	if this.Field7 != that1.Field7 {
-		return false
-	}
-	if this.Field8 != that1.Field8 {
-		return false
-	}
-	if this.Field9 != that1.Field9 {
-		return false
-	}
-	if this.Field10 != that1.Field10 {
-		return false
-	}
-	if this.Field11 != that1.Field11 {
-		return false
-	}
-	if this.Field12 != that1.Field12 {
-		return false
-	}
-	if this.Field13 != that1.Field13 {
-		return false
-	}
-	if this.Field14 != that1.Field14 {
-		return false
-	}
-	if !bytes.Equal(this.Field15, that1.Field15) {
-		return false
-	}
-	return true
-}
-func (this *RepeatedScalar) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*RepeatedScalar)
-	if !ok {
-		that2, ok := that.(RepeatedScalar)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.Field1) != len(that1.Field1) {
-		return false
-	}
-	for i := range this.Field1 {
-		if this.Field1[i] != that1.Field1[i] {
-			return false
-		}
-	}
-	if len(this.Field2) != len(that1.Field2) {
-		return false
-	}
-	for i := range this.Field2 {
-		if this.Field2[i] != that1.Field2[i] {
-			return false
-		}
-	}
-	if len(this.Field3) != len(that1.Field3) {
-		return false
-	}
-	for i := range this.Field3 {
-		if this.Field3[i] != that1.Field3[i] {
-			return false
-		}
-	}
-	if len(this.Field4) != len(that1.Field4) {
-		return false
-	}
-	for i := range this.Field4 {
-		if this.Field4[i] != that1.Field4[i] {
-			return false
-		}
-	}
-	if len(this.Field5) != len(that1.Field5) {
-		return false
-	}
-	for i := range this.Field5 {
-		if this.Field5[i] != that1.Field5[i] {
-			return false
-		}
-	}
-	if len(this.Field6) != len(that1.Field6) {
-		return false
-	}
-	for i := range this.Field6 {
-		if this.Field6[i] != that1.Field6[i] {
-			return false
-		}
-	}
-	if len(this.Field7) != len(that1.Field7) {
-		return false
-	}
-	for i := range this.Field7 {
-		if this.Field7[i] != that1.Field7[i] {
-			return false
-		}
-	}
-	if len(this.Field8) != len(that1.Field8) {
-		return false
-	}
-	for i := range this.Field8 {
-		if this.Field8[i] != that1.Field8[i] {
-			return false
-		}
-	}
-	if len(this.Field9) != len(that1.Field9) {
-		return false
-	}
-	for i := range this.Field9 {
-		if this.Field9[i] != that1.Field9[i] {
-			return false
-		}
-	}
-	if len(this.Field10) != len(that1.Field10) {
-		return false
-	}
-	for i := range this.Field10 {
-		if this.Field10[i] != that1.Field10[i] {
-			return false
-		}
-	}
-	if len(this.Field11) != len(that1.Field11) {
-		return false
-	}
-	for i := range this.Field11 {
-		if this.Field11[i] != that1.Field11[i] {
-			return false
-		}
-	}
-	if len(this.Field12) != len(that1.Field12) {
-		return false
-	}
-	for i := range this.Field12 {
-		if this.Field12[i] != that1.Field12[i] {
-			return false
-		}
-	}
-	if len(this.Field13) != len(that1.Field13) {
-		return false
-	}
-	for i := range this.Field13 {
-		if this.Field13[i] != that1.Field13[i] {
-			return false
-		}
-	}
-	if len(this.Field14) != len(that1.Field14) {
-		return false
-	}
-	for i := range this.Field14 {
-		if this.Field14[i] != that1.Field14[i] {
-			return false
-		}
-	}
-	if len(this.Field15) != len(that1.Field15) {
-		return false
-	}
-	for i := range this.Field15 {
-		if !bytes.Equal(this.Field15[i], that1.Field15[i]) {
-			return false
-		}
-	}
-	return true
-}
 func (this *RepeatedScalarPacked) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*RepeatedScalarPacked)
-	if !ok {
-		that2, ok := that.(RepeatedScalarPacked)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.Field1) != len(that1.Field1) {
-		return false
-	}
-	for i := range this.Field1 {
-		if this.Field1[i] != that1.Field1[i] {
-			return false
-		}
-	}
-	if len(this.Field2) != len(that1.Field2) {
-		return false
-	}
-	for i := range this.Field2 {
-		if this.Field2[i] != that1.Field2[i] {
-			return false
-		}
-	}
-	if len(this.Field3) != len(that1.Field3) {
-		return false
-	}
-	for i := range this.Field3 {
-		if this.Field3[i] != that1.Field3[i] {
-			return false
-		}
-	}
-	if len(this.Field4) != len(that1.Field4) {
-		return false
-	}
-	for i := range this.Field4 {
-		if this.Field4[i] != that1.Field4[i] {
-			return false
-		}
-	}
-	if len(this.Field5) != len(that1.Field5) {
-		return false
-	}
-	for i := range this.Field5 {
-		if this.Field5[i] != that1.Field5[i] {
-			return false
-		}
-	}
-	if len(this.Field6) != len(that1.Field6) {
-		return false
-	}
-	for i := range this.Field6 {
-		if this.Field6[i] != that1.Field6[i] {
-			return false
-		}
-	}
-	if len(this.Field7) != len(that1.Field7) {
-		return false
-	}
-	for i := range this.Field7 {
-		if this.Field7[i] != that1.Field7[i] {
-			return false
-		}
-	}
-	if len(this.Field8) != len(that1.Field8) {
-		return false
-	}
-	for i := range this.Field8 {
-		if this.Field8[i] != that1.Field8[i] {
-			return false
-		}
-	}
-	if len(this.Field9) != len(that1.Field9) {
-		return false
-	}
-	for i := range this.Field9 {
-		if this.Field9[i] != that1.Field9[i] {
-			return false
-		}
-	}
-	if len(this.Field10) != len(that1.Field10) {
-		return false
-	}
-	for i := range this.Field10 {
-		if this.Field10[i] != that1.Field10[i] {
-			return false
-		}
-	}
-	if len(this.Field11) != len(that1.Field11) {
-		return false
-	}
-	for i := range this.Field11 {
-		if this.Field11[i] != that1.Field11[i] {
-			return false
-		}
-	}
-	if len(this.Field12) != len(that1.Field12) {
-		return false
-	}
-	for i := range this.Field12 {
-		if this.Field12[i] != that1.Field12[i] {
-			return false
-		}
-	}
-	if len(this.Field13) != len(that1.Field13) {
-		return false
-	}
-	for i := range this.Field13 {
-		if this.Field13[i] != that1.Field13[i] {
-			return false
-		}
-	}
-	return true
+	_ = "STUB: not implemented"
+	return false
 }
-func (this *ExternalStruct) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
 
-	that1, ok := that.(*ExternalStruct)
-	if !ok {
-		that2, ok := that.(ExternalStruct)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if !this.Field1.Equal(that1.Field1) {
-		return false
-	}
-	if !this.Field2.Equal(that1.Field2) {
-		return false
-	}
-	if !this.Field3.Equal(that1.Field3) {
-		return false
-	}
-	return true
-}
+func (this *ExternalStruct) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
+
 func (this *RepeatedExternalStruct) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*RepeatedExternalStruct)
-	if !ok {
-		that2, ok := that.(RepeatedExternalStruct)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.Field1) != len(that1.Field1) {
-		return false
-	}
-	for i := range this.Field1 {
-		if !this.Field1[i].Equal(that1.Field1[i]) {
-			return false
-		}
-	}
-	if len(this.Field2) != len(that1.Field2) {
-		return false
-	}
-	for i := range this.Field2 {
-		if !this.Field2[i].Equal(that1.Field2[i]) {
-			return false
-		}
-	}
-	if len(this.Field3) != len(that1.Field3) {
-		return false
-	}
-	for i := range this.Field3 {
-		if !this.Field3[i].Equal(that1.Field3[i]) {
-			return false
-		}
-	}
-	return true
+	_ = "STUB: not implemented"
+	return false
 }
+
 func (this *NonNullableExternalStruct) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*NonNullableExternalStruct)
-	if !ok {
-		that2, ok := that.(NonNullableExternalStruct)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if !this.Field1.Equal(&that1.Field1) {
-		return false
-	}
-	if !this.Field2.Equal(&that1.Field2) {
-		return false
-	}
-	if !this.Field3.Equal(&that1.Field3) {
-		return false
-	}
-	return true
+	_ = "STUB: not implemented"
+	return false
 }
+
 func (this *RepeatedNonNullableExternalStruct) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*RepeatedNonNullableExternalStruct)
-	if !ok {
-		that2, ok := that.(RepeatedNonNullableExternalStruct)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.Field1) != len(that1.Field1) {
-		return false
-	}
-	for i := range this.Field1 {
-		if !this.Field1[i].Equal(&that1.Field1[i]) {
-			return false
-		}
-	}
-	if len(this.Field2) != len(that1.Field2) {
-		return false
-	}
-	for i := range this.Field2 {
-		if !this.Field2[i].Equal(&that1.Field2[i]) {
-			return false
-		}
-	}
-	if len(this.Field3) != len(that1.Field3) {
-		return false
-	}
-	for i := range this.Field3 {
-		if !this.Field3[i].Equal(&that1.Field3[i]) {
-			return false
-		}
-	}
-	return true
+	_ = "STUB: not implemented"
+	return false
 }
-func (this *MapStruct) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
 
-	that1, ok := that.(*MapStruct)
-	if !ok {
-		that2, ok := that.(MapStruct)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.NullableMap) != len(that1.NullableMap) {
-		return false
-	}
-	for i := range this.NullableMap {
-		if !this.NullableMap[i].Equal(that1.NullableMap[i]) {
-			return false
-		}
-	}
-	if len(this.NonnullableMap) != len(that1.NonnullableMap) {
-		return false
-	}
-	for i := range this.NonnullableMap {
-		a := this.NonnullableMap[i]
-		b := that1.NonnullableMap[i]
-		if !(&a).Equal(&b) {
-			return false
-		}
-	}
-	return true
-}
-func (this *OneOf) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *MapStruct) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf)
-	if !ok {
-		that2, ok := that.(OneOf)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if that1.Fields == nil {
-		if this.Fields != nil {
-			return false
-		}
-	} else if this.Fields == nil {
-		return false
-	} else if !this.Fields.Equal(that1.Fields) {
-		return false
-	}
-	if that1.FieldsTwo == nil {
-		if this.FieldsTwo != nil {
-			return false
-		}
-	} else if this.FieldsTwo == nil {
-		return false
-	} else if !this.FieldsTwo.Equal(that1.FieldsTwo) {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field1) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field1)
-	if !ok {
-		that2, ok := that.(OneOf_Field1)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Field1 != that1.Field1 {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field2) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field1) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field2)
-	if !ok {
-		that2, ok := that.(OneOf_Field2)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Field2 != that1.Field2 {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field3) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field2) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field3)
-	if !ok {
-		that2, ok := that.(OneOf_Field3)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Field3 != that1.Field3 {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field4) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field3) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field4)
-	if !ok {
-		that2, ok := that.(OneOf_Field4)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Field4 != that1.Field4 {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field5) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field4) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field5)
-	if !ok {
-		that2, ok := that.(OneOf_Field5)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Field5 != that1.Field5 {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field6) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field5) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field6)
-	if !ok {
-		that2, ok := that.(OneOf_Field6)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Field6 != that1.Field6 {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field7) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field6) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field7)
-	if !ok {
-		that2, ok := that.(OneOf_Field7)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if !bytes.Equal(this.Field7, that1.Field7) {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field8) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field7) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field8)
-	if !ok {
-		that2, ok := that.(OneOf_Field8)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if !this.Field8.Equal(that1.Field8) {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field9) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field8) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field9)
-	if !ok {
-		that2, ok := that.(OneOf_Field9)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if !this.Field9.Equal(that1.Field9) {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field10) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field9) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field10)
-	if !ok {
-		that2, ok := that.(OneOf_Field10)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if !this.Field10.Equal(that1.Field10) {
-		return false
-	}
-	return true
-}
-func (this *OneOf_Field11) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
+func (this *OneOf_Field10) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
 
-	that1, ok := that.(*OneOf_Field11)
-	if !ok {
-		that2, ok := that.(OneOf_Field11)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if !this.Field11.Equal(that1.Field11) {
-		return false
-	}
-	return true
-}
+func (this *OneOf_Field11) Equal(that interface{}) bool { _ = "STUB: not implemented"; return false }
+
 func NewPopulatedBasicScalar(r randyDeepcopy, easy bool) *BasicScalar {
-	this := &BasicScalar{}
-	this.Field1 = float64(r.Float64())
-	if r.Intn(2) == 0 {
-		this.Field1 *= -1
-	}
-	this.Field2 = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Field2 *= -1
-	}
-	this.Field3 = int32(r.Int31())
-	if r.Intn(2) == 0 {
-		this.Field3 *= -1
-	}
-	this.Field4 = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.Field4 *= -1
-	}
-	this.Field5 = uint32(r.Uint32())
-	this.Field6 = uint64(uint64(r.Uint32()))
-	this.Field7 = int32(r.Int31())
-	if r.Intn(2) == 0 {
-		this.Field7 *= -1
-	}
-	this.Field8 = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.Field8 *= -1
-	}
-	this.Field9 = uint32(r.Uint32())
-	this.Field10 = int32(r.Int31())
-	if r.Intn(2) == 0 {
-		this.Field10 *= -1
-	}
-	this.Field11 = uint64(uint64(r.Uint32()))
-	this.Field12 = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.Field12 *= -1
-	}
-	this.Field13 = bool(bool(r.Intn(2) == 0))
-	this.Field14 = string(randStringDeepcopy(r))
-	v1 := r.Intn(100)
-	this.Field15 = make([]byte, v1)
-	for i := 0; i < v1; i++ {
-		this.Field15[i] = byte(r.Intn(256))
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func NewPopulatedRepeatedScalar(r randyDeepcopy, easy bool) *RepeatedScalar {
-	this := &RepeatedScalar{}
-	v2 := r.Intn(10)
-	this.Field1 = make([]float64, v2)
-	for i := 0; i < v2; i++ {
-		this.Field1[i] = float64(r.Float64())
-		if r.Intn(2) == 0 {
-			this.Field1[i] *= -1
-		}
-	}
-	v3 := r.Intn(10)
-	this.Field2 = make([]float32, v3)
-	for i := 0; i < v3; i++ {
-		this.Field2[i] = float32(r.Float32())
-		if r.Intn(2) == 0 {
-			this.Field2[i] *= -1
-		}
-	}
-	v4 := r.Intn(10)
-	this.Field3 = make([]int32, v4)
-	for i := 0; i < v4; i++ {
-		this.Field3[i] = int32(r.Int31())
-		if r.Intn(2) == 0 {
-			this.Field3[i] *= -1
-		}
-	}
-	v5 := r.Intn(10)
-	this.Field4 = make([]int64, v5)
-	for i := 0; i < v5; i++ {
-		this.Field4[i] = int64(r.Int63())
-		if r.Intn(2) == 0 {
-			this.Field4[i] *= -1
-		}
-	}
-	v6 := r.Intn(10)
-	this.Field5 = make([]uint32, v6)
-	for i := 0; i < v6; i++ {
-		this.Field5[i] = uint32(r.Uint32())
-	}
-	v7 := r.Intn(10)
-	this.Field6 = make([]uint64, v7)
-	for i := 0; i < v7; i++ {
-		this.Field6[i] = uint64(uint64(r.Uint32()))
-	}
-	v8 := r.Intn(10)
-	this.Field7 = make([]int32, v8)
-	for i := 0; i < v8; i++ {
-		this.Field7[i] = int32(r.Int31())
-		if r.Intn(2) == 0 {
-			this.Field7[i] *= -1
-		}
-	}
-	v9 := r.Intn(10)
-	this.Field8 = make([]int64, v9)
-	for i := 0; i < v9; i++ {
-		this.Field8[i] = int64(r.Int63())
-		if r.Intn(2) == 0 {
-			this.Field8[i] *= -1
-		}
-	}
-	v10 := r.Intn(10)
-	this.Field9 = make([]uint32, v10)
-	for i := 0; i < v10; i++ {
-		this.Field9[i] = uint32(r.Uint32())
-	}
-	v11 := r.Intn(10)
-	this.Field10 = make([]int32, v11)
-	for i := 0; i < v11; i++ {
-		this.Field10[i] = int32(r.Int31())
-		if r.Intn(2) == 0 {
-			this.Field10[i] *= -1
-		}
-	}
-	v12 := r.Intn(10)
-	this.Field11 = make([]uint64, v12)
-	for i := 0; i < v12; i++ {
-		this.Field11[i] = uint64(uint64(r.Uint32()))
-	}
-	v13 := r.Intn(10)
-	this.Field12 = make([]int64, v13)
-	for i := 0; i < v13; i++ {
-		this.Field12[i] = int64(r.Int63())
-		if r.Intn(2) == 0 {
-			this.Field12[i] *= -1
-		}
-	}
-	v14 := r.Intn(10)
-	this.Field13 = make([]bool, v14)
-	for i := 0; i < v14; i++ {
-		this.Field13[i] = bool(bool(r.Intn(2) == 0))
-	}
-	v15 := r.Intn(10)
-	this.Field14 = make([]string, v15)
-	for i := 0; i < v15; i++ {
-		this.Field14[i] = string(randStringDeepcopy(r))
-	}
-	v16 := r.Intn(10)
-	this.Field15 = make([][]byte, v16)
-	for i := 0; i < v16; i++ {
-		v17 := r.Intn(100)
-		this.Field15[i] = make([]byte, v17)
-		for j := 0; j < v17; j++ {
-			this.Field15[i][j] = byte(r.Intn(256))
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func NewPopulatedRepeatedScalarPacked(r randyDeepcopy, easy bool) *RepeatedScalarPacked {
-	this := &RepeatedScalarPacked{}
-	v18 := r.Intn(10)
-	this.Field1 = make([]float64, v18)
-	for i := 0; i < v18; i++ {
-		this.Field1[i] = float64(r.Float64())
-		if r.Intn(2) == 0 {
-			this.Field1[i] *= -1
-		}
-	}
-	v19 := r.Intn(10)
-	this.Field2 = make([]float32, v19)
-	for i := 0; i < v19; i++ {
-		this.Field2[i] = float32(r.Float32())
-		if r.Intn(2) == 0 {
-			this.Field2[i] *= -1
-		}
-	}
-	v20 := r.Intn(10)
-	this.Field3 = make([]int32, v20)
-	for i := 0; i < v20; i++ {
-		this.Field3[i] = int32(r.Int31())
-		if r.Intn(2) == 0 {
-			this.Field3[i] *= -1
-		}
-	}
-	v21 := r.Intn(10)
-	this.Field4 = make([]int64, v21)
-	for i := 0; i < v21; i++ {
-		this.Field4[i] = int64(r.Int63())
-		if r.Intn(2) == 0 {
-			this.Field4[i] *= -1
-		}
-	}
-	v22 := r.Intn(10)
-	this.Field5 = make([]uint32, v22)
-	for i := 0; i < v22; i++ {
-		this.Field5[i] = uint32(r.Uint32())
-	}
-	v23 := r.Intn(10)
-	this.Field6 = make([]uint64, v23)
-	for i := 0; i < v23; i++ {
-		this.Field6[i] = uint64(uint64(r.Uint32()))
-	}
-	v24 := r.Intn(10)
-	this.Field7 = make([]int32, v24)
-	for i := 0; i < v24; i++ {
-		this.Field7[i] = int32(r.Int31())
-		if r.Intn(2) == 0 {
-			this.Field7[i] *= -1
-		}
-	}
-	v25 := r.Intn(10)
-	this.Field8 = make([]int64, v25)
-	for i := 0; i < v25; i++ {
-		this.Field8[i] = int64(r.Int63())
-		if r.Intn(2) == 0 {
-			this.Field8[i] *= -1
-		}
-	}
-	v26 := r.Intn(10)
-	this.Field9 = make([]uint32, v26)
-	for i := 0; i < v26; i++ {
-		this.Field9[i] = uint32(r.Uint32())
-	}
-	v27 := r.Intn(10)
-	this.Field10 = make([]int32, v27)
-	for i := 0; i < v27; i++ {
-		this.Field10[i] = int32(r.Int31())
-		if r.Intn(2) == 0 {
-			this.Field10[i] *= -1
-		}
-	}
-	v28 := r.Intn(10)
-	this.Field11 = make([]uint64, v28)
-	for i := 0; i < v28; i++ {
-		this.Field11[i] = uint64(uint64(r.Uint32()))
-	}
-	v29 := r.Intn(10)
-	this.Field12 = make([]int64, v29)
-	for i := 0; i < v29; i++ {
-		this.Field12[i] = int64(r.Int63())
-		if r.Intn(2) == 0 {
-			this.Field12[i] *= -1
-		}
-	}
-	v30 := r.Intn(10)
-	this.Field13 = make([]bool, v30)
-	for i := 0; i < v30; i++ {
-		this.Field13[i] = bool(bool(r.Intn(2) == 0))
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func NewPopulatedExternalStruct(r randyDeepcopy, easy bool) *ExternalStruct {
-	this := &ExternalStruct{}
-	if r.Intn(5) != 0 {
-		this.Field1 = NewPopulatedBasicScalar(r, easy)
-	}
-	if r.Intn(5) != 0 {
-		this.Field2 = NewPopulatedRepeatedScalar(r, easy)
-	}
-	if r.Intn(5) != 0 {
-		this.Field3 = NewPopulatedRepeatedScalarPacked(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func NewPopulatedRepeatedExternalStruct(r randyDeepcopy, easy bool) *RepeatedExternalStruct {
-	this := &RepeatedExternalStruct{}
-	if r.Intn(5) != 0 {
-		v31 := r.Intn(5)
-		this.Field1 = make([]*BasicScalar, v31)
-		for i := 0; i < v31; i++ {
-			this.Field1[i] = NewPopulatedBasicScalar(r, easy)
-		}
-	}
-	if r.Intn(5) != 0 {
-		v32 := r.Intn(5)
-		this.Field2 = make([]*RepeatedScalar, v32)
-		for i := 0; i < v32; i++ {
-			this.Field2[i] = NewPopulatedRepeatedScalar(r, easy)
-		}
-	}
-	if r.Intn(5) != 0 {
-		v33 := r.Intn(5)
-		this.Field3 = make([]*RepeatedScalarPacked, v33)
-		for i := 0; i < v33; i++ {
-			this.Field3[i] = NewPopulatedRepeatedScalarPacked(r, easy)
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func NewPopulatedNonNullableExternalStruct(r randyDeepcopy, easy bool) *NonNullableExternalStruct {
-	this := &NonNullableExternalStruct{}
-	v34 := NewPopulatedBasicScalar(r, easy)
-	this.Field1 = *v34
-	v35 := NewPopulatedRepeatedScalar(r, easy)
-	this.Field2 = *v35
-	v36 := NewPopulatedRepeatedScalarPacked(r, easy)
-	this.Field3 = *v36
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func NewPopulatedRepeatedNonNullableExternalStruct(r randyDeepcopy, easy bool) *RepeatedNonNullableExternalStruct {
-	this := &RepeatedNonNullableExternalStruct{}
-	if r.Intn(5) != 0 {
-		v37 := r.Intn(5)
-		this.Field1 = make([]BasicScalar, v37)
-		for i := 0; i < v37; i++ {
-			v38 := NewPopulatedBasicScalar(r, easy)
-			this.Field1[i] = *v38
-		}
-	}
-	if r.Intn(5) != 0 {
-		v39 := r.Intn(5)
-		this.Field2 = make([]RepeatedScalar, v39)
-		for i := 0; i < v39; i++ {
-			v40 := NewPopulatedRepeatedScalar(r, easy)
-			this.Field2[i] = *v40
-		}
-	}
-	if r.Intn(5) != 0 {
-		v41 := r.Intn(5)
-		this.Field3 = make([]RepeatedScalarPacked, v41)
-		for i := 0; i < v41; i++ {
-			v42 := NewPopulatedRepeatedScalarPacked(r, easy)
-			this.Field3[i] = *v42
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func NewPopulatedMapStruct(r randyDeepcopy, easy bool) *MapStruct {
-	this := &MapStruct{}
-	if r.Intn(5) != 0 {
-		v43 := r.Intn(10)
-		this.NullableMap = make(map[string]*BasicScalar)
-		for i := 0; i < v43; i++ {
-			this.NullableMap[randStringDeepcopy(r)] = NewPopulatedBasicScalar(r, easy)
-		}
-	}
-	if r.Intn(5) != 0 {
-		v44 := r.Intn(10)
-		this.NonnullableMap = make(map[string]BasicScalar)
-		for i := 0; i < v44; i++ {
-			this.NonnullableMap[randStringDeepcopy(r)] = *NewPopulatedBasicScalar(r, easy)
-		}
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func NewPopulatedOneOf(r randyDeepcopy, easy bool) *OneOf {
-	this := &OneOf{}
-	oneofNumber_Fields := []int32{1, 2, 3, 4, 5, 6, 7, 8, 9}[r.Intn(9)]
-	switch oneofNumber_Fields {
-	case 1:
-		this.Fields = NewPopulatedOneOf_Field1(r, easy)
-	case 2:
-		this.Fields = NewPopulatedOneOf_Field2(r, easy)
-	case 3:
-		this.Fields = NewPopulatedOneOf_Field3(r, easy)
-	case 4:
-		this.Fields = NewPopulatedOneOf_Field4(r, easy)
-	case 5:
-		this.Fields = NewPopulatedOneOf_Field5(r, easy)
-	case 6:
-		this.Fields = NewPopulatedOneOf_Field6(r, easy)
-	case 7:
-		this.Fields = NewPopulatedOneOf_Field7(r, easy)
-	case 8:
-		this.Fields = NewPopulatedOneOf_Field8(r, easy)
-	case 9:
-		this.Fields = NewPopulatedOneOf_Field9(r, easy)
-	}
-	oneofNumber_FieldsTwo := []int32{10, 11}[r.Intn(2)]
-	switch oneofNumber_FieldsTwo {
-	case 10:
-		this.FieldsTwo = NewPopulatedOneOf_Field10(r, easy)
-	case 11:
-		this.FieldsTwo = NewPopulatedOneOf_Field11(r, easy)
-	}
-	if !easy && r.Intn(10) != 0 {
-	}
-	return this
-}
+func NewPopulatedOneOf(r randyDeepcopy, easy bool) *OneOf { _ = "STUB: not implemented"; return nil }
 
 func NewPopulatedOneOf_Field1(r randyDeepcopy, easy bool) *OneOf_Field1 {
-	this := &OneOf_Field1{}
-	this.Field1 = float64(r.Float64())
-	if r.Intn(2) == 0 {
-		this.Field1 *= -1
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field2(r randyDeepcopy, easy bool) *OneOf_Field2 {
-	this := &OneOf_Field2{}
-	this.Field2 = float32(r.Float32())
-	if r.Intn(2) == 0 {
-		this.Field2 *= -1
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field3(r randyDeepcopy, easy bool) *OneOf_Field3 {
-	this := &OneOf_Field3{}
-	this.Field3 = int32(r.Int31())
-	if r.Intn(2) == 0 {
-		this.Field3 *= -1
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field4(r randyDeepcopy, easy bool) *OneOf_Field4 {
-	this := &OneOf_Field4{}
-	this.Field4 = int64(r.Int63())
-	if r.Intn(2) == 0 {
-		this.Field4 *= -1
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field5(r randyDeepcopy, easy bool) *OneOf_Field5 {
-	this := &OneOf_Field5{}
-	this.Field5 = uint32(r.Uint32())
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field6(r randyDeepcopy, easy bool) *OneOf_Field6 {
-	this := &OneOf_Field6{}
-	this.Field6 = string(randStringDeepcopy(r))
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field7(r randyDeepcopy, easy bool) *OneOf_Field7 {
-	this := &OneOf_Field7{}
-	v45 := r.Intn(100)
-	this.Field7 = make([]byte, v45)
-	for i := 0; i < v45; i++ {
-		this.Field7[i] = byte(r.Intn(256))
-	}
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field8(r randyDeepcopy, easy bool) *OneOf_Field8 {
-	this := &OneOf_Field8{}
-	this.Field8 = NewPopulatedMapStruct(r, easy)
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field9(r randyDeepcopy, easy bool) *OneOf_Field9 {
-	this := &OneOf_Field9{}
-	this.Field9 = NewPopulatedRepeatedNonNullableExternalStruct(r, easy)
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field10(r randyDeepcopy, easy bool) *OneOf_Field10 {
-	this := &OneOf_Field10{}
-	this.Field10 = NewPopulatedNonNullableExternalStruct(r, easy)
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func NewPopulatedOneOf_Field11(r randyDeepcopy, easy bool) *OneOf_Field11 {
-	this := &OneOf_Field11{}
-	this.Field11 = NewPopulatedRepeatedExternalStruct(r, easy)
-	return this
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type randyDeepcopy interface {
@@ -2315,374 +694,66 @@ type randyDeepcopy interface {
 	Intn(n int) int
 }
 
-func randUTF8RuneDeepcopy(r randyDeepcopy) rune {
-	ru := r.Intn(62)
-	if ru < 10 {
-		return rune(ru + 48)
-	} else if ru < 36 {
-		return rune(ru + 55)
-	}
-	return rune(ru + 61)
-}
-func randStringDeepcopy(r randyDeepcopy) string {
-	v46 := r.Intn(100)
-	tmps := make([]rune, v46)
-	for i := 0; i < v46; i++ {
-		tmps[i] = randUTF8RuneDeepcopy(r)
-	}
-	return string(tmps)
-}
+func randUTF8RuneDeepcopy(r randyDeepcopy) rune { _ = "STUB: not implemented"; return 0 }
+
+func randStringDeepcopy(r randyDeepcopy) string { _ = "STUB: not implemented"; return "" }
+
 func randUnrecognizedDeepcopy(r randyDeepcopy, maxFieldNumber int) (dAtA []byte) {
-	l := r.Intn(5)
-	for i := 0; i < l; i++ {
-		wire := r.Intn(4)
-		if wire == 3 {
-			wire = 5
-		}
-		fieldNumber := maxFieldNumber + r.Intn(100)
-		dAtA = randFieldDeepcopy(dAtA, r, fieldNumber, wire)
-	}
-	return dAtA
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func randFieldDeepcopy(dAtA []byte, r randyDeepcopy, fieldNumber int, wire int) []byte {
-	key := uint32(fieldNumber)<<3 | uint32(wire)
-	switch wire {
-	case 0:
-		dAtA = encodeVarintPopulateDeepcopy(dAtA, uint64(key))
-		v47 := r.Int63()
-		if r.Intn(2) == 0 {
-			v47 *= -1
-		}
-		dAtA = encodeVarintPopulateDeepcopy(dAtA, uint64(v47))
-	case 1:
-		dAtA = encodeVarintPopulateDeepcopy(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	case 2:
-		dAtA = encodeVarintPopulateDeepcopy(dAtA, uint64(key))
-		ll := r.Intn(100)
-		dAtA = encodeVarintPopulateDeepcopy(dAtA, uint64(ll))
-		for j := 0; j < ll; j++ {
-			dAtA = append(dAtA, byte(r.Intn(256)))
-		}
-	default:
-		dAtA = encodeVarintPopulateDeepcopy(dAtA, uint64(key))
-		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
-	}
-	return dAtA
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func encodeVarintPopulateDeepcopy(dAtA []byte, v uint64) []byte {
-	for v >= 1<<7 {
-		dAtA = append(dAtA, uint8(uint64(v)&0x7f|0x80))
-		v >>= 7
-	}
-	dAtA = append(dAtA, uint8(v))
-	return dAtA
+	_ = "STUB: not implemented"
+	return nil
 }
-func (this *BasicScalar) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&BasicScalar{`,
-		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
-		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
-		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
-		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
-		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
-		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
-		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
-		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
-		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
-		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
-		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
-		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
-		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
-		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
-		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RepeatedScalar) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RepeatedScalar{`,
-		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
-		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
-		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
-		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
-		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
-		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
-		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
-		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
-		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
-		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
-		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
-		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
-		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
-		`Field14:` + fmt.Sprintf("%v", this.Field14) + `,`,
-		`Field15:` + fmt.Sprintf("%v", this.Field15) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RepeatedScalarPacked) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RepeatedScalarPacked{`,
-		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
-		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
-		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
-		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
-		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
-		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
-		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
-		`Field8:` + fmt.Sprintf("%v", this.Field8) + `,`,
-		`Field9:` + fmt.Sprintf("%v", this.Field9) + `,`,
-		`Field10:` + fmt.Sprintf("%v", this.Field10) + `,`,
-		`Field11:` + fmt.Sprintf("%v", this.Field11) + `,`,
-		`Field12:` + fmt.Sprintf("%v", this.Field12) + `,`,
-		`Field13:` + fmt.Sprintf("%v", this.Field13) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ExternalStruct) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ExternalStruct{`,
-		`Field1:` + strings.Replace(this.Field1.String(), "BasicScalar", "BasicScalar", 1) + `,`,
-		`Field2:` + strings.Replace(this.Field2.String(), "RepeatedScalar", "RepeatedScalar", 1) + `,`,
-		`Field3:` + strings.Replace(this.Field3.String(), "RepeatedScalarPacked", "RepeatedScalarPacked", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RepeatedExternalStruct) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForField1 := "[]*BasicScalar{"
-	for _, f := range this.Field1 {
-		repeatedStringForField1 += strings.Replace(f.String(), "BasicScalar", "BasicScalar", 1) + ","
-	}
-	repeatedStringForField1 += "}"
-	repeatedStringForField2 := "[]*RepeatedScalar{"
-	for _, f := range this.Field2 {
-		repeatedStringForField2 += strings.Replace(f.String(), "RepeatedScalar", "RepeatedScalar", 1) + ","
-	}
-	repeatedStringForField2 += "}"
-	repeatedStringForField3 := "[]*RepeatedScalarPacked{"
-	for _, f := range this.Field3 {
-		repeatedStringForField3 += strings.Replace(f.String(), "RepeatedScalarPacked", "RepeatedScalarPacked", 1) + ","
-	}
-	repeatedStringForField3 += "}"
-	s := strings.Join([]string{`&RepeatedExternalStruct{`,
-		`Field1:` + repeatedStringForField1 + `,`,
-		`Field2:` + repeatedStringForField2 + `,`,
-		`Field3:` + repeatedStringForField3 + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *NonNullableExternalStruct) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&NonNullableExternalStruct{`,
-		`Field1:` + strings.Replace(strings.Replace(this.Field1.String(), "BasicScalar", "BasicScalar", 1), `&`, ``, 1) + `,`,
-		`Field2:` + strings.Replace(strings.Replace(this.Field2.String(), "RepeatedScalar", "RepeatedScalar", 1), `&`, ``, 1) + `,`,
-		`Field3:` + strings.Replace(strings.Replace(this.Field3.String(), "RepeatedScalarPacked", "RepeatedScalarPacked", 1), `&`, ``, 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
+
+func (this *BasicScalar) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RepeatedScalar) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RepeatedScalarPacked) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ExternalStruct) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RepeatedExternalStruct) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *NonNullableExternalStruct) String() string { _ = "STUB: not implemented"; return "" }
+
 func (this *RepeatedNonNullableExternalStruct) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForField1 := "[]BasicScalar{"
-	for _, f := range this.Field1 {
-		repeatedStringForField1 += strings.Replace(strings.Replace(f.String(), "BasicScalar", "BasicScalar", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForField1 += "}"
-	repeatedStringForField2 := "[]RepeatedScalar{"
-	for _, f := range this.Field2 {
-		repeatedStringForField2 += strings.Replace(strings.Replace(f.String(), "RepeatedScalar", "RepeatedScalar", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForField2 += "}"
-	repeatedStringForField3 := "[]RepeatedScalarPacked{"
-	for _, f := range this.Field3 {
-		repeatedStringForField3 += strings.Replace(strings.Replace(f.String(), "RepeatedScalarPacked", "RepeatedScalarPacked", 1), `&`, ``, 1) + ","
-	}
-	repeatedStringForField3 += "}"
-	s := strings.Join([]string{`&RepeatedNonNullableExternalStruct{`,
-		`Field1:` + repeatedStringForField1 + `,`,
-		`Field2:` + repeatedStringForField2 + `,`,
-		`Field3:` + repeatedStringForField3 + `,`,
-		`}`,
-	}, "")
-	return s
+	_ = "STUB: not implemented"
+	return ""
 }
-func (this *MapStruct) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForNullableMap := make([]string, 0, len(this.NullableMap))
-	for k, _ := range this.NullableMap {
-		keysForNullableMap = append(keysForNullableMap, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForNullableMap)
-	mapStringForNullableMap := "map[string]*BasicScalar{"
-	for _, k := range keysForNullableMap {
-		mapStringForNullableMap += fmt.Sprintf("%v: %v,", k, this.NullableMap[k])
-	}
-	mapStringForNullableMap += "}"
-	keysForNonnullableMap := make([]string, 0, len(this.NonnullableMap))
-	for k, _ := range this.NonnullableMap {
-		keysForNonnullableMap = append(keysForNonnullableMap, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForNonnullableMap)
-	mapStringForNonnullableMap := "map[string]BasicScalar{"
-	for _, k := range keysForNonnullableMap {
-		mapStringForNonnullableMap += fmt.Sprintf("%v: %v,", k, this.NonnullableMap[k])
-	}
-	mapStringForNonnullableMap += "}"
-	s := strings.Join([]string{`&MapStruct{`,
-		`NullableMap:` + mapStringForNullableMap + `,`,
-		`NonnullableMap:` + mapStringForNonnullableMap + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf{`,
-		`Fields:` + fmt.Sprintf("%v", this.Fields) + `,`,
-		`FieldsTwo:` + fmt.Sprintf("%v", this.FieldsTwo) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field1) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field1{`,
-		`Field1:` + fmt.Sprintf("%v", this.Field1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field2) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field2{`,
-		`Field2:` + fmt.Sprintf("%v", this.Field2) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field3) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field3{`,
-		`Field3:` + fmt.Sprintf("%v", this.Field3) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field4) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field4{`,
-		`Field4:` + fmt.Sprintf("%v", this.Field4) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field5) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field5{`,
-		`Field5:` + fmt.Sprintf("%v", this.Field5) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field6) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field6{`,
-		`Field6:` + fmt.Sprintf("%v", this.Field6) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field7) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field7{`,
-		`Field7:` + fmt.Sprintf("%v", this.Field7) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field8) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field8{`,
-		`Field8:` + strings.Replace(fmt.Sprintf("%v", this.Field8), "MapStruct", "MapStruct", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field9) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field9{`,
-		`Field9:` + strings.Replace(fmt.Sprintf("%v", this.Field9), "RepeatedNonNullableExternalStruct", "RepeatedNonNullableExternalStruct", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field10) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field10{`,
-		`Field10:` + strings.Replace(fmt.Sprintf("%v", this.Field10), "NonNullableExternalStruct", "NonNullableExternalStruct", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *OneOf_Field11) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&OneOf_Field11{`,
-		`Field11:` + strings.Replace(fmt.Sprintf("%v", this.Field11), "RepeatedExternalStruct", "RepeatedExternalStruct", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringDeepcopy(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
+
+func (this *MapStruct) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field1) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field2) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field3) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field4) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field5) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field6) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field7) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field8) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field9) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field10) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *OneOf_Field11) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringDeepcopy(v interface{}) string { _ = "STUB: not implemented"; return "" }

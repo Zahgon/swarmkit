@@ -2,31 +2,13 @@ package secret
 
 import (
 	"errors"
-	"fmt"
-	"os"
-	"text/tabwriter"
 
-	gogotypes "github.com/gogo/protobuf/types"
 	"github.com/moby/swarmkit/swarmd/cmd/swarmctl/common"
 	"github.com/moby/swarmkit/v2/api"
 	"github.com/spf13/cobra"
 )
 
-func printSecretSummary(secret *api.Secret) {
-	w := tabwriter.NewWriter(os.Stdout, 8, 8, 8, ' ', 0)
-	defer w.Flush()
-
-	common.FprintfIfNotEmpty(w, "ID\t: %s\n", secret.ID)
-	common.FprintfIfNotEmpty(w, "Name\t: %s\n", secret.Spec.Annotations.Name)
-	if len(secret.Spec.Annotations.Labels) > 0 {
-		fmt.Fprintln(w, "Labels\t")
-		for k, v := range secret.Spec.Annotations.Labels {
-			fmt.Fprintf(w, "  %s\t: %s\n", k, v)
-		}
-	}
-
-	common.FprintfIfNotEmpty(w, "Created\t: %s\n", gogotypes.TimestampString(secret.Meta.CreatedAt))
-}
+func printSecretSummary(secret *api.Secret) { _ = "STUB: not implemented"; return }
 
 var (
 	inspectCmd = &cobra.Command{

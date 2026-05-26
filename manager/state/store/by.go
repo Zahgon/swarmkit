@@ -13,71 +13,81 @@ type By interface {
 type byAll struct{}
 
 func (a byAll) isBy() {
+	_ = "STUB: not implemented"
+
+	// All is an argument that can be passed to find to list all items in the
+	// set.
+	return
 }
 
-// All is an argument that can be passed to find to list all items in the
-// set.
 var All byAll
 
 type byNamePrefix string
 
 func (b byNamePrefix) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByNamePrefix creates an object to pass to Find to select by query.
+	return
 }
 
-// ByNamePrefix creates an object to pass to Find to select by query.
-func ByNamePrefix(namePrefix string) By {
-	return byNamePrefix(namePrefix)
-}
+func ByNamePrefix(namePrefix string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byIDPrefix string
 
 func (b byIDPrefix) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByIDPrefix creates an object to pass to Find to select by query.
+	return
 }
 
-// ByIDPrefix creates an object to pass to Find to select by query.
-func ByIDPrefix(idPrefix string) By {
-	return byIDPrefix(idPrefix)
-}
+func ByIDPrefix(idPrefix string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byName string
 
 func (b byName) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByName creates an object to pass to Find to select by name.
+	return
 }
 
-// ByName creates an object to pass to Find to select by name.
-func ByName(name string) By {
-	return byName(name)
-}
+func ByName(name string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byService string
 
-func (b byService) isBy() {
-}
+func (b byService) isBy() { _ = "STUB: not implemented"; return }
 
 type byRuntime string
 
 func (b byRuntime) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByRuntime creates an object to pass to Find to select by runtime.
+	return
 }
 
-// ByRuntime creates an object to pass to Find to select by runtime.
 func ByRuntime(runtime string) By {
-	return byRuntime(runtime)
+	_ = "STUB: not implemented"
+	return *
+
+	// ByServiceID creates an object to pass to Find to select by service.
+	new(By)
 }
 
-// ByServiceID creates an object to pass to Find to select by service.
-func ByServiceID(serviceID string) By {
-	return byService(serviceID)
-}
+func ByServiceID(serviceID string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byNode string
 
 func (b byNode) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByNodeID creates an object to pass to Find to select by node.
+	return
 }
 
-// ByNodeID creates an object to pass to Find to select by node.
-func ByNodeID(nodeID string) By {
-	return byNode(nodeID)
-}
+func ByNodeID(nodeID string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type bySlot struct {
 	serviceID string
@@ -85,106 +95,120 @@ type bySlot struct {
 }
 
 func (b bySlot) isBy() {
+	_ = "STUB: not implemented"
+
+	// BySlot creates an object to pass to Find to select by slot.
+	return
 }
 
-// BySlot creates an object to pass to Find to select by slot.
-func BySlot(serviceID string, slot uint64) By {
-	return bySlot{serviceID: serviceID, slot: slot}
-}
+func BySlot(serviceID string, slot uint64) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byDesiredState api.TaskState
 
 func (b byDesiredState) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByDesiredState creates an object to pass to Find to select by desired state.
+	return
 }
 
-// ByDesiredState creates an object to pass to Find to select by desired state.
-func ByDesiredState(state api.TaskState) By {
-	return byDesiredState(state)
-}
+func ByDesiredState(state api.TaskState) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byTaskState api.TaskState
 
 func (b byTaskState) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByTaskState creates an object to pass to Find to select by task state.
+	return
 }
 
-// ByTaskState creates an object to pass to Find to select by task state.
-func ByTaskState(state api.TaskState) By {
-	return byTaskState(state)
-}
+func ByTaskState(state api.TaskState) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byRole api.NodeRole
 
 func (b byRole) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByRole creates an object to pass to Find to select by role.
+	return
 }
 
-// ByRole creates an object to pass to Find to select by role.
-func ByRole(role api.NodeRole) By {
-	return byRole(role)
-}
+func ByRole(role api.NodeRole) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byMembership api.NodeSpec_Membership
 
 func (b byMembership) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByMembership creates an object to pass to Find to select by Membership.
+	return
 }
 
-// ByMembership creates an object to pass to Find to select by Membership.
 func ByMembership(membership api.NodeSpec_Membership) By {
-	return byMembership(membership)
+	_ = "STUB: not implemented"
+	return *new(By)
 }
 
 type byReferencedNetworkID string
 
 func (b byReferencedNetworkID) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByReferencedNetworkID creates an object to pass to Find to search for a
+	// service or task that references a network with the given ID.
+	return
 }
 
-// ByReferencedNetworkID creates an object to pass to Find to search for a
-// service or task that references a network with the given ID.
-func ByReferencedNetworkID(networkID string) By {
-	return byReferencedNetworkID(networkID)
-}
+func ByReferencedNetworkID(networkID string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byReferencedSecretID string
 
 func (b byReferencedSecretID) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByReferencedSecretID creates an object to pass to Find to search for a
+	// service or task that references a secret with the given ID.
+	return
 }
 
-// ByReferencedSecretID creates an object to pass to Find to search for a
-// service or task that references a secret with the given ID.
-func ByReferencedSecretID(secretID string) By {
-	return byReferencedSecretID(secretID)
-}
+func ByReferencedSecretID(secretID string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byReferencedConfigID string
 
 func (b byReferencedConfigID) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByReferencedConfigID creates an object to pass to Find to search for a
+	// service or task that references a config with the given ID.
+	return
 }
 
-// ByReferencedConfigID creates an object to pass to Find to search for a
-// service or task that references a config with the given ID.
-func ByReferencedConfigID(configID string) By {
-	return byReferencedConfigID(configID)
-}
+func ByReferencedConfigID(configID string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byVolumeAttachment string
 
-func (b byVolumeAttachment) isBy() {}
+func (b byVolumeAttachment) isBy() {
+	_ = "STUB: not implemented"
 
-// ByVolumeAttachment creates an object to pass to Find to search for a Task
-// that has been assigned the given ID.
-func ByVolumeAttachment(volumeID string) By {
-	return byVolumeAttachment(volumeID)
+	// ByVolumeAttachment creates an object to pass to Find to search for a Task
+	// that has been assigned the given ID.
+	return
 }
+
+func ByVolumeAttachment(volumeID string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byKind string
 
 func (b byKind) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByKind creates an object to pass to Find to search for a Resource of a
+	// particular kind.
+	return
 }
 
-// ByKind creates an object to pass to Find to search for a Resource of a
-// particular kind.
-func ByKind(kind string) By {
-	return byKind(kind)
-}
+func ByKind(kind string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byCustom struct {
 	objType string
@@ -193,16 +217,13 @@ type byCustom struct {
 }
 
 func (b byCustom) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByCustom creates an object to pass to Find to search a custom index.
+	return
 }
 
-// ByCustom creates an object to pass to Find to search a custom index.
-func ByCustom(objType, index, value string) By {
-	return byCustom{
-		objType: objType,
-		index:   index,
-		value:   value,
-	}
-}
+func ByCustom(objType, index, value string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byCustomPrefix struct {
 	objType string
@@ -211,36 +232,31 @@ type byCustomPrefix struct {
 }
 
 func (b byCustomPrefix) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByCustomPrefix creates an object to pass to Find to search a custom index by
+	// a value prefix.
+	return
 }
 
-// ByCustomPrefix creates an object to pass to Find to search a custom index by
-// a value prefix.
-func ByCustomPrefix(objType, index, value string) By {
-	return byCustomPrefix{
-		objType: objType,
-		index:   index,
-		value:   value,
-	}
-}
+func ByCustomPrefix(objType, index, value string) By { _ = "STUB: not implemented"; return *new(By) }
 
 // ByVolumeGroup creates an object to pass to Find to search for volumes
 // belonging to a particular group.
-func ByVolumeGroup(group string) By {
-	return byVolumeGroup(group)
-}
+func ByVolumeGroup(group string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byVolumeGroup string
 
 func (b byVolumeGroup) isBy() {
+	_ = "STUB: not implemented"
+
+	// ByDriver creates an object to pass to Find to search for objects using a
+	// specific driver.
+	return
 }
 
-// ByDriver creates an object to pass to Find to search for objects using a
-// specific driver.
-func ByDriver(driver string) By {
-	return byDriver(driver)
-}
+func ByDriver(driver string) By { _ = "STUB: not implemented"; return *new(By) }
 
 type byDriver string
 
-func (b byDriver) isBy() {
-}
+func (b byDriver) isBy() { _ = "STUB: not implemented"; return }

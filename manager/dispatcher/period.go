@@ -12,17 +12,11 @@ type periodChooser struct {
 }
 
 func newPeriodChooser(period, eps time.Duration) *periodChooser {
-	return &periodChooser{
-		period:  period,
-		epsilon: eps,
-		rand:    rand.New(rand.NewSource(time.Now().UnixNano())),
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (pc *periodChooser) Choose() time.Duration {
-	var adj int64
-	if pc.epsilon > 0 {
-		adj = rand.Int63n(int64(2*pc.epsilon)) - int64(pc.epsilon)
-	}
-	return pc.period + time.Duration(adj)
+	_ = "STUB: not implemented"
+	return *new(time.Duration)
 }

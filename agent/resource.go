@@ -2,8 +2,6 @@ package agent
 
 import (
 	"context"
-
-	"github.com/moby/swarmkit/v2/api"
 )
 
 type resourceAllocator struct {
@@ -29,42 +27,19 @@ type ResourceAllocator interface {
 
 // AttachNetwork creates a network attachment.
 func (r *resourceAllocator) AttachNetwork(ctx context.Context, id, target string, addresses []string) (string, error) {
-	var taskID string
-	if err := r.agent.withSession(ctx, func(session *session) error {
-		client := api.NewResourceAllocatorClient(session.conn.ClientConn)
-		r, err := client.AttachNetwork(ctx, &api.AttachNetworkRequest{
-			Config: &api.NetworkAttachmentConfig{
-				Target:    target,
-				Addresses: addresses,
-			},
-			ContainerID: id,
-		})
-		if err != nil {
-			return err
-		}
-		taskID = r.AttachmentID
-		return nil
-	}); err != nil {
-		return "", err
-	}
-
-	return taskID, nil
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 // DetachNetwork deletes a network attachment.
 func (r *resourceAllocator) DetachNetwork(ctx context.Context, aID string) error {
-	return r.agent.withSession(ctx, func(session *session) error {
-		client := api.NewResourceAllocatorClient(session.conn.ClientConn)
-		_, err := client.DetachNetwork(ctx, &api.DetachNetworkRequest{
-			AttachmentID: aID,
-		})
-
-		return err
-	})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ResourceAllocator provides an interface to access resource
 // allocation methods such as AttachNetwork and DetachNetwork.
 func (a *Agent) ResourceAllocator() ResourceAllocator {
-	return &resourceAllocator{agent: a}
+	_ = "STUB: not implemented"
+	return *new(ResourceAllocator)
 }

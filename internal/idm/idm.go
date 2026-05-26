@@ -3,7 +3,6 @@ package idm
 
 import (
 	"errors"
-	"fmt"
 
 	"github.com/bits-and-blooms/bitset"
 )
@@ -25,60 +24,13 @@ type IDM struct {
 }
 
 // New returns an instance of id manager for a [start,end] set of numerical ids.
-func New(start, end uint) (*IDM, error) {
-	if end <= start {
-		return nil, fmt.Errorf("invalid set range: [%d, %d]", start, end)
-	}
-
-	return &IDM{start: start, end: end, set: bitset.New(1 + end - start)}, nil
-}
+func New(start, end uint) (*IDM, error) { _ = "STUB: not implemented"; return nil, nil }
 
 // GetID returns the first available id in the set.
-func (i *IDM) GetID(serial bool) (uint, error) {
-	if i.set == nil {
-		return 0, errors.New("ID set is not initialized")
-	}
-	var (
-		ordinal uint
-		ok      bool
-	)
-	if serial && i.next != 0 {
-		ordinal, ok = i.set.NextClear(i.next)
-		if ok {
-			goto found
-		}
-	}
-	ordinal, ok = i.set.NextClear(0)
-	if !ok {
-		return 0, ErrNoBitAvailable
-	}
-
-found:
-	i.set.Set(ordinal)
-	i.next = ordinal + 1
-	if i.next > i.end-i.start {
-		i.next = 0
-	}
-	return i.start + ordinal, nil
-}
+func (i *IDM) GetID(serial bool) (uint, error) { _ = "STUB: not implemented"; return 0, nil }
 
 // GetSpecificID tries to reserve the specified id.
-func (i *IDM) GetSpecificID(id uint) error {
-	if i.set == nil {
-		return errors.New("ID set is not initialized")
-	}
-
-	if id < i.start || id > i.end {
-		return errors.New("requested id does not belong to the set")
-	}
-	if i.set.Test(id - i.start) {
-		return ErrBitAllocated
-	}
-	i.set.Set(id - i.start)
-	return nil
-}
+func (i *IDM) GetSpecificID(id uint) error { _ = "STUB: not implemented"; return nil }
 
 // Release releases the specified id.
-func (i *IDM) Release(id uint) {
-	i.set.Clear(id - i.start)
-}
+func (i *IDM) Release(id uint) { _ = "STUB: not implemented"; return }

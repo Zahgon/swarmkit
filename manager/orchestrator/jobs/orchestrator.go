@@ -64,21 +64,13 @@ type Orchestrator struct {
 	watchCancel func()
 }
 
-func NewOrchestrator(store *store.MemoryStore) *Orchestrator {
-	return &Orchestrator{
-		store:    store,
-		stopChan: make(chan struct{}),
-		doneChan: make(chan struct{}),
-	}
-}
+func NewOrchestrator(store *store.MemoryStore) *Orchestrator { _ = "STUB: not implemented"; return nil }
 
 // Run runs the Orchestrator reconciliation loop. It takes a context as an
 // argument, but canceling this context will not stop the routine; this context
 // is only for passing in logging information. Call Stop to stop the
 // Orchestrator
-func (o *Orchestrator) Run(ctx context.Context) {
-	o.startOnce.Do(func() { o.run(ctx) })
-}
+func (o *Orchestrator) Run(ctx context.Context) { _ = "STUB: not implemented"; return }
 
 // init runs the once-off initialization logic for the orchestrator. This
 // includes initializing the sub-components, starting the channel watch, and
@@ -154,102 +146,45 @@ func (o *Orchestrator) init(ctx context.Context) {
 // run provides the actual meat of the the run operation. The call to run is
 // made inside of Run, and is enclosed in a sync.Once to stop this from being
 // called multiple times
-func (o *Orchestrator) run(ctx context.Context) {
-	ctx = log.WithModule(ctx, "orchestrator/jobs")
+func (o *Orchestrator) run(ctx context.Context) { _ = "STUB: not implemented"; return }
 
-	// closing doneChan should be the absolute last thing that happens in this
-	// method, and so should be the absolute first thing we defer.
-	defer close(o.doneChan)
+// closing doneChan should be the absolute last thing that happens in this
+// method, and so should be the absolute first thing we defer.
 
-	o.init(ctx)
-	defer o.watchCancel()
+// first, before taking any action, see if we should stop the
+// orchestrator. if both the stop channel and the watch channel are
+// available to read, the channel that gets read is picked at random,
+// but we always want to stop if it's possible.
 
-	for {
-		// first, before taking any action, see if we should stop the
-		// orchestrator. if both the stop channel and the watch channel are
-		// available to read, the channel that gets read is picked at random,
-		// but we always want to stop if it's possible.
-		select {
-		case <-o.stopChan:
-			return
-		default:
-		}
-
-		select {
-		case event := <-o.watchChan:
-			o.handleEvent(ctx, event)
-		case <-o.stopChan:
-			// we also need to check for stop in here, in case there are no
-			// updates to cause the loop to turn over.
-			return
-		}
-	}
-}
+// we also need to check for stop in here, in case there are no
+// updates to cause the loop to turn over.
 
 // handle event does the logic of handling one event message and calling the
 // reconciler as needed. by handling the event logic in this function, we can
 // make an end-run around the run-loop and avoid being at the mercy of the go
 // scheduler when testing the orchestrator.
 func (o *Orchestrator) handleEvent(ctx context.Context, event events.Event) {
-	var (
-		service *api.Service
-		task    *api.Task
-	)
-
-	switch ev := event.(type) {
-	case api.EventCreateService:
-		service = ev.Service
-	case api.EventUpdateService:
-		service = ev.Service
-	case api.EventDeleteService:
-		if orchestrator.IsReplicatedJob(ev.Service) || orchestrator.IsGlobalJob(ev.Service) {
-			orchestrator.SetServiceTasksRemove(ctx, o.store, ev.Service)
-			o.restartSupervisor.ClearServiceHistory(ev.Service.ID)
-		}
-	case api.EventUpdateTask:
-		task = ev.Task
-	}
-
-	// if this is a task event, we should check if it means the service
-	// should be reconciled.
-	if task != nil {
-		// only bother with all this if the task has entered a terminal
-		// state and we don't want that to have happened.
-		if task.Status.State > api.TaskStateRunning && task.DesiredState <= api.TaskStateCompleted {
-			o.store.View(func(tx store.ReadTx) {
-				// if for any reason the service ID is invalid, then
-				// service will just be nil and nothing needs to be
-				// done
-				service = store.GetService(tx, task.ServiceID)
-			})
-		}
-	}
-
-	if orchestrator.IsReplicatedJob(service) {
-		if err := o.replicatedReconciler.ReconcileService(service.ID); err != nil {
-			log.G(ctx).WithField(
-				"service.id", service.ID,
-			).WithError(err).Error("error reconciling replicated job")
-		}
-	}
-
-	if orchestrator.IsGlobalJob(service) {
-		if err := o.globalReconciler.ReconcileService(service.ID); err != nil {
-			log.G(ctx).WithField(
-				"service.id", service.ID,
-			).WithError(err).Error("error reconciling global job")
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// if this is a task event, we should check if it means the service
+// should be reconciled.
+
+// only bother with all this if the task has entered a terminal
+// state and we don't want that to have happened.
+
+// if for any reason the service ID is invalid, then
+// service will just be nil and nothing needs to be
+// done
 
 // Stop stops the Orchestrator
 func (o *Orchestrator) Stop() {
+	_ = "STUB: not implemented"
 	// close stopChan inside of the Once so that there can be no races
 	// involving multiple attempts to close stopChan.
-	o.stopOnce.Do(func() {
-		close(o.stopChan)
-	})
-	// now, we wait for the Orchestrator to stop. this wait is unqualified; we
-	// will not return until Orchestrator has stopped successfully.
-	<-o.doneChan
+	return
 }
+
+// now, we wait for the Orchestrator to stop. this wait is unqualified; we
+// will not return until Orchestrator has stopped successfully.

@@ -3,7 +3,6 @@ package template
 import (
 	"github.com/moby/swarmkit/v2/agent/exec"
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/pkg/errors"
 )
 
 type templatedSecretGetter struct {
@@ -14,32 +13,13 @@ type templatedSecretGetter struct {
 
 // NewTemplatedSecretGetter returns a SecretGetter that evaluates templates.
 func NewTemplatedSecretGetter(dependencies exec.DependencyGetter, t *api.Task, node *api.NodeDescription) exec.SecretGetter {
-	return templatedSecretGetter{dependencies: dependencies, t: t, node: node}
+	_ = "STUB: not implemented"
+	return *new(exec.SecretGetter)
 }
 
 func (t templatedSecretGetter) Get(secretID string) (*api.Secret, error) {
-	if t.dependencies == nil {
-		return nil, errors.New("no secret provider available")
-	}
-
-	secrets := t.dependencies.Secrets()
-	if secrets == nil {
-		return nil, errors.New("no secret provider available")
-	}
-
-	secret, err := secrets.Get(secretID)
-	if err != nil {
-		return secret, err
-	}
-
-	newSpec, err := ExpandSecretSpec(secret, t.node, t.t, t.dependencies)
-	if err != nil {
-		return secret, errors.Wrapf(err, "failed to expand templated secret %s", secretID)
-	}
-
-	secretCopy := *secret
-	secretCopy.Spec = *newSpec
-	return &secretCopy, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // TemplatedConfigGetter is a ConfigGetter with an additional method to expose
@@ -62,37 +42,18 @@ type templatedConfigGetter struct {
 
 // NewTemplatedConfigGetter returns a ConfigGetter that evaluates templates.
 func NewTemplatedConfigGetter(dependencies exec.DependencyGetter, t *api.Task, node *api.NodeDescription) TemplatedConfigGetter {
-	return templatedConfigGetter{dependencies: dependencies, t: t, node: node}
+	_ = "STUB: not implemented"
+	return *new(TemplatedConfigGetter)
 }
 
 func (t templatedConfigGetter) Get(configID string) (*api.Config, error) {
-	config, _, err := t.GetAndFlagSecretData(configID)
-	return config, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (t templatedConfigGetter) GetAndFlagSecretData(configID string) (*api.Config, bool, error) {
-	if t.dependencies == nil {
-		return nil, false, errors.New("no config provider available")
-	}
-
-	configs := t.dependencies.Configs()
-	if configs == nil {
-		return nil, false, errors.New("no config provider available")
-	}
-
-	config, err := configs.Get(configID)
-	if err != nil {
-		return config, false, err
-	}
-
-	newSpec, sensitive, err := ExpandConfigSpec(config, t.node, t.t, t.dependencies)
-	if err != nil {
-		return config, false, errors.Wrapf(err, "failed to expand templated config %s", configID)
-	}
-
-	configCopy := *config
-	configCopy.Spec = *newSpec
-	return &configCopy, sensitive, nil
+	_ = "STUB: not implemented"
+	return nil, false, nil
 }
 
 type templatedDependencyGetter struct {
@@ -103,24 +64,24 @@ type templatedDependencyGetter struct {
 
 // NewTemplatedDependencyGetter returns a DependencyGetter that evaluates templates.
 func NewTemplatedDependencyGetter(dependencies exec.DependencyGetter, t *api.Task, node *api.NodeDescription) exec.DependencyGetter {
-	return templatedDependencyGetter{
-		secrets: NewTemplatedSecretGetter(dependencies, t, node),
-		configs: NewTemplatedConfigGetter(dependencies, t, node),
-		volumes: dependencies.Volumes(),
-	}
+	_ = "STUB: not implemented"
+	return *new(exec.DependencyGetter)
 }
 
 func (t templatedDependencyGetter) Secrets() exec.SecretGetter {
-	return t.secrets
+	_ = "STUB: not implemented"
+	return *new(exec.SecretGetter)
 }
 
 func (t templatedDependencyGetter) Configs() exec.ConfigGetter {
-	return t.configs
+	_ = "STUB: not implemented"
+	return *new(exec.ConfigGetter)
 }
 
 func (t templatedDependencyGetter) Volumes() exec.VolumeGetter {
+	_ = "STUB: not implemented"
 	// volumes are not templated, but we include that call (and pass it
 	// straight through to the underlying getter) in order to fulfill the
 	// DependencyGetter interface.
-	return t.volumes
+	return *new(exec.VolumeGetter)
 }

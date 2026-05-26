@@ -6,25 +6,15 @@ package api
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+	time "time"
+
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	_ "github.com/gogo/protobuf/types"
-	github_com_gogo_protobuf_types "github.com/gogo/protobuf/types"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	_ "github.com/moby/swarmkit/v2/protobuf/plugin"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
-	time "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -56,12 +46,11 @@ var AssignmentChange_AssignmentAction_value = map[string]int32{
 	"REMOVE": 1,
 }
 
-func (x AssignmentChange_AssignmentAction) String() string {
-	return proto.EnumName(AssignmentChange_AssignmentAction_name, int32(x))
-}
+func (x AssignmentChange_AssignmentAction) String() string { _ = "STUB: not implemented"; return "" }
 
 func (AssignmentChange_AssignmentAction) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{12, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // AssignmentType specifies whether this assignment message carries
@@ -83,12 +72,11 @@ var AssignmentsMessage_Type_value = map[string]int32{
 	"INCREMENTAL": 1,
 }
 
-func (x AssignmentsMessage_Type) String() string {
-	return proto.EnumName(AssignmentsMessage_Type_name, int32(x))
-}
+func (x AssignmentsMessage_Type) String() string { _ = "STUB: not implemented"; return "" }
 
 func (AssignmentsMessage_Type) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{13, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // SessionRequest starts a session.
@@ -101,35 +89,22 @@ type SessionRequest struct {
 	SessionID string `protobuf:"bytes,2,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
 }
 
-func (m *SessionRequest) Reset()      { *m = SessionRequest{} }
-func (*SessionRequest) ProtoMessage() {}
-func (*SessionRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{0}
-}
-func (m *SessionRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *SessionRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*SessionRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*SessionRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *SessionRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SessionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SessionRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SessionRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SessionRequest.Merge(m, src)
-}
-func (m *SessionRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *SessionRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_SessionRequest.DiscardUnknown(m)
-}
+
+func (m *SessionRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SessionRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SessionRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SessionRequest proto.InternalMessageInfo
 
@@ -191,35 +166,22 @@ type SessionMessage struct {
 	RootCA []byte `protobuf:"bytes,5,opt,name=RootCA,proto3" json:"RootCA,omitempty"`
 }
 
-func (m *SessionMessage) Reset()      { *m = SessionMessage{} }
-func (*SessionMessage) ProtoMessage() {}
-func (*SessionMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{1}
-}
-func (m *SessionMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *SessionMessage) Reset()                    { _ = "STUB: not implemented"; return }
+func (*SessionMessage) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*SessionMessage) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *SessionMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SessionMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SessionMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SessionMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SessionMessage.Merge(m, src)
-}
-func (m *SessionMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *SessionMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_SessionMessage.DiscardUnknown(m)
-}
+
+func (m *SessionMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SessionMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SessionMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SessionMessage proto.InternalMessageInfo
 
@@ -228,35 +190,22 @@ type HeartbeatRequest struct {
 	SessionID string `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
 }
 
-func (m *HeartbeatRequest) Reset()      { *m = HeartbeatRequest{} }
-func (*HeartbeatRequest) ProtoMessage() {}
-func (*HeartbeatRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{2}
-}
-func (m *HeartbeatRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *HeartbeatRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*HeartbeatRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*HeartbeatRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *HeartbeatRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *HeartbeatRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_HeartbeatRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *HeartbeatRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HeartbeatRequest.Merge(m, src)
-}
-func (m *HeartbeatRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *HeartbeatRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_HeartbeatRequest.DiscardUnknown(m)
-}
+
+func (m *HeartbeatRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *HeartbeatRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *HeartbeatRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_HeartbeatRequest proto.InternalMessageInfo
 
@@ -266,35 +215,22 @@ type HeartbeatResponse struct {
 	Period time.Duration `protobuf:"bytes,1,opt,name=period,proto3,stdduration" json:"period"`
 }
 
-func (m *HeartbeatResponse) Reset()      { *m = HeartbeatResponse{} }
-func (*HeartbeatResponse) ProtoMessage() {}
-func (*HeartbeatResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{3}
-}
-func (m *HeartbeatResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *HeartbeatResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*HeartbeatResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*HeartbeatResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *HeartbeatResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *HeartbeatResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_HeartbeatResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *HeartbeatResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_HeartbeatResponse.Merge(m, src)
-}
-func (m *HeartbeatResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *HeartbeatResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_HeartbeatResponse.DiscardUnknown(m)
-}
+
+func (m *HeartbeatResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *HeartbeatResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *HeartbeatResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_HeartbeatResponse proto.InternalMessageInfo
 
@@ -305,35 +241,28 @@ type UpdateTaskStatusRequest struct {
 	Updates   []*UpdateTaskStatusRequest_TaskStatusUpdate `protobuf:"bytes,3,rep,name=updates,proto3" json:"updates,omitempty"`
 }
 
-func (m *UpdateTaskStatusRequest) Reset()      { *m = UpdateTaskStatusRequest{} }
-func (*UpdateTaskStatusRequest) ProtoMessage() {}
+func (m *UpdateTaskStatusRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateTaskStatusRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateTaskStatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{4}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateTaskStatusRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateTaskStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateTaskStatusRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateTaskStatusRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateTaskStatusRequest.Merge(m, src)
-}
-func (m *UpdateTaskStatusRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateTaskStatusRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateTaskStatusRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateTaskStatusRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateTaskStatusRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateTaskStatusRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateTaskStatusRequest proto.InternalMessageInfo
 
@@ -342,36 +271,37 @@ type UpdateTaskStatusRequest_TaskStatusUpdate struct {
 	Status *TaskStatus `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *UpdateTaskStatusRequest_TaskStatusUpdate) Reset() {
-	*m = UpdateTaskStatusRequest_TaskStatusUpdate{}
-}
-func (*UpdateTaskStatusRequest_TaskStatusUpdate) ProtoMessage() {}
+func (m *UpdateTaskStatusRequest_TaskStatusUpdate) Reset() { _ = "STUB: not implemented"; return }
+
+func (*UpdateTaskStatusRequest_TaskStatusUpdate) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateTaskStatusRequest_TaskStatusUpdate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{4, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateTaskStatusRequest_TaskStatusUpdate.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateTaskStatusRequest_TaskStatusUpdate.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
+
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) XXX_Size() int {
-	return m.Size()
+	_ = "STUB: not implemented"
+	return 0
 }
+
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateTaskStatusRequest_TaskStatusUpdate.DiscardUnknown(m)
+	_ = "STUB: not implemented"
+	return
 }
 
 var xxx_messageInfo_UpdateTaskStatusRequest_TaskStatusUpdate proto.InternalMessageInfo
@@ -379,35 +309,28 @@ var xxx_messageInfo_UpdateTaskStatusRequest_TaskStatusUpdate proto.InternalMessa
 type UpdateTaskStatusResponse struct {
 }
 
-func (m *UpdateTaskStatusResponse) Reset()      { *m = UpdateTaskStatusResponse{} }
-func (*UpdateTaskStatusResponse) ProtoMessage() {}
+func (m *UpdateTaskStatusResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateTaskStatusResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateTaskStatusResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{5}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateTaskStatusResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateTaskStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateTaskStatusResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateTaskStatusResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateTaskStatusResponse.Merge(m, src)
-}
-func (m *UpdateTaskStatusResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateTaskStatusResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateTaskStatusResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateTaskStatusResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateTaskStatusResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateTaskStatusResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateTaskStatusResponse proto.InternalMessageInfo
 
@@ -416,35 +339,28 @@ type UpdateVolumeStatusRequest struct {
 	Updates   []*UpdateVolumeStatusRequest_VolumeStatusUpdate `protobuf:"bytes,2,rep,name=updates,proto3" json:"updates,omitempty"`
 }
 
-func (m *UpdateVolumeStatusRequest) Reset()      { *m = UpdateVolumeStatusRequest{} }
-func (*UpdateVolumeStatusRequest) ProtoMessage() {}
+func (m *UpdateVolumeStatusRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateVolumeStatusRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateVolumeStatusRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{6}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateVolumeStatusRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateVolumeStatusRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateVolumeStatusRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateVolumeStatusRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateVolumeStatusRequest.Merge(m, src)
-}
-func (m *UpdateVolumeStatusRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateVolumeStatusRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateVolumeStatusRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateVolumeStatusRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateVolumeStatusRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateVolumeStatusRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateVolumeStatusRequest proto.InternalMessageInfo
 
@@ -463,36 +379,40 @@ type UpdateVolumeStatusRequest_VolumeStatusUpdate struct {
 	Unpublished bool `protobuf:"varint,2,opt,name=unpublished,proto3" json:"unpublished,omitempty"`
 }
 
-func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) Reset() {
-	*m = UpdateVolumeStatusRequest_VolumeStatusUpdate{}
+func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) Reset() { _ = "STUB: not implemented"; return }
+
+func (*UpdateVolumeStatusRequest_VolumeStatusUpdate) ProtoMessage() {
+	_ = "STUB: not implemented"
+	return
 }
-func (*UpdateVolumeStatusRequest_VolumeStatusUpdate) ProtoMessage() {}
 func (*UpdateVolumeStatusRequest_VolumeStatusUpdate) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{6, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateVolumeStatusRequest_VolumeStatusUpdate.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateVolumeStatusRequest_VolumeStatusUpdate.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
+
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) XXX_Size() int {
-	return m.Size()
+	_ = "STUB: not implemented"
+	return 0
 }
+
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateVolumeStatusRequest_VolumeStatusUpdate.DiscardUnknown(m)
+	_ = "STUB: not implemented"
+	return
 }
 
 var xxx_messageInfo_UpdateVolumeStatusRequest_VolumeStatusUpdate proto.InternalMessageInfo
@@ -500,35 +420,31 @@ var xxx_messageInfo_UpdateVolumeStatusRequest_VolumeStatusUpdate proto.InternalM
 type UpdateVolumeStatusResponse struct {
 }
 
-func (m *UpdateVolumeStatusResponse) Reset()      { *m = UpdateVolumeStatusResponse{} }
-func (*UpdateVolumeStatusResponse) ProtoMessage() {}
+func (m *UpdateVolumeStatusResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateVolumeStatusResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateVolumeStatusResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{7}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateVolumeStatusResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateVolumeStatusResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateVolumeStatusResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateVolumeStatusResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateVolumeStatusResponse.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *UpdateVolumeStatusResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateVolumeStatusResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateVolumeStatusResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateVolumeStatusResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateVolumeStatusResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateVolumeStatusResponse proto.InternalMessageInfo
 
@@ -536,35 +452,22 @@ type TasksRequest struct {
 	SessionID string `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
 }
 
-func (m *TasksRequest) Reset()      { *m = TasksRequest{} }
-func (*TasksRequest) ProtoMessage() {}
-func (*TasksRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{8}
-}
-func (m *TasksRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *TasksRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*TasksRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*TasksRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *TasksRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *TasksRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_TasksRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *TasksRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TasksRequest.Merge(m, src)
-}
-func (m *TasksRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *TasksRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_TasksRequest.DiscardUnknown(m)
-}
+
+func (m *TasksRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *TasksRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *TasksRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_TasksRequest proto.InternalMessageInfo
 
@@ -574,35 +477,22 @@ type TasksMessage struct {
 	Tasks []*Task `protobuf:"bytes,1,rep,name=tasks,proto3" json:"tasks,omitempty"`
 }
 
-func (m *TasksMessage) Reset()      { *m = TasksMessage{} }
-func (*TasksMessage) ProtoMessage() {}
-func (*TasksMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{9}
-}
-func (m *TasksMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *TasksMessage) Reset()                    { _ = "STUB: not implemented"; return }
+func (*TasksMessage) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*TasksMessage) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *TasksMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *TasksMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_TasksMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *TasksMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TasksMessage.Merge(m, src)
-}
-func (m *TasksMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *TasksMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_TasksMessage.DiscardUnknown(m)
-}
+
+func (m *TasksMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *TasksMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *TasksMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_TasksMessage proto.InternalMessageInfo
 
@@ -610,35 +500,22 @@ type AssignmentsRequest struct {
 	SessionID string `protobuf:"bytes,1,opt,name=session_id,json=sessionId,proto3" json:"session_id,omitempty"`
 }
 
-func (m *AssignmentsRequest) Reset()      { *m = AssignmentsRequest{} }
-func (*AssignmentsRequest) ProtoMessage() {}
-func (*AssignmentsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{10}
-}
-func (m *AssignmentsRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *AssignmentsRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*AssignmentsRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*AssignmentsRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *AssignmentsRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *AssignmentsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_AssignmentsRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *AssignmentsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AssignmentsRequest.Merge(m, src)
-}
-func (m *AssignmentsRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *AssignmentsRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_AssignmentsRequest.DiscardUnknown(m)
-}
+
+func (m *AssignmentsRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *AssignmentsRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *AssignmentsRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_AssignmentsRequest proto.InternalMessageInfo
 
@@ -651,35 +528,22 @@ type Assignment struct {
 	Item isAssignment_Item `protobuf_oneof:"item"`
 }
 
-func (m *Assignment) Reset()      { *m = Assignment{} }
-func (*Assignment) ProtoMessage() {}
-func (*Assignment) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{11}
-}
-func (m *Assignment) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *Assignment) Reset()                    { _ = "STUB: not implemented"; return }
+func (*Assignment) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*Assignment) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *Assignment) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *Assignment) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Assignment.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *Assignment) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Assignment.Merge(m, src)
-}
-func (m *Assignment) XXX_Size() int {
-	return m.Size()
-}
-func (m *Assignment) XXX_DiscardUnknown() {
-	xxx_messageInfo_Assignment.DiscardUnknown(m)
-}
+
+func (m *Assignment) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *Assignment) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *Assignment) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_Assignment proto.InternalMessageInfo
 
@@ -702,90 +566,48 @@ type Assignment_Volume struct {
 	Volume *VolumeAssignment `protobuf:"bytes,4,opt,name=volume,proto3,oneof" json:"volume,omitempty"`
 }
 
-func (*Assignment_Task) isAssignment_Item()   {}
-func (*Assignment_Secret) isAssignment_Item() {}
-func (*Assignment_Config) isAssignment_Item() {}
-func (*Assignment_Volume) isAssignment_Item() {}
+func (*Assignment_Task) isAssignment_Item()   { _ = "STUB: not implemented"; return }
+func (*Assignment_Secret) isAssignment_Item() { _ = "STUB: not implemented"; return }
+func (*Assignment_Config) isAssignment_Item() { _ = "STUB: not implemented"; return }
+func (*Assignment_Volume) isAssignment_Item() { _ = "STUB: not implemented"; return }
 
 func (m *Assignment) GetItem() isAssignment_Item {
-	if m != nil {
-		return m.Item
-	}
-	return nil
+	_ = "STUB: not implemented"
+	return *new(isAssignment_Item)
 }
 
-func (m *Assignment) GetTask() *Task {
-	if x, ok := m.GetItem().(*Assignment_Task); ok {
-		return x.Task
-	}
-	return nil
-}
+func (m *Assignment) GetTask() *Task { _ = "STUB: not implemented"; return nil }
 
-func (m *Assignment) GetSecret() *Secret {
-	if x, ok := m.GetItem().(*Assignment_Secret); ok {
-		return x.Secret
-	}
-	return nil
-}
+func (m *Assignment) GetSecret() *Secret { _ = "STUB: not implemented"; return nil }
 
-func (m *Assignment) GetConfig() *Config {
-	if x, ok := m.GetItem().(*Assignment_Config); ok {
-		return x.Config
-	}
-	return nil
-}
+func (m *Assignment) GetConfig() *Config { _ = "STUB: not implemented"; return nil }
 
-func (m *Assignment) GetVolume() *VolumeAssignment {
-	if x, ok := m.GetItem().(*Assignment_Volume); ok {
-		return x.Volume
-	}
-	return nil
-}
+func (m *Assignment) GetVolume() *VolumeAssignment { _ = "STUB: not implemented"; return nil }
 
 // XXX_OneofWrappers is for the internal use of the proto package.
-func (*Assignment) XXX_OneofWrappers() []interface{} {
-	return []interface{}{
-		(*Assignment_Task)(nil),
-		(*Assignment_Secret)(nil),
-		(*Assignment_Config)(nil),
-		(*Assignment_Volume)(nil),
-	}
-}
+func (*Assignment) XXX_OneofWrappers() []interface{} { _ = "STUB: not implemented"; return nil }
 
 type AssignmentChange struct {
 	Assignment *Assignment                       `protobuf:"bytes,1,opt,name=assignment,proto3" json:"assignment,omitempty"`
 	Action     AssignmentChange_AssignmentAction `protobuf:"varint,2,opt,name=action,proto3,enum=docker.swarmkit.v1.AssignmentChange_AssignmentAction" json:"action,omitempty"`
 }
 
-func (m *AssignmentChange) Reset()      { *m = AssignmentChange{} }
-func (*AssignmentChange) ProtoMessage() {}
-func (*AssignmentChange) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{12}
-}
-func (m *AssignmentChange) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *AssignmentChange) Reset()                    { _ = "STUB: not implemented"; return }
+func (*AssignmentChange) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*AssignmentChange) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *AssignmentChange) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *AssignmentChange) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_AssignmentChange.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *AssignmentChange) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AssignmentChange.Merge(m, src)
-}
-func (m *AssignmentChange) XXX_Size() int {
-	return m.Size()
-}
-func (m *AssignmentChange) XXX_DiscardUnknown() {
-	xxx_messageInfo_AssignmentChange.DiscardUnknown(m)
-}
+
+func (m *AssignmentChange) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *AssignmentChange) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *AssignmentChange) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_AssignmentChange proto.InternalMessageInfo
 
@@ -805,35 +627,22 @@ type AssignmentsMessage struct {
 	Changes []*AssignmentChange `protobuf:"bytes,4,rep,name=changes,proto3" json:"changes,omitempty"`
 }
 
-func (m *AssignmentsMessage) Reset()      { *m = AssignmentsMessage{} }
-func (*AssignmentsMessage) ProtoMessage() {}
-func (*AssignmentsMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_71002346457e55a8, []int{13}
-}
-func (m *AssignmentsMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *AssignmentsMessage) Reset()                    { _ = "STUB: not implemented"; return }
+func (*AssignmentsMessage) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*AssignmentsMessage) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *AssignmentsMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *AssignmentsMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_AssignmentsMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *AssignmentsMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AssignmentsMessage.Merge(m, src)
-}
-func (m *AssignmentsMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *AssignmentsMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_AssignmentsMessage.DiscardUnknown(m)
-}
+
+func (m *AssignmentsMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *AssignmentsMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *AssignmentsMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_AssignmentsMessage proto.InternalMessageInfo
 
@@ -944,387 +753,125 @@ type authenticatedWrapperDispatcherServer struct {
 }
 
 func NewAuthenticatedWrapperDispatcherServer(local DispatcherServer, authorize func(context.Context, []string) error) DispatcherServer {
-	return &authenticatedWrapperDispatcherServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(DispatcherServer)
 }
 
 func (p *authenticatedWrapperDispatcherServer) Session(r *SessionRequest, stream Dispatcher_SessionServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.Session(r, stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *authenticatedWrapperDispatcherServer) Heartbeat(ctx context.Context, r *HeartbeatRequest) (*HeartbeatResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.Heartbeat(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperDispatcherServer) UpdateTaskStatus(ctx context.Context, r *UpdateTaskStatusRequest) (*UpdateTaskStatusResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateTaskStatus(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperDispatcherServer) UpdateVolumeStatus(ctx context.Context, r *UpdateVolumeStatusRequest) (*UpdateVolumeStatusResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateVolumeStatus(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperDispatcherServer) Tasks(r *TasksRequest, stream Dispatcher_TasksServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.Tasks(r, stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *authenticatedWrapperDispatcherServer) Assignments(r *AssignmentsRequest, stream Dispatcher_AssignmentsServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-worker", "swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.Assignments(r, stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *SessionRequest) Copy() *SessionRequest {
-	if m == nil {
-		return nil
-	}
-	o := &SessionRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *SessionRequest) Copy() *SessionRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *SessionRequest) CopyFrom(src interface{}) {
+func (m *SessionRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*SessionRequest)
-	*m = *o
-	if o.Description != nil {
-		m.Description = &NodeDescription{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Description, o.Description)
-	}
-}
+func (m *SessionMessage) Copy() *SessionMessage { _ = "STUB: not implemented"; return nil }
 
-func (m *SessionMessage) Copy() *SessionMessage {
-	if m == nil {
-		return nil
-	}
-	o := &SessionMessage{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *SessionMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *SessionMessage) CopyFrom(src interface{}) {
+func (m *HeartbeatRequest) Copy() *HeartbeatRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*SessionMessage)
-	*m = *o
-	if o.Node != nil {
-		m.Node = &Node{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Node, o.Node)
-	}
-	if o.Managers != nil {
-		m.Managers = make([]*WeightedPeer, len(o.Managers))
-		for i := range m.Managers {
-			m.Managers[i] = &WeightedPeer{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Managers[i], o.Managers[i])
-		}
-	}
+func (m *HeartbeatRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.NetworkBootstrapKeys != nil {
-		m.NetworkBootstrapKeys = make([]*EncryptionKey, len(o.NetworkBootstrapKeys))
-		for i := range m.NetworkBootstrapKeys {
-			m.NetworkBootstrapKeys[i] = &EncryptionKey{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.NetworkBootstrapKeys[i], o.NetworkBootstrapKeys[i])
-		}
-	}
+func (m *HeartbeatResponse) Copy() *HeartbeatResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.RootCA != nil {
-		m.RootCA = make([]byte, len(o.RootCA))
-		copy(m.RootCA, o.RootCA)
-	}
-}
-
-func (m *HeartbeatRequest) Copy() *HeartbeatRequest {
-	if m == nil {
-		return nil
-	}
-	o := &HeartbeatRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *HeartbeatRequest) CopyFrom(src interface{}) {
-
-	o := src.(*HeartbeatRequest)
-	*m = *o
-}
-
-func (m *HeartbeatResponse) Copy() *HeartbeatResponse {
-	if m == nil {
-		return nil
-	}
-	o := &HeartbeatResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *HeartbeatResponse) CopyFrom(src interface{}) {
-
-	o := src.(*HeartbeatResponse)
-	*m = *o
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Period, &o.Period)
-}
+func (m *HeartbeatResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *UpdateTaskStatusRequest) Copy() *UpdateTaskStatusRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateTaskStatusRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateTaskStatusRequest) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateTaskStatusRequest)
-	*m = *o
-	if o.Updates != nil {
-		m.Updates = make([]*UpdateTaskStatusRequest_TaskStatusUpdate, len(o.Updates))
-		for i := range m.Updates {
-			m.Updates[i] = &UpdateTaskStatusRequest_TaskStatusUpdate{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Updates[i], o.Updates[i])
-		}
-	}
-
-}
+func (m *UpdateTaskStatusRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) Copy() *UpdateTaskStatusRequest_TaskStatusUpdate {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateTaskStatusRequest_TaskStatusUpdate{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateTaskStatusRequest_TaskStatusUpdate)
-	*m = *o
-	if o.Status != nil {
-		m.Status = &TaskStatus{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Status, o.Status)
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
 func (m *UpdateTaskStatusResponse) Copy() *UpdateTaskStatusResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateTaskStatusResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateTaskStatusResponse) CopyFrom(src interface{}) {}
+func (m *UpdateTaskStatusResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 func (m *UpdateVolumeStatusRequest) Copy() *UpdateVolumeStatusRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateVolumeStatusRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateVolumeStatusRequest) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateVolumeStatusRequest)
-	*m = *o
-	if o.Updates != nil {
-		m.Updates = make([]*UpdateVolumeStatusRequest_VolumeStatusUpdate, len(o.Updates))
-		for i := range m.Updates {
-			m.Updates[i] = &UpdateVolumeStatusRequest_VolumeStatusUpdate{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Updates[i], o.Updates[i])
-		}
-	}
-
-}
+func (m *UpdateVolumeStatusRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) Copy() *UpdateVolumeStatusRequest_VolumeStatusUpdate {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateVolumeStatusRequest_VolumeStatusUpdate{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateVolumeStatusRequest_VolumeStatusUpdate)
-	*m = *o
+	_ = "STUB: not implemented"
+	return
 }
 
 func (m *UpdateVolumeStatusResponse) Copy() *UpdateVolumeStatusResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateVolumeStatusResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateVolumeStatusResponse) CopyFrom(src interface{}) {}
-func (m *TasksRequest) Copy() *TasksRequest {
-	if m == nil {
-		return nil
-	}
-	o := &TasksRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *UpdateVolumeStatusResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *TasksRequest) Copy() *TasksRequest                    { _ = "STUB: not implemented"; return nil }
 
-func (m *TasksRequest) CopyFrom(src interface{}) {
+func (m *TasksRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*TasksRequest)
-	*m = *o
-}
+func (m *TasksMessage) Copy() *TasksMessage { _ = "STUB: not implemented"; return nil }
 
-func (m *TasksMessage) Copy() *TasksMessage {
-	if m == nil {
-		return nil
-	}
-	o := &TasksMessage{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *TasksMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *TasksMessage) CopyFrom(src interface{}) {
+func (m *AssignmentsRequest) Copy() *AssignmentsRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*TasksMessage)
-	*m = *o
-	if o.Tasks != nil {
-		m.Tasks = make([]*Task, len(o.Tasks))
-		for i := range m.Tasks {
-			m.Tasks[i] = &Task{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Tasks[i], o.Tasks[i])
-		}
-	}
+func (m *AssignmentsRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *Assignment) Copy() *Assignment { _ = "STUB: not implemented"; return nil }
 
-func (m *AssignmentsRequest) Copy() *AssignmentsRequest {
-	if m == nil {
-		return nil
-	}
-	o := &AssignmentsRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *Assignment) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *AssignmentsRequest) CopyFrom(src interface{}) {
+func (m *AssignmentChange) Copy() *AssignmentChange { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*AssignmentsRequest)
-	*m = *o
-}
+func (m *AssignmentChange) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *Assignment) Copy() *Assignment {
-	if m == nil {
-		return nil
-	}
-	o := &Assignment{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *AssignmentsMessage) Copy() *AssignmentsMessage { _ = "STUB: not implemented"; return nil }
 
-func (m *Assignment) CopyFrom(src interface{}) {
-
-	o := src.(*Assignment)
-	*m = *o
-	if o.Item != nil {
-		switch o.Item.(type) {
-		case *Assignment_Task:
-			v := Assignment_Task{
-				Task: &Task{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Task, o.GetTask())
-			m.Item = &v
-		case *Assignment_Secret:
-			v := Assignment_Secret{
-				Secret: &Secret{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Secret, o.GetSecret())
-			m.Item = &v
-		case *Assignment_Config:
-			v := Assignment_Config{
-				Config: &Config{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Config, o.GetConfig())
-			m.Item = &v
-		case *Assignment_Volume:
-			v := Assignment_Volume{
-				Volume: &VolumeAssignment{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Volume, o.GetVolume())
-			m.Item = &v
-		}
-	}
-
-}
-
-func (m *AssignmentChange) Copy() *AssignmentChange {
-	if m == nil {
-		return nil
-	}
-	o := &AssignmentChange{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *AssignmentChange) CopyFrom(src interface{}) {
-
-	o := src.(*AssignmentChange)
-	*m = *o
-	if o.Assignment != nil {
-		m.Assignment = &Assignment{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Assignment, o.Assignment)
-	}
-}
-
-func (m *AssignmentsMessage) Copy() *AssignmentsMessage {
-	if m == nil {
-		return nil
-	}
-	o := &AssignmentsMessage{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *AssignmentsMessage) CopyFrom(src interface{}) {
-
-	o := src.(*AssignmentsMessage)
-	*m = *o
-	if o.Changes != nil {
-		m.Changes = make([]*AssignmentChange, len(o.Changes))
-		for i := range m.Changes {
-			m.Changes[i] = &AssignmentChange{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Changes[i], o.Changes[i])
-		}
-	}
-
-}
+func (m *AssignmentsMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
@@ -1378,22 +925,13 @@ type dispatcherClient struct {
 }
 
 func NewDispatcherClient(cc *grpc.ClientConn) DispatcherClient {
-	return &dispatcherClient{cc}
+	_ = "STUB: not implemented"
+	return *new(DispatcherClient)
 }
 
 func (c *dispatcherClient) Session(ctx context.Context, in *SessionRequest, opts ...grpc.CallOption) (Dispatcher_SessionClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dispatcher_serviceDesc.Streams[0], "/docker.swarmkit.v1.Dispatcher/Session", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &dispatcherSessionClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Dispatcher_SessionClient), nil
 }
 
 type Dispatcher_SessionClient interface {
@@ -1406,54 +944,29 @@ type dispatcherSessionClient struct {
 }
 
 func (x *dispatcherSessionClient) Recv() (*SessionMessage, error) {
-	m := new(SessionMessage)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *dispatcherClient) Heartbeat(ctx context.Context, in *HeartbeatRequest, opts ...grpc.CallOption) (*HeartbeatResponse, error) {
-	out := new(HeartbeatResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Dispatcher/Heartbeat", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *dispatcherClient) UpdateTaskStatus(ctx context.Context, in *UpdateTaskStatusRequest, opts ...grpc.CallOption) (*UpdateTaskStatusResponse, error) {
-	out := new(UpdateTaskStatusResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Dispatcher/UpdateTaskStatus", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *dispatcherClient) UpdateVolumeStatus(ctx context.Context, in *UpdateVolumeStatusRequest, opts ...grpc.CallOption) (*UpdateVolumeStatusResponse, error) {
-	out := new(UpdateVolumeStatusResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Dispatcher/UpdateVolumeStatus", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // Deprecated: Do not use.
 func (c *dispatcherClient) Tasks(ctx context.Context, in *TasksRequest, opts ...grpc.CallOption) (Dispatcher_TasksClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dispatcher_serviceDesc.Streams[1], "/docker.swarmkit.v1.Dispatcher/Tasks", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &dispatcherTasksClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Dispatcher_TasksClient), nil
 }
 
 type Dispatcher_TasksClient interface {
@@ -1466,26 +979,13 @@ type dispatcherTasksClient struct {
 }
 
 func (x *dispatcherTasksClient) Recv() (*TasksMessage, error) {
-	m := new(TasksMessage)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *dispatcherClient) Assignments(ctx context.Context, in *AssignmentsRequest, opts ...grpc.CallOption) (Dispatcher_AssignmentsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Dispatcher_serviceDesc.Streams[2], "/docker.swarmkit.v1.Dispatcher/Assignments", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &dispatcherAssignmentsClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Dispatcher_AssignmentsClient), nil
 }
 
 type Dispatcher_AssignmentsClient interface {
@@ -1498,11 +998,8 @@ type dispatcherAssignmentsClient struct {
 }
 
 func (x *dispatcherAssignmentsClient) Recv() (*AssignmentsMessage, error) {
-	m := new(AssignmentsMessage)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // DispatcherServer is the server API for Dispatcher service.
@@ -1547,34 +1044,43 @@ type UnimplementedDispatcherServer struct {
 }
 
 func (*UnimplementedDispatcherServer) Session(req *SessionRequest, srv Dispatcher_SessionServer) error {
-	return status.Errorf(codes.Unimplemented, "method Session not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (*UnimplementedDispatcherServer) Heartbeat(ctx context.Context, req *HeartbeatRequest) (*HeartbeatResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Heartbeat not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (*UnimplementedDispatcherServer) UpdateTaskStatus(ctx context.Context, req *UpdateTaskStatusRequest) (*UpdateTaskStatusResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateTaskStatus not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (*UnimplementedDispatcherServer) UpdateVolumeStatus(ctx context.Context, req *UpdateVolumeStatusRequest) (*UpdateVolumeStatusResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateVolumeStatus not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (*UnimplementedDispatcherServer) Tasks(req *TasksRequest, srv Dispatcher_TasksServer) error {
-	return status.Errorf(codes.Unimplemented, "method Tasks not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (*UnimplementedDispatcherServer) Assignments(req *AssignmentsRequest, srv Dispatcher_AssignmentsServer) error {
-	return status.Errorf(codes.Unimplemented, "method Assignments not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func RegisterDispatcherServer(s *grpc.Server, srv DispatcherServer) {
-	s.RegisterService(&_Dispatcher_serviceDesc, srv)
+	_ = "STUB: not implemented"
+	return
 }
 
 func _Dispatcher_Session_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(SessionRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(DispatcherServer).Session(m, &dispatcherSessionServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Dispatcher_SessionServer interface {
@@ -1587,69 +1093,28 @@ type dispatcherSessionServer struct {
 }
 
 func (x *dispatcherSessionServer) Send(m *SessionMessage) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func _Dispatcher_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(HeartbeatRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DispatcherServer).Heartbeat(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Dispatcher/Heartbeat",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DispatcherServer).Heartbeat(ctx, req.(*HeartbeatRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Dispatcher_UpdateTaskStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateTaskStatusRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DispatcherServer).UpdateTaskStatus(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Dispatcher/UpdateTaskStatus",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DispatcherServer).UpdateTaskStatus(ctx, req.(*UpdateTaskStatusRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Dispatcher_UpdateVolumeStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateVolumeStatusRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DispatcherServer).UpdateVolumeStatus(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Dispatcher/UpdateVolumeStatus",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DispatcherServer).UpdateVolumeStatus(ctx, req.(*UpdateVolumeStatusRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Dispatcher_Tasks_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(TasksRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(DispatcherServer).Tasks(m, &dispatcherTasksServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Dispatcher_TasksServer interface {
@@ -1661,16 +1126,11 @@ type dispatcherTasksServer struct {
 	grpc.ServerStream
 }
 
-func (x *dispatcherTasksServer) Send(m *TasksMessage) error {
-	return x.ServerStream.SendMsg(m)
-}
+func (x *dispatcherTasksServer) Send(m *TasksMessage) error { _ = "STUB: not implemented"; return nil }
 
 func _Dispatcher_Assignments_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(AssignmentsRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(DispatcherServer).Assignments(m, &dispatcherAssignmentsServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Dispatcher_AssignmentsServer interface {
@@ -1683,7 +1143,8 @@ type dispatcherAssignmentsServer struct {
 }
 
 func (x *dispatcherAssignmentsServer) Send(m *AssignmentsMessage) error {
-	return x.ServerStream.SendMsg(m)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 var _Dispatcher_serviceDesc = grpc.ServiceDesc{
@@ -1724,720 +1185,282 @@ var _Dispatcher_serviceDesc = grpc.ServiceDesc{
 }
 
 func (m *SessionRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *SessionRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SessionRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SessionID) > 0 {
-		i -= len(m.SessionID)
-		copy(dAtA[i:], m.SessionID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.SessionID)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Description != nil {
-		{
-			size, err := m.Description.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SessionMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *SessionMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SessionMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.RootCA) > 0 {
-		i -= len(m.RootCA)
-		copy(dAtA[i:], m.RootCA)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.RootCA)))
-		i--
-		dAtA[i] = 0x2a
-	}
-	if len(m.NetworkBootstrapKeys) > 0 {
-		for iNdEx := len(m.NetworkBootstrapKeys) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.NetworkBootstrapKeys[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintDispatcher(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Managers) > 0 {
-		for iNdEx := len(m.Managers) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Managers[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintDispatcher(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if m.Node != nil {
-		{
-			size, err := m.Node.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.SessionID) > 0 {
-		i -= len(m.SessionID)
-		copy(dAtA[i:], m.SessionID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.SessionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HeartbeatRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *HeartbeatRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HeartbeatRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SessionID) > 0 {
-		i -= len(m.SessionID)
-		copy(dAtA[i:], m.SessionID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.SessionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HeartbeatResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *HeartbeatResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *HeartbeatResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	n3, err3 := github_com_gogo_protobuf_types.StdDurationMarshalTo(m.Period, dAtA[i-github_com_gogo_protobuf_types.SizeOfStdDuration(m.Period):])
-	if err3 != nil {
-		return 0, err3
-	}
-	i -= n3
-	i = encodeVarintDispatcher(dAtA, i, uint64(n3))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateTaskStatusRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateTaskStatusRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateTaskStatusRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Updates) > 0 {
-		for iNdEx := len(m.Updates) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Updates[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintDispatcher(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.SessionID) > 0 {
-		i -= len(m.SessionID)
-		copy(dAtA[i:], m.SessionID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.SessionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Status != nil {
-		{
-			size, err := m.Status.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.TaskID) > 0 {
-		i -= len(m.TaskID)
-		copy(dAtA[i:], m.TaskID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.TaskID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateTaskStatusResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateTaskStatusResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateTaskStatusResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeStatusRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateVolumeStatusRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeStatusRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Updates) > 0 {
-		for iNdEx := len(m.Updates) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Updates[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintDispatcher(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.SessionID) > 0 {
-		i -= len(m.SessionID)
-		copy(dAtA[i:], m.SessionID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.SessionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Unpublished {
-		i--
-		if m.Unpublished {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.ID) > 0 {
-		i -= len(m.ID)
-		copy(dAtA[i:], m.ID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.ID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeStatusResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateVolumeStatusResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeStatusResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *TasksRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *TasksRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *TasksRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SessionID) > 0 {
-		i -= len(m.SessionID)
-		copy(dAtA[i:], m.SessionID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.SessionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *TasksMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *TasksMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *TasksMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Tasks) > 0 {
-		for iNdEx := len(m.Tasks) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Tasks[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintDispatcher(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AssignmentsRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *AssignmentsRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AssignmentsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SessionID) > 0 {
-		i -= len(m.SessionID)
-		copy(dAtA[i:], m.SessionID)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.SessionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *Assignment) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *Assignment) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *Assignment) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *Assignment) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *Assignment) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Item != nil {
-		{
-			size := m.Item.Size()
-			i -= size
-			if _, err := m.Item.MarshalTo(dAtA[i:]); err != nil {
-				return 0, err
-			}
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Assignment_Task) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Assignment_Task) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Task != nil {
-		{
-			size, err := m.Task.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Assignment_Secret) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Assignment_Secret) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Secret != nil {
-		{
-			size, err := m.Secret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Assignment_Config) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Assignment_Config) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Config != nil {
-		{
-			size, err := m.Config.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Assignment_Volume) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Assignment_Volume) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Volume != nil {
-		{
-			size, err := m.Volume.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *AssignmentChange) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *AssignmentChange) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AssignmentChange) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Action != 0 {
-		i = encodeVarintDispatcher(dAtA, i, uint64(m.Action))
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.Assignment != nil {
-		{
-			size, err := m.Assignment.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintDispatcher(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AssignmentsMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *AssignmentsMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *AssignmentsMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Changes) > 0 {
-		for iNdEx := len(m.Changes) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Changes[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintDispatcher(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.ResultsIn) > 0 {
-		i -= len(m.ResultsIn)
-		copy(dAtA[i:], m.ResultsIn)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.ResultsIn)))
-		i--
-		dAtA[i] = 0x1a
-	}
-	if len(m.AppliesTo) > 0 {
-		i -= len(m.AppliesTo)
-		copy(dAtA[i:], m.AppliesTo)
-		i = encodeVarintDispatcher(dAtA, i, uint64(len(m.AppliesTo)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Type != 0 {
-		i = encodeVarintDispatcher(dAtA, i, uint64(m.Type))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func encodeVarintDispatcher(dAtA []byte, offset int, v uint64) int {
-	offset -= sovDispatcher(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
+	_ = "STUB: not implemented"
+	return 0
 }
 
 type raftProxyDispatcherServer struct {
@@ -2447,69 +1470,18 @@ type raftProxyDispatcherServer struct {
 }
 
 func NewRaftProxyDispatcherServer(local DispatcherServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) DispatcherServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyDispatcherServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(DispatcherServer)
 }
+
 func (p *raftProxyDispatcherServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyDispatcherServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type Dispatcher_SessionServerWrapper struct {
@@ -2518,154 +1490,28 @@ type Dispatcher_SessionServerWrapper struct {
 }
 
 func (s Dispatcher_SessionServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyDispatcherServer) Session(r *SessionRequest, stream Dispatcher_SessionServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := Dispatcher_SessionServerWrapper{
-				Dispatcher_SessionServer: stream,
-				ctx:                      ctx,
-			}
-			return p.local.Session(r, streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewDispatcherClient(conn).Session(ctx, r)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (p *raftProxyDispatcherServer) Heartbeat(ctx context.Context, r *HeartbeatRequest) (*HeartbeatResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.Heartbeat(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewDispatcherClient(conn).Heartbeat(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.Heartbeat(ctx, r)
-			}
-			return nil, err
-		}
-		return NewDispatcherClient(conn).Heartbeat(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyDispatcherServer) UpdateTaskStatus(ctx context.Context, r *UpdateTaskStatusRequest) (*UpdateTaskStatusResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateTaskStatus(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewDispatcherClient(conn).UpdateTaskStatus(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateTaskStatus(ctx, r)
-			}
-			return nil, err
-		}
-		return NewDispatcherClient(conn).UpdateTaskStatus(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyDispatcherServer) UpdateVolumeStatus(ctx context.Context, r *UpdateVolumeStatusRequest) (*UpdateVolumeStatusResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateVolumeStatus(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewDispatcherClient(conn).UpdateVolumeStatus(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateVolumeStatus(ctx, r)
-			}
-			return nil, err
-		}
-		return NewDispatcherClient(conn).UpdateVolumeStatus(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type Dispatcher_TasksServerWrapper struct {
@@ -2674,48 +1520,12 @@ type Dispatcher_TasksServerWrapper struct {
 }
 
 func (s Dispatcher_TasksServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyDispatcherServer) Tasks(r *TasksRequest, stream Dispatcher_TasksServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := Dispatcher_TasksServerWrapper{
-				Dispatcher_TasksServer: stream,
-				ctx:                    ctx,
-			}
-			return p.local.Tasks(r, streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewDispatcherClient(conn).Tasks(ctx, r)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
@@ -2725,2455 +1535,164 @@ type Dispatcher_AssignmentsServerWrapper struct {
 }
 
 func (s Dispatcher_AssignmentsServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyDispatcherServer) Assignments(r *AssignmentsRequest, stream Dispatcher_AssignmentsServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := Dispatcher_AssignmentsServerWrapper{
-				Dispatcher_AssignmentsServer: stream,
-				ctx:                          ctx,
-			}
-			return p.local.Assignments(r, streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewDispatcherClient(conn).Assignments(ctx, r)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (m *SessionRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Description != nil {
-		l = m.Description.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	l = len(m.SessionID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
+func (m *SessionRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *SessionMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SessionID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if m.Node != nil {
-		l = m.Node.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if len(m.Managers) > 0 {
-		for _, e := range m.Managers {
-			l = e.Size()
-			n += 1 + l + sovDispatcher(uint64(l))
-		}
-	}
-	if len(m.NetworkBootstrapKeys) > 0 {
-		for _, e := range m.NetworkBootstrapKeys {
-			l = e.Size()
-			n += 1 + l + sovDispatcher(uint64(l))
-		}
-	}
-	l = len(m.RootCA)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
+func (m *SessionMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *HeartbeatRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SessionID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
+func (m *HeartbeatRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *HeartbeatResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = github_com_gogo_protobuf_types.SizeOfStdDuration(m.Period)
-	n += 1 + l + sovDispatcher(uint64(l))
-	return n
-}
+func (m *HeartbeatResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateTaskStatusRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SessionID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if len(m.Updates) > 0 {
-		for _, e := range m.Updates {
-			l = e.Size()
-			n += 1 + l + sovDispatcher(uint64(l))
-		}
-	}
-	return n
-}
+func (m *UpdateTaskStatusRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.TaskID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if m.Status != nil {
-		l = m.Status.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
+	_ = "STUB: not implemented"
+	return 0
 }
 
-func (m *UpdateTaskStatusResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *UpdateTaskStatusResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateVolumeStatusRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SessionID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if len(m.Updates) > 0 {
-		for _, e := range m.Updates {
-			l = e.Size()
-			n += 1 + l + sovDispatcher(uint64(l))
-		}
-	}
-	return n
-}
+func (m *UpdateVolumeStatusRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if m.Unpublished {
-		n += 2
-	}
-	return n
+	_ = "STUB: not implemented"
+	return 0
 }
 
-func (m *UpdateVolumeStatusResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *UpdateVolumeStatusResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *TasksRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SessionID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
+func (m *TasksRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *TasksMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Tasks) > 0 {
-		for _, e := range m.Tasks {
-			l = e.Size()
-			n += 1 + l + sovDispatcher(uint64(l))
-		}
-	}
-	return n
-}
+func (m *TasksMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *AssignmentsRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SessionID)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
+func (m *AssignmentsRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *Assignment) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Item != nil {
-		n += m.Item.Size()
-	}
-	return n
-}
+func (m *Assignment) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *Assignment_Task) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Task != nil {
-		l = m.Task.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
-func (m *Assignment_Secret) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Secret != nil {
-		l = m.Secret.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
-func (m *Assignment_Config) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Config != nil {
-		l = m.Config.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
-func (m *Assignment_Volume) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Volume != nil {
-		l = m.Volume.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	return n
-}
-func (m *AssignmentChange) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Assignment != nil {
-		l = m.Assignment.Size()
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if m.Action != 0 {
-		n += 1 + sovDispatcher(uint64(m.Action))
-	}
-	return n
-}
+func (m *Assignment_Task) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *AssignmentsMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Type != 0 {
-		n += 1 + sovDispatcher(uint64(m.Type))
-	}
-	l = len(m.AppliesTo)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	l = len(m.ResultsIn)
-	if l > 0 {
-		n += 1 + l + sovDispatcher(uint64(l))
-	}
-	if len(m.Changes) > 0 {
-		for _, e := range m.Changes {
-			l = e.Size()
-			n += 1 + l + sovDispatcher(uint64(l))
-		}
-	}
-	return n
-}
+func (m *Assignment_Secret) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovDispatcher(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozDispatcher(x uint64) (n int) {
-	return sovDispatcher(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *SessionRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SessionRequest{`,
-		`Description:` + strings.Replace(fmt.Sprintf("%v", this.Description), "NodeDescription", "NodeDescription", 1) + `,`,
-		`SessionID:` + fmt.Sprintf("%v", this.SessionID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SessionMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForManagers := "[]*WeightedPeer{"
-	for _, f := range this.Managers {
-		repeatedStringForManagers += strings.Replace(fmt.Sprintf("%v", f), "WeightedPeer", "WeightedPeer", 1) + ","
-	}
-	repeatedStringForManagers += "}"
-	repeatedStringForNetworkBootstrapKeys := "[]*EncryptionKey{"
-	for _, f := range this.NetworkBootstrapKeys {
-		repeatedStringForNetworkBootstrapKeys += strings.Replace(fmt.Sprintf("%v", f), "EncryptionKey", "EncryptionKey", 1) + ","
-	}
-	repeatedStringForNetworkBootstrapKeys += "}"
-	s := strings.Join([]string{`&SessionMessage{`,
-		`SessionID:` + fmt.Sprintf("%v", this.SessionID) + `,`,
-		`Node:` + strings.Replace(fmt.Sprintf("%v", this.Node), "Node", "Node", 1) + `,`,
-		`Managers:` + repeatedStringForManagers + `,`,
-		`NetworkBootstrapKeys:` + repeatedStringForNetworkBootstrapKeys + `,`,
-		`RootCA:` + fmt.Sprintf("%v", this.RootCA) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *HeartbeatRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&HeartbeatRequest{`,
-		`SessionID:` + fmt.Sprintf("%v", this.SessionID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *HeartbeatResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&HeartbeatResponse{`,
-		`Period:` + strings.Replace(strings.Replace(fmt.Sprintf("%v", this.Period), "Duration", "types.Duration", 1), `&`, ``, 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateTaskStatusRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForUpdates := "[]*UpdateTaskStatusRequest_TaskStatusUpdate{"
-	for _, f := range this.Updates {
-		repeatedStringForUpdates += strings.Replace(fmt.Sprintf("%v", f), "UpdateTaskStatusRequest_TaskStatusUpdate", "UpdateTaskStatusRequest_TaskStatusUpdate", 1) + ","
-	}
-	repeatedStringForUpdates += "}"
-	s := strings.Join([]string{`&UpdateTaskStatusRequest{`,
-		`SessionID:` + fmt.Sprintf("%v", this.SessionID) + `,`,
-		`Updates:` + repeatedStringForUpdates + `,`,
-		`}`,
-	}, "")
-	return s
-}
+func (m *Assignment_Config) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *Assignment_Volume) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *AssignmentChange) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *AssignmentsMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sovDispatcher(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sozDispatcher(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (this *SessionRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SessionMessage) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *HeartbeatRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *HeartbeatResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateTaskStatusRequest) String() string { _ = "STUB: not implemented"; return "" }
+
 func (this *UpdateTaskStatusRequest_TaskStatusUpdate) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateTaskStatusRequest_TaskStatusUpdate{`,
-		`TaskID:` + fmt.Sprintf("%v", this.TaskID) + `,`,
-		`Status:` + strings.Replace(fmt.Sprintf("%v", this.Status), "TaskStatus", "TaskStatus", 1) + `,`,
-		`}`,
-	}, "")
-	return s
+	_ = "STUB: not implemented"
+	return ""
 }
-func (this *UpdateTaskStatusResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateTaskStatusResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateVolumeStatusRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForUpdates := "[]*UpdateVolumeStatusRequest_VolumeStatusUpdate{"
-	for _, f := range this.Updates {
-		repeatedStringForUpdates += strings.Replace(fmt.Sprintf("%v", f), "UpdateVolumeStatusRequest_VolumeStatusUpdate", "UpdateVolumeStatusRequest_VolumeStatusUpdate", 1) + ","
-	}
-	repeatedStringForUpdates += "}"
-	s := strings.Join([]string{`&UpdateVolumeStatusRequest{`,
-		`SessionID:` + fmt.Sprintf("%v", this.SessionID) + `,`,
-		`Updates:` + repeatedStringForUpdates + `,`,
-		`}`,
-	}, "")
-	return s
-}
+
+func (this *UpdateTaskStatusResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateVolumeStatusRequest) String() string { _ = "STUB: not implemented"; return "" }
+
 func (this *UpdateVolumeStatusRequest_VolumeStatusUpdate) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateVolumeStatusRequest_VolumeStatusUpdate{`,
-		`ID:` + fmt.Sprintf("%v", this.ID) + `,`,
-		`Unpublished:` + fmt.Sprintf("%v", this.Unpublished) + `,`,
-		`}`,
-	}, "")
-	return s
+	_ = "STUB: not implemented"
+	return ""
 }
-func (this *UpdateVolumeStatusResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateVolumeStatusResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *TasksRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&TasksRequest{`,
-		`SessionID:` + fmt.Sprintf("%v", this.SessionID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *TasksMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForTasks := "[]*Task{"
-	for _, f := range this.Tasks {
-		repeatedStringForTasks += strings.Replace(fmt.Sprintf("%v", f), "Task", "Task", 1) + ","
-	}
-	repeatedStringForTasks += "}"
-	s := strings.Join([]string{`&TasksMessage{`,
-		`Tasks:` + repeatedStringForTasks + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *AssignmentsRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AssignmentsRequest{`,
-		`SessionID:` + fmt.Sprintf("%v", this.SessionID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Assignment) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Assignment{`,
-		`Item:` + fmt.Sprintf("%v", this.Item) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Assignment_Task) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Assignment_Task{`,
-		`Task:` + strings.Replace(fmt.Sprintf("%v", this.Task), "Task", "Task", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Assignment_Secret) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Assignment_Secret{`,
-		`Secret:` + strings.Replace(fmt.Sprintf("%v", this.Secret), "Secret", "Secret", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Assignment_Config) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Assignment_Config{`,
-		`Config:` + strings.Replace(fmt.Sprintf("%v", this.Config), "Config", "Config", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Assignment_Volume) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Assignment_Volume{`,
-		`Volume:` + strings.Replace(fmt.Sprintf("%v", this.Volume), "VolumeAssignment", "VolumeAssignment", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *AssignmentChange) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AssignmentChange{`,
-		`Assignment:` + strings.Replace(this.Assignment.String(), "Assignment", "Assignment", 1) + `,`,
-		`Action:` + fmt.Sprintf("%v", this.Action) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *AssignmentsMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForChanges := "[]*AssignmentChange{"
-	for _, f := range this.Changes {
-		repeatedStringForChanges += strings.Replace(f.String(), "AssignmentChange", "AssignmentChange", 1) + ","
-	}
-	repeatedStringForChanges += "}"
-	s := strings.Join([]string{`&AssignmentsMessage{`,
-		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
-		`AppliesTo:` + fmt.Sprintf("%v", this.AppliesTo) + `,`,
-		`ResultsIn:` + fmt.Sprintf("%v", this.ResultsIn) + `,`,
-		`Changes:` + repeatedStringForChanges + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringDispatcher(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *SessionRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SessionRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SessionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Description", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Description == nil {
-				m.Description = &NodeDescription{}
-			}
-			if err := m.Description.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SessionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SessionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *SessionMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SessionMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SessionMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SessionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SessionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Node", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Node == nil {
-				m.Node = &Node{}
-			}
-			if err := m.Node.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Managers", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Managers = append(m.Managers, &WeightedPeer{})
-			if err := m.Managers[len(m.Managers)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NetworkBootstrapKeys", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NetworkBootstrapKeys = append(m.NetworkBootstrapKeys, &EncryptionKey{})
-			if err := m.NetworkBootstrapKeys[len(m.NetworkBootstrapKeys)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RootCA", wireType)
-			}
-			var byteLen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				byteLen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if byteLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + byteLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.RootCA = append(m.RootCA[:0], dAtA[iNdEx:postIndex]...)
-			if m.RootCA == nil {
-				m.RootCA = []byte{}
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *UpdateVolumeStatusResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *HeartbeatRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: HeartbeatRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: HeartbeatRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SessionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SessionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *TasksRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *HeartbeatResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: HeartbeatResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: HeartbeatResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Period", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := github_com_gogo_protobuf_types.StdDurationUnmarshal(&m.Period, dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *TasksMessage) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (this *AssignmentsRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Assignment) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Assignment_Task) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Assignment_Secret) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Assignment_Config) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Assignment_Volume) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *AssignmentChange) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *AssignmentsMessage) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringDispatcher(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *SessionRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *SessionMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *HeartbeatRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *HeartbeatResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateTaskStatusRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateTaskStatusRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateTaskStatusRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SessionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SessionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Updates", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Updates = append(m.Updates, &UpdateTaskStatusRequest_TaskStatusUpdate{})
-			if err := m.Updates[len(m.Updates)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *UpdateTaskStatusRequest_TaskStatusUpdate) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: TaskStatusUpdate: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: TaskStatusUpdate: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field TaskID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.TaskID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Status == nil {
-				m.Status = &TaskStatus{}
-			}
-			if err := m.Status.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *UpdateTaskStatusResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateTaskStatusResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateTaskStatusResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *UpdateVolumeStatusRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateVolumeStatusRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateVolumeStatusRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SessionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SessionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Updates", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Updates = append(m.Updates, &UpdateVolumeStatusRequest_VolumeStatusUpdate{})
-			if err := m.Updates[len(m.Updates)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *UpdateVolumeStatusRequest_VolumeStatusUpdate) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: VolumeStatusUpdate: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: VolumeStatusUpdate: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Unpublished", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Unpublished = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *UpdateVolumeStatusResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateVolumeStatusResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateVolumeStatusResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *TasksRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: TasksRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: TasksRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SessionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SessionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *TasksMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: TasksMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: TasksMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tasks", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Tasks = append(m.Tasks, &Task{})
-			if err := m.Tasks[len(m.Tasks)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *TasksRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *AssignmentsRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: AssignmentsRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: AssignmentsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SessionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SessionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *TasksMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Assignment) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Assignment: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Assignment: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Task", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Task{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Item = &Assignment_Task{v}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secret", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Secret{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Item = &Assignment_Secret{v}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Config", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Config{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Item = &Assignment_Config{v}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volume", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &VolumeAssignment{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Item = &Assignment_Volume{v}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *AssignmentsRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *AssignmentChange) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: AssignmentChange: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: AssignmentChange: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Assignment", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Assignment == nil {
-				m.Assignment = &Assignment{}
-			}
-			if err := m.Assignment.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Action", wireType)
-			}
-			m.Action = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Action |= AssignmentChange_AssignmentAction(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *Assignment) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *AssignmentsMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: AssignmentsMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: AssignmentsMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Type", wireType)
-			}
-			m.Type = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Type |= AssignmentsMessage_Type(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AppliesTo", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.AppliesTo = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ResultsIn", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ResultsIn = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Changes", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Changes = append(m.Changes, &AssignmentChange{})
-			if err := m.Changes[len(m.Changes)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipDispatcher(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthDispatcher
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *AssignmentChange) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipDispatcher(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowDispatcher
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowDispatcher
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthDispatcher
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupDispatcher
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthDispatcher
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (m *AssignmentsMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipDispatcher(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthDispatcher        = fmt.Errorf("proto: negative length found during unmarshaling")

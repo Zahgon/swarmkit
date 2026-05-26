@@ -2,14 +2,12 @@ package csi
 
 import (
 	"context"
-	"fmt"
 	"sync"
 	"time"
 
 	"github.com/moby/swarmkit/v2/agent/csi/plugin"
 	"github.com/moby/swarmkit/v2/agent/exec"
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/moby/swarmkit/v2/log"
 	mobyplugin "github.com/moby/swarmkit/v2/node/plugin"
 	"github.com/moby/swarmkit/v2/volumequeue"
 )
@@ -46,203 +44,102 @@ type volumes struct {
 
 // NewManager returns a place to store volumes.
 func NewManager(pg mobyplugin.Getter, secrets exec.SecretGetter) exec.VolumesManager {
-	r := &volumes{
-		volumes:        map[string]volumeState{},
-		plugins:        plugin.NewManager(pg, secrets),
-		pendingVolumes: volumequeue.NewVolumeQueue(),
-	}
-	go r.retryVolumes()
-
-	return r
+	_ = "STUB: not implemented"
+	return *new(exec.VolumesManager)
 }
 
 // retryVolumes runs in a goroutine to retry failing volumes.
-func (r *volumes) retryVolumes() {
-	ctx := log.WithModule(context.Background(), "node/agent/csi")
-	for {
-		vid, attempt := r.pendingVolumes.Wait()
+func (r *volumes) retryVolumes() { _ = "STUB: not implemented"; return }
 
-		dctx := log.WithFields(ctx, log.Fields{
-			"volume.id": vid,
-			"attempt":   fmt.Sprintf("%d", attempt),
-		})
-
-		// this case occurs when the Stop method has been called on
-		// pendingVolumes, and means that we should pack up and exit.
-		if vid == "" && attempt == 0 {
-			break
-		}
-		r.tryVolume(dctx, vid, attempt)
-	}
-}
+// this case occurs when the Stop method has been called on
+// pendingVolumes, and means that we should pack up and exit.
 
 // tryVolume synchronously tries one volume. it puts the volume back into the
 // queue if the attempt fails.
 func (r *volumes) tryVolume(ctx context.Context, id string, attempt uint) {
-	r.mu.RLock()
-	vs, ok := r.volumes[id]
-	r.mu.RUnlock()
-
-	if !ok {
-		return
-	}
-
-	// create a sub-context with a timeout. because we can only process one
-	// volume at a time, if we rely on the server-side or default timeout, we
-	// may be waiting a very long time for a particular volume to fail.
-	//
-	// TODO(dperny): there is almost certainly a more intelligent way to do
-	// this. For example, we could:
-	//
-	//   * Change code such that we can service volumes managed by different
-	//     plugins at the same time.
-	//   * Take longer timeouts when we don't have any other volumes in the
-	//     queue
-	//   * Have interruptible attempts, so that if we're taking longer
-	//     timeouts, we can abort them to service new volumes.
-	//
-	// These are too complicated to be worth the engineering effort at this
-	// time.
-
-	timeoutCtx, cancel := context.WithTimeout(ctx, csiCallTimeout)
-	// always gotta call the WithTimeout cancel
-	defer cancel()
-
-	if !vs.remove {
-		if err := r.publishVolume(timeoutCtx, vs.volume); err != nil {
-			log.G(timeoutCtx).WithError(err).Info("publishing volume failed")
-			r.pendingVolumes.Enqueue(id, attempt+1)
-		}
-	} else {
-		if err := r.unpublishVolume(timeoutCtx, vs.volume); err != nil {
-			log.G(timeoutCtx).WithError(err).Info("upublishing volume failed")
-			r.pendingVolumes.Enqueue(id, attempt+1)
-		} else {
-			// if unpublishing was successful, then call the callback
-			vs.removeCallback(id)
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// create a sub-context with a timeout. because we can only process one
+// volume at a time, if we rely on the server-side or default timeout, we
+// may be waiting a very long time for a particular volume to fail.
+//
+// TODO(dperny): there is almost certainly a more intelligent way to do
+// this. For example, we could:
+//
+//   * Change code such that we can service volumes managed by different
+//     plugins at the same time.
+//   * Take longer timeouts when we don't have any other volumes in the
+//     queue
+//   * Have interruptible attempts, so that if we're taking longer
+//     timeouts, we can abort them to service new volumes.
+//
+// These are too complicated to be worth the engineering effort at this
+// time.
+
+// always gotta call the WithTimeout cancel
+
+// if unpublishing was successful, then call the callback
 
 // Get returns a volume published path for the provided volume ID.  If the volume doesn't exist, returns empty string.
-func (r *volumes) Get(volumeID string) (string, error) {
-	r.mu.Lock()
-	defer r.mu.Unlock()
-	if vs, ok := r.volumes[volumeID]; ok {
-		if vs.remove {
-			// TODO(dperny): use a structured error
-			return "", fmt.Errorf("volume being removed")
-		}
+func (r *volumes) Get(volumeID string) (string, error) { _ = "STUB: not implemented"; return "", nil }
 
-		if p, err := r.plugins.Get(vs.volume.Driver.Name); err == nil {
-			path := p.GetPublishedPath(volumeID)
-			if path != "" {
-				return path, nil
-			}
-			// don't put this line here, it spams like crazy.
-			// log.L.WithField("method", "(*volumes).Get").Debugf("Path not published for volume:%v", volumeID)
-		} else {
-			return "", err
-		}
+// TODO(dperny): use a structured error
 
-	}
-	return "", fmt.Errorf("%w: published path is unavailable", exec.ErrDependencyNotReady)
-}
+// don't put this line here, it spams like crazy.
+// log.L.WithField("method", "(*volumes).Get").Debugf("Path not published for volume:%v", volumeID)
 
 // Add adds one or more volumes to the volume map.
-func (r *volumes) Add(volumes ...api.VolumeAssignment) {
-	r.mu.Lock()
-	defer r.mu.Unlock()
+func (r *volumes) Add(volumes ...api.VolumeAssignment) { _ = "STUB: not implemented"; return }
 
-	for _, volume := range volumes {
-		// if we get an Add operation, then we will always restart the retries.
-		v := volume.Copy()
-		r.volumes[volume.ID] = volumeState{
-			volume: v,
-		}
-		// enqueue the volume so that we process it
-		r.pendingVolumes.Enqueue(volume.ID, 0)
-		log.L.WithField("method", "(*volumes).Add").Debugf("Add Volume: %v", volume.VolumeID)
-	}
-}
+// if we get an Add operation, then we will always restart the retries.
+
+// enqueue the volume so that we process it
 
 // Remove removes one or more volumes from this manager. callback is called
 // whenever the removal is successful.
 func (r *volumes) Remove(volumes []api.VolumeAssignment, callback func(id string)) {
-	r.mu.Lock()
-	defer r.mu.Unlock()
-
-	for _, volume := range volumes {
-		// if we get a Remove call, then we always restart the retries and
-		// attempt removal.
-		v := volume.Copy()
-		r.volumes[volume.ID] = volumeState{
-			volume:         v,
-			remove:         true,
-			removeCallback: callback,
-		}
-		r.pendingVolumes.Enqueue(volume.ID, 0)
-	}
+	_ = "STUB: not implemented"
+	return
 }
+
+// if we get a Remove call, then we always restart the retries and
+// attempt removal.
 
 func (r *volumes) publishVolume(ctx context.Context, assignment *api.VolumeAssignment) error {
-	log.G(ctx).Info("attempting to publish volume")
-	p, err := r.plugins.Get(assignment.Driver.Name)
-	if err != nil {
-		return err
-	}
-
-	// even though this may have succeeded already, the call to NodeStageVolume
-	// is idempotent, so we can retry it every time.
-	if err := p.NodeStageVolume(ctx, assignment); err != nil {
-		return err
-	}
-
-	log.G(ctx).Debug("staging volume succeeded, attempting to publish volume")
-
-	return p.NodePublishVolume(ctx, assignment)
+	_ = "STUB: not implemented"
+	return nil
 }
 
+// even though this may have succeeded already, the call to NodeStageVolume
+// is idempotent, so we can retry it every time.
+
 func (r *volumes) unpublishVolume(ctx context.Context, assignment *api.VolumeAssignment) error {
-	log.G(ctx).Info("attempting to unpublish volume")
-	p, err := r.plugins.Get(assignment.Driver.Name)
-	if err != nil {
-		return err
-	}
-
-	if err := p.NodeUnpublishVolume(ctx, assignment); err != nil {
-		return err
-	}
-
-	return p.NodeUnstageVolume(ctx, assignment)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (r *volumes) Plugins() exec.VolumePluginManager {
-	return r.plugins
+	_ = "STUB: not implemented"
+
+	// taskRestrictedVolumesProvider restricts the ids to the task.
+	return *new(exec.VolumePluginManager)
 }
 
-// taskRestrictedVolumesProvider restricts the ids to the task.
 type taskRestrictedVolumesProvider struct {
 	volumes   exec.VolumeGetter
 	volumeIDs map[string]struct{}
 }
 
 func (sp *taskRestrictedVolumesProvider) Get(volumeID string) (string, error) {
-	if _, ok := sp.volumeIDs[volumeID]; !ok {
-		return "", fmt.Errorf("task not authorized to access volume %s", volumeID)
-	}
-
-	return sp.volumes.Get(volumeID)
+	_ = "STUB: not implemented"
+	return "", nil
 }
 
 // Restrict provides a getter that only allows access to the volumes
 // referenced by the task.
 func Restrict(volumes exec.VolumeGetter, t *api.Task) exec.VolumeGetter {
-	vids := map[string]struct{}{}
-
-	for _, v := range t.Volumes {
-		vids[v.ID] = struct{}{}
-	}
-
-	return &taskRestrictedVolumesProvider{volumes: volumes, volumeIDs: vids}
+	_ = "STUB: not implemented"
+	return *new(exec.VolumeGetter)
 }

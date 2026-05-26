@@ -1,20 +1,10 @@
 package ca
 
 import (
-	"crypto/x509"
 	"encoding/pem"
-	"os"
-	"path/filepath"
-	"strconv"
-	"strings"
 	"sync"
 
-	"crypto/tls"
-
 	"github.com/moby/swarmkit/v2/ca/keyutils"
-	"github.com/moby/swarmkit/v2/ca/pkcs8"
-	"github.com/moby/swarmkit/v2/ioutils"
-	"github.com/pkg/errors"
 )
 
 const (
@@ -108,9 +98,7 @@ type ErrInvalidKEK struct {
 	Wrapped error
 }
 
-func (e ErrInvalidKEK) Error() string {
-	return e.Wrapped.Error()
-}
+func (e ErrInvalidKEK) Error() string { _ = "STUB: not implemented"; return "" }
 
 // KeyReadWriter is an object that knows how to read and write TLS keys and certs to disk,
 // optionally encrypted and optionally updating PEM headers.  It should be the only object which
@@ -133,20 +121,12 @@ type KeyReadWriter struct {
 
 // NewKeyReadWriter creates a new KeyReadWriter
 func NewKeyReadWriter(paths CertPaths, kek []byte, headersObj PEMKeyHeaders) *KeyReadWriter {
-	return &KeyReadWriter{
-		kekData:      KEKData{KEK: kek},
-		paths:        paths,
-		headersObj:   headersObj,
-		keyFormatter: keyutils.Default,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // SetKeyFormatter sets the keyformatter with which to encrypt and decrypt keys
-func (k *KeyReadWriter) SetKeyFormatter(kf keyutils.Formatter) {
-	k.mu.Lock()
-	defer k.mu.Unlock()
-	k.keyFormatter = kf
-}
+func (k *KeyReadWriter) SetKeyFormatter(kf keyutils.Formatter) { _ = "STUB: not implemented"; return }
 
 // Migrate checks to see if a temporary key file exists.  Older versions of
 // swarmkit wrote temporary keys instead of temporary certificates, so
@@ -154,148 +134,55 @@ func (k *KeyReadWriter) SetKeyFormatter(kf keyutils.Formatter) {
 // instead of temporary keys, because we may need to periodically re-encrypt the
 // keys and modify the headers, and it's easier to have a single canonical key
 // location than two possible key locations.
-func (k *KeyReadWriter) Migrate() error {
-	tmpPaths := k.genTempPaths()
-	keyBytes, err := os.ReadFile(tmpPaths.Key)
-	if err != nil {
-		return nil // no key?  no migration
-	}
+func (k *KeyReadWriter) Migrate() error { _ = "STUB: not implemented"; return nil }
 
-	// it does exist - no need to decrypt, because previous versions of swarmkit
-	// which supported this temporary key did not support encrypting TLS keys
-	cert, err := os.ReadFile(k.paths.Cert)
-	if err != nil {
-		return os.RemoveAll(tmpPaths.Key) // no cert?  no migration
-	}
+// no key?  no migration
 
-	// nope, this does not match the cert
-	if _, err = tls.X509KeyPair(cert, keyBytes); err != nil {
-		return os.RemoveAll(tmpPaths.Key)
-	}
+// it does exist - no need to decrypt, because previous versions of swarmkit
+// which supported this temporary key did not support encrypting TLS keys
 
-	return os.Rename(tmpPaths.Key, k.paths.Key)
-}
+// no cert?  no migration
+
+// nope, this does not match the cert
 
 // Read will read a TLS cert and key from the given paths
 func (k *KeyReadWriter) Read() ([]byte, []byte, error) {
-	k.mu.Lock()
-	defer k.mu.Unlock()
-	keyBlock, err := k.readKey()
-	if err != nil {
-		return nil, nil, err
-	}
-
-	if version, ok := keyBlock.Headers[versionHeader]; ok {
-		if versionInt, err := strconv.ParseUint(version, 10, 64); err == nil {
-			k.kekData.Version = versionInt
-		}
-	}
-	delete(keyBlock.Headers, versionHeader)
-
-	if k.headersObj != nil {
-		newHeaders, err := k.headersObj.UnmarshalHeaders(keyBlock.Headers, k.kekData)
-		if err != nil {
-			return nil, nil, errors.Wrap(err, "unable to read TLS key headers")
-		}
-		k.headersObj = newHeaders
-	}
-
-	keyBytes := pem.EncodeToMemory(keyBlock)
-	cert, err := os.ReadFile(k.paths.Cert)
-	// The cert is written to a temporary file first, then the key, and then
-	// the cert gets renamed - so, if interrupted, it's possible to end up with
-	// a cert that only exists in the temporary location.
-	switch {
-	case err == nil:
-		_, err = tls.X509KeyPair(cert, keyBytes)
-	case os.IsNotExist(err): //continue to try temp location
-		break
-	default:
-		return nil, nil, err
-	}
-
-	// either the cert doesn't exist, or it doesn't match the key - try the temp file, if it exists
-	if err != nil {
-		var tempErr error
-		tmpPaths := k.genTempPaths()
-		cert, tempErr = os.ReadFile(tmpPaths.Cert)
-		if tempErr != nil {
-			return nil, nil, err // return the original error
-		}
-		if _, tempErr := tls.X509KeyPair(cert, keyBytes); tempErr != nil {
-			os.RemoveAll(tmpPaths.Cert) // nope, it doesn't match either - remove and return the original error
-			return nil, nil, err
-		}
-		os.Rename(tmpPaths.Cert, k.paths.Cert) // try to move the temp cert back to the regular location
-
-	}
-
-	return cert, keyBytes, nil
+	_ = "STUB: not implemented"
+	return nil, nil, nil
 }
+
+// The cert is written to a temporary file first, then the key, and then
+// the cert gets renamed - so, if interrupted, it's possible to end up with
+// a cert that only exists in the temporary location.
+
+//continue to try temp location
+
+// either the cert doesn't exist, or it doesn't match the key - try the temp file, if it exists
+
+// return the original error
+
+// nope, it doesn't match either - remove and return the original error
+
+// try to move the temp cert back to the regular location
 
 // ViewAndRotateKEK re-encrypts the key with a new KEK
 func (k *KeyReadWriter) ViewAndRotateKEK(cb func(KEKData, PEMKeyHeaders) (KEKData, PEMKeyHeaders, error)) error {
-	k.mu.Lock()
-	defer k.mu.Unlock()
-
-	updatedKEK, updatedHeaderObj, err := cb(k.kekData, k.headersObj)
-	if err != nil {
-		return err
-	}
-
-	keyBlock, err := k.readKey()
-	if err != nil {
-		return err
-	}
-
-	return k.writeKey(keyBlock, updatedKEK, updatedHeaderObj)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ViewAndUpdateHeaders updates the header manager, and updates any headers on the existing key
 func (k *KeyReadWriter) ViewAndUpdateHeaders(cb func(PEMKeyHeaders) (PEMKeyHeaders, error)) error {
-	k.mu.Lock()
-	defer k.mu.Unlock()
-
-	pkh, err := cb(k.headersObj)
-	if err != nil {
-		return err
-	}
-
-	keyBlock, err := k.readKeyblock()
-	if err != nil {
-		return err
-	}
-
-	headers := make(map[string]string)
-	if pkh != nil {
-		var err error
-		headers, err = pkh.MarshalHeaders(k.kekData)
-		if err != nil {
-			return err
-		}
-	}
-	// we WANT any original encryption headers
-	for key, value := range keyBlock.Headers {
-		normalizedKey := strings.TrimSpace(strings.ToLower(key))
-		if normalizedKey == "proc-type" || normalizedKey == "dek-info" {
-			headers[key] = value
-		}
-	}
-	headers[versionHeader] = strconv.FormatUint(k.kekData.Version, 10)
-	keyBlock.Headers = headers
-
-	if err = ioutils.AtomicWriteFile(k.paths.Key, pem.EncodeToMemory(keyBlock), keyPerms); err != nil {
-		return err
-	}
-	k.headersObj = pkh
+	_ = "STUB: not implemented"
 	return nil
 }
 
+// we WANT any original encryption headers
+
 // GetCurrentState returns the current KEK data, including version
 func (k *KeyReadWriter) GetCurrentState() (PEMKeyHeaders, KEKData) {
-	k.mu.Lock()
-	defer k.mu.Unlock()
-	return k.headersObj, k.kekData
+	_ = "STUB: not implemented"
+	return *new(PEMKeyHeaders), *new(KEKData)
 }
 
 // Write attempts write a cert and key to text.  This can also optionally update
@@ -303,190 +190,58 @@ func (k *KeyReadWriter) GetCurrentState() (PEMKeyHeaders, KEKData) {
 // update KEK is nil, then we don't update. If the updated KEK itself is nil,
 // then we update the KEK to be nil (data should be unencrypted).
 func (k *KeyReadWriter) Write(certBytes, plaintextKeyBytes []byte, kekData *KEKData) error {
-	k.mu.Lock()
-	defer k.mu.Unlock()
-
-	// current assumption is that the cert and key will be in the same directory
-	if err := os.MkdirAll(filepath.Dir(k.paths.Key), 0o755); err != nil {
-		return err
-	}
-
-	// Ensure that we will have a keypair on disk at all times by writing the cert to a
-	// temp path first.  This is because we want to have only a single copy of the key
-	// for rotation and header modification.
-	tmpPaths := k.genTempPaths()
-	if err := ioutils.AtomicWriteFile(tmpPaths.Cert, certBytes, certPerms); err != nil {
-		return err
-	}
-
-	keyBlock, _ := pem.Decode(plaintextKeyBytes)
-	if keyBlock == nil {
-		return errors.New("invalid PEM-encoded private key")
-	}
-
-	if kekData == nil {
-		kekData = &k.kekData
-	}
-	pkh := k.headersObj
-	if k.headersObj != nil {
-		pkh = k.headersObj.UpdateKEK(k.kekData, *kekData)
-	}
-
-	if err := k.writeKey(keyBlock, *kekData, pkh); err != nil {
-		return err
-	}
-	return os.Rename(tmpPaths.Cert, k.paths.Cert)
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (k *KeyReadWriter) genTempPaths() CertPaths {
-	return CertPaths{
-		Key:  filepath.Join(filepath.Dir(k.paths.Key), "."+filepath.Base(k.paths.Key)),
-		Cert: filepath.Join(filepath.Dir(k.paths.Cert), "."+filepath.Base(k.paths.Cert)),
-	}
-}
+// current assumption is that the cert and key will be in the same directory
+
+// Ensure that we will have a keypair on disk at all times by writing the cert to a
+// temp path first.  This is because we want to have only a single copy of the key
+// for rotation and header modification.
+
+func (k *KeyReadWriter) genTempPaths() CertPaths { _ = "STUB: not implemented"; return *new(CertPaths) }
 
 // Target returns a string representation of this KeyReadWriter, namely where
 // it is writing to
-func (k *KeyReadWriter) Target() string {
-	return k.paths.Cert
-}
+func (k *KeyReadWriter) Target() string { _ = "STUB: not implemented"; return "" }
 
 func (k *KeyReadWriter) readKeyblock() (*pem.Block, error) {
-	key, err := os.ReadFile(k.paths.Key)
-	if err != nil {
-		return nil, err
-	}
-
-	// Decode the PEM private key
-	keyBlock, _ := pem.Decode(key)
-	if keyBlock == nil {
-		return nil, errors.New("invalid PEM-encoded private key")
-	}
-
-	return keyBlock, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// Decode the PEM private key
 
 // readKey returns the decrypted key pem bytes, and enforces the KEK if applicable
 // (writes it back with the correct encryption if it is not correctly encrypted)
-func (k *KeyReadWriter) readKey() (*pem.Block, error) {
-	keyBlock, err := k.readKeyblock()
-	if err != nil {
-		return nil, err
-	}
+func (k *KeyReadWriter) readKey() (*pem.Block, error) { _ = "STUB: not implemented"; return nil, nil }
 
-	if !keyutils.IsEncryptedPEMBlock(keyBlock) {
-		return keyBlock, nil
-	}
+// If it's encrypted, we can't read without a passphrase (we're assuming
+// empty passphrases are invalid)
 
-	// If it's encrypted, we can't read without a passphrase (we're assuming
-	// empty passphrases are invalid)
-	if k.kekData.KEK == nil {
-		return nil, ErrInvalidKEK{Wrapped: x509.IncorrectPasswordError}
-	}
+// change header only if its pkcs8
 
-	derBytes, err := k.keyFormatter.DecryptPEMBlock(keyBlock, k.kekData.KEK)
-	if err == keyutils.ErrFIPSUnsupportedKeyFormat {
-		return nil, err
-	} else if err != nil {
-		return nil, ErrInvalidKEK{Wrapped: err}
-	}
+// remove encryption PEM headers
 
-	// change header only if its pkcs8
-	if keyBlock.Type == "ENCRYPTED PRIVATE KEY" {
-		keyBlock.Type = "PRIVATE KEY"
-	}
-
-	// remove encryption PEM headers
-	headers := make(map[string]string)
-	mergePEMHeaders(headers, keyBlock.Headers)
-
-	return &pem.Block{
-		Type:    keyBlock.Type, // the key type doesn't change
-		Bytes:   derBytes,
-		Headers: headers,
-	}, nil
-}
+// the key type doesn't change
 
 // writeKey takes an unencrypted keyblock and, if the kek is not nil, encrypts it before
 // writing it to disk.  If the kek is nil, writes it to disk unencrypted.
 func (k *KeyReadWriter) writeKey(keyBlock *pem.Block, kekData KEKData, pkh PEMKeyHeaders) error {
-	if kekData.KEK != nil {
-		encryptedPEMBlock, err := k.keyFormatter.EncryptPEMBlock(keyBlock.Bytes, kekData.KEK)
-		if err != nil {
-			return err
-		}
-		if !keyutils.IsEncryptedPEMBlock(encryptedPEMBlock) {
-			return errors.New("unable to encrypt key - invalid PEM file produced")
-		}
-		keyBlock = encryptedPEMBlock
-	}
-
-	if pkh != nil {
-		headers, err := pkh.MarshalHeaders(kekData)
-		if err != nil {
-			return err
-		}
-		mergePEMHeaders(keyBlock.Headers, headers)
-	}
-	keyBlock.Headers[versionHeader] = strconv.FormatUint(kekData.Version, 10)
-
-	if err := ioutils.AtomicWriteFile(k.paths.Key, pem.EncodeToMemory(keyBlock), keyPerms); err != nil {
-		return err
-	}
-	k.kekData = kekData
-	k.headersObj = pkh
+	_ = "STUB: not implemented"
 	return nil
 }
 
 // DowngradeKey converts the PKCS#8 key to PKCS#1 format and save it
-func (k *KeyReadWriter) DowngradeKey() error {
-	_, key, err := k.Read()
-	if err != nil {
-		return err
-	}
+func (k *KeyReadWriter) DowngradeKey() error { _ = "STUB: not implemented"; return nil }
 
-	oldBlock, _ := pem.Decode(key)
-	if oldBlock == nil {
-		return errors.New("invalid PEM-encoded private key")
-	}
+// stop if the key is already downgraded to pkcs1
 
-	// stop if the key is already downgraded to pkcs1
-	if !keyutils.IsPKCS8(oldBlock.Bytes) {
-		return errors.New("key is already downgraded to PKCS#1")
-	}
+// add kek-version header back to the new key
 
-	eckey, err := pkcs8.ConvertToECPrivateKeyPEM(key)
-	if err != nil {
-		return err
-	}
-
-	newBlock, _ := pem.Decode(eckey)
-	if newBlock == nil {
-		return errors.New("invalid PEM-encoded private key")
-	}
-
-	if k.kekData.KEK != nil {
-		newBlock, err = k.keyFormatter.EncryptPEMBlock(newBlock.Bytes, k.kekData.KEK)
-		if err != nil {
-			return err
-		}
-	}
-
-	// add kek-version header back to the new key
-	newBlock.Headers[versionHeader] = strconv.FormatUint(k.kekData.Version, 10)
-	mergePEMHeaders(newBlock.Headers, oldBlock.Headers)
-
-	// do not use krw.Write as it will convert the key to pkcs8
-	return ioutils.AtomicWriteFile(k.paths.Key, pem.EncodeToMemory(newBlock), keyPerms)
-}
+// do not use krw.Write as it will convert the key to pkcs8
 
 // merges one set of PEM headers onto another, excepting for key encryption value
 // "proc-type" and "dek-info"
-func mergePEMHeaders(original, newSet map[string]string) {
-	for key, value := range newSet {
-		normalizedKey := strings.TrimSpace(strings.ToLower(key))
-		if normalizedKey != "proc-type" && normalizedKey != "dek-info" {
-			original[key] = value
-		}
-	}
-}
+func mergePEMHeaders(original, newSet map[string]string) { _ = "STUB: not implemented"; return }

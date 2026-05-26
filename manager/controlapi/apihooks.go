@@ -17,16 +17,16 @@ type NetworkViewResponseMutator interface {
 type NoopViewResponseMutator struct{}
 
 func (NoopViewResponseMutator) OnGetNetwork(_ context.Context, _ *api.Network, _ string, _ []byte) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (NoopViewResponseMutator) OnListNetworks(_ context.Context, _ []*api.Network, _ string, _ []byte) error {
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (s *Server) networkhooks() NetworkViewResponseMutator {
-	if s.NetworkHooks != nil {
-		return s.NetworkHooks
-	}
-	return NoopViewResponseMutator{}
+	_ = "STUB: not implemented"
+	return *new(NetworkViewResponseMutator)
 }

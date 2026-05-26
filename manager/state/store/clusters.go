@@ -1,8 +1,6 @@
 package store
 
 import (
-	"strings"
-
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/moby/swarmkit/v2/api"
 )
@@ -70,59 +68,29 @@ func init() {
 // CreateCluster adds a new cluster to the store.
 // Returns ErrExist if the ID is already taken.
 func CreateCluster(tx Tx, c *api.Cluster) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is not already in use.
-	if tx.lookup(tableCluster, indexName, strings.ToLower(c.Spec.Annotations.Name)) != nil {
-		return ErrNameConflict
-	}
-
-	return tx.create(tableCluster, c)
+	return nil
 }
 
 // UpdateCluster updates an existing cluster in the store.
 // Returns ErrNotExist if the cluster doesn't exist.
 func UpdateCluster(tx Tx, c *api.Cluster) error {
+	_ = "STUB: not implemented"
 	// Ensure the name is either not in use or already used by this same Cluster.
-	if existing := tx.lookup(tableCluster, indexName, strings.ToLower(c.Spec.Annotations.Name)); existing != nil {
-		if existing.GetID() != c.ID {
-			return ErrNameConflict
-		}
-	}
-
-	return tx.update(tableCluster, c)
+	return nil
 }
 
 // DeleteCluster removes a cluster from the store.
 // Returns ErrNotExist if the cluster doesn't exist.
-func DeleteCluster(tx Tx, id string) error {
-	return tx.delete(tableCluster, id)
-}
+func DeleteCluster(tx Tx, id string) error { _ = "STUB: not implemented"; return nil }
 
 // GetCluster looks up a cluster by ID.
 // Returns nil if the cluster doesn't exist.
-func GetCluster(tx ReadTx, id string) *api.Cluster {
-	n := tx.get(tableCluster, id)
-	if n == nil {
-		return nil
-	}
-	return n.(*api.Cluster)
-}
+func GetCluster(tx ReadTx, id string) *api.Cluster { _ = "STUB: not implemented"; return nil }
 
 // FindClusters selects a set of clusters and returns them.
 func FindClusters(tx ReadTx, by By) ([]*api.Cluster, error) {
-	checkType := func(by By) error {
-		switch by.(type) {
-		case byName, byNamePrefix, byIDPrefix, byCustom, byCustomPrefix:
-			return nil
-		default:
-			return ErrInvalidFindBy
-		}
-	}
-
-	clusterList := []*api.Cluster{}
-	appendResult := func(o api.StoreObject) {
-		clusterList = append(clusterList, o.(*api.Cluster))
-	}
-
-	err := tx.find(tableCluster, by, checkType, appendResult)
-	return clusterList, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }

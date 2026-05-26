@@ -1,8 +1,6 @@
 package store
 
 import (
-	"strings"
-
 	memdb "github.com/hashicorp/go-memdb"
 	"github.com/moby/swarmkit/v2/api"
 )
@@ -69,81 +67,47 @@ func init() {
 	})
 }
 
-func CreateVolume(tx Tx, v *api.Volume) error {
-	if tx.lookup(tableVolume, indexName, strings.ToLower(v.Spec.Annotations.Name)) != nil {
-		return ErrNameConflict
-	}
-
-	return tx.create(tableVolume, v)
-}
+func CreateVolume(tx Tx, v *api.Volume) error { _ = "STUB: not implemented"; return nil }
 
 func UpdateVolume(tx Tx, v *api.Volume) error {
+	_ = "STUB: not implemented"
 	// ensure the name is either not in use, or is in use by this volume.
-	if existing := tx.lookup(tableVolume, indexName, strings.ToLower(v.Spec.Annotations.Name)); existing != nil {
-		if existing.GetID() != v.ID {
-			return ErrNameConflict
-		}
-	}
-
-	return tx.update(tableVolume, v)
+	return nil
 }
 
-func DeleteVolume(tx Tx, id string) error {
-	return tx.delete(tableVolume, id)
-}
+func DeleteVolume(tx Tx, id string) error { _ = "STUB: not implemented"; return nil }
 
-func GetVolume(tx ReadTx, id string) *api.Volume {
-	n := tx.get(tableVolume, id)
-	if n == nil {
-		return nil
-	}
-	return n.(*api.Volume)
-}
+func GetVolume(tx ReadTx, id string) *api.Volume { _ = "STUB: not implemented"; return nil }
 
 func FindVolumes(tx ReadTx, by By) ([]*api.Volume, error) {
-	checkType := func(by By) error {
-		switch by.(type) {
-		case byName, byNamePrefix, byIDPrefix, byVolumeGroup, byCustom, byCustomPrefix, byDriver:
-			return nil
-		default:
-			return ErrInvalidFindBy
-		}
-	}
-
-	volumeList := []*api.Volume{}
-	appendResult := func(o api.StoreObject) {
-		volumeList = append(volumeList, o.(*api.Volume))
-	}
-
-	err := tx.find(tableVolume, by, checkType, appendResult)
-	return volumeList, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type volumeIndexerByGroup struct{}
 
 func (vi volumeIndexerByGroup) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (vi volumeIndexerByGroup) FromObject(obj interface{}) (bool, []byte, error) {
-	v := obj.(*api.Volume)
-	val := v.Spec.Group + "\x00"
-	return true, []byte(val), nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
 type volumeIndexerByDriver struct{}
 
 func (vi volumeIndexerByDriver) FromArgs(args ...interface{}) ([]byte, error) {
-	return fromArgs(args...)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (vi volumeIndexerByDriver) FromObject(obj interface{}) (bool, []byte, error) {
-	v := obj.(*api.Volume)
-	// this should never happen -- existence of the volume driver is checked
-	// at the controlapi level. However, guard against the unforeseen.
-	if v.Spec.Driver == nil {
-		return false, nil, nil
-	}
-	val := v.Spec.Driver.Name + "\x00"
-	return true, []byte(val), nil
+	_ = "STUB: not implemented"
+	return false,
+
+		// this should never happen -- existence of the volume driver is checked
+		// at the controlapi level. However, guard against the unforeseen.
+		nil, nil
 }

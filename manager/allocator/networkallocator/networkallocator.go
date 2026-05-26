@@ -26,9 +26,7 @@ type ServiceAllocationOpts struct {
 }
 
 // OnInit is called for allocator initialization stage
-func OnInit(options *ServiceAllocationOpts) {
-	options.OnInit = true
-}
+func OnInit(options *ServiceAllocationOpts) { _ = "STUB: not implemented"; return }
 
 // NetworkAllocator provides network model specific allocation functionality.
 type NetworkAllocator interface {
@@ -140,34 +138,14 @@ type Provider interface {
 }
 
 // IsIngressNetwork check if the network is an ingress network
-func IsIngressNetwork(nw *api.Network) bool {
-	if nw.Spec.Ingress {
-		return true
-	}
-	// Check if legacy defined ingress network
-	_, ok := nw.Spec.Annotations.Labels["com.docker.swarm.internal"]
-	return ok && nw.Spec.Annotations.Name == "ingress"
-}
+func IsIngressNetwork(nw *api.Network) bool { _ = "STUB: not implemented"; return false }
+
+// Check if legacy defined ingress network
 
 // IsIngressNetworkNeeded checks whether the service requires the routing-mesh
-func IsIngressNetworkNeeded(s *api.Service) bool {
-	if s == nil {
-		return false
-	}
+func IsIngressNetworkNeeded(s *api.Service) bool { _ = "STUB: not implemented"; return false }
 
-	if s.Spec.Endpoint == nil {
-		return false
-	}
-
-	for _, p := range s.Spec.Endpoint.Ports {
-		// The service to which this task belongs is trying to
-		// expose ports with PublishMode as Ingress to the
-		// external world. Automatically attach the task to
-		// the ingress network.
-		if p.PublishMode == api.PublishModeIngress {
-			return true
-		}
-	}
-
-	return false
-}
+// The service to which this task belongs is trying to
+// expose ports with PublishMode as Ingress to the
+// external world. Automatically attach the task to
+// the ingress network.

@@ -2,8 +2,6 @@ package api
 
 import (
 	"errors"
-	"fmt"
-	"strings"
 
 	"github.com/docker/go-events"
 )
@@ -54,70 +52,23 @@ type EventDelete interface {
 }
 
 func customIndexer(kind string, annotations *Annotations) (bool, [][]byte, error) {
-	var converted [][]byte
-
-	for _, entry := range annotations.Indices {
-		index := make([]byte, 0, len(kind)+1+len(entry.Key)+1+len(entry.Val)+1)
-		if kind != "" {
-			index = append(index, []byte(kind)...)
-			index = append(index, '|')
-		}
-		index = append(index, []byte(entry.Key)...)
-		index = append(index, '|')
-		index = append(index, []byte(entry.Val)...)
-		index = append(index, '\x00')
-		converted = append(converted, index)
-	}
-
-	// Add the null character as a terminator
-	return len(converted) != 0, converted, nil
+	_ = "STUB: not implemented"
+	return false, nil, nil
 }
 
-func fromArgs(args ...interface{}) ([]byte, error) {
-	if len(args) != 1 {
-		return nil, fmt.Errorf("must provide only a single argument")
-	}
-	arg, ok := args[0].(string)
-	if !ok {
-		return nil, fmt.Errorf("argument must be a string: %#v", args[0])
-	}
-	// Add the null character as a terminator
-	arg += "\x00"
-	return []byte(arg), nil
-}
+// Add the null character as a terminator
+
+func fromArgs(args ...interface{}) ([]byte, error) { _ = "STUB: not implemented"; return nil, nil }
+
+// Add the null character as a terminator
 
 func prefixFromArgs(args ...interface{}) ([]byte, error) {
-	val, err := fromArgs(args...)
-	if err != nil {
-		return nil, err
-	}
-
-	// Strip the null terminator, the rest is a prefix
-	n := len(val)
-	if n > 0 {
-		return val[:n-1], nil
-	}
-	return val, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func checkCustom(a1, a2 Annotations) bool {
-	if len(a1.Indices) == 1 {
-		for _, ind := range a2.Indices {
-			if ind.Key == a1.Indices[0].Key && ind.Val == a1.Indices[0].Val {
-				return true
-			}
-		}
-	}
-	return false
-}
+// Strip the null terminator, the rest is a prefix
 
-func checkCustomPrefix(a1, a2 Annotations) bool {
-	if len(a1.Indices) == 1 {
-		for _, ind := range a2.Indices {
-			if ind.Key == a1.Indices[0].Key && strings.HasPrefix(ind.Val, a1.Indices[0].Val) {
-				return true
-			}
-		}
-	}
-	return false
-}
+func checkCustom(a1, a2 Annotations) bool { _ = "STUB: not implemented"; return false }
+
+func checkCustomPrefix(a1, a2 Annotations) bool { _ = "STUB: not implemented"; return false }

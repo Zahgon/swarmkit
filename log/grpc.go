@@ -18,9 +18,9 @@ type logrusWrapper struct {
 // logrus's are: https://github.com/sirupsen/logrus/blob/master/logrus.go
 // 0=panic, 1=fatal, 2=error, 3=warn, 4=info, 5=debug
 func (lw logrusWrapper) V(l int) bool {
+	_ = "STUB: not implemented"
 	// translate to logrus level
-	logrusLevel := 4 - l
-	return int(lw.Logger.Level) <= logrusLevel
+	return false
 }
 
 func init() {

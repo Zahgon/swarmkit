@@ -1,7 +1,6 @@
 package testutils
 
 import (
-	"fmt"
 	"net"
 
 	"github.com/moby/swarmkit/v2/node/plugin"
@@ -17,31 +16,15 @@ type FakePluginGetter struct {
 var _ plugin.Getter = &FakePluginGetter{}
 
 func (f *FakePluginGetter) Get(name, capability string) (plugin.Plugin, error) {
-	if capability != DockerCSIPluginNodeCap && capability != DockerCSIPluginControllerCap {
-		return nil, fmt.Errorf(
-			"requested plugin with %s cap, but should only ever request %s or %s",
-			capability, DockerCSIPluginNodeCap, DockerCSIPluginControllerCap,
-		)
-	}
-
-	if plug, ok := f.Plugins[name]; ok {
-		return plug, nil
-	}
-	return nil, fmt.Errorf("plugin %s not found", name)
+	_ = "STUB: not implemented"
+	return *new(plugin.Plugin), nil
 }
 
 // GetAllManagedPluginsByCap returns all of the fake's plugins. If capability
 // is anything other than DockerCSIPluginCap, it returns nothing.
 func (f *FakePluginGetter) GetAllManagedPluginsByCap(capability string) []plugin.Plugin {
-	if capability != DockerCSIPluginNodeCap && capability != DockerCSIPluginControllerCap {
-		return nil
-	}
-
-	allPlugins := make([]plugin.Plugin, 0, len(f.Plugins))
-	for _, plug := range f.Plugins {
-		allPlugins = append(allPlugins, plug)
-	}
-	return allPlugins
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type FakePlugin struct {
@@ -52,21 +35,10 @@ type FakePlugin struct {
 
 var _ plugin.AddrPlugin = &FakePlugin{}
 
-func (f *FakePlugin) Name() string {
-	return f.PluginName
-}
+func (f *FakePlugin) Name() string { _ = "STUB: not implemented"; return "" }
 
-func (f *FakePlugin) ScopedPath(path string) string {
-	if f.Scope != "" {
-		return fmt.Sprintf("%s/%s", f.Scope, path)
-	}
-	return path
-}
+func (f *FakePlugin) ScopedPath(path string) string { _ = "STUB: not implemented"; return "" }
 
-func (f *FakePlugin) Client() plugin.Client {
-	return nil
-}
+func (f *FakePlugin) Client() plugin.Client { _ = "STUB: not implemented"; return *new(plugin.Client) }
 
-func (f *FakePlugin) Addr() net.Addr {
-	return f.PluginAddr
-}
+func (f *FakePlugin) Addr() net.Addr { _ = "STUB: not implemented"; return *new(net.Addr) }

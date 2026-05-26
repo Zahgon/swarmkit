@@ -16,19 +16,9 @@ import (
 
 type secretSorter []*api.Secret
 
-func (k secretSorter) Len() int      { return len(k) }
-func (k secretSorter) Swap(i, j int) { k[i], k[j] = k[j], k[i] }
-func (k secretSorter) Less(i, j int) bool {
-	iTime, err := gogotypes.TimestampFromProto(k[i].Meta.CreatedAt)
-	if err != nil {
-		panic(err)
-	}
-	jTime, err := gogotypes.TimestampFromProto(k[j].Meta.CreatedAt)
-	if err != nil {
-		panic(err)
-	}
-	return jTime.Before(iTime)
-}
+func (k secretSorter) Len() int           { _ = "STUB: not implemented"; return 0 }
+func (k secretSorter) Swap(i, j int)      { _ = "STUB: not implemented"; return }
+func (k secretSorter) Less(i, j int) bool { _ = "STUB: not implemented"; return false }
 
 var (
 	listCmd = &cobra.Command{

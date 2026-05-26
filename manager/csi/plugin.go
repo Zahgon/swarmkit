@@ -3,17 +3,12 @@ package csi
 import (
 	"context"
 	"errors"
-	"fmt"
 	"net"
 
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 
 	"github.com/container-storage-interface/spec/lib/go/csi"
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/moby/swarmkit/v2/internal/csi/capability"
-	"github.com/moby/swarmkit/v2/log"
 	mobyplugin "github.com/moby/swarmkit/v2/node/plugin"
 )
 
@@ -78,39 +73,22 @@ type plugin struct {
 // assuring that the given plugin implements the PluginAddr interface without
 // having to typecast in this constructor.
 func NewPlugin(p mobyplugin.AddrPlugin, provider SecretProvider) Plugin {
-	return &plugin{
-		name: p.Name(),
-		// TODO(dperny): verify that we do not need to include the Network()
-		// portion of the Addr.
-		socket:     fmt.Sprintf("%s://%s", p.Addr().Network(), p.Addr().String()),
-		addr:       p.Addr(),
-		provider:   provider,
-		swarmToCSI: map[string]string{},
-		csiToSwarm: map[string]string{},
-	}
+	_ = "STUB: not implemented"
+	return *new(Plugin)
 }
+
+// TODO(dperny): verify that we do not need to include the Network()
+// portion of the Addr.
 
 // connect is a private method that initializes a gRPC ClientConn and creates
 // the IdentityClient and ControllerClient.
-func (p *plugin) connect(ctx context.Context) error {
-	cc, err := grpc.DialContext(ctx, p.socket, grpc.WithInsecure())
-	if err != nil {
-		return err
-	}
+func (p *plugin) connect(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
 
-	p.cc = cc
+// first, probe the plugin, to ensure that it exists and is ready to go
 
-	// first, probe the plugin, to ensure that it exists and is ready to go
-	idc := csi.NewIdentityClient(cc)
-	p.idClient = idc
-
-	// controllerClient may not do anything if the plugin does not support
-	// the controller service, but it should not be an error to create it now
-	// anyway
-	p.controllerClient = csi.NewControllerClient(cc)
-
-	return p.init(ctx)
-}
+// controllerClient may not do anything if the plugin does not support
+// the controller service, but it should not be an error to create it now
+// anyway
 
 // init checks uses the identity service to check the properties of the plugin,
 // most importantly, its capabilities.
@@ -164,107 +142,50 @@ func (p *plugin) init(ctx context.Context) error {
 // CreateVolume wraps and abstracts the CSI CreateVolume logic and returns
 // the volume info, or an error.
 func (p *plugin) CreateVolume(ctx context.Context, v *api.Volume) (*api.VolumeInfo, error) {
-	c, err := p.Client(ctx)
-	if err != nil {
-		return nil, err
-	}
-
-	if !p.controller {
-		// TODO(dperny): come up with a scheme to handle headless plugins
-		// TODO(dperny): handle plugins without create volume capabilities
-		return &api.VolumeInfo{VolumeID: v.Spec.Annotations.Name}, nil
-	}
-
-	createVolumeRequest := p.makeCreateVolume(v)
-	resp, err := c.CreateVolume(ctx, createVolumeRequest)
-	if err != nil {
-		return nil, err
-	}
-
-	return makeVolumeInfo(resp.Volume), nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+// TODO(dperny): come up with a scheme to handle headless plugins
+// TODO(dperny): handle plugins without create volume capabilities
 
 func (p *plugin) DeleteVolume(ctx context.Context, v *api.Volume) error {
-	if v.VolumeInfo == nil {
-		return errors.New("VolumeInfo must not be nil")
-	}
-	// we won't use a fancy createDeleteVolumeRequest method because the
-	// request is simple enough to not bother with it
-	secrets := p.makeSecrets(v)
-	req := &csi.DeleteVolumeRequest{
-		VolumeId: v.VolumeInfo.VolumeID,
-		Secrets:  secrets,
-	}
-	c, err := p.Client(ctx)
-	if err != nil {
-		return err
-	}
-	// response from RPC intentionally left blank
-	_, err = c.DeleteVolume(ctx, req)
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }
+
+// we won't use a fancy createDeleteVolumeRequest method because the
+// request is simple enough to not bother with it
+
+// response from RPC intentionally left blank
 
 // PublishVolume calls ControllerPublishVolume to publish the given Volume to
 // the Node with the given swarmkit ID. It returns a map, which is the
 // PublishContext for this Volume on this Node.
 func (p *plugin) PublishVolume(ctx context.Context, v *api.Volume, nodeID string) (map[string]string, error) {
-	if !p.publisher {
-		return nil, nil
-	}
-	csiNodeID := p.swarmToCSI[nodeID]
-	if csiNodeID == "" {
-		log.L.Errorf("CSI node ID not found for given Swarm node ID. Plugin: %s , Swarm node ID: %s", p.name, nodeID)
-		return nil, status.Error(codes.FailedPrecondition, "CSI node ID not found for given Swarm node ID")
-	}
-
-	req := p.makeControllerPublishVolumeRequest(v, nodeID)
-	c, err := p.Client(ctx)
-	if err != nil {
-		return nil, err
-	}
-	resp, err := c.ControllerPublishVolume(ctx, req)
-
-	if err != nil {
-		return nil, err
-	}
-	return resp.PublishContext, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // UnpublishVolume calls ControllerUnpublishVolume to unpublish the given
 // Volume from the Node with the given swarmkit ID. It returns an error if the
 // unpublish does not succeed
 func (p *plugin) UnpublishVolume(ctx context.Context, v *api.Volume, nodeID string) error {
-	if !p.publisher {
-		return nil
-	}
-
-	req := p.makeControllerUnpublishVolumeRequest(v, nodeID)
-	c, err := p.Client(ctx)
-	if err != nil {
-		return err
-	}
-
-	// response of the RPC intentionally left blank
-	_, err = c.ControllerUnpublishVolume(ctx, req)
-	return err
+	_ = "STUB: not implemented"
+	return nil
 }
+
+// response of the RPC intentionally left blank
 
 // AddNode adds a mapping for a node's swarm ID to the ID provided by this CSI
 // plugin. This allows future calls to the plugin to be done entirely in terms
 // of the swarm node ID.
 //
 // The CSI node ID is provided by the node as part of the NodeDescription.
-func (p *plugin) AddNode(swarmID, csiID string) {
-	p.swarmToCSI[swarmID] = csiID
-	p.csiToSwarm[csiID] = swarmID
-}
+func (p *plugin) AddNode(swarmID, csiID string) { _ = "STUB: not implemented"; return }
 
 // RemoveNode removes a node from this plugin's node mappings.
-func (p *plugin) RemoveNode(swarmID string) {
-	csiID := p.swarmToCSI[swarmID]
-	delete(p.swarmToCSI, swarmID)
-	delete(p.csiToSwarm, csiID)
-}
+func (p *plugin) RemoveNode(swarmID string) { _ = "STUB: not implemented"; return }
 
 // Client retrieves a csi.ControllerClient for this plugin
 //
@@ -272,80 +193,37 @@ func (p *plugin) RemoveNode(swarmID string) {
 // it will initialize the gRPC connection to the remote plugin and create a new
 // ControllerClient.
 func (p *plugin) Client(ctx context.Context) (csi.ControllerClient, error) {
-	if p.controllerClient == nil {
-		if err := p.connect(ctx); err != nil {
-			return nil, err
-		}
-	}
-	return p.controllerClient, nil
+	_ = "STUB: not implemented"
+	return *new(csi.ControllerClient), nil
 }
 
 // makeCreateVolume makes a csi.CreateVolumeRequest from the volume object and
 // spec. it uses the Plugin's SecretProvider to retrieve relevant secrets.
 func (p *plugin) makeCreateVolume(v *api.Volume) *csi.CreateVolumeRequest {
-	secrets := p.makeSecrets(v)
-	return &csi.CreateVolumeRequest{
-		Name:       v.Spec.Annotations.Name,
-		Parameters: v.Spec.Driver.Options,
-		VolumeCapabilities: []*csi.VolumeCapability{
-			capability.MakeCapability(v.Spec.AccessMode),
-		},
-		Secrets:                   secrets,
-		AccessibilityRequirements: makeTopologyRequirement(v.Spec.AccessibilityRequirements),
-		CapacityRange:             makeCapacityRange(v.Spec.CapacityRange),
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // makeSecrets uses the plugin's SecretProvider to make the secrets map to pass
 // to CSI RPCs.
 func (p *plugin) makeSecrets(v *api.Volume) map[string]string {
-	secrets := map[string]string{}
-	for _, vs := range v.Spec.Secrets {
-		// a secret should never be nil, but check just to be sure
-		if vs != nil {
-			secret := p.provider.GetSecret(vs.Secret)
-			if secret != nil {
-				// TODO(dperny): return an error, but this should never happen,
-				// as secrets should be validated at volume creation time
-				secrets[vs.Key] = string(secret.Spec.Data)
-			}
-		}
-	}
-	return secrets
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (p *plugin) makeControllerPublishVolumeRequest(v *api.Volume, nodeID string) *csi.ControllerPublishVolumeRequest {
-	if v.VolumeInfo == nil {
-		return nil
-	}
+// a secret should never be nil, but check just to be sure
 
-	secrets := p.makeSecrets(v)
-	capability := capability.MakeCapability(v.Spec.AccessMode)
-	capability.AccessType = &csi.VolumeCapability_Mount{
-		Mount: &csi.VolumeCapability_MountVolume{},
-	}
-	return &csi.ControllerPublishVolumeRequest{
-		VolumeId:         v.VolumeInfo.VolumeID,
-		NodeId:           p.swarmToCSI[nodeID],
-		Secrets:          secrets,
-		VolumeCapability: capability,
-		VolumeContext:    v.VolumeInfo.VolumeContext,
-	}
+// TODO(dperny): return an error, but this should never happen,
+// as secrets should be validated at volume creation time
+
+func (p *plugin) makeControllerPublishVolumeRequest(v *api.Volume, nodeID string) *csi.ControllerPublishVolumeRequest {
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (p *plugin) makeControllerUnpublishVolumeRequest(v *api.Volume, nodeID string) *csi.ControllerUnpublishVolumeRequest {
-	if v.VolumeInfo == nil {
-		return nil
-	}
-
-	secrets := p.makeSecrets(v)
-	return &csi.ControllerUnpublishVolumeRequest{
-		VolumeId: v.VolumeInfo.VolumeID,
-		NodeId:   p.swarmToCSI[nodeID],
-		Secrets:  secrets,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (p *plugin) Addr() net.Addr {
-	return p.addr
-}
+func (p *plugin) Addr() net.Addr { _ = "STUB: not implemented"; return *new(net.Addr) }

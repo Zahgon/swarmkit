@@ -52,28 +52,20 @@ type Temporary interface {
 }
 
 // MakeTemporary makes the error temporary.
-func MakeTemporary(err error) error {
-	if IsTemporary(err) {
-		return err
-	}
-
-	return temporary{err}
-}
+func MakeTemporary(err error) error { _ = "STUB: not implemented"; return nil }
 
 type temporary struct {
 	error
 }
 
-func (t temporary) Unwrap() error   { return t.error }
-func (t temporary) Cause() error    { return t.error }
-func (t temporary) Temporary() bool { return true }
+func (t temporary) Unwrap() error { _ = "STUB: not implemented"; return nil }
+func (t temporary) Cause() error  { _ = "STUB: not implemented"; return nil }
+func (t temporary) Temporary() bool {
+	_ = "STUB: not implemented"
 
-// IsTemporary returns true if the error or a recursive cause returns true for
-// temporary.
-func IsTemporary(err error) bool {
-	var tmp Temporary
-	if errors.As(err, &tmp) {
-		return tmp.Temporary()
-	}
+	// IsTemporary returns true if the error or a recursive cause returns true for
+	// temporary.
 	return false
 }
+
+func IsTemporary(err error) bool { _ = "STUB: not implemented"; return false }

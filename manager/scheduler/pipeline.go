@@ -1,8 +1,6 @@
 package scheduler
 
 import (
-	"sort"
-
 	"github.com/moby/swarmkit/v2/api"
 )
 
@@ -30,9 +28,9 @@ type checklistEntry struct {
 
 type checklistByFailures []checklistEntry
 
-func (c checklistByFailures) Len() int           { return len(c) }
-func (c checklistByFailures) Swap(i, j int)      { c[i], c[j] = c[j], c[i] }
-func (c checklistByFailures) Less(i, j int) bool { return c[i].failureCount < c[j].failureCount }
+func (c checklistByFailures) Len() int           { _ = "STUB: not implemented"; return 0 }
+func (c checklistByFailures) Swap(i, j int)      { _ = "STUB: not implemented"; return }
+func (c checklistByFailures) Less(i, j int) bool { _ = "STUB: not implemented"; return false }
 
 // Pipeline runs a set of filters against nodes.
 type Pipeline struct {
@@ -41,63 +39,21 @@ type Pipeline struct {
 }
 
 // NewPipeline returns a pipeline with the default set of filters.
-func NewPipeline() *Pipeline {
-	p := &Pipeline{}
-
-	for _, f := range defaultFilters {
-		p.checklist = append(p.checklist, checklistEntry{f: f})
-	}
-
-	return p
-}
+func NewPipeline() *Pipeline { _ = "STUB: not implemented"; return nil }
 
 // Process a node through the filter pipeline.
 // Returns true if all filters pass, false otherwise.
-func (p *Pipeline) Process(n *NodeInfo) bool {
-	for i, entry := range p.checklist {
-		if entry.enabled && !entry.f.Check(n) {
-			// Immediately stop on first failure.
-			p.checklist[i].failureCount++
-			return false
-		}
-	}
-	for i := range p.checklist {
-		p.checklist[i].failureCount = 0
-	}
-	return true
-}
+func (p *Pipeline) Process(n *NodeInfo) bool { _ = "STUB: not implemented"; return false }
 
-func (p *Pipeline) AddFilter(f Filter) {
-	p.checklist = append(p.checklist, checklistEntry{f: f})
-}
+// Immediately stop on first failure.
+
+func (p *Pipeline) AddFilter(f Filter) { _ = "STUB: not implemented"; return }
 
 // SetTask sets up the filters to process a new task. Once this is called,
 // Process can be called repeatedly to try to assign the task various nodes.
-func (p *Pipeline) SetTask(t *api.Task) {
-	for i := range p.checklist {
-		p.checklist[i].enabled = p.checklist[i].f.SetTask(t)
-		p.checklist[i].failureCount = 0
-	}
-}
+func (p *Pipeline) SetTask(t *api.Task) { _ = "STUB: not implemented"; return }
 
 // Explain returns a string explaining why a task could not be scheduled.
-func (p *Pipeline) Explain() string {
-	var explanation string
+func (p *Pipeline) Explain() string { _ = "STUB: not implemented"; return "" }
 
-	// Sort from most failures to least
-
-	sortedByFailures := make([]checklistEntry, len(p.checklist))
-	copy(sortedByFailures, p.checklist)
-	sort.Sort(sort.Reverse(checklistByFailures(sortedByFailures)))
-
-	for _, entry := range sortedByFailures {
-		if entry.failureCount > 0 {
-			if len(explanation) > 0 {
-				explanation += "; "
-			}
-			explanation += entry.f.Explain(entry.failureCount)
-		}
-	}
-
-	return explanation
-}
+// Sort from most failures to least

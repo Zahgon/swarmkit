@@ -5,15 +5,10 @@ package plugin
 
 import (
 	fmt "fmt"
-	github_com_gogo_protobuf_proto "github.com/gogo/protobuf/proto"
+	math "math"
+
 	proto "github.com/gogo/protobuf/proto"
 	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -47,35 +42,22 @@ type WatchSelectors struct {
 	Kind *bool `protobuf:"varint,13,opt,name=kind" json:"kind,omitempty"`
 }
 
-func (m *WatchSelectors) Reset()      { *m = WatchSelectors{} }
-func (*WatchSelectors) ProtoMessage() {}
-func (*WatchSelectors) Descriptor() ([]byte, []int) {
-	return fileDescriptor_3708583e03e1c1e3, []int{0}
-}
-func (m *WatchSelectors) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *WatchSelectors) Reset()                    { _ = "STUB: not implemented"; return }
+func (*WatchSelectors) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*WatchSelectors) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *WatchSelectors) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *WatchSelectors) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_WatchSelectors.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *WatchSelectors) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WatchSelectors.Merge(m, src)
-}
-func (m *WatchSelectors) XXX_Size() int {
-	return m.Size()
-}
-func (m *WatchSelectors) XXX_DiscardUnknown() {
-	xxx_messageInfo_WatchSelectors.DiscardUnknown(m)
-}
+
+func (m *WatchSelectors) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *WatchSelectors) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchSelectors) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_WatchSelectors proto.InternalMessageInfo
 
@@ -83,35 +65,22 @@ type StoreObject struct {
 	WatchSelectors *WatchSelectors `protobuf:"bytes,1,req,name=watch_selectors,json=watchSelectors" json:"watch_selectors,omitempty"`
 }
 
-func (m *StoreObject) Reset()      { *m = StoreObject{} }
-func (*StoreObject) ProtoMessage() {}
-func (*StoreObject) Descriptor() ([]byte, []int) {
-	return fileDescriptor_3708583e03e1c1e3, []int{1}
-}
-func (m *StoreObject) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *StoreObject) Reset()                    { _ = "STUB: not implemented"; return }
+func (*StoreObject) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*StoreObject) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *StoreObject) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *StoreObject) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_StoreObject.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *StoreObject) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_StoreObject.Merge(m, src)
-}
-func (m *StoreObject) XXX_Size() int {
-	return m.Size()
-}
-func (m *StoreObject) XXX_DiscardUnknown() {
-	xxx_messageInfo_StoreObject.DiscardUnknown(m)
-}
+
+func (m *StoreObject) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *StoreObject) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *StoreObject) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_StoreObject proto.InternalMessageInfo
 
@@ -124,35 +93,22 @@ type TLSAuthorization struct {
 	Insecure *bool `protobuf:"varint,2,opt,name=insecure" json:"insecure,omitempty"`
 }
 
-func (m *TLSAuthorization) Reset()      { *m = TLSAuthorization{} }
-func (*TLSAuthorization) ProtoMessage() {}
-func (*TLSAuthorization) Descriptor() ([]byte, []int) {
-	return fileDescriptor_3708583e03e1c1e3, []int{2}
-}
-func (m *TLSAuthorization) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *TLSAuthorization) Reset()                    { _ = "STUB: not implemented"; return }
+func (*TLSAuthorization) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*TLSAuthorization) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *TLSAuthorization) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *TLSAuthorization) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_TLSAuthorization.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *TLSAuthorization) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_TLSAuthorization.Merge(m, src)
-}
-func (m *TLSAuthorization) XXX_Size() int {
-	return m.Size()
-}
-func (m *TLSAuthorization) XXX_DiscardUnknown() {
-	xxx_messageInfo_TLSAuthorization.DiscardUnknown(m)
-}
+
+func (m *TLSAuthorization) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *TLSAuthorization) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *TLSAuthorization) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_TLSAuthorization proto.InternalMessageInfo
 
@@ -237,1034 +193,87 @@ var fileDescriptor_3708583e03e1c1e3 = []byte{
 	0x00, 0x00, 0xff, 0xff, 0x0f, 0x50, 0xb9, 0xa3, 0x05, 0x04, 0x00, 0x00,
 }
 
-func (m *WatchSelectors) Copy() *WatchSelectors {
-	if m == nil {
-		return nil
-	}
-	o := &WatchSelectors{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *WatchSelectors) Copy() *WatchSelectors { _ = "STUB: not implemented"; return nil }
 
-func (m *WatchSelectors) CopyFrom(src interface{}) {
+func (m *WatchSelectors) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*WatchSelectors)
-	*m = *o
-}
+func (m *StoreObject) Copy() *StoreObject { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreObject) Copy() *StoreObject {
-	if m == nil {
-		return nil
-	}
-	o := &StoreObject{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *StoreObject) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *StoreObject) CopyFrom(src interface{}) {
+func (m *TLSAuthorization) Copy() *TLSAuthorization { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*StoreObject)
-	*m = *o
-	if o.WatchSelectors != nil {
-		m.WatchSelectors = &WatchSelectors{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.WatchSelectors, o.WatchSelectors)
-	}
-}
-
-func (m *TLSAuthorization) Copy() *TLSAuthorization {
-	if m == nil {
-		return nil
-	}
-	o := &TLSAuthorization{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *TLSAuthorization) CopyFrom(src interface{}) {
-
-	o := src.(*TLSAuthorization)
-	*m = *o
-	if o.Roles != nil {
-		m.Roles = make([]string, len(o.Roles))
-		copy(m.Roles, o.Roles)
-	}
-
-}
+func (m *TLSAuthorization) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *WatchSelectors) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *WatchSelectors) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchSelectors) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Kind != nil {
-		i--
-		if *m.Kind {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x68
-	}
-	if m.Membership != nil {
-		i--
-		if *m.Membership {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x60
-	}
-	if m.Role != nil {
-		i--
-		if *m.Role {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x58
-	}
-	if m.DesiredState != nil {
-		i--
-		if *m.DesiredState {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x50
-	}
-	if m.Slot != nil {
-		i--
-		if *m.Slot {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x48
-	}
-	if m.NodeID != nil {
-		i--
-		if *m.NodeID {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x40
-	}
-	if m.ServiceID != nil {
-		i--
-		if *m.ServiceID {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x38
-	}
-	if m.CustomPrefix != nil {
-		i--
-		if *m.CustomPrefix {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x30
-	}
-	if m.Custom != nil {
-		i--
-		if *m.Custom {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x28
-	}
-	if m.NamePrefix != nil {
-		i--
-		if *m.NamePrefix {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x20
-	}
-	if m.Name != nil {
-		i--
-		if *m.Name {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x18
-	}
-	if m.IDPrefix != nil {
-		i--
-		if *m.IDPrefix {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.ID != nil {
-		i--
-		if *m.ID {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreObject) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *StoreObject) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *StoreObject) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *StoreObject) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.WatchSelectors == nil {
-		return 0, github_com_gogo_protobuf_proto.NewRequiredNotSetError("watch_selectors")
-	} else {
-		{
-			size, err := m.WatchSelectors.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintPlugin(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *TLSAuthorization) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *TLSAuthorization) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *TLSAuthorization) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Insecure != nil {
-		i--
-		if *m.Insecure {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.Roles) > 0 {
-		for iNdEx := len(m.Roles) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Roles[iNdEx])
-			copy(dAtA[i:], m.Roles[iNdEx])
-			i = encodeVarintPlugin(dAtA, i, uint64(len(m.Roles[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func encodeVarintPlugin(dAtA []byte, offset int, v uint64) int {
-	offset -= sovPlugin(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
-}
-func (m *WatchSelectors) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.ID != nil {
-		n += 2
-	}
-	if m.IDPrefix != nil {
-		n += 2
-	}
-	if m.Name != nil {
-		n += 2
-	}
-	if m.NamePrefix != nil {
-		n += 2
-	}
-	if m.Custom != nil {
-		n += 2
-	}
-	if m.CustomPrefix != nil {
-		n += 2
-	}
-	if m.ServiceID != nil {
-		n += 2
-	}
-	if m.NodeID != nil {
-		n += 2
-	}
-	if m.Slot != nil {
-		n += 2
-	}
-	if m.DesiredState != nil {
-		n += 2
-	}
-	if m.Role != nil {
-		n += 2
-	}
-	if m.Membership != nil {
-		n += 2
-	}
-	if m.Kind != nil {
-		n += 2
-	}
-	return n
-}
+func encodeVarintPlugin(dAtA []byte, offset int, v uint64) int { _ = "STUB: not implemented"; return 0 }
 
-func (m *StoreObject) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.WatchSelectors != nil {
-		l = m.WatchSelectors.Size()
-		n += 1 + l + sovPlugin(uint64(l))
-	}
-	return n
-}
+func (m *WatchSelectors) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *TLSAuthorization) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Roles) > 0 {
-		for _, s := range m.Roles {
-			l = len(s)
-			n += 1 + l + sovPlugin(uint64(l))
-		}
-	}
-	if m.Insecure != nil {
-		n += 2
-	}
-	return n
-}
+func (m *StoreObject) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovPlugin(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozPlugin(x uint64) (n int) {
-	return sovPlugin(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *WatchSelectors) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WatchSelectors{`,
-		`ID:` + valueToStringPlugin(this.ID) + `,`,
-		`IDPrefix:` + valueToStringPlugin(this.IDPrefix) + `,`,
-		`Name:` + valueToStringPlugin(this.Name) + `,`,
-		`NamePrefix:` + valueToStringPlugin(this.NamePrefix) + `,`,
-		`Custom:` + valueToStringPlugin(this.Custom) + `,`,
-		`CustomPrefix:` + valueToStringPlugin(this.CustomPrefix) + `,`,
-		`ServiceID:` + valueToStringPlugin(this.ServiceID) + `,`,
-		`NodeID:` + valueToStringPlugin(this.NodeID) + `,`,
-		`Slot:` + valueToStringPlugin(this.Slot) + `,`,
-		`DesiredState:` + valueToStringPlugin(this.DesiredState) + `,`,
-		`Role:` + valueToStringPlugin(this.Role) + `,`,
-		`Membership:` + valueToStringPlugin(this.Membership) + `,`,
-		`Kind:` + valueToStringPlugin(this.Kind) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *StoreObject) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&StoreObject{`,
-		`WatchSelectors:` + strings.Replace(this.WatchSelectors.String(), "WatchSelectors", "WatchSelectors", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *TLSAuthorization) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&TLSAuthorization{`,
-		`Roles:` + fmt.Sprintf("%v", this.Roles) + `,`,
-		`Insecure:` + valueToStringPlugin(this.Insecure) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringPlugin(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *WatchSelectors) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowPlugin
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: WatchSelectors: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: WatchSelectors: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.ID = &b
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefix", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.IDPrefix = &b
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.Name = &b
-		case 4:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefix", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.NamePrefix = &b
-		case 5:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Custom", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.Custom = &b
-		case 6:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CustomPrefix", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.CustomPrefix = &b
-		case 7:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.ServiceID = &b
-		case 8:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.NodeID = &b
-		case 9:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Slot", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.Slot = &b
-		case 10:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DesiredState", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.DesiredState = &b
-		case 11:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Role", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.Role = &b
-		case 12:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Membership", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.Membership = &b
-		case 13:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Kind", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.Kind = &b
-		default:
-			iNdEx = preIndex
-			skippy, err := skipPlugin(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthPlugin
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *TLSAuthorization) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *StoreObject) Unmarshal(dAtA []byte) error {
-	var hasFields [1]uint64
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowPlugin
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: StoreObject: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: StoreObject: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field WatchSelectors", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthPlugin
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthPlugin
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.WatchSelectors == nil {
-				m.WatchSelectors = &WatchSelectors{}
-			}
-			if err := m.WatchSelectors.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-			hasFields[0] |= uint64(0x00000001)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipPlugin(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthPlugin
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-	if hasFields[0]&uint64(0x00000001) == 0 {
-		return github_com_gogo_protobuf_proto.NewRequiredNotSetError("watch_selectors")
-	}
+func sovPlugin(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *TLSAuthorization) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowPlugin
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: TLSAuthorization: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: TLSAuthorization: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Roles", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthPlugin
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthPlugin
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Roles = append(m.Roles, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Insecure", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			b := bool(v != 0)
-			m.Insecure = &b
-		default:
-			iNdEx = preIndex
-			skippy, err := skipPlugin(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthPlugin
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func sozPlugin(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipPlugin(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowPlugin
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowPlugin
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthPlugin
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupPlugin
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthPlugin
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (this *WatchSelectors) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *StoreObject) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *TLSAuthorization) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringPlugin(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *WatchSelectors) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *StoreObject) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *TLSAuthorization) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipPlugin(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthPlugin        = fmt.Errorf("proto: negative length found during unmarshaling")

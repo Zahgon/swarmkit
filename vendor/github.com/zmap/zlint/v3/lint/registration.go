@@ -242,7 +242,8 @@ func sourceListToMap(sources SourceList) map[LintSource]bool {
 // criteria included.
 //
 // FilterOptions are applied in the following order of precedence:
-//   ExcludeSources > IncludeSources > NameFilter > ExcludeNames > IncludeNames
+//
+//	ExcludeSources > IncludeSources > NameFilter > ExcludeNames > IncludeNames
 func (r *registryImpl) Filter(opts FilterOptions) (Registry, error) {
 	// If there's no filtering to be done, return the existing Registry.
 	if opts.Empty() {

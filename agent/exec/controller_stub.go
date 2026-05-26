@@ -2,8 +2,6 @@ package exec
 
 import (
 	"context"
-	"runtime"
-	"strings"
 
 	"github.com/moby/swarmkit/v2/api"
 )
@@ -24,52 +22,43 @@ type StubController struct {
 }
 
 // NewStubController returns an initialized StubController
-func NewStubController() *StubController {
-	return &StubController{
-		calls: make(map[string]int),
-	}
-}
+func NewStubController() *StubController { _ = "STUB: not implemented"; return nil }
 
 // If function A calls updateCountsForSelf,
 // The callCount[A] value will be incremented
-func (sc *StubController) called() {
-	pc, _, _, ok := runtime.Caller(1)
-	if !ok {
-		panic("Failed to find caller of function")
-	}
-	// longName looks like 'github.com/moby/swarmkit/agent/exec.(*StubController).Prepare:1'
-	longName := runtime.FuncForPC(pc).Name()
-	parts := strings.Split(longName, ".")
-	tail := strings.Split(parts[len(parts)-1], ":")
-	sc.calls[tail[0]]++
-}
+func (sc *StubController) called() { _ = "STUB: not implemented"; return }
+
+// longName looks like 'github.com/moby/swarmkit/agent/exec.(*StubController).Prepare:1'
 
 // Update is part of the Controller interface
 func (sc *StubController) Update(ctx context.Context, t *api.Task) error {
-	sc.called()
-	return sc.UpdateFn(ctx, t)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Prepare is part of the Controller interface
-func (sc *StubController) Prepare(ctx context.Context) error { sc.called(); return sc.PrepareFn(ctx) }
+func (sc *StubController) Prepare(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
 
 // Start is part of the Controller interface
-func (sc *StubController) Start(ctx context.Context) error { sc.called(); return sc.StartFn(ctx) }
+func (sc *StubController) Start(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
 
 // Wait is part of the Controller interface
-func (sc *StubController) Wait(ctx context.Context) error { sc.called(); return sc.WaitFn(ctx) }
+func (sc *StubController) Wait(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
 
 // Shutdown is part of the Controller interface
-func (sc *StubController) Shutdown(ctx context.Context) error { sc.called(); return sc.ShutdownFn(ctx) }
+func (sc *StubController) Shutdown(ctx context.Context) error {
+	_ = "STUB: not implemented"
+	return nil
+}
 
 // Terminate is part of the Controller interface
 func (sc *StubController) Terminate(ctx context.Context) error {
-	sc.called()
-	return sc.TerminateFn(ctx)
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Remove is part of the Controller interface
-func (sc *StubController) Remove(ctx context.Context) error { sc.called(); return sc.RemoveFn(ctx) }
+func (sc *StubController) Remove(ctx context.Context) error { _ = "STUB: not implemented"; return nil }
 
 // Close is part of the Controller interface
-func (sc *StubController) Close() error { sc.called(); return sc.CloseFn() }
+func (sc *StubController) Close() error { _ = "STUB: not implemented"; return nil }

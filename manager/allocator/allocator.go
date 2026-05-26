@@ -65,89 +65,29 @@ type allocActor struct {
 // New returns a new instance of Allocator for use during allocation
 // stage of the manager.
 func New(store *store.MemoryStore, na networkallocator.NetworkAllocator) *Allocator {
-	if na == nil {
-		na = networkallocator.Inert{}
-	}
-	return &Allocator{
-		store: store,
-		taskBallot: &taskBallot{
-			votes: make(map[string][]string),
-		},
-		stopChan:     make(chan struct{}),
-		doneChan:     make(chan struct{}),
-		nwkAllocator: na,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Run starts all allocator go-routines and waits for Stop to be called.
 func (a *Allocator) Run(ctx context.Context) error {
+	_ = "STUB: not implemented"
 	// Setup cancel context for all goroutines to use.
-	ctx, cancel := context.WithCancel(ctx)
-	var (
-		wg     sync.WaitGroup
-		actors []func() error
-	)
-
-	defer func() {
-		cancel()
-		wg.Wait()
-		close(a.doneChan)
-	}()
-
-	for _, aa := range []allocActor{
-		{
-			taskVoter: networkVoter,
-			init:      a.doNetworkInit,
-			action:    a.doNetworkAlloc,
-		},
-	} {
-		if aa.taskVoter != "" {
-			a.registerToVote(aa.taskVoter)
-		}
-
-		// Assign a pointer for variable capture
-		aaPtr := &aa
-		actor := func() error {
-			wg.Add(1)
-			defer wg.Done()
-
-			// init might return an allocator specific context
-			// which is a child of the passed in context to hold
-			// allocator specific state
-			watch, watchCancel, err := a.init(ctx, aaPtr)
-			if err != nil {
-				return err
-			}
-
-			wg.Add(1)
-			go func(watch <-chan events.Event, watchCancel func()) {
-				defer func() {
-					wg.Done()
-					watchCancel()
-				}()
-				a.run(ctx, *aaPtr, watch)
-			}(watch, watchCancel)
-			return nil
-		}
-
-		actors = append(actors, actor)
-	}
-
-	for _, actor := range actors {
-		if err := actor(); err != nil {
-			return err
-		}
-	}
-
-	<-a.stopChan
 	return nil
 }
 
+// Assign a pointer for variable capture
+
+// init might return an allocator specific context
+// which is a child of the passed in context to hold
+// allocator specific state
+
 // Stop stops the allocator
 func (a *Allocator) Stop() {
-	close(a.stopChan)
+	_ = "STUB: not implemented"
+
 	// Wait for all allocator goroutines to truly exit
-	<-a.doneChan
+	return
 }
 
 func (a *Allocator) init(ctx context.Context, aa *allocActor) (<-chan events.Event, func(), error) {
@@ -175,57 +115,21 @@ func (a *Allocator) init(ctx context.Context, aa *allocActor) (<-chan events.Eve
 }
 
 func (a *Allocator) run(ctx context.Context, aa allocActor, watch <-chan events.Event) {
-	for {
-		select {
-		case ev, ok := <-watch:
-			if !ok {
-				return
-			}
-
-			aa.action(ctx, ev)
-		case <-ctx.Done():
-			return
-		}
-	}
+	_ = "STUB: not implemented"
+	return
 }
 
-func (a *Allocator) registerToVote(name string) {
-	a.taskBallot.Lock()
-	defer a.taskBallot.Unlock()
-
-	a.taskBallot.voters = append(a.taskBallot.voters, name)
-}
+func (a *Allocator) registerToVote(name string) { _ = "STUB: not implemented"; return }
 
 func (a *Allocator) taskAllocateVote(voter string, id string) bool {
-	a.taskBallot.Lock()
-	defer a.taskBallot.Unlock()
-
-	// If voter has already voted, return false
-	for _, v := range a.taskBallot.votes[id] {
-		// check if voter is in x
-		if v == voter {
-			return false
-		}
-	}
-
-	a.taskBallot.votes[id] = append(a.taskBallot.votes[id], voter)
-
-	// We haven't gotten enough votes yet
-	if len(a.taskBallot.voters) > len(a.taskBallot.votes[id]) {
-		return false
-	}
-
-nextVoter:
-	for _, voter := range a.taskBallot.voters {
-		for _, vote := range a.taskBallot.votes[id] {
-			if voter == vote {
-				continue nextVoter
-			}
-		}
-
-		// Not every registered voter has registered a vote.
-		return false
-	}
-
-	return true
+	_ = "STUB: not implemented"
+	return false
 }
+
+// If voter has already voted, return false
+
+// check if voter is in x
+
+// We haven't gotten enough votes yet
+
+// Not every registered voter has registered a vote.

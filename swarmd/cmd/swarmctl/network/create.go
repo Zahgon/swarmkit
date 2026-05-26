@@ -3,7 +3,6 @@ package network
 import (
 	"errors"
 	"fmt"
-	"net"
 	"strings"
 
 	"github.com/moby/swarmkit/swarmd/cmd/swarmctl/common"
@@ -85,90 +84,8 @@ var (
 )
 
 func processIPAMOptions(cmd *cobra.Command) (*api.IPAMOptions, error) {
-	flags := cmd.Flags()
-
-	var ipamOpts *api.IPAMOptions
-	if flags.Changed("ipam-driver") {
-		driver, err := cmd.Flags().GetString("ipam-driver")
-		if err != nil {
-			return nil, err
-		}
-
-		ipamOpts = &api.IPAMOptions{
-			Driver: &api.Driver{
-				Name: driver,
-			},
-		}
-	}
-
-	if !flags.Changed("subnet") {
-		return ipamOpts, nil
-	}
-
-	subnets, err := cmd.Flags().GetStringSlice("subnet")
-	if err != nil {
-		return nil, err
-	}
-
-	gateways, err := cmd.Flags().GetStringSlice("gateway")
-	if err != nil {
-		return nil, err
-	}
-
-	ranges, err := cmd.Flags().GetStringSlice("ip-range")
-	if err != nil {
-		return nil, err
-	}
-
-	ipamConfigs := make([]*api.IPAMConfig, 0, len(subnets))
-	for _, s := range subnets {
-		_, ipNet, err := net.ParseCIDR(s)
-		if err != nil {
-			return nil, err
-		}
-
-		family := api.IPAMConfig_IPV6
-		if ipNet.IP.To4() != nil {
-			family = api.IPAMConfig_IPV4
-		}
-
-		var gateway string
-		for i, g := range gateways {
-			if ipNet.Contains(net.ParseIP(g)) {
-				gateways = append(gateways[:i], gateways[i+1:]...)
-				gateway = g
-				break
-			}
-		}
-
-		var iprange string
-		for i, r := range ranges {
-			_, rangeNet, err := net.ParseCIDR(r)
-			if err != nil {
-				return nil, err
-			}
-
-			if ipNet.Contains(rangeNet.IP) {
-				ranges = append(ranges[:i], ranges[i+1:]...)
-				iprange = r
-				break
-			}
-		}
-
-		ipamConfigs = append(ipamConfigs, &api.IPAMConfig{
-			Family:  family,
-			Subnet:  s,
-			Gateway: gateway,
-			Range:   iprange,
-		})
-	}
-
-	if ipamOpts == nil {
-		ipamOpts = &api.IPAMOptions{}
-	}
-
-	ipamOpts.Configs = ipamConfigs
-	return ipamOpts, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func init() {

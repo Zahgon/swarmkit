@@ -29,14 +29,6 @@ type Server struct {
 
 // NewServer creates a Cluster API server.
 func NewServer(store *store.MemoryStore, raft *raft.Node, securityConfig *ca.SecurityConfig, nv networkallocator.DriverValidator, dr *drivers.DriverProvider) *Server {
-	if nv == nil {
-		nv = networkallocator.InertProvider{}
-	}
-	return &Server{
-		store:          store,
-		dr:             dr,
-		raft:           raft,
-		securityConfig: securityConfig,
-		netvalidator:   nv,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }

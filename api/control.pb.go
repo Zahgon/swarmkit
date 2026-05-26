@@ -6,24 +6,14 @@ package api
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_gogo_protobuf_sortkeys "github.com/gogo/protobuf/sortkeys"
 	types "github.com/gogo/protobuf/types"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	_ "github.com/moby/swarmkit/v2/protobuf/plugin"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -58,47 +48,33 @@ var UpdateServiceRequest_Rollback_value = map[string]int32{
 	"PREVIOUS": 1,
 }
 
-func (x UpdateServiceRequest_Rollback) String() string {
-	return proto.EnumName(UpdateServiceRequest_Rollback_name, int32(x))
-}
+func (x UpdateServiceRequest_Rollback) String() string { _ = "STUB: not implemented"; return "" }
 
 func (UpdateServiceRequest_Rollback) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{18, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type GetNodeRequest struct {
 	NodeID string `protobuf:"bytes,1,opt,name=node_id,json=nodeId,proto3" json:"node_id,omitempty"`
 }
 
-func (m *GetNodeRequest) Reset()      { *m = GetNodeRequest{} }
-func (*GetNodeRequest) ProtoMessage() {}
-func (*GetNodeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{0}
-}
-func (m *GetNodeRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetNodeRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetNodeRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetNodeRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetNodeRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetNodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetNodeRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetNodeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetNodeRequest.Merge(m, src)
-}
-func (m *GetNodeRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetNodeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetNodeRequest.DiscardUnknown(m)
-}
+
+func (m *GetNodeRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetNodeRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetNodeRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetNodeRequest proto.InternalMessageInfo
 
@@ -106,35 +82,22 @@ type GetNodeResponse struct {
 	Node *Node `protobuf:"bytes,1,opt,name=node,proto3" json:"node,omitempty"`
 }
 
-func (m *GetNodeResponse) Reset()      { *m = GetNodeResponse{} }
-func (*GetNodeResponse) ProtoMessage() {}
-func (*GetNodeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{1}
-}
-func (m *GetNodeResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetNodeResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetNodeResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetNodeResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetNodeResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetNodeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetNodeResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetNodeResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetNodeResponse.Merge(m, src)
-}
-func (m *GetNodeResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetNodeResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetNodeResponse.DiscardUnknown(m)
-}
+
+func (m *GetNodeResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetNodeResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetNodeResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetNodeResponse proto.InternalMessageInfo
 
@@ -142,35 +105,22 @@ type ListNodesRequest struct {
 	Filters *ListNodesRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListNodesRequest) Reset()      { *m = ListNodesRequest{} }
-func (*ListNodesRequest) ProtoMessage() {}
-func (*ListNodesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{2}
-}
-func (m *ListNodesRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ListNodesRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ListNodesRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ListNodesRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ListNodesRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListNodesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListNodesRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListNodesRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListNodesRequest.Merge(m, src)
-}
-func (m *ListNodesRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListNodesRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListNodesRequest.DiscardUnknown(m)
-}
+
+func (m *ListNodesRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListNodesRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListNodesRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListNodesRequest proto.InternalMessageInfo
 
@@ -188,35 +138,28 @@ type ListNodesRequest_Filters struct {
 	NamePrefixes []string `protobuf:"bytes,6,rep,name=name_prefixes,json=namePrefixes,proto3" json:"name_prefixes,omitempty"`
 }
 
-func (m *ListNodesRequest_Filters) Reset()      { *m = ListNodesRequest_Filters{} }
-func (*ListNodesRequest_Filters) ProtoMessage() {}
+func (m *ListNodesRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListNodesRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListNodesRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{2, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListNodesRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListNodesRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListNodesRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListNodesRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListNodesRequest_Filters.Merge(m, src)
-}
-func (m *ListNodesRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListNodesRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListNodesRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListNodesRequest_Filters) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListNodesRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListNodesRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListNodesRequest_Filters proto.InternalMessageInfo
 
@@ -224,35 +167,22 @@ type ListNodesResponse struct {
 	Nodes []*Node `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty"`
 }
 
-func (m *ListNodesResponse) Reset()      { *m = ListNodesResponse{} }
-func (*ListNodesResponse) ProtoMessage() {}
-func (*ListNodesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{3}
-}
-func (m *ListNodesResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ListNodesResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ListNodesResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ListNodesResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ListNodesResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListNodesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListNodesResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListNodesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListNodesResponse.Merge(m, src)
-}
-func (m *ListNodesResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListNodesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListNodesResponse.DiscardUnknown(m)
-}
+
+func (m *ListNodesResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListNodesResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListNodesResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListNodesResponse proto.InternalMessageInfo
 
@@ -265,35 +195,22 @@ type UpdateNodeRequest struct {
 	Spec        *NodeSpec `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *UpdateNodeRequest) Reset()      { *m = UpdateNodeRequest{} }
-func (*UpdateNodeRequest) ProtoMessage() {}
-func (*UpdateNodeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{4}
-}
-func (m *UpdateNodeRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *UpdateNodeRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*UpdateNodeRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*UpdateNodeRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *UpdateNodeRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateNodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateNodeRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateNodeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateNodeRequest.Merge(m, src)
-}
-func (m *UpdateNodeRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateNodeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateNodeRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateNodeRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateNodeRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateNodeRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateNodeRequest proto.InternalMessageInfo
 
@@ -301,35 +218,22 @@ type UpdateNodeResponse struct {
 	Node *Node `protobuf:"bytes,1,opt,name=node,proto3" json:"node,omitempty"`
 }
 
-func (m *UpdateNodeResponse) Reset()      { *m = UpdateNodeResponse{} }
-func (*UpdateNodeResponse) ProtoMessage() {}
-func (*UpdateNodeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{5}
-}
-func (m *UpdateNodeResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *UpdateNodeResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*UpdateNodeResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*UpdateNodeResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *UpdateNodeResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateNodeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateNodeResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateNodeResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateNodeResponse.Merge(m, src)
-}
-func (m *UpdateNodeResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateNodeResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateNodeResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateNodeResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateNodeResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateNodeResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateNodeResponse proto.InternalMessageInfo
 
@@ -339,70 +243,44 @@ type RemoveNodeRequest struct {
 	Force  bool   `protobuf:"varint,2,opt,name=force,proto3" json:"force,omitempty"`
 }
 
-func (m *RemoveNodeRequest) Reset()      { *m = RemoveNodeRequest{} }
-func (*RemoveNodeRequest) ProtoMessage() {}
-func (*RemoveNodeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{6}
-}
-func (m *RemoveNodeRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *RemoveNodeRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RemoveNodeRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RemoveNodeRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RemoveNodeRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveNodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveNodeRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveNodeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveNodeRequest.Merge(m, src)
-}
-func (m *RemoveNodeRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveNodeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveNodeRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveNodeRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveNodeRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveNodeRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveNodeRequest proto.InternalMessageInfo
 
 type RemoveNodeResponse struct {
 }
 
-func (m *RemoveNodeResponse) Reset()      { *m = RemoveNodeResponse{} }
-func (*RemoveNodeResponse) ProtoMessage() {}
-func (*RemoveNodeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{7}
-}
-func (m *RemoveNodeResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *RemoveNodeResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RemoveNodeResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RemoveNodeResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RemoveNodeResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveNodeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveNodeResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveNodeResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveNodeResponse.Merge(m, src)
-}
-func (m *RemoveNodeResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveNodeResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveNodeResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveNodeResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveNodeResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveNodeResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveNodeResponse proto.InternalMessageInfo
 
@@ -410,35 +288,22 @@ type GetTaskRequest struct {
 	TaskID string `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
 }
 
-func (m *GetTaskRequest) Reset()      { *m = GetTaskRequest{} }
-func (*GetTaskRequest) ProtoMessage() {}
-func (*GetTaskRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{8}
-}
-func (m *GetTaskRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetTaskRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetTaskRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetTaskRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetTaskRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetTaskRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetTaskRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetTaskRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetTaskRequest.Merge(m, src)
-}
-func (m *GetTaskRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetTaskRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetTaskRequest.DiscardUnknown(m)
-}
+
+func (m *GetTaskRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetTaskRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetTaskRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetTaskRequest proto.InternalMessageInfo
 
@@ -446,35 +311,22 @@ type GetTaskResponse struct {
 	Task *Task `protobuf:"bytes,1,opt,name=task,proto3" json:"task,omitempty"`
 }
 
-func (m *GetTaskResponse) Reset()      { *m = GetTaskResponse{} }
-func (*GetTaskResponse) ProtoMessage() {}
-func (*GetTaskResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{9}
-}
-func (m *GetTaskResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetTaskResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetTaskResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetTaskResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetTaskResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetTaskResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetTaskResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetTaskResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetTaskResponse.Merge(m, src)
-}
-func (m *GetTaskResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetTaskResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetTaskResponse.DiscardUnknown(m)
-}
+
+func (m *GetTaskResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetTaskResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetTaskResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetTaskResponse proto.InternalMessageInfo
 
@@ -482,70 +334,44 @@ type RemoveTaskRequest struct {
 	TaskID string `protobuf:"bytes,1,opt,name=task_id,json=taskId,proto3" json:"task_id,omitempty"`
 }
 
-func (m *RemoveTaskRequest) Reset()      { *m = RemoveTaskRequest{} }
-func (*RemoveTaskRequest) ProtoMessage() {}
-func (*RemoveTaskRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{10}
-}
-func (m *RemoveTaskRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *RemoveTaskRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RemoveTaskRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RemoveTaskRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RemoveTaskRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveTaskRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveTaskRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveTaskRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveTaskRequest.Merge(m, src)
-}
-func (m *RemoveTaskRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveTaskRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveTaskRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveTaskRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveTaskRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveTaskRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveTaskRequest proto.InternalMessageInfo
 
 type RemoveTaskResponse struct {
 }
 
-func (m *RemoveTaskResponse) Reset()      { *m = RemoveTaskResponse{} }
-func (*RemoveTaskResponse) ProtoMessage() {}
-func (*RemoveTaskResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{11}
-}
-func (m *RemoveTaskResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *RemoveTaskResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*RemoveTaskResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*RemoveTaskResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *RemoveTaskResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveTaskResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveTaskResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveTaskResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveTaskResponse.Merge(m, src)
-}
-func (m *RemoveTaskResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveTaskResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveTaskResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveTaskResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveTaskResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveTaskResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveTaskResponse proto.InternalMessageInfo
 
@@ -553,35 +379,22 @@ type ListTasksRequest struct {
 	Filters *ListTasksRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListTasksRequest) Reset()      { *m = ListTasksRequest{} }
-func (*ListTasksRequest) ProtoMessage() {}
-func (*ListTasksRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{12}
-}
-func (m *ListTasksRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ListTasksRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ListTasksRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ListTasksRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ListTasksRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListTasksRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListTasksRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListTasksRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListTasksRequest.Merge(m, src)
-}
-func (m *ListTasksRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListTasksRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListTasksRequest.DiscardUnknown(m)
-}
+
+func (m *ListTasksRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListTasksRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListTasksRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListTasksRequest proto.InternalMessageInfo
 
@@ -602,35 +415,28 @@ type ListTasksRequest_Filters struct {
 	UpToDate bool `protobuf:"varint,8,opt,name=up_to_date,json=upToDate,proto3" json:"up_to_date,omitempty"`
 }
 
-func (m *ListTasksRequest_Filters) Reset()      { *m = ListTasksRequest_Filters{} }
-func (*ListTasksRequest_Filters) ProtoMessage() {}
+func (m *ListTasksRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListTasksRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListTasksRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{12, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListTasksRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListTasksRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListTasksRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListTasksRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListTasksRequest_Filters.Merge(m, src)
-}
-func (m *ListTasksRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListTasksRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListTasksRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListTasksRequest_Filters) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListTasksRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListTasksRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListTasksRequest_Filters proto.InternalMessageInfo
 
@@ -638,35 +444,22 @@ type ListTasksResponse struct {
 	Tasks []*Task `protobuf:"bytes,1,rep,name=tasks,proto3" json:"tasks,omitempty"`
 }
 
-func (m *ListTasksResponse) Reset()      { *m = ListTasksResponse{} }
-func (*ListTasksResponse) ProtoMessage() {}
-func (*ListTasksResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{13}
-}
-func (m *ListTasksResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ListTasksResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ListTasksResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ListTasksResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ListTasksResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListTasksResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListTasksResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListTasksResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListTasksResponse.Merge(m, src)
-}
-func (m *ListTasksResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListTasksResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListTasksResponse.DiscardUnknown(m)
-}
+
+func (m *ListTasksResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListTasksResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListTasksResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListTasksResponse proto.InternalMessageInfo
 
@@ -674,35 +467,25 @@ type CreateServiceRequest struct {
 	Spec *ServiceSpec `protobuf:"bytes,1,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *CreateServiceRequest) Reset()      { *m = CreateServiceRequest{} }
-func (*CreateServiceRequest) ProtoMessage() {}
+func (m *CreateServiceRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateServiceRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateServiceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{14}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateServiceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateServiceRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateServiceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateServiceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateServiceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateServiceRequest.Merge(m, src)
-}
-func (m *CreateServiceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateServiceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateServiceRequest.DiscardUnknown(m)
-}
+
+func (m *CreateServiceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateServiceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateServiceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateServiceRequest proto.InternalMessageInfo
 
@@ -710,35 +493,28 @@ type CreateServiceResponse struct {
 	Service *Service `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
 }
 
-func (m *CreateServiceResponse) Reset()      { *m = CreateServiceResponse{} }
-func (*CreateServiceResponse) ProtoMessage() {}
+func (m *CreateServiceResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateServiceResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateServiceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{15}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *CreateServiceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *CreateServiceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateServiceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateServiceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateServiceResponse.Merge(m, src)
-}
-func (m *CreateServiceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateServiceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateServiceResponse.DiscardUnknown(m)
-}
+
+func (m *CreateServiceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateServiceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateServiceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateServiceResponse proto.InternalMessageInfo
 
@@ -747,35 +523,22 @@ type GetServiceRequest struct {
 	InsertDefaults bool   `protobuf:"varint,2,opt,name=insert_defaults,json=insertDefaults,proto3" json:"insert_defaults,omitempty"`
 }
 
-func (m *GetServiceRequest) Reset()      { *m = GetServiceRequest{} }
-func (*GetServiceRequest) ProtoMessage() {}
-func (*GetServiceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{16}
-}
-func (m *GetServiceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetServiceRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetServiceRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetServiceRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetServiceRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetServiceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetServiceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetServiceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetServiceRequest.Merge(m, src)
-}
-func (m *GetServiceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetServiceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetServiceRequest.DiscardUnknown(m)
-}
+
+func (m *GetServiceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetServiceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetServiceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetServiceRequest proto.InternalMessageInfo
 
@@ -783,35 +546,22 @@ type GetServiceResponse struct {
 	Service *Service `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
 }
 
-func (m *GetServiceResponse) Reset()      { *m = GetServiceResponse{} }
-func (*GetServiceResponse) ProtoMessage() {}
-func (*GetServiceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{17}
-}
-func (m *GetServiceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetServiceResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetServiceResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetServiceResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetServiceResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetServiceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetServiceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetServiceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetServiceResponse.Merge(m, src)
-}
-func (m *GetServiceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetServiceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetServiceResponse.DiscardUnknown(m)
-}
+
+func (m *GetServiceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetServiceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetServiceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetServiceResponse proto.InternalMessageInfo
 
@@ -825,35 +575,25 @@ type UpdateServiceRequest struct {
 	Rollback UpdateServiceRequest_Rollback `protobuf:"varint,4,opt,name=rollback,proto3,enum=docker.swarmkit.v1.UpdateServiceRequest_Rollback" json:"rollback,omitempty"`
 }
 
-func (m *UpdateServiceRequest) Reset()      { *m = UpdateServiceRequest{} }
-func (*UpdateServiceRequest) ProtoMessage() {}
+func (m *UpdateServiceRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateServiceRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateServiceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{18}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateServiceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateServiceRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateServiceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateServiceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateServiceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateServiceRequest.Merge(m, src)
-}
-func (m *UpdateServiceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateServiceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateServiceRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateServiceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateServiceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateServiceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateServiceRequest proto.InternalMessageInfo
 
@@ -861,35 +601,28 @@ type UpdateServiceResponse struct {
 	Service *Service `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
 }
 
-func (m *UpdateServiceResponse) Reset()      { *m = UpdateServiceResponse{} }
-func (*UpdateServiceResponse) ProtoMessage() {}
+func (m *UpdateServiceResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateServiceResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateServiceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{19}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateServiceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateServiceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateServiceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateServiceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateServiceResponse.Merge(m, src)
-}
-func (m *UpdateServiceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateServiceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateServiceResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateServiceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateServiceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateServiceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateServiceResponse proto.InternalMessageInfo
 
@@ -897,70 +630,53 @@ type RemoveServiceRequest struct {
 	ServiceID string `protobuf:"bytes,1,opt,name=service_id,json=serviceId,proto3" json:"service_id,omitempty"`
 }
 
-func (m *RemoveServiceRequest) Reset()      { *m = RemoveServiceRequest{} }
-func (*RemoveServiceRequest) ProtoMessage() {}
+func (m *RemoveServiceRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveServiceRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveServiceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{20}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveServiceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveServiceRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveServiceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveServiceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveServiceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveServiceRequest.Merge(m, src)
-}
-func (m *RemoveServiceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveServiceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveServiceRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveServiceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveServiceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveServiceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveServiceRequest proto.InternalMessageInfo
 
 type RemoveServiceResponse struct {
 }
 
-func (m *RemoveServiceResponse) Reset()      { *m = RemoveServiceResponse{} }
-func (*RemoveServiceResponse) ProtoMessage() {}
+func (m *RemoveServiceResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveServiceResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveServiceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{21}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RemoveServiceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RemoveServiceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveServiceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveServiceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveServiceResponse.Merge(m, src)
-}
-func (m *RemoveServiceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveServiceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveServiceResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveServiceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveServiceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveServiceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveServiceResponse proto.InternalMessageInfo
 
@@ -968,35 +684,25 @@ type ListServicesRequest struct {
 	Filters *ListServicesRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListServicesRequest) Reset()      { *m = ListServicesRequest{} }
-func (*ListServicesRequest) ProtoMessage() {}
+func (m *ListServicesRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListServicesRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListServicesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{22}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListServicesRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListServicesRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListServicesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListServicesRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListServicesRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListServicesRequest.Merge(m, src)
-}
-func (m *ListServicesRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListServicesRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListServicesRequest.DiscardUnknown(m)
-}
+
+func (m *ListServicesRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListServicesRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListServicesRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListServicesRequest proto.InternalMessageInfo
 
@@ -1009,35 +715,31 @@ type ListServicesRequest_Filters struct {
 	Runtimes     []string `protobuf:"bytes,5,rep,name=runtimes,proto3" json:"runtimes,omitempty"`
 }
 
-func (m *ListServicesRequest_Filters) Reset()      { *m = ListServicesRequest_Filters{} }
-func (*ListServicesRequest_Filters) ProtoMessage() {}
+func (m *ListServicesRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListServicesRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListServicesRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{22, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServicesRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListServicesRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListServicesRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServicesRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListServicesRequest_Filters.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListServicesRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListServicesRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListServicesRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListServicesRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListServicesRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListServicesRequest_Filters proto.InternalMessageInfo
 
@@ -1045,35 +747,25 @@ type ListServicesResponse struct {
 	Services []*Service `protobuf:"bytes,1,rep,name=services,proto3" json:"services,omitempty"`
 }
 
-func (m *ListServicesResponse) Reset()      { *m = ListServicesResponse{} }
-func (*ListServicesResponse) ProtoMessage() {}
+func (m *ListServicesResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListServicesResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListServicesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{23}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListServicesResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListServicesResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListServicesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListServicesResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListServicesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListServicesResponse.Merge(m, src)
-}
-func (m *ListServicesResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListServicesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListServicesResponse.DiscardUnknown(m)
-}
+
+func (m *ListServicesResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListServicesResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListServicesResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListServicesResponse proto.InternalMessageInfo
 
@@ -1085,35 +777,31 @@ type ListServiceStatusesRequest struct {
 	Services []string `protobuf:"bytes,1,rep,name=services,proto3" json:"services,omitempty"`
 }
 
-func (m *ListServiceStatusesRequest) Reset()      { *m = ListServiceStatusesRequest{} }
-func (*ListServiceStatusesRequest) ProtoMessage() {}
+func (m *ListServiceStatusesRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListServiceStatusesRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListServiceStatusesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{24}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServiceStatusesRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListServiceStatusesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListServiceStatusesRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServiceStatusesRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListServiceStatusesRequest.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListServiceStatusesRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListServiceStatusesRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListServiceStatusesRequest.DiscardUnknown(m)
-}
+
+func (m *ListServiceStatusesRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListServiceStatusesRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListServiceStatusesRequest proto.InternalMessageInfo
 
@@ -1125,35 +813,31 @@ type ListServiceStatusesResponse struct {
 	Statuses []*ListServiceStatusesResponse_ServiceStatus `protobuf:"bytes,1,rep,name=statuses,proto3" json:"statuses,omitempty"`
 }
 
-func (m *ListServiceStatusesResponse) Reset()      { *m = ListServiceStatusesResponse{} }
-func (*ListServiceStatusesResponse) ProtoMessage() {}
+func (m *ListServiceStatusesResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListServiceStatusesResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListServiceStatusesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{25}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServiceStatusesResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListServiceStatusesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListServiceStatusesResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServiceStatusesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListServiceStatusesResponse.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListServiceStatusesResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListServiceStatusesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListServiceStatusesResponse.DiscardUnknown(m)
-}
+
+func (m *ListServiceStatusesResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListServiceStatusesResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListServiceStatusesResponse proto.InternalMessageInfo
 
@@ -1176,36 +860,37 @@ type ListServiceStatusesResponse_ServiceStatus struct {
 	CompletedTasks uint64 `protobuf:"varint,4,opt,name=completed_tasks,json=completedTasks,proto3" json:"completed_tasks,omitempty"`
 }
 
-func (m *ListServiceStatusesResponse_ServiceStatus) Reset() {
-	*m = ListServiceStatusesResponse_ServiceStatus{}
-}
-func (*ListServiceStatusesResponse_ServiceStatus) ProtoMessage() {}
+func (m *ListServiceStatusesResponse_ServiceStatus) Reset() { _ = "STUB: not implemented"; return }
+
+func (*ListServiceStatusesResponse_ServiceStatus) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListServiceStatusesResponse_ServiceStatus) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{25, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServiceStatusesResponse_ServiceStatus) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListServiceStatusesResponse_ServiceStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListServiceStatusesResponse_ServiceStatus.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListServiceStatusesResponse_ServiceStatus) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListServiceStatusesResponse_ServiceStatus.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
+
 func (m *ListServiceStatusesResponse_ServiceStatus) XXX_Size() int {
-	return m.Size()
+	_ = "STUB: not implemented"
+	return 0
 }
+
 func (m *ListServiceStatusesResponse_ServiceStatus) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListServiceStatusesResponse_ServiceStatus.DiscardUnknown(m)
+	_ = "STUB: not implemented"
+	return
 }
 
 var xxx_messageInfo_ListServiceStatusesResponse_ServiceStatus proto.InternalMessageInfo
@@ -1214,35 +899,25 @@ type CreateNetworkRequest struct {
 	Spec *NetworkSpec `protobuf:"bytes,1,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *CreateNetworkRequest) Reset()      { *m = CreateNetworkRequest{} }
-func (*CreateNetworkRequest) ProtoMessage() {}
+func (m *CreateNetworkRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateNetworkRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateNetworkRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{26}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateNetworkRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateNetworkRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateNetworkRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateNetworkRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateNetworkRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateNetworkRequest.Merge(m, src)
-}
-func (m *CreateNetworkRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateNetworkRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateNetworkRequest.DiscardUnknown(m)
-}
+
+func (m *CreateNetworkRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateNetworkRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateNetworkRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateNetworkRequest proto.InternalMessageInfo
 
@@ -1250,35 +925,28 @@ type CreateNetworkResponse struct {
 	Network *Network `protobuf:"bytes,1,opt,name=network,proto3" json:"network,omitempty"`
 }
 
-func (m *CreateNetworkResponse) Reset()      { *m = CreateNetworkResponse{} }
-func (*CreateNetworkResponse) ProtoMessage() {}
+func (m *CreateNetworkResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateNetworkResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateNetworkResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{27}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *CreateNetworkResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *CreateNetworkResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateNetworkResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateNetworkResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateNetworkResponse.Merge(m, src)
-}
-func (m *CreateNetworkResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateNetworkResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateNetworkResponse.DiscardUnknown(m)
-}
+
+func (m *CreateNetworkResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateNetworkResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateNetworkResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateNetworkResponse proto.InternalMessageInfo
 
@@ -1289,35 +957,22 @@ type GetNetworkRequest struct {
 	Appdata *types.Any `protobuf:"bytes,3,opt,name=appdata,proto3" json:"appdata,omitempty"`
 }
 
-func (m *GetNetworkRequest) Reset()      { *m = GetNetworkRequest{} }
-func (*GetNetworkRequest) ProtoMessage() {}
-func (*GetNetworkRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{28}
-}
-func (m *GetNetworkRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetNetworkRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetNetworkRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetNetworkRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetNetworkRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetNetworkRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetNetworkRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetNetworkRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetNetworkRequest.Merge(m, src)
-}
-func (m *GetNetworkRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetNetworkRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetNetworkRequest.DiscardUnknown(m)
-}
+
+func (m *GetNetworkRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetNetworkRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetNetworkRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetNetworkRequest proto.InternalMessageInfo
 
@@ -1325,35 +980,22 @@ type GetNetworkResponse struct {
 	Network *Network `protobuf:"bytes,1,opt,name=network,proto3" json:"network,omitempty"`
 }
 
-func (m *GetNetworkResponse) Reset()      { *m = GetNetworkResponse{} }
-func (*GetNetworkResponse) ProtoMessage() {}
-func (*GetNetworkResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{29}
-}
-func (m *GetNetworkResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetNetworkResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetNetworkResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetNetworkResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetNetworkResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetNetworkResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetNetworkResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetNetworkResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetNetworkResponse.Merge(m, src)
-}
-func (m *GetNetworkResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetNetworkResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetNetworkResponse.DiscardUnknown(m)
-}
+
+func (m *GetNetworkResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetNetworkResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetNetworkResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetNetworkResponse proto.InternalMessageInfo
 
@@ -1362,70 +1004,53 @@ type RemoveNetworkRequest struct {
 	NetworkID string `protobuf:"bytes,2,opt,name=network_id,json=networkId,proto3" json:"network_id,omitempty"`
 }
 
-func (m *RemoveNetworkRequest) Reset()      { *m = RemoveNetworkRequest{} }
-func (*RemoveNetworkRequest) ProtoMessage() {}
+func (m *RemoveNetworkRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveNetworkRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveNetworkRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{30}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveNetworkRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveNetworkRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveNetworkRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveNetworkRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveNetworkRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveNetworkRequest.Merge(m, src)
-}
-func (m *RemoveNetworkRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveNetworkRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveNetworkRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveNetworkRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveNetworkRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveNetworkRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveNetworkRequest proto.InternalMessageInfo
 
 type RemoveNetworkResponse struct {
 }
 
-func (m *RemoveNetworkResponse) Reset()      { *m = RemoveNetworkResponse{} }
-func (*RemoveNetworkResponse) ProtoMessage() {}
+func (m *RemoveNetworkResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveNetworkResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveNetworkResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{31}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RemoveNetworkResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RemoveNetworkResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveNetworkResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveNetworkResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveNetworkResponse.Merge(m, src)
-}
-func (m *RemoveNetworkResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveNetworkResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveNetworkResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveNetworkResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveNetworkResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveNetworkResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveNetworkResponse proto.InternalMessageInfo
 
@@ -1435,35 +1060,25 @@ type ListNetworksRequest struct {
 	Appdata *types.Any `protobuf:"bytes,2,opt,name=appdata,proto3" json:"appdata,omitempty"`
 }
 
-func (m *ListNetworksRequest) Reset()      { *m = ListNetworksRequest{} }
-func (*ListNetworksRequest) ProtoMessage() {}
+func (m *ListNetworksRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListNetworksRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListNetworksRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{32}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListNetworksRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListNetworksRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListNetworksRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListNetworksRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListNetworksRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListNetworksRequest.Merge(m, src)
-}
-func (m *ListNetworksRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListNetworksRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListNetworksRequest.DiscardUnknown(m)
-}
+
+func (m *ListNetworksRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListNetworksRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListNetworksRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListNetworksRequest proto.InternalMessageInfo
 
@@ -1475,35 +1090,31 @@ type ListNetworksRequest_Filters struct {
 	NamePrefixes []string `protobuf:"bytes,4,rep,name=name_prefixes,json=namePrefixes,proto3" json:"name_prefixes,omitempty"`
 }
 
-func (m *ListNetworksRequest_Filters) Reset()      { *m = ListNetworksRequest_Filters{} }
-func (*ListNetworksRequest_Filters) ProtoMessage() {}
+func (m *ListNetworksRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListNetworksRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListNetworksRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{32, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListNetworksRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListNetworksRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListNetworksRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListNetworksRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListNetworksRequest_Filters.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListNetworksRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListNetworksRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListNetworksRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListNetworksRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListNetworksRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListNetworksRequest_Filters proto.InternalMessageInfo
 
@@ -1511,35 +1122,25 @@ type ListNetworksResponse struct {
 	Networks []*Network `protobuf:"bytes,1,rep,name=networks,proto3" json:"networks,omitempty"`
 }
 
-func (m *ListNetworksResponse) Reset()      { *m = ListNetworksResponse{} }
-func (*ListNetworksResponse) ProtoMessage() {}
+func (m *ListNetworksResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListNetworksResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListNetworksResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{33}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListNetworksResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListNetworksResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListNetworksResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListNetworksResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListNetworksResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListNetworksResponse.Merge(m, src)
-}
-func (m *ListNetworksResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListNetworksResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListNetworksResponse.DiscardUnknown(m)
-}
+
+func (m *ListNetworksResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListNetworksResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListNetworksResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListNetworksResponse proto.InternalMessageInfo
 
@@ -1547,35 +1148,22 @@ type GetClusterRequest struct {
 	ClusterID string `protobuf:"bytes,1,opt,name=cluster_id,json=clusterId,proto3" json:"cluster_id,omitempty"`
 }
 
-func (m *GetClusterRequest) Reset()      { *m = GetClusterRequest{} }
-func (*GetClusterRequest) ProtoMessage() {}
-func (*GetClusterRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{34}
-}
-func (m *GetClusterRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetClusterRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetClusterRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetClusterRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetClusterRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetClusterRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetClusterRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetClusterRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetClusterRequest.Merge(m, src)
-}
-func (m *GetClusterRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetClusterRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetClusterRequest.DiscardUnknown(m)
-}
+
+func (m *GetClusterRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetClusterRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetClusterRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetClusterRequest proto.InternalMessageInfo
 
@@ -1583,35 +1171,22 @@ type GetClusterResponse struct {
 	Cluster *Cluster `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
 }
 
-func (m *GetClusterResponse) Reset()      { *m = GetClusterResponse{} }
-func (*GetClusterResponse) ProtoMessage() {}
-func (*GetClusterResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{35}
-}
-func (m *GetClusterResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetClusterResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetClusterResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetClusterResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetClusterResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetClusterResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetClusterResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetClusterResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetClusterResponse.Merge(m, src)
-}
-func (m *GetClusterResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetClusterResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetClusterResponse.DiscardUnknown(m)
-}
+
+func (m *GetClusterResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetClusterResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetClusterResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetClusterResponse proto.InternalMessageInfo
 
@@ -1619,35 +1194,25 @@ type ListClustersRequest struct {
 	Filters *ListClustersRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListClustersRequest) Reset()      { *m = ListClustersRequest{} }
-func (*ListClustersRequest) ProtoMessage() {}
+func (m *ListClustersRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListClustersRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListClustersRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{36}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListClustersRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListClustersRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListClustersRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListClustersRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListClustersRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListClustersRequest.Merge(m, src)
-}
-func (m *ListClustersRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListClustersRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListClustersRequest.DiscardUnknown(m)
-}
+
+func (m *ListClustersRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListClustersRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListClustersRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListClustersRequest proto.InternalMessageInfo
 
@@ -1659,35 +1224,31 @@ type ListClustersRequest_Filters struct {
 	NamePrefixes []string `protobuf:"bytes,4,rep,name=name_prefixes,json=namePrefixes,proto3" json:"name_prefixes,omitempty"`
 }
 
-func (m *ListClustersRequest_Filters) Reset()      { *m = ListClustersRequest_Filters{} }
-func (*ListClustersRequest_Filters) ProtoMessage() {}
+func (m *ListClustersRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListClustersRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListClustersRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{36, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListClustersRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListClustersRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListClustersRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListClustersRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListClustersRequest_Filters.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListClustersRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListClustersRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListClustersRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListClustersRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListClustersRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListClustersRequest_Filters proto.InternalMessageInfo
 
@@ -1695,35 +1256,25 @@ type ListClustersResponse struct {
 	Clusters []*Cluster `protobuf:"bytes,1,rep,name=clusters,proto3" json:"clusters,omitempty"`
 }
 
-func (m *ListClustersResponse) Reset()      { *m = ListClustersResponse{} }
-func (*ListClustersResponse) ProtoMessage() {}
+func (m *ListClustersResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListClustersResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListClustersResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{37}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListClustersResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListClustersResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListClustersResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListClustersResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListClustersResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListClustersResponse.Merge(m, src)
-}
-func (m *ListClustersResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListClustersResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListClustersResponse.DiscardUnknown(m)
-}
+
+func (m *ListClustersResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListClustersResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListClustersResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListClustersResponse proto.InternalMessageInfo
 
@@ -1737,35 +1288,22 @@ type KeyRotation struct {
 	ManagerUnlockKey bool `protobuf:"varint,3,opt,name=manager_unlock_key,json=managerUnlockKey,proto3" json:"manager_unlock_key,omitempty"`
 }
 
-func (m *KeyRotation) Reset()      { *m = KeyRotation{} }
-func (*KeyRotation) ProtoMessage() {}
-func (*KeyRotation) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{38}
-}
-func (m *KeyRotation) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *KeyRotation) Reset()                    { _ = "STUB: not implemented"; return }
+func (*KeyRotation) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*KeyRotation) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *KeyRotation) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *KeyRotation) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_KeyRotation.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *KeyRotation) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_KeyRotation.Merge(m, src)
-}
-func (m *KeyRotation) XXX_Size() int {
-	return m.Size()
-}
-func (m *KeyRotation) XXX_DiscardUnknown() {
-	xxx_messageInfo_KeyRotation.DiscardUnknown(m)
-}
+
+func (m *KeyRotation) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *KeyRotation) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *KeyRotation) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_KeyRotation proto.InternalMessageInfo
 
@@ -1780,35 +1318,25 @@ type UpdateClusterRequest struct {
 	Rotation KeyRotation `protobuf:"bytes,4,opt,name=rotation,proto3" json:"rotation"`
 }
 
-func (m *UpdateClusterRequest) Reset()      { *m = UpdateClusterRequest{} }
-func (*UpdateClusterRequest) ProtoMessage() {}
+func (m *UpdateClusterRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateClusterRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateClusterRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{39}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateClusterRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateClusterRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateClusterRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateClusterRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateClusterRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateClusterRequest.Merge(m, src)
-}
-func (m *UpdateClusterRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateClusterRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateClusterRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateClusterRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateClusterRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateClusterRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateClusterRequest proto.InternalMessageInfo
 
@@ -1816,35 +1344,28 @@ type UpdateClusterResponse struct {
 	Cluster *Cluster `protobuf:"bytes,1,opt,name=cluster,proto3" json:"cluster,omitempty"`
 }
 
-func (m *UpdateClusterResponse) Reset()      { *m = UpdateClusterResponse{} }
-func (*UpdateClusterResponse) ProtoMessage() {}
+func (m *UpdateClusterResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateClusterResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateClusterResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{40}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateClusterResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateClusterResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateClusterResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateClusterResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateClusterResponse.Merge(m, src)
-}
-func (m *UpdateClusterResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateClusterResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateClusterResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateClusterResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateClusterResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateClusterResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateClusterResponse proto.InternalMessageInfo
 
@@ -1853,35 +1374,22 @@ type GetSecretRequest struct {
 	SecretID string `protobuf:"bytes,1,opt,name=secret_id,json=secretId,proto3" json:"secret_id,omitempty"`
 }
 
-func (m *GetSecretRequest) Reset()      { *m = GetSecretRequest{} }
-func (*GetSecretRequest) ProtoMessage() {}
-func (*GetSecretRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{41}
-}
-func (m *GetSecretRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetSecretRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetSecretRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetSecretRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetSecretRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetSecretRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetSecretRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetSecretRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetSecretRequest.Merge(m, src)
-}
-func (m *GetSecretRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetSecretRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetSecretRequest.DiscardUnknown(m)
-}
+
+func (m *GetSecretRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetSecretRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetSecretRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetSecretRequest proto.InternalMessageInfo
 
@@ -1892,35 +1400,22 @@ type GetSecretResponse struct {
 	Secret *Secret `protobuf:"bytes,1,opt,name=secret,proto3" json:"secret,omitempty"`
 }
 
-func (m *GetSecretResponse) Reset()      { *m = GetSecretResponse{} }
-func (*GetSecretResponse) ProtoMessage() {}
-func (*GetSecretResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{42}
-}
-func (m *GetSecretResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetSecretResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetSecretResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetSecretResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetSecretResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetSecretResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetSecretResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetSecretResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetSecretResponse.Merge(m, src)
-}
-func (m *GetSecretResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetSecretResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetSecretResponse.DiscardUnknown(m)
-}
+
+func (m *GetSecretResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetSecretResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetSecretResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetSecretResponse proto.InternalMessageInfo
 
@@ -1934,35 +1429,25 @@ type UpdateSecretRequest struct {
 	Spec *SecretSpec `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *UpdateSecretRequest) Reset()      { *m = UpdateSecretRequest{} }
-func (*UpdateSecretRequest) ProtoMessage() {}
+func (m *UpdateSecretRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateSecretRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateSecretRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{43}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateSecretRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateSecretRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateSecretRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateSecretRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateSecretRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateSecretRequest.Merge(m, src)
-}
-func (m *UpdateSecretRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateSecretRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateSecretRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateSecretRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateSecretRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateSecretRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateSecretRequest proto.InternalMessageInfo
 
@@ -1970,35 +1455,25 @@ type UpdateSecretResponse struct {
 	Secret *Secret `protobuf:"bytes,1,opt,name=secret,proto3" json:"secret,omitempty"`
 }
 
-func (m *UpdateSecretResponse) Reset()      { *m = UpdateSecretResponse{} }
-func (*UpdateSecretResponse) ProtoMessage() {}
+func (m *UpdateSecretResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateSecretResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateSecretResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{44}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateSecretResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateSecretResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateSecretResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateSecretResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateSecretResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateSecretResponse.Merge(m, src)
-}
-func (m *UpdateSecretResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateSecretResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateSecretResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateSecretResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateSecretResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateSecretResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateSecretResponse proto.InternalMessageInfo
 
@@ -2008,35 +1483,22 @@ type ListSecretsRequest struct {
 	Filters *ListSecretsRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListSecretsRequest) Reset()      { *m = ListSecretsRequest{} }
-func (*ListSecretsRequest) ProtoMessage() {}
-func (*ListSecretsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{45}
-}
-func (m *ListSecretsRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ListSecretsRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ListSecretsRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ListSecretsRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ListSecretsRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListSecretsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListSecretsRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListSecretsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListSecretsRequest.Merge(m, src)
-}
-func (m *ListSecretsRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListSecretsRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListSecretsRequest.DiscardUnknown(m)
-}
+
+func (m *ListSecretsRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListSecretsRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListSecretsRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListSecretsRequest proto.InternalMessageInfo
 
@@ -2047,35 +1509,31 @@ type ListSecretsRequest_Filters struct {
 	NamePrefixes []string          `protobuf:"bytes,4,rep,name=name_prefixes,json=namePrefixes,proto3" json:"name_prefixes,omitempty"`
 }
 
-func (m *ListSecretsRequest_Filters) Reset()      { *m = ListSecretsRequest_Filters{} }
-func (*ListSecretsRequest_Filters) ProtoMessage() {}
+func (m *ListSecretsRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListSecretsRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListSecretsRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{45, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListSecretsRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListSecretsRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListSecretsRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListSecretsRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListSecretsRequest_Filters.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListSecretsRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListSecretsRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListSecretsRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListSecretsRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListSecretsRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListSecretsRequest_Filters proto.InternalMessageInfo
 
@@ -2087,35 +1545,25 @@ type ListSecretsResponse struct {
 	Secrets []*Secret `protobuf:"bytes,1,rep,name=secrets,proto3" json:"secrets,omitempty"`
 }
 
-func (m *ListSecretsResponse) Reset()      { *m = ListSecretsResponse{} }
-func (*ListSecretsResponse) ProtoMessage() {}
+func (m *ListSecretsResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListSecretsResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListSecretsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{46}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListSecretsResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListSecretsResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListSecretsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListSecretsResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListSecretsResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListSecretsResponse.Merge(m, src)
-}
-func (m *ListSecretsResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListSecretsResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListSecretsResponse.DiscardUnknown(m)
-}
+
+func (m *ListSecretsResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListSecretsResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListSecretsResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListSecretsResponse proto.InternalMessageInfo
 
@@ -2125,35 +1573,25 @@ type CreateSecretRequest struct {
 	Spec *SecretSpec `protobuf:"bytes,1,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *CreateSecretRequest) Reset()      { *m = CreateSecretRequest{} }
-func (*CreateSecretRequest) ProtoMessage() {}
+func (m *CreateSecretRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateSecretRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateSecretRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{47}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateSecretRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateSecretRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateSecretRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateSecretRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateSecretRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateSecretRequest.Merge(m, src)
-}
-func (m *CreateSecretRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateSecretRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateSecretRequest.DiscardUnknown(m)
-}
+
+func (m *CreateSecretRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateSecretRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateSecretRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateSecretRequest proto.InternalMessageInfo
 
@@ -2164,35 +1602,25 @@ type CreateSecretResponse struct {
 	Secret *Secret `protobuf:"bytes,1,opt,name=secret,proto3" json:"secret,omitempty"`
 }
 
-func (m *CreateSecretResponse) Reset()      { *m = CreateSecretResponse{} }
-func (*CreateSecretResponse) ProtoMessage() {}
+func (m *CreateSecretResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateSecretResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateSecretResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{48}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateSecretResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateSecretResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateSecretResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateSecretResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateSecretResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateSecretResponse.Merge(m, src)
-}
-func (m *CreateSecretResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateSecretResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateSecretResponse.DiscardUnknown(m)
-}
+
+func (m *CreateSecretResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateSecretResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateSecretResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateSecretResponse proto.InternalMessageInfo
 
@@ -2202,35 +1630,25 @@ type RemoveSecretRequest struct {
 	SecretID string `protobuf:"bytes,1,opt,name=secret_id,json=secretId,proto3" json:"secret_id,omitempty"`
 }
 
-func (m *RemoveSecretRequest) Reset()      { *m = RemoveSecretRequest{} }
-func (*RemoveSecretRequest) ProtoMessage() {}
+func (m *RemoveSecretRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveSecretRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveSecretRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{49}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveSecretRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveSecretRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveSecretRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveSecretRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveSecretRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveSecretRequest.Merge(m, src)
-}
-func (m *RemoveSecretRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveSecretRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveSecretRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveSecretRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveSecretRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveSecretRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveSecretRequest proto.InternalMessageInfo
 
@@ -2239,35 +1657,25 @@ var xxx_messageInfo_RemoveSecretRequest proto.InternalMessageInfo
 type RemoveSecretResponse struct {
 }
 
-func (m *RemoveSecretResponse) Reset()      { *m = RemoveSecretResponse{} }
-func (*RemoveSecretResponse) ProtoMessage() {}
+func (m *RemoveSecretResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveSecretResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveSecretResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{50}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveSecretResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveSecretResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveSecretResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveSecretResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveSecretResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveSecretResponse.Merge(m, src)
-}
-func (m *RemoveSecretResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveSecretResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveSecretResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveSecretResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveSecretResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveSecretResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveSecretResponse proto.InternalMessageInfo
 
@@ -2276,35 +1684,22 @@ type GetConfigRequest struct {
 	ConfigID string `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
 }
 
-func (m *GetConfigRequest) Reset()      { *m = GetConfigRequest{} }
-func (*GetConfigRequest) ProtoMessage() {}
-func (*GetConfigRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{51}
-}
-func (m *GetConfigRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetConfigRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetConfigRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetConfigRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetConfigRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetConfigRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetConfigRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetConfigRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetConfigRequest.Merge(m, src)
-}
-func (m *GetConfigRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetConfigRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetConfigRequest.DiscardUnknown(m)
-}
+
+func (m *GetConfigRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetConfigRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetConfigRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetConfigRequest proto.InternalMessageInfo
 
@@ -2314,35 +1709,22 @@ type GetConfigResponse struct {
 	Config *Config `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
 }
 
-func (m *GetConfigResponse) Reset()      { *m = GetConfigResponse{} }
-func (*GetConfigResponse) ProtoMessage() {}
-func (*GetConfigResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{52}
-}
-func (m *GetConfigResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetConfigResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetConfigResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetConfigResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetConfigResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetConfigResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetConfigResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetConfigResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetConfigResponse.Merge(m, src)
-}
-func (m *GetConfigResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetConfigResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetConfigResponse.DiscardUnknown(m)
-}
+
+func (m *GetConfigResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetConfigResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetConfigResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetConfigResponse proto.InternalMessageInfo
 
@@ -2356,35 +1738,25 @@ type UpdateConfigRequest struct {
 	Spec *ConfigSpec `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *UpdateConfigRequest) Reset()      { *m = UpdateConfigRequest{} }
-func (*UpdateConfigRequest) ProtoMessage() {}
+func (m *UpdateConfigRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateConfigRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateConfigRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{53}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateConfigRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateConfigRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateConfigRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateConfigRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateConfigRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateConfigRequest.Merge(m, src)
-}
-func (m *UpdateConfigRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateConfigRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateConfigRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateConfigRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateConfigRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateConfigRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateConfigRequest proto.InternalMessageInfo
 
@@ -2392,35 +1764,25 @@ type UpdateConfigResponse struct {
 	Config *Config `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
 }
 
-func (m *UpdateConfigResponse) Reset()      { *m = UpdateConfigResponse{} }
-func (*UpdateConfigResponse) ProtoMessage() {}
+func (m *UpdateConfigResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateConfigResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateConfigResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{54}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateConfigResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateConfigResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateConfigResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateConfigResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateConfigResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateConfigResponse.Merge(m, src)
-}
-func (m *UpdateConfigResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateConfigResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateConfigResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateConfigResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateConfigResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateConfigResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateConfigResponse proto.InternalMessageInfo
 
@@ -2430,35 +1792,22 @@ type ListConfigsRequest struct {
 	Filters *ListConfigsRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListConfigsRequest) Reset()      { *m = ListConfigsRequest{} }
-func (*ListConfigsRequest) ProtoMessage() {}
-func (*ListConfigsRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{55}
-}
-func (m *ListConfigsRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ListConfigsRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ListConfigsRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ListConfigsRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ListConfigsRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListConfigsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListConfigsRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListConfigsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListConfigsRequest.Merge(m, src)
-}
-func (m *ListConfigsRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListConfigsRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListConfigsRequest.DiscardUnknown(m)
-}
+
+func (m *ListConfigsRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListConfigsRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListConfigsRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListConfigsRequest proto.InternalMessageInfo
 
@@ -2469,35 +1818,31 @@ type ListConfigsRequest_Filters struct {
 	NamePrefixes []string          `protobuf:"bytes,4,rep,name=name_prefixes,json=namePrefixes,proto3" json:"name_prefixes,omitempty"`
 }
 
-func (m *ListConfigsRequest_Filters) Reset()      { *m = ListConfigsRequest_Filters{} }
-func (*ListConfigsRequest_Filters) ProtoMessage() {}
+func (m *ListConfigsRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListConfigsRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListConfigsRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{55, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListConfigsRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListConfigsRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListConfigsRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListConfigsRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListConfigsRequest_Filters.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListConfigsRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListConfigsRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListConfigsRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListConfigsRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListConfigsRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListConfigsRequest_Filters proto.InternalMessageInfo
 
@@ -2507,35 +1852,25 @@ type ListConfigsResponse struct {
 	Configs []*Config `protobuf:"bytes,1,rep,name=configs,proto3" json:"configs,omitempty"`
 }
 
-func (m *ListConfigsResponse) Reset()      { *m = ListConfigsResponse{} }
-func (*ListConfigsResponse) ProtoMessage() {}
+func (m *ListConfigsResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListConfigsResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListConfigsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{56}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListConfigsResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListConfigsResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListConfigsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListConfigsResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListConfigsResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListConfigsResponse.Merge(m, src)
-}
-func (m *ListConfigsResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListConfigsResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListConfigsResponse.DiscardUnknown(m)
-}
+
+func (m *ListConfigsResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListConfigsResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListConfigsResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListConfigsResponse proto.InternalMessageInfo
 
@@ -2545,35 +1880,25 @@ type CreateConfigRequest struct {
 	Spec *ConfigSpec `protobuf:"bytes,1,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *CreateConfigRequest) Reset()      { *m = CreateConfigRequest{} }
-func (*CreateConfigRequest) ProtoMessage() {}
+func (m *CreateConfigRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateConfigRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateConfigRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{57}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateConfigRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateConfigRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateConfigRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateConfigRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateConfigRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateConfigRequest.Merge(m, src)
-}
-func (m *CreateConfigRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateConfigRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateConfigRequest.DiscardUnknown(m)
-}
+
+func (m *CreateConfigRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateConfigRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateConfigRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateConfigRequest proto.InternalMessageInfo
 
@@ -2583,35 +1908,25 @@ type CreateConfigResponse struct {
 	Config *Config `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
 }
 
-func (m *CreateConfigResponse) Reset()      { *m = CreateConfigResponse{} }
-func (*CreateConfigResponse) ProtoMessage() {}
+func (m *CreateConfigResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateConfigResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateConfigResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{58}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateConfigResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateConfigResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateConfigResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateConfigResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateConfigResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateConfigResponse.Merge(m, src)
-}
-func (m *CreateConfigResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateConfigResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateConfigResponse.DiscardUnknown(m)
-}
+
+func (m *CreateConfigResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateConfigResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateConfigResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateConfigResponse proto.InternalMessageInfo
 
@@ -2621,35 +1936,25 @@ type RemoveConfigRequest struct {
 	ConfigID string `protobuf:"bytes,1,opt,name=config_id,json=configId,proto3" json:"config_id,omitempty"`
 }
 
-func (m *RemoveConfigRequest) Reset()      { *m = RemoveConfigRequest{} }
-func (*RemoveConfigRequest) ProtoMessage() {}
+func (m *RemoveConfigRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveConfigRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveConfigRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{59}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveConfigRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveConfigRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveConfigRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveConfigRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveConfigRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveConfigRequest.Merge(m, src)
-}
-func (m *RemoveConfigRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveConfigRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveConfigRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveConfigRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveConfigRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveConfigRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveConfigRequest proto.InternalMessageInfo
 
@@ -2658,35 +1963,25 @@ var xxx_messageInfo_RemoveConfigRequest proto.InternalMessageInfo
 type RemoveConfigResponse struct {
 }
 
-func (m *RemoveConfigResponse) Reset()      { *m = RemoveConfigResponse{} }
-func (*RemoveConfigResponse) ProtoMessage() {}
+func (m *RemoveConfigResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveConfigResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveConfigResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{60}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveConfigResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveConfigResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveConfigResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveConfigResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveConfigResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveConfigResponse.Merge(m, src)
-}
-func (m *RemoveConfigResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveConfigResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveConfigResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveConfigResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveConfigResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveConfigResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveConfigResponse proto.InternalMessageInfo
 
@@ -2697,35 +1992,28 @@ type CreateExtensionRequest struct {
 	Description string       `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 }
 
-func (m *CreateExtensionRequest) Reset()      { *m = CreateExtensionRequest{} }
-func (*CreateExtensionRequest) ProtoMessage() {}
+func (m *CreateExtensionRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateExtensionRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateExtensionRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{61}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *CreateExtensionRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *CreateExtensionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateExtensionRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateExtensionRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateExtensionRequest.Merge(m, src)
-}
-func (m *CreateExtensionRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateExtensionRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateExtensionRequest.DiscardUnknown(m)
-}
+
+func (m *CreateExtensionRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateExtensionRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateExtensionRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateExtensionRequest proto.InternalMessageInfo
 
@@ -2735,35 +2023,28 @@ type CreateExtensionResponse struct {
 	Extension *Extension `protobuf:"bytes,1,opt,name=extension,proto3" json:"extension,omitempty"`
 }
 
-func (m *CreateExtensionResponse) Reset()      { *m = CreateExtensionResponse{} }
-func (*CreateExtensionResponse) ProtoMessage() {}
+func (m *CreateExtensionResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateExtensionResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateExtensionResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{62}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *CreateExtensionResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *CreateExtensionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateExtensionResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateExtensionResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateExtensionResponse.Merge(m, src)
-}
-func (m *CreateExtensionResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateExtensionResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateExtensionResponse.DiscardUnknown(m)
-}
+
+func (m *CreateExtensionResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateExtensionResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateExtensionResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateExtensionResponse proto.InternalMessageInfo
 
@@ -2773,35 +2054,28 @@ type RemoveExtensionRequest struct {
 	ExtensionID string `protobuf:"bytes,1,opt,name=extension_id,json=extensionId,proto3" json:"extension_id,omitempty"`
 }
 
-func (m *RemoveExtensionRequest) Reset()      { *m = RemoveExtensionRequest{} }
-func (*RemoveExtensionRequest) ProtoMessage() {}
+func (m *RemoveExtensionRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveExtensionRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveExtensionRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{63}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RemoveExtensionRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RemoveExtensionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveExtensionRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveExtensionRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveExtensionRequest.Merge(m, src)
-}
-func (m *RemoveExtensionRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveExtensionRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveExtensionRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveExtensionRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveExtensionRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveExtensionRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveExtensionRequest proto.InternalMessageInfo
 
@@ -2810,35 +2084,28 @@ var xxx_messageInfo_RemoveExtensionRequest proto.InternalMessageInfo
 type RemoveExtensionResponse struct {
 }
 
-func (m *RemoveExtensionResponse) Reset()      { *m = RemoveExtensionResponse{} }
-func (*RemoveExtensionResponse) ProtoMessage() {}
+func (m *RemoveExtensionResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveExtensionResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveExtensionResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{64}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RemoveExtensionResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RemoveExtensionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveExtensionResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveExtensionResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveExtensionResponse.Merge(m, src)
-}
-func (m *RemoveExtensionResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveExtensionResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveExtensionResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveExtensionResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveExtensionResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveExtensionResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveExtensionResponse proto.InternalMessageInfo
 
@@ -2847,35 +2114,25 @@ type GetExtensionRequest struct {
 	ExtensionID string `protobuf:"bytes,1,opt,name=extension_id,json=extensionId,proto3" json:"extension_id,omitempty"`
 }
 
-func (m *GetExtensionRequest) Reset()      { *m = GetExtensionRequest{} }
-func (*GetExtensionRequest) ProtoMessage() {}
+func (m *GetExtensionRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*GetExtensionRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*GetExtensionRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{65}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetExtensionRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *GetExtensionRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetExtensionRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetExtensionRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetExtensionRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetExtensionRequest.Merge(m, src)
-}
-func (m *GetExtensionRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetExtensionRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetExtensionRequest.DiscardUnknown(m)
-}
+
+func (m *GetExtensionRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetExtensionRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetExtensionRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetExtensionRequest proto.InternalMessageInfo
 
@@ -2885,35 +2142,25 @@ type GetExtensionResponse struct {
 	Extension *Extension `protobuf:"bytes,1,opt,name=extension,proto3" json:"extension,omitempty"`
 }
 
-func (m *GetExtensionResponse) Reset()      { *m = GetExtensionResponse{} }
-func (*GetExtensionResponse) ProtoMessage() {}
+func (m *GetExtensionResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*GetExtensionResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*GetExtensionResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{66}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetExtensionResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *GetExtensionResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetExtensionResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetExtensionResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetExtensionResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetExtensionResponse.Merge(m, src)
-}
-func (m *GetExtensionResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetExtensionResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetExtensionResponse.DiscardUnknown(m)
-}
+
+func (m *GetExtensionResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetExtensionResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetExtensionResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetExtensionResponse proto.InternalMessageInfo
 
@@ -2925,35 +2172,28 @@ type CreateResourceRequest struct {
 	Payload     *types.Any   `protobuf:"bytes,3,opt,name=payload,proto3" json:"payload,omitempty"`
 }
 
-func (m *CreateResourceRequest) Reset()      { *m = CreateResourceRequest{} }
-func (*CreateResourceRequest) ProtoMessage() {}
+func (m *CreateResourceRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateResourceRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateResourceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{67}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *CreateResourceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *CreateResourceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateResourceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateResourceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateResourceRequest.Merge(m, src)
-}
-func (m *CreateResourceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateResourceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateResourceRequest.DiscardUnknown(m)
-}
+
+func (m *CreateResourceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateResourceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateResourceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateResourceRequest proto.InternalMessageInfo
 
@@ -2963,35 +2203,28 @@ type CreateResourceResponse struct {
 	Resource *Resource `protobuf:"bytes,1,opt,name=resource,proto3" json:"resource,omitempty"`
 }
 
-func (m *CreateResourceResponse) Reset()      { *m = CreateResourceResponse{} }
-func (*CreateResourceResponse) ProtoMessage() {}
+func (m *CreateResourceResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateResourceResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateResourceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{68}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *CreateResourceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *CreateResourceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateResourceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateResourceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateResourceResponse.Merge(m, src)
-}
-func (m *CreateResourceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateResourceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateResourceResponse.DiscardUnknown(m)
-}
+
+func (m *CreateResourceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateResourceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateResourceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateResourceResponse proto.InternalMessageInfo
 
@@ -3001,35 +2234,28 @@ type RemoveResourceRequest struct {
 	ResourceID string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"`
 }
 
-func (m *RemoveResourceRequest) Reset()      { *m = RemoveResourceRequest{} }
-func (*RemoveResourceRequest) ProtoMessage() {}
+func (m *RemoveResourceRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveResourceRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveResourceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{69}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RemoveResourceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RemoveResourceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveResourceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveResourceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveResourceRequest.Merge(m, src)
-}
-func (m *RemoveResourceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveResourceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveResourceRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveResourceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveResourceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveResourceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveResourceRequest proto.InternalMessageInfo
 
@@ -3038,35 +2264,28 @@ var xxx_messageInfo_RemoveResourceRequest proto.InternalMessageInfo
 type RemoveResourceResponse struct {
 }
 
-func (m *RemoveResourceResponse) Reset()      { *m = RemoveResourceResponse{} }
-func (*RemoveResourceResponse) ProtoMessage() {}
+func (m *RemoveResourceResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveResourceResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveResourceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{70}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *RemoveResourceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *RemoveResourceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveResourceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveResourceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveResourceResponse.Merge(m, src)
-}
-func (m *RemoveResourceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveResourceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveResourceResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveResourceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveResourceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveResourceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveResourceResponse proto.InternalMessageInfo
 
@@ -3083,35 +2302,28 @@ type UpdateResourceRequest struct {
 	Payload *types.Any `protobuf:"bytes,4,opt,name=payload,proto3" json:"payload,omitempty"`
 }
 
-func (m *UpdateResourceRequest) Reset()      { *m = UpdateResourceRequest{} }
-func (*UpdateResourceRequest) ProtoMessage() {}
+func (m *UpdateResourceRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateResourceRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateResourceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{71}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateResourceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateResourceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateResourceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateResourceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateResourceRequest.Merge(m, src)
-}
-func (m *UpdateResourceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateResourceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateResourceRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateResourceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateResourceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateResourceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateResourceRequest proto.InternalMessageInfo
 
@@ -3119,35 +2331,28 @@ type UpdateResourceResponse struct {
 	Resource *Resource `protobuf:"bytes,1,opt,name=resource,proto3" json:"resource,omitempty"`
 }
 
-func (m *UpdateResourceResponse) Reset()      { *m = UpdateResourceResponse{} }
-func (*UpdateResourceResponse) ProtoMessage() {}
+func (m *UpdateResourceResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateResourceResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateResourceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{72}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *UpdateResourceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *UpdateResourceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateResourceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateResourceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateResourceResponse.Merge(m, src)
-}
-func (m *UpdateResourceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateResourceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateResourceResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateResourceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateResourceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateResourceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateResourceResponse proto.InternalMessageInfo
 
@@ -3156,35 +2361,22 @@ type GetResourceRequest struct {
 	ResourceID string `protobuf:"bytes,1,opt,name=resource_id,json=resourceId,proto3" json:"resource_id,omitempty"`
 }
 
-func (m *GetResourceRequest) Reset()      { *m = GetResourceRequest{} }
-func (*GetResourceRequest) ProtoMessage() {}
-func (*GetResourceRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{73}
-}
-func (m *GetResourceRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetResourceRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetResourceRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetResourceRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetResourceRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetResourceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetResourceRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetResourceRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetResourceRequest.Merge(m, src)
-}
-func (m *GetResourceRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetResourceRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetResourceRequest.DiscardUnknown(m)
-}
+
+func (m *GetResourceRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetResourceRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetResourceRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetResourceRequest proto.InternalMessageInfo
 
@@ -3194,35 +2386,25 @@ type GetResourceResponse struct {
 	Resource *Resource `protobuf:"bytes,1,opt,name=resource,proto3" json:"resource,omitempty"`
 }
 
-func (m *GetResourceResponse) Reset()      { *m = GetResourceResponse{} }
-func (*GetResourceResponse) ProtoMessage() {}
+func (m *GetResourceResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*GetResourceResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*GetResourceResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{74}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetResourceResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *GetResourceResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetResourceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetResourceResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetResourceResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetResourceResponse.Merge(m, src)
-}
-func (m *GetResourceResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetResourceResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetResourceResponse.DiscardUnknown(m)
-}
+
+func (m *GetResourceResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetResourceResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetResourceResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetResourceResponse proto.InternalMessageInfo
 
@@ -3232,35 +2414,25 @@ type ListResourcesRequest struct {
 	Filters *ListResourcesRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListResourcesRequest) Reset()      { *m = ListResourcesRequest{} }
-func (*ListResourcesRequest) ProtoMessage() {}
+func (m *ListResourcesRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListResourcesRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListResourcesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{75}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListResourcesRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListResourcesRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListResourcesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListResourcesRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListResourcesRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListResourcesRequest.Merge(m, src)
-}
-func (m *ListResourcesRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListResourcesRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListResourcesRequest.DiscardUnknown(m)
-}
+
+func (m *ListResourcesRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListResourcesRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListResourcesRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListResourcesRequest proto.InternalMessageInfo
 
@@ -3272,35 +2444,31 @@ type ListResourcesRequest_Filters struct {
 	Kind         string            `protobuf:"bytes,5,opt,name=kind,proto3" json:"kind,omitempty"`
 }
 
-func (m *ListResourcesRequest_Filters) Reset()      { *m = ListResourcesRequest_Filters{} }
-func (*ListResourcesRequest_Filters) ProtoMessage() {}
+func (m *ListResourcesRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListResourcesRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListResourcesRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{75, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListResourcesRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListResourcesRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListResourcesRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListResourcesRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListResourcesRequest_Filters.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListResourcesRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListResourcesRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListResourcesRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListResourcesRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListResourcesRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListResourcesRequest_Filters proto.InternalMessageInfo
 
@@ -3310,35 +2478,28 @@ type ListResourcesResponse struct {
 	Resources []*Resource `protobuf:"bytes,1,rep,name=resources,proto3" json:"resources,omitempty"`
 }
 
-func (m *ListResourcesResponse) Reset()      { *m = ListResourcesResponse{} }
-func (*ListResourcesResponse) ProtoMessage() {}
+func (m *ListResourcesResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListResourcesResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListResourcesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{76}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListResourcesResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListResourcesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListResourcesResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListResourcesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListResourcesResponse.Merge(m, src)
-}
-func (m *ListResourcesResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListResourcesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListResourcesResponse.DiscardUnknown(m)
-}
+
+func (m *ListResourcesResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListResourcesResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListResourcesResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListResourcesResponse proto.InternalMessageInfo
 
@@ -3346,35 +2507,25 @@ type CreateVolumeRequest struct {
 	Spec *VolumeSpec `protobuf:"bytes,1,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *CreateVolumeRequest) Reset()      { *m = CreateVolumeRequest{} }
-func (*CreateVolumeRequest) ProtoMessage() {}
+func (m *CreateVolumeRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateVolumeRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateVolumeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{77}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateVolumeRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateVolumeRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateVolumeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateVolumeRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateVolumeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateVolumeRequest.Merge(m, src)
-}
-func (m *CreateVolumeRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateVolumeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateVolumeRequest.DiscardUnknown(m)
-}
+
+func (m *CreateVolumeRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateVolumeRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateVolumeRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateVolumeRequest proto.InternalMessageInfo
 
@@ -3382,35 +2533,25 @@ type CreateVolumeResponse struct {
 	Volume *Volume `protobuf:"bytes,1,opt,name=volume,proto3" json:"volume,omitempty"`
 }
 
-func (m *CreateVolumeResponse) Reset()      { *m = CreateVolumeResponse{} }
-func (*CreateVolumeResponse) ProtoMessage() {}
+func (m *CreateVolumeResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*CreateVolumeResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*CreateVolumeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{78}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateVolumeResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *CreateVolumeResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateVolumeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_CreateVolumeResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *CreateVolumeResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CreateVolumeResponse.Merge(m, src)
-}
-func (m *CreateVolumeResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *CreateVolumeResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_CreateVolumeResponse.DiscardUnknown(m)
-}
+
+func (m *CreateVolumeResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *CreateVolumeResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *CreateVolumeResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_CreateVolumeResponse proto.InternalMessageInfo
 
@@ -3418,35 +2559,22 @@ type GetVolumeRequest struct {
 	VolumeID string `protobuf:"bytes,1,opt,name=volume_id,json=volumeId,proto3" json:"volume_id,omitempty"`
 }
 
-func (m *GetVolumeRequest) Reset()      { *m = GetVolumeRequest{} }
-func (*GetVolumeRequest) ProtoMessage() {}
-func (*GetVolumeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{79}
-}
-func (m *GetVolumeRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetVolumeRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetVolumeRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetVolumeRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetVolumeRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetVolumeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetVolumeRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetVolumeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetVolumeRequest.Merge(m, src)
-}
-func (m *GetVolumeRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetVolumeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetVolumeRequest.DiscardUnknown(m)
-}
+
+func (m *GetVolumeRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetVolumeRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetVolumeRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetVolumeRequest proto.InternalMessageInfo
 
@@ -3454,35 +2582,22 @@ type GetVolumeResponse struct {
 	Volume *Volume `protobuf:"bytes,1,opt,name=volume,proto3" json:"volume,omitempty"`
 }
 
-func (m *GetVolumeResponse) Reset()      { *m = GetVolumeResponse{} }
-func (*GetVolumeResponse) ProtoMessage() {}
-func (*GetVolumeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{80}
-}
-func (m *GetVolumeResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *GetVolumeResponse) Reset()                    { _ = "STUB: not implemented"; return }
+func (*GetVolumeResponse) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*GetVolumeResponse) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *GetVolumeResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *GetVolumeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_GetVolumeResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *GetVolumeResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetVolumeResponse.Merge(m, src)
-}
-func (m *GetVolumeResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *GetVolumeResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetVolumeResponse.DiscardUnknown(m)
-}
+
+func (m *GetVolumeResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *GetVolumeResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *GetVolumeResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_GetVolumeResponse proto.InternalMessageInfo
 
@@ -3492,35 +2607,25 @@ type UpdateVolumeRequest struct {
 	Spec          *VolumeSpec `protobuf:"bytes,3,opt,name=spec,proto3" json:"spec,omitempty"`
 }
 
-func (m *UpdateVolumeRequest) Reset()      { *m = UpdateVolumeRequest{} }
-func (*UpdateVolumeRequest) ProtoMessage() {}
+func (m *UpdateVolumeRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateVolumeRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateVolumeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{81}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateVolumeRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateVolumeRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateVolumeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateVolumeRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateVolumeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateVolumeRequest.Merge(m, src)
-}
-func (m *UpdateVolumeRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateVolumeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateVolumeRequest.DiscardUnknown(m)
-}
+
+func (m *UpdateVolumeRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateVolumeRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateVolumeRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateVolumeRequest proto.InternalMessageInfo
 
@@ -3528,35 +2633,25 @@ type UpdateVolumeResponse struct {
 	Volume *Volume `protobuf:"bytes,1,opt,name=volume,proto3" json:"volume,omitempty"`
 }
 
-func (m *UpdateVolumeResponse) Reset()      { *m = UpdateVolumeResponse{} }
-func (*UpdateVolumeResponse) ProtoMessage() {}
+func (m *UpdateVolumeResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*UpdateVolumeResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*UpdateVolumeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{82}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateVolumeResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *UpdateVolumeResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateVolumeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_UpdateVolumeResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *UpdateVolumeResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UpdateVolumeResponse.Merge(m, src)
-}
-func (m *UpdateVolumeResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *UpdateVolumeResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_UpdateVolumeResponse.DiscardUnknown(m)
-}
+
+func (m *UpdateVolumeResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *UpdateVolumeResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *UpdateVolumeResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_UpdateVolumeResponse proto.InternalMessageInfo
 
@@ -3564,35 +2659,22 @@ type ListVolumesRequest struct {
 	Filters *ListVolumesRequest_Filters `protobuf:"bytes,1,opt,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *ListVolumesRequest) Reset()      { *m = ListVolumesRequest{} }
-func (*ListVolumesRequest) ProtoMessage() {}
-func (*ListVolumesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{83}
-}
-func (m *ListVolumesRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ListVolumesRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ListVolumesRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ListVolumesRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ListVolumesRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListVolumesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListVolumesRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListVolumesRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListVolumesRequest.Merge(m, src)
-}
-func (m *ListVolumesRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListVolumesRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListVolumesRequest.DiscardUnknown(m)
-}
+
+func (m *ListVolumesRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListVolumesRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListVolumesRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListVolumesRequest proto.InternalMessageInfo
 
@@ -3605,35 +2687,31 @@ type ListVolumesRequest_Filters struct {
 	Drivers      []string          `protobuf:"bytes,6,rep,name=drivers,proto3" json:"drivers,omitempty"`
 }
 
-func (m *ListVolumesRequest_Filters) Reset()      { *m = ListVolumesRequest_Filters{} }
-func (*ListVolumesRequest_Filters) ProtoMessage() {}
+func (m *ListVolumesRequest_Filters) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListVolumesRequest_Filters) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListVolumesRequest_Filters) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{83, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListVolumesRequest_Filters) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *ListVolumesRequest_Filters) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListVolumesRequest_Filters.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *ListVolumesRequest_Filters) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListVolumesRequest_Filters.Merge(m, src)
+	_ = "STUB: not implemented"
+	return
 }
-func (m *ListVolumesRequest_Filters) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListVolumesRequest_Filters) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListVolumesRequest_Filters.DiscardUnknown(m)
-}
+
+func (m *ListVolumesRequest_Filters) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListVolumesRequest_Filters) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListVolumesRequest_Filters proto.InternalMessageInfo
 
@@ -3641,35 +2719,25 @@ type ListVolumesResponse struct {
 	Volumes []*Volume `protobuf:"bytes,1,rep,name=volumes,proto3" json:"volumes,omitempty"`
 }
 
-func (m *ListVolumesResponse) Reset()      { *m = ListVolumesResponse{} }
-func (*ListVolumesResponse) ProtoMessage() {}
+func (m *ListVolumesResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*ListVolumesResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*ListVolumesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{84}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListVolumesResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *ListVolumesResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListVolumesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ListVolumesResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ListVolumesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ListVolumesResponse.Merge(m, src)
-}
-func (m *ListVolumesResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *ListVolumesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ListVolumesResponse.DiscardUnknown(m)
-}
+
+func (m *ListVolumesResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ListVolumesResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ListVolumesResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ListVolumesResponse proto.InternalMessageInfo
 
@@ -3680,70 +2748,50 @@ type RemoveVolumeRequest struct {
 	Force bool `protobuf:"varint,2,opt,name=force,proto3" json:"force,omitempty"`
 }
 
-func (m *RemoveVolumeRequest) Reset()      { *m = RemoveVolumeRequest{} }
-func (*RemoveVolumeRequest) ProtoMessage() {}
+func (m *RemoveVolumeRequest) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveVolumeRequest) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveVolumeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{85}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveVolumeRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveVolumeRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveVolumeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveVolumeRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveVolumeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveVolumeRequest.Merge(m, src)
-}
-func (m *RemoveVolumeRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveVolumeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveVolumeRequest.DiscardUnknown(m)
-}
+
+func (m *RemoveVolumeRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveVolumeRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveVolumeRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveVolumeRequest proto.InternalMessageInfo
 
 type RemoveVolumeResponse struct {
 }
 
-func (m *RemoveVolumeResponse) Reset()      { *m = RemoveVolumeResponse{} }
-func (*RemoveVolumeResponse) ProtoMessage() {}
+func (m *RemoveVolumeResponse) Reset()      { _ = "STUB: not implemented"; return }
+func (*RemoveVolumeResponse) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*RemoveVolumeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_b37401dd08bf8930, []int{86}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveVolumeResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+
+func (m *RemoveVolumeResponse) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveVolumeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_RemoveVolumeResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *RemoveVolumeResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RemoveVolumeResponse.Merge(m, src)
-}
-func (m *RemoveVolumeResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *RemoveVolumeResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_RemoveVolumeResponse.DiscardUnknown(m)
-}
+
+func (m *RemoveVolumeResponse) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *RemoveVolumeResponse) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *RemoveVolumeResponse) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_RemoveVolumeResponse proto.InternalMessageInfo
 
@@ -4062,2336 +3110,700 @@ type authenticatedWrapperControlServer struct {
 }
 
 func NewAuthenticatedWrapperControlServer(local ControlServer, authorize func(context.Context, []string) error) ControlServer {
-	return &authenticatedWrapperControlServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(ControlServer)
 }
 
 func (p *authenticatedWrapperControlServer) GetNode(ctx context.Context, r *GetNodeRequest) (*GetNodeResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetNode(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListNodes(ctx context.Context, r *ListNodesRequest) (*ListNodesResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListNodes(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) UpdateNode(ctx context.Context, r *UpdateNodeRequest) (*UpdateNodeResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateNode(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveNode(ctx context.Context, r *RemoveNodeRequest) (*RemoveNodeResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveNode(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetTask(ctx context.Context, r *GetTaskRequest) (*GetTaskResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetTask(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListTasks(ctx context.Context, r *ListTasksRequest) (*ListTasksResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListTasks(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveTask(ctx context.Context, r *RemoveTaskRequest) (*RemoveTaskResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveTask(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetService(ctx context.Context, r *GetServiceRequest) (*GetServiceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetService(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListServices(ctx context.Context, r *ListServicesRequest) (*ListServicesResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListServices(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) CreateService(ctx context.Context, r *CreateServiceRequest) (*CreateServiceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.CreateService(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) UpdateService(ctx context.Context, r *UpdateServiceRequest) (*UpdateServiceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateService(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveService(ctx context.Context, r *RemoveServiceRequest) (*RemoveServiceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveService(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListServiceStatuses(ctx context.Context, r *ListServiceStatusesRequest) (*ListServiceStatusesResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListServiceStatuses(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetNetwork(ctx context.Context, r *GetNetworkRequest) (*GetNetworkResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetNetwork(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListNetworks(ctx context.Context, r *ListNetworksRequest) (*ListNetworksResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListNetworks(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) CreateNetwork(ctx context.Context, r *CreateNetworkRequest) (*CreateNetworkResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.CreateNetwork(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveNetwork(ctx context.Context, r *RemoveNetworkRequest) (*RemoveNetworkResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveNetwork(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetCluster(ctx context.Context, r *GetClusterRequest) (*GetClusterResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetCluster(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListClusters(ctx context.Context, r *ListClustersRequest) (*ListClustersResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListClusters(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) UpdateCluster(ctx context.Context, r *UpdateClusterRequest) (*UpdateClusterResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateCluster(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetSecret(ctx context.Context, r *GetSecretRequest) (*GetSecretResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetSecret(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) UpdateSecret(ctx context.Context, r *UpdateSecretRequest) (*UpdateSecretResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateSecret(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListSecrets(ctx context.Context, r *ListSecretsRequest) (*ListSecretsResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListSecrets(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) CreateSecret(ctx context.Context, r *CreateSecretRequest) (*CreateSecretResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.CreateSecret(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveSecret(ctx context.Context, r *RemoveSecretRequest) (*RemoveSecretResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveSecret(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetConfig(ctx context.Context, r *GetConfigRequest) (*GetConfigResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetConfig(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) UpdateConfig(ctx context.Context, r *UpdateConfigRequest) (*UpdateConfigResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateConfig(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListConfigs(ctx context.Context, r *ListConfigsRequest) (*ListConfigsResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListConfigs(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) CreateConfig(ctx context.Context, r *CreateConfigRequest) (*CreateConfigResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.CreateConfig(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveConfig(ctx context.Context, r *RemoveConfigRequest) (*RemoveConfigResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveConfig(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetExtension(ctx context.Context, r *GetExtensionRequest) (*GetExtensionResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetExtension(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) CreateExtension(ctx context.Context, r *CreateExtensionRequest) (*CreateExtensionResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.CreateExtension(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveExtension(ctx context.Context, r *RemoveExtensionRequest) (*RemoveExtensionResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveExtension(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetResource(ctx context.Context, r *GetResourceRequest) (*GetResourceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetResource(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) UpdateResource(ctx context.Context, r *UpdateResourceRequest) (*UpdateResourceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateResource(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListResources(ctx context.Context, r *ListResourcesRequest) (*ListResourcesResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListResources(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) CreateResource(ctx context.Context, r *CreateResourceRequest) (*CreateResourceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.CreateResource(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveResource(ctx context.Context, r *RemoveResourceRequest) (*RemoveResourceResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveResource(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) CreateVolume(ctx context.Context, r *CreateVolumeRequest) (*CreateVolumeResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.CreateVolume(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) GetVolume(ctx context.Context, r *GetVolumeRequest) (*GetVolumeResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.GetVolume(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) UpdateVolume(ctx context.Context, r *UpdateVolumeRequest) (*UpdateVolumeResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.UpdateVolume(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) ListVolumes(ctx context.Context, r *ListVolumesRequest) (*ListVolumesResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.ListVolumes(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *authenticatedWrapperControlServer) RemoveVolume(ctx context.Context, r *RemoveVolumeRequest) (*RemoveVolumeResponse, error) {
-
-	if err := p.authorize(ctx, []string{"swarm-manager"}); err != nil {
-		return nil, err
-	}
-	return p.local.RemoveVolume(ctx, r)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *GetNodeRequest) Copy() *GetNodeRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetNodeRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetNodeRequest) Copy() *GetNodeRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetNodeRequest) CopyFrom(src interface{}) {
+func (m *GetNodeRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*GetNodeRequest)
-	*m = *o
-}
+func (m *GetNodeResponse) Copy() *GetNodeResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *GetNodeResponse) Copy() *GetNodeResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetNodeResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetNodeResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetNodeResponse) CopyFrom(src interface{}) {
+func (m *ListNodesRequest) Copy() *ListNodesRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*GetNodeResponse)
-	*m = *o
-	if o.Node != nil {
-		m.Node = &Node{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Node, o.Node)
-	}
-}
-
-func (m *ListNodesRequest) Copy() *ListNodesRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListNodesRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListNodesRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListNodesRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListNodesRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListNodesRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListNodesRequest_Filters) Copy() *ListNodesRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListNodesRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListNodesRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListNodesRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListNodesRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListNodesResponse) Copy() *ListNodesResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
+func (m *ListNodesResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
+func (m *UpdateNodeRequest) Copy() *UpdateNodeRequest { _ = "STUB: not implemented"; return nil }
 
-	if o.NodeLabels != nil {
-		m.NodeLabels = make(map[string]string, len(o.NodeLabels))
-		for k, v := range o.NodeLabels {
-			m.NodeLabels[k] = v
-		}
-	}
+func (m *UpdateNodeRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Memberships != nil {
-		m.Memberships = make([]NodeSpec_Membership, len(o.Memberships))
-		copy(m.Memberships, o.Memberships)
-	}
+func (m *UpdateNodeResponse) Copy() *UpdateNodeResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.Roles != nil {
-		m.Roles = make([]NodeRole, len(o.Roles))
-		copy(m.Roles, o.Roles)
-	}
+func (m *UpdateNodeResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
+func (m *RemoveNodeRequest) Copy() *RemoveNodeRequest { _ = "STUB: not implemented"; return nil }
 
-}
+func (m *RemoveNodeRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *ListNodesResponse) Copy() *ListNodesResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListNodesResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RemoveNodeResponse) Copy() *RemoveNodeResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *ListNodesResponse) CopyFrom(src interface{}) {
+func (m *RemoveNodeResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *GetTaskRequest) Copy() *GetTaskRequest        { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*ListNodesResponse)
-	*m = *o
-	if o.Nodes != nil {
-		m.Nodes = make([]*Node, len(o.Nodes))
-		for i := range m.Nodes {
-			m.Nodes[i] = &Node{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Nodes[i], o.Nodes[i])
-		}
-	}
+func (m *GetTaskRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *GetTaskResponse) Copy() *GetTaskResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *UpdateNodeRequest) Copy() *UpdateNodeRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateNodeRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetTaskResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *UpdateNodeRequest) CopyFrom(src interface{}) {
+func (m *RemoveTaskRequest) Copy() *RemoveTaskRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*UpdateNodeRequest)
-	*m = *o
-	if o.NodeVersion != nil {
-		m.NodeVersion = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.NodeVersion, o.NodeVersion)
-	}
-	if o.Spec != nil {
-		m.Spec = &NodeSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
+func (m *RemoveTaskRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *UpdateNodeResponse) Copy() *UpdateNodeResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateNodeResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RemoveTaskResponse) Copy() *RemoveTaskResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *UpdateNodeResponse) CopyFrom(src interface{}) {
+func (m *RemoveTaskResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *ListTasksRequest) Copy() *ListTasksRequest    { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*UpdateNodeResponse)
-	*m = *o
-	if o.Node != nil {
-		m.Node = &Node{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Node, o.Node)
-	}
-}
-
-func (m *RemoveNodeRequest) Copy() *RemoveNodeRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveNodeRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveNodeRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveNodeRequest)
-	*m = *o
-}
-
-func (m *RemoveNodeResponse) Copy() *RemoveNodeResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveNodeResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveNodeResponse) CopyFrom(src interface{}) {}
-func (m *GetTaskRequest) Copy() *GetTaskRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetTaskRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetTaskRequest) CopyFrom(src interface{}) {
-
-	o := src.(*GetTaskRequest)
-	*m = *o
-}
-
-func (m *GetTaskResponse) Copy() *GetTaskResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetTaskResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetTaskResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetTaskResponse)
-	*m = *o
-	if o.Task != nil {
-		m.Task = &Task{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Task, o.Task)
-	}
-}
-
-func (m *RemoveTaskRequest) Copy() *RemoveTaskRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveTaskRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveTaskRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveTaskRequest)
-	*m = *o
-}
-
-func (m *RemoveTaskResponse) Copy() *RemoveTaskResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveTaskResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveTaskResponse) CopyFrom(src interface{}) {}
-func (m *ListTasksRequest) Copy() *ListTasksRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListTasksRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListTasksRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListTasksRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListTasksRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListTasksRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListTasksRequest_Filters) Copy() *ListTasksRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListTasksRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListTasksRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListTasksRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListTasksRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListTasksResponse) Copy() *ListTasksResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
+func (m *ListTasksResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
+func (m *CreateServiceRequest) Copy() *CreateServiceRequest { _ = "STUB: not implemented"; return nil }
 
-	if o.ServiceIDs != nil {
-		m.ServiceIDs = make([]string, len(o.ServiceIDs))
-		copy(m.ServiceIDs, o.ServiceIDs)
-	}
-
-	if o.NodeIDs != nil {
-		m.NodeIDs = make([]string, len(o.NodeIDs))
-		copy(m.NodeIDs, o.NodeIDs)
-	}
-
-	if o.DesiredStates != nil {
-		m.DesiredStates = make([]TaskState, len(o.DesiredStates))
-		copy(m.DesiredStates, o.DesiredStates)
-	}
-
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
-
-	if o.Runtimes != nil {
-		m.Runtimes = make([]string, len(o.Runtimes))
-		copy(m.Runtimes, o.Runtimes)
-	}
-
-}
-
-func (m *ListTasksResponse) Copy() *ListTasksResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListTasksResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListTasksResponse) CopyFrom(src interface{}) {
-
-	o := src.(*ListTasksResponse)
-	*m = *o
-	if o.Tasks != nil {
-		m.Tasks = make([]*Task, len(o.Tasks))
-		for i := range m.Tasks {
-			m.Tasks[i] = &Task{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Tasks[i], o.Tasks[i])
-		}
-	}
-
-}
-
-func (m *CreateServiceRequest) Copy() *CreateServiceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &CreateServiceRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *CreateServiceRequest) CopyFrom(src interface{}) {
-
-	o := src.(*CreateServiceRequest)
-	*m = *o
-	if o.Spec != nil {
-		m.Spec = &ServiceSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
+func (m *CreateServiceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *CreateServiceResponse) Copy() *CreateServiceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &CreateServiceResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *CreateServiceResponse) CopyFrom(src interface{}) {
+func (m *CreateServiceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*CreateServiceResponse)
-	*m = *o
-	if o.Service != nil {
-		m.Service = &Service{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Service, o.Service)
-	}
-}
+func (m *GetServiceRequest) Copy() *GetServiceRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetServiceRequest) Copy() *GetServiceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetServiceRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetServiceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetServiceRequest) CopyFrom(src interface{}) {
+func (m *GetServiceResponse) Copy() *GetServiceResponse { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*GetServiceRequest)
-	*m = *o
-}
+func (m *GetServiceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetServiceResponse) Copy() *GetServiceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetServiceResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *UpdateServiceRequest) Copy() *UpdateServiceRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetServiceResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetServiceResponse)
-	*m = *o
-	if o.Service != nil {
-		m.Service = &Service{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Service, o.Service)
-	}
-}
-
-func (m *UpdateServiceRequest) Copy() *UpdateServiceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateServiceRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *UpdateServiceRequest) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateServiceRequest)
-	*m = *o
-	if o.ServiceVersion != nil {
-		m.ServiceVersion = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.ServiceVersion, o.ServiceVersion)
-	}
-	if o.Spec != nil {
-		m.Spec = &ServiceSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
+func (m *UpdateServiceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *UpdateServiceResponse) Copy() *UpdateServiceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateServiceResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateServiceResponse) CopyFrom(src interface{}) {
+func (m *UpdateServiceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*UpdateServiceResponse)
-	*m = *o
-	if o.Service != nil {
-		m.Service = &Service{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Service, o.Service)
-	}
-}
+func (m *RemoveServiceRequest) Copy() *RemoveServiceRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *RemoveServiceRequest) Copy() *RemoveServiceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveServiceRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveServiceRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveServiceRequest)
-	*m = *o
-}
+func (m *RemoveServiceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RemoveServiceResponse) Copy() *RemoveServiceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveServiceResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *RemoveServiceResponse) CopyFrom(src interface{}) {}
-func (m *ListServicesRequest) Copy() *ListServicesRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListServicesRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RemoveServiceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *ListServicesRequest) Copy() *ListServicesRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *ListServicesRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListServicesRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListServicesRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListServicesRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListServicesRequest_Filters) Copy() *ListServicesRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListServicesRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListServicesRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListServicesRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListServicesRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListServicesResponse) Copy() *ListServicesResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
-
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
-
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
-
-	if o.Runtimes != nil {
-		m.Runtimes = make([]string, len(o.Runtimes))
-		copy(m.Runtimes, o.Runtimes)
-	}
-
-}
-
-func (m *ListServicesResponse) Copy() *ListServicesResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListServicesResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListServicesResponse) CopyFrom(src interface{}) {
-
-	o := src.(*ListServicesResponse)
-	*m = *o
-	if o.Services != nil {
-		m.Services = make([]*Service, len(o.Services))
-		for i := range m.Services {
-			m.Services[i] = &Service{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Services[i], o.Services[i])
-		}
-	}
-
-}
+func (m *ListServicesResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListServiceStatusesRequest) Copy() *ListServiceStatusesRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListServiceStatusesRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListServiceStatusesRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListServiceStatusesRequest)
-	*m = *o
-	if o.Services != nil {
-		m.Services = make([]string, len(o.Services))
-		copy(m.Services, o.Services)
-	}
-
-}
+func (m *ListServiceStatusesRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListServiceStatusesResponse) Copy() *ListServiceStatusesResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListServiceStatusesResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListServiceStatusesResponse) CopyFrom(src interface{}) {
-
-	o := src.(*ListServiceStatusesResponse)
-	*m = *o
-	if o.Statuses != nil {
-		m.Statuses = make([]*ListServiceStatusesResponse_ServiceStatus, len(o.Statuses))
-		for i := range m.Statuses {
-			m.Statuses[i] = &ListServiceStatusesResponse_ServiceStatus{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Statuses[i], o.Statuses[i])
-		}
-	}
-
-}
+func (m *ListServiceStatusesResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListServiceStatusesResponse_ServiceStatus) Copy() *ListServiceStatusesResponse_ServiceStatus {
-	if m == nil {
-		return nil
-	}
-	o := &ListServiceStatusesResponse_ServiceStatus{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
 func (m *ListServiceStatusesResponse_ServiceStatus) CopyFrom(src interface{}) {
-
-	o := src.(*ListServiceStatusesResponse_ServiceStatus)
-	*m = *o
+	_ = "STUB: not implemented"
+	return
 }
 
-func (m *CreateNetworkRequest) Copy() *CreateNetworkRequest {
-	if m == nil {
-		return nil
-	}
-	o := &CreateNetworkRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *CreateNetworkRequest) Copy() *CreateNetworkRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *CreateNetworkRequest) CopyFrom(src interface{}) {
-
-	o := src.(*CreateNetworkRequest)
-	*m = *o
-	if o.Spec != nil {
-		m.Spec = &NetworkSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
+func (m *CreateNetworkRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *CreateNetworkResponse) Copy() *CreateNetworkResponse {
-	if m == nil {
-		return nil
-	}
-	o := &CreateNetworkResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *CreateNetworkResponse) CopyFrom(src interface{}) {
+func (m *CreateNetworkResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*CreateNetworkResponse)
-	*m = *o
-	if o.Network != nil {
-		m.Network = &Network{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Network, o.Network)
-	}
-}
+func (m *GetNetworkRequest) Copy() *GetNetworkRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetNetworkRequest) Copy() *GetNetworkRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetNetworkRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetNetworkRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetNetworkRequest) CopyFrom(src interface{}) {
+func (m *GetNetworkResponse) Copy() *GetNetworkResponse { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*GetNetworkRequest)
-	*m = *o
-	if o.Appdata != nil {
-		m.Appdata = &types.Any{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Appdata, o.Appdata)
-	}
-}
+func (m *GetNetworkResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetNetworkResponse) Copy() *GetNetworkResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetNetworkResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RemoveNetworkRequest) Copy() *RemoveNetworkRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetNetworkResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetNetworkResponse)
-	*m = *o
-	if o.Network != nil {
-		m.Network = &Network{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Network, o.Network)
-	}
-}
-
-func (m *RemoveNetworkRequest) Copy() *RemoveNetworkRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveNetworkRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveNetworkRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveNetworkRequest)
-	*m = *o
-}
+func (m *RemoveNetworkRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RemoveNetworkResponse) Copy() *RemoveNetworkResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveNetworkResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *RemoveNetworkResponse) CopyFrom(src interface{}) {}
-func (m *ListNetworksRequest) Copy() *ListNetworksRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListNetworksRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RemoveNetworkResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *ListNetworksRequest) Copy() *ListNetworksRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *ListNetworksRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListNetworksRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListNetworksRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-	if o.Appdata != nil {
-		m.Appdata = &types.Any{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Appdata, o.Appdata)
-	}
-}
+func (m *ListNetworksRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListNetworksRequest_Filters) Copy() *ListNetworksRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListNetworksRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListNetworksRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListNetworksRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListNetworksRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListNetworksResponse) Copy() *ListNetworksResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
+func (m *ListNetworksResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
+func (m *GetClusterRequest) Copy() *GetClusterRequest { _ = "STUB: not implemented"; return nil }
 
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
+func (m *GetClusterRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *GetClusterResponse) Copy() *GetClusterResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *ListNetworksResponse) Copy() *ListNetworksResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListNetworksResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetClusterResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *ListNetworksResponse) CopyFrom(src interface{}) {
+func (m *ListClustersRequest) Copy() *ListClustersRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*ListNetworksResponse)
-	*m = *o
-	if o.Networks != nil {
-		m.Networks = make([]*Network, len(o.Networks))
-		for i := range m.Networks {
-			m.Networks[i] = &Network{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Networks[i], o.Networks[i])
-		}
-	}
-
-}
-
-func (m *GetClusterRequest) Copy() *GetClusterRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetClusterRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetClusterRequest) CopyFrom(src interface{}) {
-
-	o := src.(*GetClusterRequest)
-	*m = *o
-}
-
-func (m *GetClusterResponse) Copy() *GetClusterResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetClusterResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetClusterResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetClusterResponse)
-	*m = *o
-	if o.Cluster != nil {
-		m.Cluster = &Cluster{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Cluster, o.Cluster)
-	}
-}
-
-func (m *ListClustersRequest) Copy() *ListClustersRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListClustersRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListClustersRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListClustersRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListClustersRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListClustersRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListClustersRequest_Filters) Copy() *ListClustersRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListClustersRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListClustersRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListClustersRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListClustersRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListClustersResponse) Copy() *ListClustersResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
+func (m *ListClustersResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
+func (m *KeyRotation) Copy() *KeyRotation { _ = "STUB: not implemented"; return nil }
 
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
+func (m *KeyRotation) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *UpdateClusterRequest) Copy() *UpdateClusterRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *ListClustersResponse) Copy() *ListClustersResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListClustersResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListClustersResponse) CopyFrom(src interface{}) {
-
-	o := src.(*ListClustersResponse)
-	*m = *o
-	if o.Clusters != nil {
-		m.Clusters = make([]*Cluster, len(o.Clusters))
-		for i := range m.Clusters {
-			m.Clusters[i] = &Cluster{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Clusters[i], o.Clusters[i])
-		}
-	}
-
-}
-
-func (m *KeyRotation) Copy() *KeyRotation {
-	if m == nil {
-		return nil
-	}
-	o := &KeyRotation{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *KeyRotation) CopyFrom(src interface{}) {
-
-	o := src.(*KeyRotation)
-	*m = *o
-}
-
-func (m *UpdateClusterRequest) Copy() *UpdateClusterRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateClusterRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *UpdateClusterRequest) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateClusterRequest)
-	*m = *o
-	if o.ClusterVersion != nil {
-		m.ClusterVersion = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.ClusterVersion, o.ClusterVersion)
-	}
-	if o.Spec != nil {
-		m.Spec = &ClusterSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Rotation, &o.Rotation)
-}
+func (m *UpdateClusterRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *UpdateClusterResponse) Copy() *UpdateClusterResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateClusterResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateClusterResponse) CopyFrom(src interface{}) {
+func (m *UpdateClusterResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*UpdateClusterResponse)
-	*m = *o
-	if o.Cluster != nil {
-		m.Cluster = &Cluster{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Cluster, o.Cluster)
-	}
-}
+func (m *GetSecretRequest) Copy() *GetSecretRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetSecretRequest) Copy() *GetSecretRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetSecretRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetSecretRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetSecretRequest) CopyFrom(src interface{}) {
+func (m *GetSecretResponse) Copy() *GetSecretResponse { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*GetSecretRequest)
-	*m = *o
-}
+func (m *GetSecretResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetSecretResponse) Copy() *GetSecretResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetSecretResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *UpdateSecretRequest) Copy() *UpdateSecretRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetSecretResponse) CopyFrom(src interface{}) {
+func (m *UpdateSecretRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*GetSecretResponse)
-	*m = *o
-	if o.Secret != nil {
-		m.Secret = &Secret{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Secret, o.Secret)
-	}
-}
+func (m *UpdateSecretResponse) Copy() *UpdateSecretResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *UpdateSecretRequest) Copy() *UpdateSecretRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateSecretRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *UpdateSecretResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *UpdateSecretRequest) CopyFrom(src interface{}) {
+func (m *ListSecretsRequest) Copy() *ListSecretsRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*UpdateSecretRequest)
-	*m = *o
-	if o.SecretVersion != nil {
-		m.SecretVersion = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.SecretVersion, o.SecretVersion)
-	}
-	if o.Spec != nil {
-		m.Spec = &SecretSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
-
-func (m *UpdateSecretResponse) Copy() *UpdateSecretResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateSecretResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *UpdateSecretResponse) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateSecretResponse)
-	*m = *o
-	if o.Secret != nil {
-		m.Secret = &Secret{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Secret, o.Secret)
-	}
-}
-
-func (m *ListSecretsRequest) Copy() *ListSecretsRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListSecretsRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListSecretsRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListSecretsRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListSecretsRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListSecretsRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListSecretsRequest_Filters) Copy() *ListSecretsRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListSecretsRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListSecretsRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListSecretsRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListSecretsRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListSecretsResponse) Copy() *ListSecretsResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
+func (m *ListSecretsResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
+func (m *CreateSecretRequest) Copy() *CreateSecretRequest { _ = "STUB: not implemented"; return nil }
 
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
+func (m *CreateSecretRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *CreateSecretResponse) Copy() *CreateSecretResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *ListSecretsResponse) Copy() *ListSecretsResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListSecretsResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *CreateSecretResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *ListSecretsResponse) CopyFrom(src interface{}) {
+func (m *RemoveSecretRequest) Copy() *RemoveSecretRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*ListSecretsResponse)
-	*m = *o
-	if o.Secrets != nil {
-		m.Secrets = make([]*Secret, len(o.Secrets))
-		for i := range m.Secrets {
-			m.Secrets[i] = &Secret{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Secrets[i], o.Secrets[i])
-		}
-	}
+func (m *RemoveSecretRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *RemoveSecretResponse) Copy() *RemoveSecretResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *CreateSecretRequest) Copy() *CreateSecretRequest {
-	if m == nil {
-		return nil
-	}
-	o := &CreateSecretRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RemoveSecretResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *GetConfigRequest) Copy() *GetConfigRequest      { _ = "STUB: not implemented"; return nil }
 
-func (m *CreateSecretRequest) CopyFrom(src interface{}) {
+func (m *GetConfigRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*CreateSecretRequest)
-	*m = *o
-	if o.Spec != nil {
-		m.Spec = &SecretSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
+func (m *GetConfigResponse) Copy() *GetConfigResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *CreateSecretResponse) Copy() *CreateSecretResponse {
-	if m == nil {
-		return nil
-	}
-	o := &CreateSecretResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetConfigResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *CreateSecretResponse) CopyFrom(src interface{}) {
+func (m *UpdateConfigRequest) Copy() *UpdateConfigRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*CreateSecretResponse)
-	*m = *o
-	if o.Secret != nil {
-		m.Secret = &Secret{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Secret, o.Secret)
-	}
-}
+func (m *UpdateConfigRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *RemoveSecretRequest) Copy() *RemoveSecretRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveSecretRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *UpdateConfigResponse) Copy() *UpdateConfigResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *RemoveSecretRequest) CopyFrom(src interface{}) {
+func (m *UpdateConfigResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*RemoveSecretRequest)
-	*m = *o
-}
+func (m *ListConfigsRequest) Copy() *ListConfigsRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *RemoveSecretResponse) Copy() *RemoveSecretResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveSecretResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveSecretResponse) CopyFrom(src interface{}) {}
-func (m *GetConfigRequest) Copy() *GetConfigRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetConfigRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetConfigRequest) CopyFrom(src interface{}) {
-
-	o := src.(*GetConfigRequest)
-	*m = *o
-}
-
-func (m *GetConfigResponse) Copy() *GetConfigResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetConfigResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetConfigResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetConfigResponse)
-	*m = *o
-	if o.Config != nil {
-		m.Config = &Config{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Config, o.Config)
-	}
-}
-
-func (m *UpdateConfigRequest) Copy() *UpdateConfigRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateConfigRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *UpdateConfigRequest) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateConfigRequest)
-	*m = *o
-	if o.ConfigVersion != nil {
-		m.ConfigVersion = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.ConfigVersion, o.ConfigVersion)
-	}
-	if o.Spec != nil {
-		m.Spec = &ConfigSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
-
-func (m *UpdateConfigResponse) Copy() *UpdateConfigResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateConfigResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *UpdateConfigResponse) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateConfigResponse)
-	*m = *o
-	if o.Config != nil {
-		m.Config = &Config{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Config, o.Config)
-	}
-}
-
-func (m *ListConfigsRequest) Copy() *ListConfigsRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListConfigsRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListConfigsRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListConfigsRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListConfigsRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListConfigsRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListConfigsRequest_Filters) Copy() *ListConfigsRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListConfigsRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListConfigsRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListConfigsRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListConfigsRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListConfigsResponse) Copy() *ListConfigsResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
+func (m *ListConfigsResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
+func (m *CreateConfigRequest) Copy() *CreateConfigRequest { _ = "STUB: not implemented"; return nil }
 
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
+func (m *CreateConfigRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *CreateConfigResponse) Copy() *CreateConfigResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *ListConfigsResponse) Copy() *ListConfigsResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListConfigsResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *CreateConfigResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *ListConfigsResponse) CopyFrom(src interface{}) {
+func (m *RemoveConfigRequest) Copy() *RemoveConfigRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*ListConfigsResponse)
-	*m = *o
-	if o.Configs != nil {
-		m.Configs = make([]*Config, len(o.Configs))
-		for i := range m.Configs {
-			m.Configs[i] = &Config{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Configs[i], o.Configs[i])
-		}
-	}
+func (m *RemoveConfigRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-}
+func (m *RemoveConfigResponse) Copy() *RemoveConfigResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *CreateConfigRequest) Copy() *CreateConfigRequest {
-	if m == nil {
-		return nil
-	}
-	o := &CreateConfigRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *CreateConfigRequest) CopyFrom(src interface{}) {
-
-	o := src.(*CreateConfigRequest)
-	*m = *o
-	if o.Spec != nil {
-		m.Spec = &ConfigSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
-
-func (m *CreateConfigResponse) Copy() *CreateConfigResponse {
-	if m == nil {
-		return nil
-	}
-	o := &CreateConfigResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *CreateConfigResponse) CopyFrom(src interface{}) {
-
-	o := src.(*CreateConfigResponse)
-	*m = *o
-	if o.Config != nil {
-		m.Config = &Config{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Config, o.Config)
-	}
-}
-
-func (m *RemoveConfigRequest) Copy() *RemoveConfigRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveConfigRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveConfigRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveConfigRequest)
-	*m = *o
-}
-
-func (m *RemoveConfigResponse) Copy() *RemoveConfigResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveConfigResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveConfigResponse) CopyFrom(src interface{}) {}
+func (m *RemoveConfigResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 func (m *CreateExtensionRequest) Copy() *CreateExtensionRequest {
-	if m == nil {
-		return nil
-	}
-	o := &CreateExtensionRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *CreateExtensionRequest) CopyFrom(src interface{}) {
-
-	o := src.(*CreateExtensionRequest)
-	*m = *o
-	if o.Annotations != nil {
-		m.Annotations = &Annotations{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Annotations, o.Annotations)
-	}
-}
+func (m *CreateExtensionRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *CreateExtensionResponse) Copy() *CreateExtensionResponse {
-	if m == nil {
-		return nil
-	}
-	o := &CreateExtensionResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *CreateExtensionResponse) CopyFrom(src interface{}) {
-
-	o := src.(*CreateExtensionResponse)
-	*m = *o
-	if o.Extension != nil {
-		m.Extension = &Extension{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Extension, o.Extension)
-	}
-}
+func (m *CreateExtensionResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RemoveExtensionRequest) Copy() *RemoveExtensionRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveExtensionRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *RemoveExtensionRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveExtensionRequest)
-	*m = *o
-}
+func (m *RemoveExtensionRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RemoveExtensionResponse) Copy() *RemoveExtensionResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveExtensionResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *RemoveExtensionResponse) CopyFrom(src interface{}) {}
-func (m *GetExtensionRequest) Copy() *GetExtensionRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetExtensionRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *RemoveExtensionResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
+func (m *GetExtensionRequest) Copy() *GetExtensionRequest   { _ = "STUB: not implemented"; return nil }
 
-func (m *GetExtensionRequest) CopyFrom(src interface{}) {
+func (m *GetExtensionRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*GetExtensionRequest)
-	*m = *o
-}
+func (m *GetExtensionResponse) Copy() *GetExtensionResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *GetExtensionResponse) Copy() *GetExtensionResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetExtensionResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *GetExtensionResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetExtensionResponse)
-	*m = *o
-	if o.Extension != nil {
-		m.Extension = &Extension{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Extension, o.Extension)
-	}
-}
+func (m *GetExtensionResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *CreateResourceRequest) Copy() *CreateResourceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &CreateResourceRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *CreateResourceRequest) CopyFrom(src interface{}) {
-
-	o := src.(*CreateResourceRequest)
-	*m = *o
-	if o.Annotations != nil {
-		m.Annotations = &Annotations{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Annotations, o.Annotations)
-	}
-	if o.Payload != nil {
-		m.Payload = &types.Any{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Payload, o.Payload)
-	}
-}
+func (m *CreateResourceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *CreateResourceResponse) Copy() *CreateResourceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &CreateResourceResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *CreateResourceResponse) CopyFrom(src interface{}) {
-
-	o := src.(*CreateResourceResponse)
-	*m = *o
-	if o.Resource != nil {
-		m.Resource = &Resource{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Resource, o.Resource)
-	}
-}
+func (m *CreateResourceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RemoveResourceRequest) Copy() *RemoveResourceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveResourceRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *RemoveResourceRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveResourceRequest)
-	*m = *o
-}
+func (m *RemoveResourceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *RemoveResourceResponse) Copy() *RemoveResourceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveResourceResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *RemoveResourceResponse) CopyFrom(src interface{}) {}
+func (m *RemoveResourceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 func (m *UpdateResourceRequest) Copy() *UpdateResourceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateResourceRequest{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateResourceRequest) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateResourceRequest)
-	*m = *o
-	if o.ResourceVersion != nil {
-		m.ResourceVersion = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.ResourceVersion, o.ResourceVersion)
-	}
-	if o.Annotations != nil {
-		m.Annotations = &Annotations{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Annotations, o.Annotations)
-	}
-	if o.Payload != nil {
-		m.Payload = &types.Any{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Payload, o.Payload)
-	}
-}
+func (m *UpdateResourceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *UpdateResourceResponse) Copy() *UpdateResourceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateResourceResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *UpdateResourceResponse) CopyFrom(src interface{}) {
+func (m *UpdateResourceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*UpdateResourceResponse)
-	*m = *o
-	if o.Resource != nil {
-		m.Resource = &Resource{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Resource, o.Resource)
-	}
-}
+func (m *GetResourceRequest) Copy() *GetResourceRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetResourceRequest) Copy() *GetResourceRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetResourceRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetResourceRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetResourceRequest) CopyFrom(src interface{}) {
+func (m *GetResourceResponse) Copy() *GetResourceResponse { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*GetResourceRequest)
-	*m = *o
-}
+func (m *GetResourceResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetResourceResponse) Copy() *GetResourceResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetResourceResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *ListResourcesRequest) Copy() *ListResourcesRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetResourceResponse) CopyFrom(src interface{}) {
-
-	o := src.(*GetResourceResponse)
-	*m = *o
-	if o.Resource != nil {
-		m.Resource = &Resource{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Resource, o.Resource)
-	}
-}
-
-func (m *ListResourcesRequest) Copy() *ListResourcesRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListResourcesRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListResourcesRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListResourcesRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListResourcesRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListResourcesRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListResourcesRequest_Filters) Copy() *ListResourcesRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListResourcesRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListResourcesRequest_Filters) CopyFrom(src interface{}) {
-
-	o := src.(*ListResourcesRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
-
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
-
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
-
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
-
-}
+func (m *ListResourcesRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListResourcesResponse) Copy() *ListResourcesResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListResourcesResponse{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListResourcesResponse) CopyFrom(src interface{}) {
+func (m *ListResourcesResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListResourcesResponse)
-	*m = *o
-	if o.Resources != nil {
-		m.Resources = make([]*Resource, len(o.Resources))
-		for i := range m.Resources {
-			m.Resources[i] = &Resource{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Resources[i], o.Resources[i])
-		}
-	}
+func (m *CreateVolumeRequest) Copy() *CreateVolumeRequest { _ = "STUB: not implemented"; return nil }
 
-}
+func (m *CreateVolumeRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *CreateVolumeRequest) Copy() *CreateVolumeRequest {
-	if m == nil {
-		return nil
-	}
-	o := &CreateVolumeRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *CreateVolumeResponse) Copy() *CreateVolumeResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *CreateVolumeRequest) CopyFrom(src interface{}) {
+func (m *CreateVolumeResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*CreateVolumeRequest)
-	*m = *o
-	if o.Spec != nil {
-		m.Spec = &VolumeSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
+func (m *GetVolumeRequest) Copy() *GetVolumeRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *CreateVolumeResponse) Copy() *CreateVolumeResponse {
-	if m == nil {
-		return nil
-	}
-	o := &CreateVolumeResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *GetVolumeRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *CreateVolumeResponse) CopyFrom(src interface{}) {
+func (m *GetVolumeResponse) Copy() *GetVolumeResponse { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*CreateVolumeResponse)
-	*m = *o
-	if o.Volume != nil {
-		m.Volume = &Volume{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Volume, o.Volume)
-	}
-}
+func (m *GetVolumeResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetVolumeRequest) Copy() *GetVolumeRequest {
-	if m == nil {
-		return nil
-	}
-	o := &GetVolumeRequest{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *UpdateVolumeRequest) Copy() *UpdateVolumeRequest { _ = "STUB: not implemented"; return nil }
 
-func (m *GetVolumeRequest) CopyFrom(src interface{}) {
+func (m *UpdateVolumeRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*GetVolumeRequest)
-	*m = *o
-}
+func (m *UpdateVolumeResponse) Copy() *UpdateVolumeResponse { _ = "STUB: not implemented"; return nil }
 
-func (m *GetVolumeResponse) Copy() *GetVolumeResponse {
-	if m == nil {
-		return nil
-	}
-	o := &GetVolumeResponse{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *UpdateVolumeResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *GetVolumeResponse) CopyFrom(src interface{}) {
+func (m *ListVolumesRequest) Copy() *ListVolumesRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*GetVolumeResponse)
-	*m = *o
-	if o.Volume != nil {
-		m.Volume = &Volume{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Volume, o.Volume)
-	}
-}
-
-func (m *UpdateVolumeRequest) Copy() *UpdateVolumeRequest {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateVolumeRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *UpdateVolumeRequest) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateVolumeRequest)
-	*m = *o
-	if o.VolumeVersion != nil {
-		m.VolumeVersion = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.VolumeVersion, o.VolumeVersion)
-	}
-	if o.Spec != nil {
-		m.Spec = &VolumeSpec{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Spec, o.Spec)
-	}
-}
-
-func (m *UpdateVolumeResponse) Copy() *UpdateVolumeResponse {
-	if m == nil {
-		return nil
-	}
-	o := &UpdateVolumeResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *UpdateVolumeResponse) CopyFrom(src interface{}) {
-
-	o := src.(*UpdateVolumeResponse)
-	*m = *o
-	if o.Volume != nil {
-		m.Volume = &Volume{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Volume, o.Volume)
-	}
-}
-
-func (m *ListVolumesRequest) Copy() *ListVolumesRequest {
-	if m == nil {
-		return nil
-	}
-	o := &ListVolumesRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListVolumesRequest) CopyFrom(src interface{}) {
-
-	o := src.(*ListVolumesRequest)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = &ListVolumesRequest_Filters{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters, o.Filters)
-	}
-}
+func (m *ListVolumesRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *ListVolumesRequest_Filters) Copy() *ListVolumesRequest_Filters {
-	if m == nil {
-		return nil
-	}
-	o := &ListVolumesRequest_Filters{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *ListVolumesRequest_Filters) CopyFrom(src interface{}) {
+func (m *ListVolumesRequest_Filters) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*ListVolumesRequest_Filters)
-	*m = *o
-	if o.Names != nil {
-		m.Names = make([]string, len(o.Names))
-		copy(m.Names, o.Names)
-	}
+func (m *ListVolumesResponse) Copy() *ListVolumesResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.IDPrefixes != nil {
-		m.IDPrefixes = make([]string, len(o.IDPrefixes))
-		copy(m.IDPrefixes, o.IDPrefixes)
-	}
+func (m *ListVolumesResponse) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Labels != nil {
-		m.Labels = make(map[string]string, len(o.Labels))
-		for k, v := range o.Labels {
-			m.Labels[k] = v
-		}
-	}
+func (m *RemoveVolumeRequest) Copy() *RemoveVolumeRequest { _ = "STUB: not implemented"; return nil }
 
-	if o.NamePrefixes != nil {
-		m.NamePrefixes = make([]string, len(o.NamePrefixes))
-		copy(m.NamePrefixes, o.NamePrefixes)
-	}
+func (m *RemoveVolumeRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Groups != nil {
-		m.Groups = make([]string, len(o.Groups))
-		copy(m.Groups, o.Groups)
-	}
+func (m *RemoveVolumeResponse) Copy() *RemoveVolumeResponse { _ = "STUB: not implemented"; return nil }
 
-	if o.Drivers != nil {
-		m.Drivers = make([]string, len(o.Drivers))
-		copy(m.Drivers, o.Drivers)
-	}
+func (m *RemoveVolumeResponse) CopyFrom(src interface{}) {
+	_ = "STUB: not implemented"
 
+	// Reference imports to suppress errors if they are not otherwise used.
+	return
 }
 
-func (m *ListVolumesResponse) Copy() *ListVolumesResponse {
-	if m == nil {
-		return nil
-	}
-	o := &ListVolumesResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ListVolumesResponse) CopyFrom(src interface{}) {
-
-	o := src.(*ListVolumesResponse)
-	*m = *o
-	if o.Volumes != nil {
-		m.Volumes = make([]*Volume, len(o.Volumes))
-		for i := range m.Volumes {
-			m.Volumes[i] = &Volume{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Volumes[i], o.Volumes[i])
-		}
-	}
-
-}
-
-func (m *RemoveVolumeRequest) Copy() *RemoveVolumeRequest {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveVolumeRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveVolumeRequest) CopyFrom(src interface{}) {
-
-	o := src.(*RemoveVolumeRequest)
-	*m = *o
-}
-
-func (m *RemoveVolumeResponse) Copy() *RemoveVolumeResponse {
-	if m == nil {
-		return nil
-	}
-	o := &RemoveVolumeResponse{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *RemoveVolumeResponse) CopyFrom(src interface{}) {}
-
-// Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
 var _ grpc.ClientConn
 
@@ -6551,394 +3963,223 @@ type controlClient struct {
 }
 
 func NewControlClient(cc *grpc.ClientConn) ControlClient {
-	return &controlClient{cc}
+	_ = "STUB: not implemented"
+	return *new(ControlClient)
 }
 
 func (c *controlClient) GetNode(ctx context.Context, in *GetNodeRequest, opts ...grpc.CallOption) (*GetNodeResponse, error) {
-	out := new(GetNodeResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetNode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListNodes(ctx context.Context, in *ListNodesRequest, opts ...grpc.CallOption) (*ListNodesResponse, error) {
-	out := new(ListNodesResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListNodes", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) UpdateNode(ctx context.Context, in *UpdateNodeRequest, opts ...grpc.CallOption) (*UpdateNodeResponse, error) {
-	out := new(UpdateNodeResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/UpdateNode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveNode(ctx context.Context, in *RemoveNodeRequest, opts ...grpc.CallOption) (*RemoveNodeResponse, error) {
-	out := new(RemoveNodeResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveNode", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetTask(ctx context.Context, in *GetTaskRequest, opts ...grpc.CallOption) (*GetTaskResponse, error) {
-	out := new(GetTaskResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetTask", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListTasks(ctx context.Context, in *ListTasksRequest, opts ...grpc.CallOption) (*ListTasksResponse, error) {
-	out := new(ListTasksResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListTasks", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveTask(ctx context.Context, in *RemoveTaskRequest, opts ...grpc.CallOption) (*RemoveTaskResponse, error) {
-	out := new(RemoveTaskResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveTask", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetService(ctx context.Context, in *GetServiceRequest, opts ...grpc.CallOption) (*GetServiceResponse, error) {
-	out := new(GetServiceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetService", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListServices(ctx context.Context, in *ListServicesRequest, opts ...grpc.CallOption) (*ListServicesResponse, error) {
-	out := new(ListServicesResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListServices", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) CreateService(ctx context.Context, in *CreateServiceRequest, opts ...grpc.CallOption) (*CreateServiceResponse, error) {
-	out := new(CreateServiceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/CreateService", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) UpdateService(ctx context.Context, in *UpdateServiceRequest, opts ...grpc.CallOption) (*UpdateServiceResponse, error) {
-	out := new(UpdateServiceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/UpdateService", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveService(ctx context.Context, in *RemoveServiceRequest, opts ...grpc.CallOption) (*RemoveServiceResponse, error) {
-	out := new(RemoveServiceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveService", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListServiceStatuses(ctx context.Context, in *ListServiceStatusesRequest, opts ...grpc.CallOption) (*ListServiceStatusesResponse, error) {
-	out := new(ListServiceStatusesResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListServiceStatuses", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetNetwork(ctx context.Context, in *GetNetworkRequest, opts ...grpc.CallOption) (*GetNetworkResponse, error) {
-	out := new(GetNetworkResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetNetwork", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListNetworks(ctx context.Context, in *ListNetworksRequest, opts ...grpc.CallOption) (*ListNetworksResponse, error) {
-	out := new(ListNetworksResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListNetworks", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) CreateNetwork(ctx context.Context, in *CreateNetworkRequest, opts ...grpc.CallOption) (*CreateNetworkResponse, error) {
-	out := new(CreateNetworkResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/CreateNetwork", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveNetwork(ctx context.Context, in *RemoveNetworkRequest, opts ...grpc.CallOption) (*RemoveNetworkResponse, error) {
-	out := new(RemoveNetworkResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveNetwork", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetCluster(ctx context.Context, in *GetClusterRequest, opts ...grpc.CallOption) (*GetClusterResponse, error) {
-	out := new(GetClusterResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetCluster", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListClusters(ctx context.Context, in *ListClustersRequest, opts ...grpc.CallOption) (*ListClustersResponse, error) {
-	out := new(ListClustersResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListClusters", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) UpdateCluster(ctx context.Context, in *UpdateClusterRequest, opts ...grpc.CallOption) (*UpdateClusterResponse, error) {
-	out := new(UpdateClusterResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/UpdateCluster", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetSecret(ctx context.Context, in *GetSecretRequest, opts ...grpc.CallOption) (*GetSecretResponse, error) {
-	out := new(GetSecretResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetSecret", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) UpdateSecret(ctx context.Context, in *UpdateSecretRequest, opts ...grpc.CallOption) (*UpdateSecretResponse, error) {
-	out := new(UpdateSecretResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/UpdateSecret", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListSecrets(ctx context.Context, in *ListSecretsRequest, opts ...grpc.CallOption) (*ListSecretsResponse, error) {
-	out := new(ListSecretsResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListSecrets", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) CreateSecret(ctx context.Context, in *CreateSecretRequest, opts ...grpc.CallOption) (*CreateSecretResponse, error) {
-	out := new(CreateSecretResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/CreateSecret", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveSecret(ctx context.Context, in *RemoveSecretRequest, opts ...grpc.CallOption) (*RemoveSecretResponse, error) {
-	out := new(RemoveSecretResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveSecret", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetConfig(ctx context.Context, in *GetConfigRequest, opts ...grpc.CallOption) (*GetConfigResponse, error) {
-	out := new(GetConfigResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetConfig", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) UpdateConfig(ctx context.Context, in *UpdateConfigRequest, opts ...grpc.CallOption) (*UpdateConfigResponse, error) {
-	out := new(UpdateConfigResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/UpdateConfig", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListConfigs(ctx context.Context, in *ListConfigsRequest, opts ...grpc.CallOption) (*ListConfigsResponse, error) {
-	out := new(ListConfigsResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListConfigs", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) CreateConfig(ctx context.Context, in *CreateConfigRequest, opts ...grpc.CallOption) (*CreateConfigResponse, error) {
-	out := new(CreateConfigResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/CreateConfig", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveConfig(ctx context.Context, in *RemoveConfigRequest, opts ...grpc.CallOption) (*RemoveConfigResponse, error) {
-	out := new(RemoveConfigResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveConfig", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetExtension(ctx context.Context, in *GetExtensionRequest, opts ...grpc.CallOption) (*GetExtensionResponse, error) {
-	out := new(GetExtensionResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetExtension", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) CreateExtension(ctx context.Context, in *CreateExtensionRequest, opts ...grpc.CallOption) (*CreateExtensionResponse, error) {
-	out := new(CreateExtensionResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/CreateExtension", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveExtension(ctx context.Context, in *RemoveExtensionRequest, opts ...grpc.CallOption) (*RemoveExtensionResponse, error) {
-	out := new(RemoveExtensionResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveExtension", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetResource(ctx context.Context, in *GetResourceRequest, opts ...grpc.CallOption) (*GetResourceResponse, error) {
-	out := new(GetResourceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetResource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) UpdateResource(ctx context.Context, in *UpdateResourceRequest, opts ...grpc.CallOption) (*UpdateResourceResponse, error) {
-	out := new(UpdateResourceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/UpdateResource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListResources(ctx context.Context, in *ListResourcesRequest, opts ...grpc.CallOption) (*ListResourcesResponse, error) {
-	out := new(ListResourcesResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListResources", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) CreateResource(ctx context.Context, in *CreateResourceRequest, opts ...grpc.CallOption) (*CreateResourceResponse, error) {
-	out := new(CreateResourceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/CreateResource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveResource(ctx context.Context, in *RemoveResourceRequest, opts ...grpc.CallOption) (*RemoveResourceResponse, error) {
-	out := new(RemoveResourceResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveResource", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) CreateVolume(ctx context.Context, in *CreateVolumeRequest, opts ...grpc.CallOption) (*CreateVolumeResponse, error) {
-	out := new(CreateVolumeResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/CreateVolume", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) GetVolume(ctx context.Context, in *GetVolumeRequest, opts ...grpc.CallOption) (*GetVolumeResponse, error) {
-	out := new(GetVolumeResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/GetVolume", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) UpdateVolume(ctx context.Context, in *UpdateVolumeRequest, opts ...grpc.CallOption) (*UpdateVolumeResponse, error) {
-	out := new(UpdateVolumeResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/UpdateVolume", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) ListVolumes(ctx context.Context, in *ListVolumesRequest, opts ...grpc.CallOption) (*ListVolumesResponse, error) {
-	out := new(ListVolumesResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/ListVolumes", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (c *controlClient) RemoveVolume(ctx context.Context, in *RemoveVolumeRequest, opts ...grpc.CallOption) (*RemoveVolumeResponse, error) {
-	out := new(RemoveVolumeResponse)
-	err := c.cc.Invoke(ctx, "/docker.swarmkit.v1.Control/RemoveVolume", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // ControlServer is the server API for Control service.
@@ -7091,911 +4332,435 @@ type UnimplementedControlServer struct {
 }
 
 func (*UnimplementedControlServer) GetNode(ctx context.Context, req *GetNodeRequest) (*GetNodeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNode not implemented")
-}
-func (*UnimplementedControlServer) ListNodes(ctx context.Context, req *ListNodesRequest) (*ListNodesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListNodes not implemented")
-}
-func (*UnimplementedControlServer) UpdateNode(ctx context.Context, req *UpdateNodeRequest) (*UpdateNodeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateNode not implemented")
-}
-func (*UnimplementedControlServer) RemoveNode(ctx context.Context, req *RemoveNodeRequest) (*RemoveNodeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveNode not implemented")
-}
-func (*UnimplementedControlServer) GetTask(ctx context.Context, req *GetTaskRequest) (*GetTaskResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTask not implemented")
-}
-func (*UnimplementedControlServer) ListTasks(ctx context.Context, req *ListTasksRequest) (*ListTasksResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListTasks not implemented")
-}
-func (*UnimplementedControlServer) RemoveTask(ctx context.Context, req *RemoveTaskRequest) (*RemoveTaskResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveTask not implemented")
-}
-func (*UnimplementedControlServer) GetService(ctx context.Context, req *GetServiceRequest) (*GetServiceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetService not implemented")
-}
-func (*UnimplementedControlServer) ListServices(ctx context.Context, req *ListServicesRequest) (*ListServicesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListServices not implemented")
-}
-func (*UnimplementedControlServer) CreateService(ctx context.Context, req *CreateServiceRequest) (*CreateServiceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateService not implemented")
-}
-func (*UnimplementedControlServer) UpdateService(ctx context.Context, req *UpdateServiceRequest) (*UpdateServiceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateService not implemented")
-}
-func (*UnimplementedControlServer) RemoveService(ctx context.Context, req *RemoveServiceRequest) (*RemoveServiceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveService not implemented")
-}
-func (*UnimplementedControlServer) ListServiceStatuses(ctx context.Context, req *ListServiceStatusesRequest) (*ListServiceStatusesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListServiceStatuses not implemented")
-}
-func (*UnimplementedControlServer) GetNetwork(ctx context.Context, req *GetNetworkRequest) (*GetNetworkResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetNetwork not implemented")
-}
-func (*UnimplementedControlServer) ListNetworks(ctx context.Context, req *ListNetworksRequest) (*ListNetworksResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListNetworks not implemented")
-}
-func (*UnimplementedControlServer) CreateNetwork(ctx context.Context, req *CreateNetworkRequest) (*CreateNetworkResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateNetwork not implemented")
-}
-func (*UnimplementedControlServer) RemoveNetwork(ctx context.Context, req *RemoveNetworkRequest) (*RemoveNetworkResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveNetwork not implemented")
-}
-func (*UnimplementedControlServer) GetCluster(ctx context.Context, req *GetClusterRequest) (*GetClusterResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCluster not implemented")
-}
-func (*UnimplementedControlServer) ListClusters(ctx context.Context, req *ListClustersRequest) (*ListClustersResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListClusters not implemented")
-}
-func (*UnimplementedControlServer) UpdateCluster(ctx context.Context, req *UpdateClusterRequest) (*UpdateClusterResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateCluster not implemented")
-}
-func (*UnimplementedControlServer) GetSecret(ctx context.Context, req *GetSecretRequest) (*GetSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSecret not implemented")
-}
-func (*UnimplementedControlServer) UpdateSecret(ctx context.Context, req *UpdateSecretRequest) (*UpdateSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateSecret not implemented")
-}
-func (*UnimplementedControlServer) ListSecrets(ctx context.Context, req *ListSecretsRequest) (*ListSecretsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListSecrets not implemented")
-}
-func (*UnimplementedControlServer) CreateSecret(ctx context.Context, req *CreateSecretRequest) (*CreateSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateSecret not implemented")
-}
-func (*UnimplementedControlServer) RemoveSecret(ctx context.Context, req *RemoveSecretRequest) (*RemoveSecretResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveSecret not implemented")
-}
-func (*UnimplementedControlServer) GetConfig(ctx context.Context, req *GetConfigRequest) (*GetConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetConfig not implemented")
-}
-func (*UnimplementedControlServer) UpdateConfig(ctx context.Context, req *UpdateConfigRequest) (*UpdateConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateConfig not implemented")
-}
-func (*UnimplementedControlServer) ListConfigs(ctx context.Context, req *ListConfigsRequest) (*ListConfigsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListConfigs not implemented")
-}
-func (*UnimplementedControlServer) CreateConfig(ctx context.Context, req *CreateConfigRequest) (*CreateConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateConfig not implemented")
-}
-func (*UnimplementedControlServer) RemoveConfig(ctx context.Context, req *RemoveConfigRequest) (*RemoveConfigResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveConfig not implemented")
-}
-func (*UnimplementedControlServer) GetExtension(ctx context.Context, req *GetExtensionRequest) (*GetExtensionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetExtension not implemented")
-}
-func (*UnimplementedControlServer) CreateExtension(ctx context.Context, req *CreateExtensionRequest) (*CreateExtensionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateExtension not implemented")
-}
-func (*UnimplementedControlServer) RemoveExtension(ctx context.Context, req *RemoveExtensionRequest) (*RemoveExtensionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveExtension not implemented")
-}
-func (*UnimplementedControlServer) GetResource(ctx context.Context, req *GetResourceRequest) (*GetResourceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetResource not implemented")
-}
-func (*UnimplementedControlServer) UpdateResource(ctx context.Context, req *UpdateResourceRequest) (*UpdateResourceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateResource not implemented")
-}
-func (*UnimplementedControlServer) ListResources(ctx context.Context, req *ListResourcesRequest) (*ListResourcesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListResources not implemented")
-}
-func (*UnimplementedControlServer) CreateResource(ctx context.Context, req *CreateResourceRequest) (*CreateResourceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateResource not implemented")
-}
-func (*UnimplementedControlServer) RemoveResource(ctx context.Context, req *RemoveResourceRequest) (*RemoveResourceResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveResource not implemented")
-}
-func (*UnimplementedControlServer) CreateVolume(ctx context.Context, req *CreateVolumeRequest) (*CreateVolumeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateVolume not implemented")
-}
-func (*UnimplementedControlServer) GetVolume(ctx context.Context, req *GetVolumeRequest) (*GetVolumeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetVolume not implemented")
-}
-func (*UnimplementedControlServer) UpdateVolume(ctx context.Context, req *UpdateVolumeRequest) (*UpdateVolumeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateVolume not implemented")
-}
-func (*UnimplementedControlServer) ListVolumes(ctx context.Context, req *ListVolumesRequest) (*ListVolumesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListVolumes not implemented")
-}
-func (*UnimplementedControlServer) RemoveVolume(ctx context.Context, req *RemoveVolumeRequest) (*RemoveVolumeResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveVolume not implemented")
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func RegisterControlServer(s *grpc.Server, srv ControlServer) {
-	s.RegisterService(&_Control_serviceDesc, srv)
+func (*UnimplementedControlServer) ListNodes(ctx context.Context, req *ListNodesRequest) (*ListNodesResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
+func (*UnimplementedControlServer) UpdateNode(ctx context.Context, req *UpdateNodeRequest) (*UpdateNodeResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveNode(ctx context.Context, req *RemoveNodeRequest) (*RemoveNodeResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetTask(ctx context.Context, req *GetTaskRequest) (*GetTaskResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListTasks(ctx context.Context, req *ListTasksRequest) (*ListTasksResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveTask(ctx context.Context, req *RemoveTaskRequest) (*RemoveTaskResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetService(ctx context.Context, req *GetServiceRequest) (*GetServiceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListServices(ctx context.Context, req *ListServicesRequest) (*ListServicesResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) CreateService(ctx context.Context, req *CreateServiceRequest) (*CreateServiceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) UpdateService(ctx context.Context, req *UpdateServiceRequest) (*UpdateServiceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveService(ctx context.Context, req *RemoveServiceRequest) (*RemoveServiceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListServiceStatuses(ctx context.Context, req *ListServiceStatusesRequest) (*ListServiceStatusesResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetNetwork(ctx context.Context, req *GetNetworkRequest) (*GetNetworkResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListNetworks(ctx context.Context, req *ListNetworksRequest) (*ListNetworksResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) CreateNetwork(ctx context.Context, req *CreateNetworkRequest) (*CreateNetworkResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveNetwork(ctx context.Context, req *RemoveNetworkRequest) (*RemoveNetworkResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetCluster(ctx context.Context, req *GetClusterRequest) (*GetClusterResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListClusters(ctx context.Context, req *ListClustersRequest) (*ListClustersResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) UpdateCluster(ctx context.Context, req *UpdateClusterRequest) (*UpdateClusterResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetSecret(ctx context.Context, req *GetSecretRequest) (*GetSecretResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) UpdateSecret(ctx context.Context, req *UpdateSecretRequest) (*UpdateSecretResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListSecrets(ctx context.Context, req *ListSecretsRequest) (*ListSecretsResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) CreateSecret(ctx context.Context, req *CreateSecretRequest) (*CreateSecretResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveSecret(ctx context.Context, req *RemoveSecretRequest) (*RemoveSecretResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetConfig(ctx context.Context, req *GetConfigRequest) (*GetConfigResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) UpdateConfig(ctx context.Context, req *UpdateConfigRequest) (*UpdateConfigResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListConfigs(ctx context.Context, req *ListConfigsRequest) (*ListConfigsResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) CreateConfig(ctx context.Context, req *CreateConfigRequest) (*CreateConfigResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveConfig(ctx context.Context, req *RemoveConfigRequest) (*RemoveConfigResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetExtension(ctx context.Context, req *GetExtensionRequest) (*GetExtensionResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) CreateExtension(ctx context.Context, req *CreateExtensionRequest) (*CreateExtensionResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveExtension(ctx context.Context, req *RemoveExtensionRequest) (*RemoveExtensionResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetResource(ctx context.Context, req *GetResourceRequest) (*GetResourceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) UpdateResource(ctx context.Context, req *UpdateResourceRequest) (*UpdateResourceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListResources(ctx context.Context, req *ListResourcesRequest) (*ListResourcesResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) CreateResource(ctx context.Context, req *CreateResourceRequest) (*CreateResourceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveResource(ctx context.Context, req *RemoveResourceRequest) (*RemoveResourceResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) CreateVolume(ctx context.Context, req *CreateVolumeRequest) (*CreateVolumeResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) GetVolume(ctx context.Context, req *GetVolumeRequest) (*GetVolumeResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) UpdateVolume(ctx context.Context, req *UpdateVolumeRequest) (*UpdateVolumeResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) ListVolumes(ctx context.Context, req *ListVolumesRequest) (*ListVolumesResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func (*UnimplementedControlServer) RemoveVolume(ctx context.Context, req *RemoveVolumeRequest) (*RemoveVolumeResponse, error) {
+	_ = "STUB: not implemented"
+	return nil, nil
+}
+
+func RegisterControlServer(s *grpc.Server, srv ControlServer) { _ = "STUB: not implemented"; return }
 
 func _Control_GetNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNodeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetNode(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetNode",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetNode(ctx, req.(*GetNodeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListNodes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListNodesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListNodes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListNodes",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListNodes(ctx, req.(*ListNodesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_UpdateNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateNodeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).UpdateNode(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/UpdateNode",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).UpdateNode(ctx, req.(*UpdateNodeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveNodeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveNode(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveNode",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveNode(ctx, req.(*RemoveNodeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTaskRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetTask(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetTask",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetTask(ctx, req.(*GetTaskRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListTasks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListTasksRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListTasks(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListTasks",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListTasks(ctx, req.(*ListTasksRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveTaskRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveTask(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveTask",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveTask(ctx, req.(*RemoveTaskRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetService_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetServiceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetService(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetService",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetService(ctx, req.(*GetServiceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListServices_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListServicesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListServices(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListServices",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListServices(ctx, req.(*ListServicesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_CreateService_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateServiceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).CreateService(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/CreateService",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).CreateService(ctx, req.(*CreateServiceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_UpdateService_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateServiceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).UpdateService(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/UpdateService",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).UpdateService(ctx, req.(*UpdateServiceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveService_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveServiceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveService(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveService",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveService(ctx, req.(*RemoveServiceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListServiceStatuses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListServiceStatusesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListServiceStatuses(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListServiceStatuses",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListServiceStatuses(ctx, req.(*ListServiceStatusesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetNetworkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetNetwork(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetNetwork",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetNetwork(ctx, req.(*GetNetworkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListNetworks_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListNetworksRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListNetworks(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListNetworks",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListNetworks(ctx, req.(*ListNetworksRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_CreateNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateNetworkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).CreateNetwork(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/CreateNetwork",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).CreateNetwork(ctx, req.(*CreateNetworkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveNetwork_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveNetworkRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveNetwork(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveNetwork",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveNetwork(ctx, req.(*RemoveNetworkRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetClusterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetCluster(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetCluster",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetCluster(ctx, req.(*GetClusterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListClusters_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListClustersRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListClusters(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListClusters",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListClusters(ctx, req.(*ListClustersRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_UpdateCluster_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateClusterRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).UpdateCluster(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/UpdateCluster",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).UpdateCluster(ctx, req.(*UpdateClusterRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetSecretRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetSecret(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetSecret",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetSecret(ctx, req.(*GetSecretRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_UpdateSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateSecretRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).UpdateSecret(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/UpdateSecret",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).UpdateSecret(ctx, req.(*UpdateSecretRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListSecrets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListSecretsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListSecrets(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListSecrets",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListSecrets(ctx, req.(*ListSecretsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_CreateSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateSecretRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).CreateSecret(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/CreateSecret",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).CreateSecret(ctx, req.(*CreateSecretRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveSecret_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveSecretRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveSecret(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveSecret",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveSecret(ctx, req.(*RemoveSecretRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetConfigRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetConfig(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetConfig",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetConfig(ctx, req.(*GetConfigRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_UpdateConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateConfigRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).UpdateConfig(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/UpdateConfig",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).UpdateConfig(ctx, req.(*UpdateConfigRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListConfigs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListConfigsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListConfigs(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListConfigs",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListConfigs(ctx, req.(*ListConfigsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_CreateConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateConfigRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).CreateConfig(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/CreateConfig",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).CreateConfig(ctx, req.(*CreateConfigRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveConfig_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveConfigRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveConfig(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveConfig",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveConfig(ctx, req.(*RemoveConfigRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetExtension_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetExtensionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetExtension(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetExtension",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetExtension(ctx, req.(*GetExtensionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_CreateExtension_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateExtensionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).CreateExtension(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/CreateExtension",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).CreateExtension(ctx, req.(*CreateExtensionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveExtension_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveExtensionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveExtension(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveExtension",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveExtension(ctx, req.(*RemoveExtensionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetResource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetResourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetResource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetResource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetResource(ctx, req.(*GetResourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_UpdateResource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateResourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).UpdateResource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/UpdateResource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).UpdateResource(ctx, req.(*UpdateResourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListResources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListResourcesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListResources(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListResources",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListResources(ctx, req.(*ListResourcesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_CreateResource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateResourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).CreateResource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/CreateResource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).CreateResource(ctx, req.(*CreateResourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveResource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveResourceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveResource(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveResource",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveResource(ctx, req.(*RemoveResourceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_CreateVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).CreateVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/CreateVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).CreateVolume(ctx, req.(*CreateVolumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_GetVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).GetVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/GetVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).GetVolume(ctx, req.(*GetVolumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_UpdateVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).UpdateVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/UpdateVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).UpdateVolume(ctx, req.(*UpdateVolumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_ListVolumes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListVolumesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).ListVolumes(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/ListVolumes",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).ListVolumes(ctx, req.(*ListVolumesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func _Control_RemoveVolume_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveVolumeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ControlServer).RemoveVolume(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/docker.swarmkit.v1.Control/RemoveVolume",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ControlServer).RemoveVolume(ctx, req.(*RemoveVolumeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 var _Control_serviceDesc = grpc.ServiceDesc{
@@ -8180,3923 +4945,1460 @@ var _Control_serviceDesc = grpc.ServiceDesc{
 }
 
 func (m *GetNodeRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetNodeRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetNodeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NodeID) > 0 {
-		i -= len(m.NodeID)
-		copy(dAtA[i:], m.NodeID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.NodeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetNodeResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetNodeResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetNodeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Node != nil {
-		{
-			size, err := m.Node.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNodesRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListNodesRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNodesRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNodesRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListNodesRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNodesRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NodeLabels) > 0 {
-		for k := range m.NodeLabels {
-			v := m.NodeLabels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x3a
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x32
-		}
-	}
-	if len(m.Roles) > 0 {
-		for iNdEx := len(m.Roles) - 1; iNdEx >= 0; iNdEx-- {
-			i = encodeVarintControl(dAtA, i, uint64(m.Roles[iNdEx]))
-			i--
-			dAtA[i] = 0x28
-		}
-	}
-	if len(m.Memberships) > 0 {
-		for iNdEx := len(m.Memberships) - 1; iNdEx >= 0; iNdEx-- {
-			i = encodeVarintControl(dAtA, i, uint64(m.Memberships[iNdEx]))
-			i--
-			dAtA[i] = 0x20
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNodesResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListNodesResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNodesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Nodes) > 0 {
-		for iNdEx := len(m.Nodes) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Nodes[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateNodeRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateNodeRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateNodeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.NodeVersion != nil {
-		{
-			size, err := m.NodeVersion.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.NodeID) > 0 {
-		i -= len(m.NodeID)
-		copy(dAtA[i:], m.NodeID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.NodeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateNodeResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateNodeResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateNodeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Node != nil {
-		{
-			size, err := m.Node.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNodeRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveNodeRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNodeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Force {
-		i--
-		if m.Force {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.NodeID) > 0 {
-		i -= len(m.NodeID)
-		copy(dAtA[i:], m.NodeID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.NodeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNodeResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveNodeResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNodeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetTaskRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetTaskRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetTaskRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.TaskID) > 0 {
-		i -= len(m.TaskID)
-		copy(dAtA[i:], m.TaskID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.TaskID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetTaskResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetTaskResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetTaskResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Task != nil {
-		{
-			size, err := m.Task.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveTaskRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveTaskRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveTaskRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.TaskID) > 0 {
-		i -= len(m.TaskID)
-		copy(dAtA[i:], m.TaskID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.TaskID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveTaskResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveTaskResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveTaskResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListTasksRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListTasksRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListTasksRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListTasksRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListTasksRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListTasksRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Runtimes) > 0 {
-		for iNdEx := len(m.Runtimes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Runtimes[iNdEx])
-			copy(dAtA[i:], m.Runtimes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Runtimes[iNdEx])))
-			i--
-			dAtA[i] = 0x4a
-		}
-	}
-	if m.UpToDate {
-		i--
-		if m.UpToDate {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x40
-	}
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x3a
-		}
-	}
-	if len(m.DesiredStates) > 0 {
-		for iNdEx := len(m.DesiredStates) - 1; iNdEx >= 0; iNdEx-- {
-			i = encodeVarintControl(dAtA, i, uint64(m.DesiredStates[iNdEx]))
-			i--
-			dAtA[i] = 0x30
-		}
-	}
-	if len(m.NodeIDs) > 0 {
-		for iNdEx := len(m.NodeIDs) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NodeIDs[iNdEx])
-			copy(dAtA[i:], m.NodeIDs[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NodeIDs[iNdEx])))
-			i--
-			dAtA[i] = 0x2a
-		}
-	}
-	if len(m.ServiceIDs) > 0 {
-		for iNdEx := len(m.ServiceIDs) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.ServiceIDs[iNdEx])
-			copy(dAtA[i:], m.ServiceIDs[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.ServiceIDs[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListTasksResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListTasksResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListTasksResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Tasks) > 0 {
-		for iNdEx := len(m.Tasks) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Tasks[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateServiceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateServiceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateServiceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateServiceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateServiceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateServiceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Service != nil {
-		{
-			size, err := m.Service.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetServiceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetServiceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetServiceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.InsertDefaults {
-		i--
-		if m.InsertDefaults {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.ServiceID) > 0 {
-		i -= len(m.ServiceID)
-		copy(dAtA[i:], m.ServiceID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ServiceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetServiceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetServiceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetServiceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Service != nil {
-		{
-			size, err := m.Service.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateServiceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateServiceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateServiceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Rollback != 0 {
-		i = encodeVarintControl(dAtA, i, uint64(m.Rollback))
-		i--
-		dAtA[i] = 0x20
-	}
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.ServiceVersion != nil {
-		{
-			size, err := m.ServiceVersion.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.ServiceID) > 0 {
-		i -= len(m.ServiceID)
-		copy(dAtA[i:], m.ServiceID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ServiceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateServiceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateServiceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateServiceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Service != nil {
-		{
-			size, err := m.Service.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveServiceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveServiceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveServiceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ServiceID) > 0 {
-		i -= len(m.ServiceID)
-		copy(dAtA[i:], m.ServiceID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ServiceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveServiceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveServiceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveServiceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServicesRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListServicesRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServicesRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServicesRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListServicesRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServicesRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Runtimes) > 0 {
-		for iNdEx := len(m.Runtimes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Runtimes[iNdEx])
-			copy(dAtA[i:], m.Runtimes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Runtimes[iNdEx])))
-			i--
-			dAtA[i] = 0x2a
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServicesResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListServicesResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServicesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Services) > 0 {
-		for iNdEx := len(m.Services) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Services[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServiceStatusesRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListServiceStatusesRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServiceStatusesRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Services) > 0 {
-		for iNdEx := len(m.Services) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Services[iNdEx])
-			copy(dAtA[i:], m.Services[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Services[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServiceStatusesResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListServiceStatusesResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServiceStatusesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Statuses) > 0 {
-		for iNdEx := len(m.Statuses) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Statuses[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServiceStatusesResponse_ServiceStatus) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListServiceStatusesResponse_ServiceStatus) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListServiceStatusesResponse_ServiceStatus) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.CompletedTasks != 0 {
-		i = encodeVarintControl(dAtA, i, uint64(m.CompletedTasks))
-		i--
-		dAtA[i] = 0x20
-	}
-	if m.RunningTasks != 0 {
-		i = encodeVarintControl(dAtA, i, uint64(m.RunningTasks))
-		i--
-		dAtA[i] = 0x18
-	}
-	if m.DesiredTasks != 0 {
-		i = encodeVarintControl(dAtA, i, uint64(m.DesiredTasks))
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.ServiceID) > 0 {
-		i -= len(m.ServiceID)
-		copy(dAtA[i:], m.ServiceID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ServiceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateNetworkRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateNetworkRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateNetworkRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateNetworkResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateNetworkResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateNetworkResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Network != nil {
-		{
-			size, err := m.Network.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetNetworkRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetNetworkRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetNetworkRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Appdata != nil {
-		{
-			size, err := m.Appdata.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if len(m.NetworkID) > 0 {
-		i -= len(m.NetworkID)
-		copy(dAtA[i:], m.NetworkID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.NetworkID)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Name) > 0 {
-		i -= len(m.Name)
-		copy(dAtA[i:], m.Name)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.Name)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetNetworkResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetNetworkResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetNetworkResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Network != nil {
-		{
-			size, err := m.Network.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNetworkRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveNetworkRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNetworkRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NetworkID) > 0 {
-		i -= len(m.NetworkID)
-		copy(dAtA[i:], m.NetworkID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.NetworkID)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Name) > 0 {
-		i -= len(m.Name)
-		copy(dAtA[i:], m.Name)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.Name)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNetworkResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveNetworkResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveNetworkResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNetworksRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListNetworksRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNetworksRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Appdata != nil {
-		{
-			size, err := m.Appdata.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNetworksRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListNetworksRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNetworksRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNetworksResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListNetworksResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListNetworksResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Networks) > 0 {
-		for iNdEx := len(m.Networks) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Networks[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetClusterRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetClusterRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetClusterRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ClusterID) > 0 {
-		i -= len(m.ClusterID)
-		copy(dAtA[i:], m.ClusterID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ClusterID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetClusterResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetClusterResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetClusterResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Cluster != nil {
-		{
-			size, err := m.Cluster.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListClustersRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListClustersRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListClustersRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListClustersRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListClustersRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListClustersRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListClustersResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListClustersResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListClustersResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Clusters) > 0 {
-		for iNdEx := len(m.Clusters) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Clusters[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *KeyRotation) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *KeyRotation) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *KeyRotation) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *KeyRotation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.ManagerUnlockKey {
-		i--
-		if m.ManagerUnlockKey {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x18
-	}
-	if m.ManagerJoinToken {
-		i--
-		if m.ManagerJoinToken {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.WorkerJoinToken {
-		i--
-		if m.WorkerJoinToken {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateClusterRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateClusterRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateClusterRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	{
-		size, err := m.Rotation.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintControl(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x22
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.ClusterVersion != nil {
-		{
-			size, err := m.ClusterVersion.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.ClusterID) > 0 {
-		i -= len(m.ClusterID)
-		copy(dAtA[i:], m.ClusterID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ClusterID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateClusterResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateClusterResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateClusterResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Cluster != nil {
-		{
-			size, err := m.Cluster.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetSecretRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetSecretRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetSecretRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SecretID) > 0 {
-		i -= len(m.SecretID)
-		copy(dAtA[i:], m.SecretID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.SecretID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetSecretResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetSecretResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetSecretResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Secret != nil {
-		{
-			size, err := m.Secret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateSecretRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateSecretRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateSecretRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.SecretVersion != nil {
-		{
-			size, err := m.SecretVersion.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.SecretID) > 0 {
-		i -= len(m.SecretID)
-		copy(dAtA[i:], m.SecretID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.SecretID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateSecretResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateSecretResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateSecretResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Secret != nil {
-		{
-			size, err := m.Secret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListSecretsRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListSecretsRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListSecretsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListSecretsRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListSecretsRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListSecretsRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListSecretsResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListSecretsResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListSecretsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Secrets) > 0 {
-		for iNdEx := len(m.Secrets) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Secrets[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateSecretRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateSecretRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateSecretRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateSecretResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateSecretResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateSecretResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Secret != nil {
-		{
-			size, err := m.Secret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveSecretRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveSecretRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveSecretRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SecretID) > 0 {
-		i -= len(m.SecretID)
-		copy(dAtA[i:], m.SecretID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.SecretID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveSecretResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveSecretResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveSecretResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetConfigRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetConfigRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetConfigRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ConfigID) > 0 {
-		i -= len(m.ConfigID)
-		copy(dAtA[i:], m.ConfigID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ConfigID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetConfigResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetConfigResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetConfigResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Config != nil {
-		{
-			size, err := m.Config.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateConfigRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateConfigRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateConfigRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.ConfigVersion != nil {
-		{
-			size, err := m.ConfigVersion.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.ConfigID) > 0 {
-		i -= len(m.ConfigID)
-		copy(dAtA[i:], m.ConfigID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ConfigID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateConfigResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateConfigResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateConfigResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Config != nil {
-		{
-			size, err := m.Config.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListConfigsRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListConfigsRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListConfigsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListConfigsRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListConfigsRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListConfigsRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListConfigsResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListConfigsResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListConfigsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Configs) > 0 {
-		for iNdEx := len(m.Configs) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Configs[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateConfigRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateConfigRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateConfigRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateConfigResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateConfigResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateConfigResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Config != nil {
-		{
-			size, err := m.Config.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveConfigRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveConfigRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveConfigRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ConfigID) > 0 {
-		i -= len(m.ConfigID)
-		copy(dAtA[i:], m.ConfigID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ConfigID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveConfigResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveConfigResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveConfigResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateExtensionRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateExtensionRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateExtensionRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Description) > 0 {
-		i -= len(m.Description)
-		copy(dAtA[i:], m.Description)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.Description)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Annotations != nil {
-		{
-			size, err := m.Annotations.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateExtensionResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateExtensionResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateExtensionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Extension != nil {
-		{
-			size, err := m.Extension.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveExtensionRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveExtensionRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveExtensionRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ExtensionID) > 0 {
-		i -= len(m.ExtensionID)
-		copy(dAtA[i:], m.ExtensionID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ExtensionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveExtensionResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveExtensionResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveExtensionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetExtensionRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetExtensionRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetExtensionRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ExtensionID) > 0 {
-		i -= len(m.ExtensionID)
-		copy(dAtA[i:], m.ExtensionID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ExtensionID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetExtensionResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetExtensionResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetExtensionResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Extension != nil {
-		{
-			size, err := m.Extension.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateResourceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateResourceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateResourceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Payload != nil {
-		{
-			size, err := m.Payload.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if len(m.Kind) > 0 {
-		i -= len(m.Kind)
-		copy(dAtA[i:], m.Kind)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.Kind)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Annotations != nil {
-		{
-			size, err := m.Annotations.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateResourceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateResourceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateResourceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Resource != nil {
-		{
-			size, err := m.Resource.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveResourceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveResourceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveResourceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ResourceID) > 0 {
-		i -= len(m.ResourceID)
-		copy(dAtA[i:], m.ResourceID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ResourceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveResourceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveResourceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveResourceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateResourceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateResourceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateResourceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Payload != nil {
-		{
-			size, err := m.Payload.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	if m.Annotations != nil {
-		{
-			size, err := m.Annotations.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.ResourceVersion != nil {
-		{
-			size, err := m.ResourceVersion.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.ResourceID) > 0 {
-		i -= len(m.ResourceID)
-		copy(dAtA[i:], m.ResourceID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ResourceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateResourceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateResourceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateResourceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Resource != nil {
-		{
-			size, err := m.Resource.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetResourceRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetResourceRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetResourceRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.ResourceID) > 0 {
-		i -= len(m.ResourceID)
-		copy(dAtA[i:], m.ResourceID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.ResourceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetResourceResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetResourceResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetResourceResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Resource != nil {
-		{
-			size, err := m.Resource.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListResourcesRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListResourcesRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListResourcesRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListResourcesRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListResourcesRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListResourcesRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Kind) > 0 {
-		i -= len(m.Kind)
-		copy(dAtA[i:], m.Kind)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.Kind)))
-		i--
-		dAtA[i] = 0x2a
-	}
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListResourcesResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListResourcesResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListResourcesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Resources) > 0 {
-		for iNdEx := len(m.Resources) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Resources[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateVolumeRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateVolumeRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateVolumeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateVolumeResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *CreateVolumeResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *CreateVolumeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Volume != nil {
-		{
-			size, err := m.Volume.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetVolumeRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetVolumeRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetVolumeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.VolumeID) > 0 {
-		i -= len(m.VolumeID)
-		copy(dAtA[i:], m.VolumeID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.VolumeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetVolumeResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *GetVolumeResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *GetVolumeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Volume != nil {
-		{
-			size, err := m.Volume.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateVolumeRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Spec != nil {
-		{
-			size, err := m.Spec.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.VolumeVersion != nil {
-		{
-			size, err := m.VolumeVersion.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.VolumeID) > 0 {
-		i -= len(m.VolumeID)
-		copy(dAtA[i:], m.VolumeID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.VolumeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *UpdateVolumeResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *UpdateVolumeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Volume != nil {
-		{
-			size, err := m.Volume.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListVolumesRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListVolumesRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListVolumesRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Filters != nil {
-		{
-			size, err := m.Filters.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintControl(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListVolumesRequest_Filters) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListVolumesRequest_Filters) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListVolumesRequest_Filters) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Drivers) > 0 {
-		for iNdEx := len(m.Drivers) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Drivers[iNdEx])
-			copy(dAtA[i:], m.Drivers[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Drivers[iNdEx])))
-			i--
-			dAtA[i] = 0x32
-		}
-	}
-	if len(m.Groups) > 0 {
-		for iNdEx := len(m.Groups) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Groups[iNdEx])
-			copy(dAtA[i:], m.Groups[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Groups[iNdEx])))
-			i--
-			dAtA[i] = 0x2a
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for iNdEx := len(m.NamePrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.NamePrefixes[iNdEx])
-			copy(dAtA[i:], m.NamePrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.NamePrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k := range m.Labels {
-			v := m.Labels[k]
-			baseI := i
-			i -= len(v)
-			copy(dAtA[i:], v)
-			i = encodeVarintControl(dAtA, i, uint64(len(v)))
-			i--
-			dAtA[i] = 0x12
-			i -= len(k)
-			copy(dAtA[i:], k)
-			i = encodeVarintControl(dAtA, i, uint64(len(k)))
-			i--
-			dAtA[i] = 0xa
-			i = encodeVarintControl(dAtA, i, uint64(baseI-i))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for iNdEx := len(m.IDPrefixes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.IDPrefixes[iNdEx])
-			copy(dAtA[i:], m.IDPrefixes[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.IDPrefixes[iNdEx])))
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Names) > 0 {
-		for iNdEx := len(m.Names) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.Names[iNdEx])
-			copy(dAtA[i:], m.Names[iNdEx])
-			i = encodeVarintControl(dAtA, i, uint64(len(m.Names[iNdEx])))
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListVolumesResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ListVolumesResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ListVolumesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Volumes) > 0 {
-		for iNdEx := len(m.Volumes) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Volumes[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintControl(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveVolumeRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveVolumeRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveVolumeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Force {
-		i--
-		if m.Force {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.VolumeID) > 0 {
-		i -= len(m.VolumeID)
-		copy(dAtA[i:], m.VolumeID)
-		i = encodeVarintControl(dAtA, i, uint64(len(m.VolumeID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveVolumeResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *RemoveVolumeResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *RemoveVolumeResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func encodeVarintControl(dAtA []byte, offset int, v uint64) int {
-	offset -= sovControl(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
+	_ = "STUB: not implemented"
+	return 0
 }
 
 type raftProxyControlServer struct {
@@ -12106,15593 +6408,887 @@ type raftProxyControlServer struct {
 }
 
 func NewRaftProxyControlServer(local ControlServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) ControlServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyControlServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(ControlServer)
 }
+
 func (p *raftProxyControlServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyControlServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetNode(ctx context.Context, r *GetNodeRequest) (*GetNodeResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetNode(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetNode(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetNode(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetNode(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListNodes(ctx context.Context, r *ListNodesRequest) (*ListNodesResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListNodes(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListNodes(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListNodes(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListNodes(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) UpdateNode(ctx context.Context, r *UpdateNodeRequest) (*UpdateNodeResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateNode(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).UpdateNode(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateNode(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).UpdateNode(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveNode(ctx context.Context, r *RemoveNodeRequest) (*RemoveNodeResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveNode(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveNode(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveNode(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveNode(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetTask(ctx context.Context, r *GetTaskRequest) (*GetTaskResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetTask(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetTask(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetTask(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetTask(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListTasks(ctx context.Context, r *ListTasksRequest) (*ListTasksResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListTasks(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListTasks(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListTasks(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListTasks(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveTask(ctx context.Context, r *RemoveTaskRequest) (*RemoveTaskResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveTask(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveTask(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveTask(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveTask(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetService(ctx context.Context, r *GetServiceRequest) (*GetServiceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetService(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetService(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetService(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetService(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListServices(ctx context.Context, r *ListServicesRequest) (*ListServicesResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListServices(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListServices(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListServices(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListServices(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) CreateService(ctx context.Context, r *CreateServiceRequest) (*CreateServiceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.CreateService(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).CreateService(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.CreateService(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).CreateService(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) UpdateService(ctx context.Context, r *UpdateServiceRequest) (*UpdateServiceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateService(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).UpdateService(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateService(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).UpdateService(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveService(ctx context.Context, r *RemoveServiceRequest) (*RemoveServiceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveService(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveService(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveService(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveService(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListServiceStatuses(ctx context.Context, r *ListServiceStatusesRequest) (*ListServiceStatusesResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListServiceStatuses(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListServiceStatuses(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListServiceStatuses(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListServiceStatuses(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetNetwork(ctx context.Context, r *GetNetworkRequest) (*GetNetworkResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetNetwork(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetNetwork(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetNetwork(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetNetwork(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListNetworks(ctx context.Context, r *ListNetworksRequest) (*ListNetworksResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListNetworks(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListNetworks(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListNetworks(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListNetworks(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) CreateNetwork(ctx context.Context, r *CreateNetworkRequest) (*CreateNetworkResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.CreateNetwork(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).CreateNetwork(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.CreateNetwork(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).CreateNetwork(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveNetwork(ctx context.Context, r *RemoveNetworkRequest) (*RemoveNetworkResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveNetwork(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveNetwork(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveNetwork(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveNetwork(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetCluster(ctx context.Context, r *GetClusterRequest) (*GetClusterResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetCluster(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetCluster(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetCluster(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetCluster(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListClusters(ctx context.Context, r *ListClustersRequest) (*ListClustersResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListClusters(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListClusters(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListClusters(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListClusters(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) UpdateCluster(ctx context.Context, r *UpdateClusterRequest) (*UpdateClusterResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateCluster(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).UpdateCluster(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateCluster(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).UpdateCluster(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetSecret(ctx context.Context, r *GetSecretRequest) (*GetSecretResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetSecret(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetSecret(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetSecret(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetSecret(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) UpdateSecret(ctx context.Context, r *UpdateSecretRequest) (*UpdateSecretResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateSecret(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).UpdateSecret(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateSecret(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).UpdateSecret(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListSecrets(ctx context.Context, r *ListSecretsRequest) (*ListSecretsResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListSecrets(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListSecrets(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListSecrets(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListSecrets(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) CreateSecret(ctx context.Context, r *CreateSecretRequest) (*CreateSecretResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.CreateSecret(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).CreateSecret(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.CreateSecret(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).CreateSecret(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveSecret(ctx context.Context, r *RemoveSecretRequest) (*RemoveSecretResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveSecret(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveSecret(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveSecret(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveSecret(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetConfig(ctx context.Context, r *GetConfigRequest) (*GetConfigResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetConfig(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetConfig(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetConfig(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetConfig(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) UpdateConfig(ctx context.Context, r *UpdateConfigRequest) (*UpdateConfigResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateConfig(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).UpdateConfig(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateConfig(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).UpdateConfig(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListConfigs(ctx context.Context, r *ListConfigsRequest) (*ListConfigsResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListConfigs(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListConfigs(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListConfigs(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListConfigs(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) CreateConfig(ctx context.Context, r *CreateConfigRequest) (*CreateConfigResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.CreateConfig(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).CreateConfig(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.CreateConfig(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).CreateConfig(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveConfig(ctx context.Context, r *RemoveConfigRequest) (*RemoveConfigResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveConfig(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveConfig(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveConfig(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveConfig(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetExtension(ctx context.Context, r *GetExtensionRequest) (*GetExtensionResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetExtension(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetExtension(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetExtension(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetExtension(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) CreateExtension(ctx context.Context, r *CreateExtensionRequest) (*CreateExtensionResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.CreateExtension(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).CreateExtension(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.CreateExtension(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).CreateExtension(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveExtension(ctx context.Context, r *RemoveExtensionRequest) (*RemoveExtensionResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveExtension(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveExtension(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveExtension(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveExtension(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetResource(ctx context.Context, r *GetResourceRequest) (*GetResourceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetResource(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetResource(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetResource(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetResource(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) UpdateResource(ctx context.Context, r *UpdateResourceRequest) (*UpdateResourceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateResource(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).UpdateResource(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateResource(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).UpdateResource(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListResources(ctx context.Context, r *ListResourcesRequest) (*ListResourcesResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListResources(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListResources(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListResources(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListResources(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) CreateResource(ctx context.Context, r *CreateResourceRequest) (*CreateResourceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.CreateResource(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).CreateResource(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.CreateResource(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).CreateResource(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveResource(ctx context.Context, r *RemoveResourceRequest) (*RemoveResourceResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveResource(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveResource(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveResource(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveResource(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) CreateVolume(ctx context.Context, r *CreateVolumeRequest) (*CreateVolumeResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.CreateVolume(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).CreateVolume(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.CreateVolume(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).CreateVolume(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) GetVolume(ctx context.Context, r *GetVolumeRequest) (*GetVolumeResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.GetVolume(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).GetVolume(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.GetVolume(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).GetVolume(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) UpdateVolume(ctx context.Context, r *UpdateVolumeRequest) (*UpdateVolumeResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.UpdateVolume(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).UpdateVolume(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.UpdateVolume(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).UpdateVolume(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) ListVolumes(ctx context.Context, r *ListVolumesRequest) (*ListVolumesResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.ListVolumes(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).ListVolumes(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.ListVolumes(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).ListVolumes(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (p *raftProxyControlServer) RemoveVolume(ctx context.Context, r *RemoveVolumeRequest) (*RemoveVolumeResponse, error) {
-
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return nil, err
-			}
-			return p.local.RemoveVolume(ctx, r)
-		}
-		return nil, err
-	}
-	modCtx, err := p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return nil, err
-	}
-
-	resp, err := NewControlClient(conn).RemoveVolume(modCtx, r)
-	if err != nil {
-		if !strings.Contains(err.Error(), "is closing") && !strings.Contains(err.Error(), "the connection is unavailable") && !strings.Contains(err.Error(), "connection error") {
-			return resp, err
-		}
-		conn, err := p.pollNewLeaderConn(ctx)
-		if err != nil {
-			if err == raftselector.ErrIsLeader {
-				return p.local.RemoveVolume(ctx, r)
-			}
-			return nil, err
-		}
-		return NewControlClient(conn).RemoveVolume(modCtx, r)
-	}
-	return resp, err
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
-func (m *GetNodeRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.NodeID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetNodeRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetNodeResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Node != nil {
-		l = m.Node.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetNodeResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListNodesRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListNodesRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListNodesRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.Memberships) > 0 {
-		for _, e := range m.Memberships {
-			n += 1 + sovControl(uint64(e))
-		}
-	}
-	if len(m.Roles) > 0 {
-		for _, e := range m.Roles {
-			n += 1 + sovControl(uint64(e))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.NodeLabels) > 0 {
-		for k, v := range m.NodeLabels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	return n
-}
+func (m *ListNodesRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListNodesResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Nodes) > 0 {
-		for _, e := range m.Nodes {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListNodesResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateNodeRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.NodeID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.NodeVersion != nil {
-		l = m.NodeVersion.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateNodeRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateNodeResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Node != nil {
-		l = m.Node.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateNodeResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveNodeRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.NodeID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Force {
-		n += 2
-	}
-	return n
-}
+func (m *RemoveNodeRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveNodeResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveNodeResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetTaskRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.TaskID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetTaskRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetTaskResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Task != nil {
-		l = m.Task.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetTaskResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveTaskRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.TaskID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *RemoveTaskRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveTaskResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveTaskResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListTasksRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListTasksRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListTasksRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.ServiceIDs) > 0 {
-		for _, s := range m.ServiceIDs {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.NodeIDs) > 0 {
-		for _, s := range m.NodeIDs {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.DesiredStates) > 0 {
-		for _, e := range m.DesiredStates {
-			n += 1 + sovControl(uint64(e))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if m.UpToDate {
-		n += 2
-	}
-	if len(m.Runtimes) > 0 {
-		for _, s := range m.Runtimes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListTasksRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListTasksResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Tasks) > 0 {
-		for _, e := range m.Tasks {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListTasksResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateServiceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateServiceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateServiceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Service != nil {
-		l = m.Service.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateServiceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetServiceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ServiceID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.InsertDefaults {
-		n += 2
-	}
-	return n
-}
+func (m *GetServiceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetServiceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Service != nil {
-		l = m.Service.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetServiceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateServiceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ServiceID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.ServiceVersion != nil {
-		l = m.ServiceVersion.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Rollback != 0 {
-		n += 1 + sovControl(uint64(m.Rollback))
-	}
-	return n
-}
+func (m *UpdateServiceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateServiceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Service != nil {
-		l = m.Service.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateServiceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveServiceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ServiceID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *RemoveServiceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveServiceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveServiceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListServicesRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListServicesRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListServicesRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Runtimes) > 0 {
-		for _, s := range m.Runtimes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListServicesRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListServicesResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Services) > 0 {
-		for _, e := range m.Services {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListServicesResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListServiceStatusesRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Services) > 0 {
-		for _, s := range m.Services {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListServiceStatusesRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListServiceStatusesResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Statuses) > 0 {
-		for _, e := range m.Statuses {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListServiceStatusesResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
 func (m *ListServiceStatusesResponse_ServiceStatus) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ServiceID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.DesiredTasks != 0 {
-		n += 1 + sovControl(uint64(m.DesiredTasks))
-	}
-	if m.RunningTasks != 0 {
-		n += 1 + sovControl(uint64(m.RunningTasks))
-	}
-	if m.CompletedTasks != 0 {
-		n += 1 + sovControl(uint64(m.CompletedTasks))
-	}
-	return n
+	_ = "STUB: not implemented"
+	return 0
 }
 
-func (m *CreateNetworkRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateNetworkRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateNetworkResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Network != nil {
-		l = m.Network.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateNetworkResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetNetworkRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Name)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	l = len(m.NetworkID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Appdata != nil {
-		l = m.Appdata.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetNetworkRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetNetworkResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Network != nil {
-		l = m.Network.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetNetworkResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveNetworkRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Name)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	l = len(m.NetworkID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *RemoveNetworkRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveNetworkResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveNetworkResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListNetworksRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Appdata != nil {
-		l = m.Appdata.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListNetworksRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListNetworksRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListNetworksRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListNetworksResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Networks) > 0 {
-		for _, e := range m.Networks {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListNetworksResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetClusterRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ClusterID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetClusterRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetClusterResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Cluster != nil {
-		l = m.Cluster.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetClusterResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListClustersRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListClustersRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListClustersRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListClustersRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListClustersResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Clusters) > 0 {
-		for _, e := range m.Clusters {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListClustersResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *KeyRotation) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.WorkerJoinToken {
-		n += 2
-	}
-	if m.ManagerJoinToken {
-		n += 2
-	}
-	if m.ManagerUnlockKey {
-		n += 2
-	}
-	return n
-}
+func (m *KeyRotation) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateClusterRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ClusterID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.ClusterVersion != nil {
-		l = m.ClusterVersion.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	l = m.Rotation.Size()
-	n += 1 + l + sovControl(uint64(l))
-	return n
-}
+func (m *UpdateClusterRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateClusterResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Cluster != nil {
-		l = m.Cluster.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateClusterResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetSecretRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SecretID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetSecretRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetSecretResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Secret != nil {
-		l = m.Secret.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetSecretResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateSecretRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SecretID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.SecretVersion != nil {
-		l = m.SecretVersion.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateSecretRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateSecretResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Secret != nil {
-		l = m.Secret.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateSecretResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListSecretsRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListSecretsRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListSecretsRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListSecretsRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListSecretsResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Secrets) > 0 {
-		for _, e := range m.Secrets {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListSecretsResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateSecretRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateSecretRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateSecretResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Secret != nil {
-		l = m.Secret.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateSecretResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveSecretRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.SecretID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *RemoveSecretRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveSecretResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveSecretResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetConfigRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ConfigID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetConfigRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetConfigResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Config != nil {
-		l = m.Config.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetConfigResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateConfigRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ConfigID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.ConfigVersion != nil {
-		l = m.ConfigVersion.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateConfigRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateConfigResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Config != nil {
-		l = m.Config.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateConfigResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListConfigsRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListConfigsRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListConfigsRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListConfigsRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListConfigsResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Configs) > 0 {
-		for _, e := range m.Configs {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListConfigsResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateConfigRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateConfigRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateConfigResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Config != nil {
-		l = m.Config.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateConfigResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveConfigRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ConfigID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *RemoveConfigRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveConfigResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveConfigResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateExtensionRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Annotations != nil {
-		l = m.Annotations.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	l = len(m.Description)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateExtensionRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateExtensionResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Extension != nil {
-		l = m.Extension.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateExtensionResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveExtensionRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ExtensionID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *RemoveExtensionRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveExtensionResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveExtensionResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetExtensionRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ExtensionID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetExtensionRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetExtensionResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Extension != nil {
-		l = m.Extension.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetExtensionResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateResourceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Annotations != nil {
-		l = m.Annotations.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	l = len(m.Kind)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Payload != nil {
-		l = m.Payload.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateResourceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateResourceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Resource != nil {
-		l = m.Resource.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateResourceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveResourceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ResourceID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *RemoveResourceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveResourceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveResourceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateResourceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ResourceID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.ResourceVersion != nil {
-		l = m.ResourceVersion.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Annotations != nil {
-		l = m.Annotations.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Payload != nil {
-		l = m.Payload.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateResourceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateResourceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Resource != nil {
-		l = m.Resource.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateResourceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetResourceRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ResourceID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetResourceRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetResourceResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Resource != nil {
-		l = m.Resource.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetResourceResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListResourcesRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListResourcesRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListResourcesRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	l = len(m.Kind)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListResourcesRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListResourcesResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Resources) > 0 {
-		for _, e := range m.Resources {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListResourcesResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateVolumeRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateVolumeRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *CreateVolumeResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Volume != nil {
-		l = m.Volume.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *CreateVolumeResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetVolumeRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.VolumeID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetVolumeRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *GetVolumeResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Volume != nil {
-		l = m.Volume.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *GetVolumeResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateVolumeRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.VolumeID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.VolumeVersion != nil {
-		l = m.VolumeVersion.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Spec != nil {
-		l = m.Spec.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateVolumeRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *UpdateVolumeResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Volume != nil {
-		l = m.Volume.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *UpdateVolumeResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListVolumesRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Filters != nil {
-		l = m.Filters.Size()
-		n += 1 + l + sovControl(uint64(l))
-	}
-	return n
-}
+func (m *ListVolumesRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListVolumesRequest_Filters) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Names) > 0 {
-		for _, s := range m.Names {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.IDPrefixes) > 0 {
-		for _, s := range m.IDPrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Labels) > 0 {
-		for k, v := range m.Labels {
-			_ = k
-			_ = v
-			mapEntrySize := 1 + len(k) + sovControl(uint64(len(k))) + 1 + len(v) + sovControl(uint64(len(v)))
-			n += mapEntrySize + 1 + sovControl(uint64(mapEntrySize))
-		}
-	}
-	if len(m.NamePrefixes) > 0 {
-		for _, s := range m.NamePrefixes {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Groups) > 0 {
-		for _, s := range m.Groups {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	if len(m.Drivers) > 0 {
-		for _, s := range m.Drivers {
-			l = len(s)
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListVolumesRequest_Filters) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *ListVolumesResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Volumes) > 0 {
-		for _, e := range m.Volumes {
-			l = e.Size()
-			n += 1 + l + sovControl(uint64(l))
-		}
-	}
-	return n
-}
+func (m *ListVolumesResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveVolumeRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.VolumeID)
-	if l > 0 {
-		n += 1 + l + sovControl(uint64(l))
-	}
-	if m.Force {
-		n += 2
-	}
-	return n
-}
+func (m *RemoveVolumeRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *RemoveVolumeResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
+func (m *RemoveVolumeResponse) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovControl(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozControl(x uint64) (n int) {
-	return sovControl(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *GetNodeRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetNodeRequest{`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetNodeResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetNodeResponse{`,
-		`Node:` + strings.Replace(fmt.Sprintf("%v", this.Node), "Node", "Node", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListNodesRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListNodesRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListNodesRequest_Filters", "ListNodesRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListNodesRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	keysForNodeLabels := make([]string, 0, len(this.NodeLabels))
-	for k, _ := range this.NodeLabels {
-		keysForNodeLabels = append(keysForNodeLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForNodeLabels)
-	mapStringForNodeLabels := "map[string]string{"
-	for _, k := range keysForNodeLabels {
-		mapStringForNodeLabels += fmt.Sprintf("%v: %v,", k, this.NodeLabels[k])
-	}
-	mapStringForNodeLabels += "}"
-	s := strings.Join([]string{`&ListNodesRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`Memberships:` + fmt.Sprintf("%v", this.Memberships) + `,`,
-		`Roles:` + fmt.Sprintf("%v", this.Roles) + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`NodeLabels:` + mapStringForNodeLabels + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListNodesResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForNodes := "[]*Node{"
-	for _, f := range this.Nodes {
-		repeatedStringForNodes += strings.Replace(fmt.Sprintf("%v", f), "Node", "Node", 1) + ","
-	}
-	repeatedStringForNodes += "}"
-	s := strings.Join([]string{`&ListNodesResponse{`,
-		`Nodes:` + repeatedStringForNodes + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateNodeRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateNodeRequest{`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`NodeVersion:` + strings.Replace(fmt.Sprintf("%v", this.NodeVersion), "Version", "Version", 1) + `,`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "NodeSpec", "NodeSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateNodeResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateNodeResponse{`,
-		`Node:` + strings.Replace(fmt.Sprintf("%v", this.Node), "Node", "Node", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveNodeRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveNodeRequest{`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`Force:` + fmt.Sprintf("%v", this.Force) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveNodeResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveNodeResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetTaskRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetTaskRequest{`,
-		`TaskID:` + fmt.Sprintf("%v", this.TaskID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetTaskResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetTaskResponse{`,
-		`Task:` + strings.Replace(fmt.Sprintf("%v", this.Task), "Task", "Task", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveTaskRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveTaskRequest{`,
-		`TaskID:` + fmt.Sprintf("%v", this.TaskID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveTaskResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveTaskResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListTasksRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListTasksRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListTasksRequest_Filters", "ListTasksRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListTasksRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListTasksRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`ServiceIDs:` + fmt.Sprintf("%v", this.ServiceIDs) + `,`,
-		`NodeIDs:` + fmt.Sprintf("%v", this.NodeIDs) + `,`,
-		`DesiredStates:` + fmt.Sprintf("%v", this.DesiredStates) + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`UpToDate:` + fmt.Sprintf("%v", this.UpToDate) + `,`,
-		`Runtimes:` + fmt.Sprintf("%v", this.Runtimes) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListTasksResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForTasks := "[]*Task{"
-	for _, f := range this.Tasks {
-		repeatedStringForTasks += strings.Replace(fmt.Sprintf("%v", f), "Task", "Task", 1) + ","
-	}
-	repeatedStringForTasks += "}"
-	s := strings.Join([]string{`&ListTasksResponse{`,
-		`Tasks:` + repeatedStringForTasks + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateServiceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateServiceRequest{`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "ServiceSpec", "ServiceSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateServiceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateServiceResponse{`,
-		`Service:` + strings.Replace(fmt.Sprintf("%v", this.Service), "Service", "Service", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetServiceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetServiceRequest{`,
-		`ServiceID:` + fmt.Sprintf("%v", this.ServiceID) + `,`,
-		`InsertDefaults:` + fmt.Sprintf("%v", this.InsertDefaults) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetServiceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetServiceResponse{`,
-		`Service:` + strings.Replace(fmt.Sprintf("%v", this.Service), "Service", "Service", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateServiceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateServiceRequest{`,
-		`ServiceID:` + fmt.Sprintf("%v", this.ServiceID) + `,`,
-		`ServiceVersion:` + strings.Replace(fmt.Sprintf("%v", this.ServiceVersion), "Version", "Version", 1) + `,`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "ServiceSpec", "ServiceSpec", 1) + `,`,
-		`Rollback:` + fmt.Sprintf("%v", this.Rollback) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateServiceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateServiceResponse{`,
-		`Service:` + strings.Replace(fmt.Sprintf("%v", this.Service), "Service", "Service", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveServiceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveServiceRequest{`,
-		`ServiceID:` + fmt.Sprintf("%v", this.ServiceID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveServiceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveServiceResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListServicesRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListServicesRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListServicesRequest_Filters", "ListServicesRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListServicesRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListServicesRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`Runtimes:` + fmt.Sprintf("%v", this.Runtimes) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListServicesResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForServices := "[]*Service{"
-	for _, f := range this.Services {
-		repeatedStringForServices += strings.Replace(fmt.Sprintf("%v", f), "Service", "Service", 1) + ","
-	}
-	repeatedStringForServices += "}"
-	s := strings.Join([]string{`&ListServicesResponse{`,
-		`Services:` + repeatedStringForServices + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListServiceStatusesRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListServiceStatusesRequest{`,
-		`Services:` + fmt.Sprintf("%v", this.Services) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListServiceStatusesResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForStatuses := "[]*ListServiceStatusesResponse_ServiceStatus{"
-	for _, f := range this.Statuses {
-		repeatedStringForStatuses += strings.Replace(fmt.Sprintf("%v", f), "ListServiceStatusesResponse_ServiceStatus", "ListServiceStatusesResponse_ServiceStatus", 1) + ","
-	}
-	repeatedStringForStatuses += "}"
-	s := strings.Join([]string{`&ListServiceStatusesResponse{`,
-		`Statuses:` + repeatedStringForStatuses + `,`,
-		`}`,
-	}, "")
-	return s
-}
+func sovControl(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sozControl(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (this *GetNodeRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetNodeResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListNodesRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListNodesRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListNodesResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateNodeRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateNodeResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveNodeRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveNodeResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetTaskRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetTaskResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveTaskRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveTaskResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListTasksRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListTasksRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListTasksResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateServiceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateServiceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetServiceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetServiceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateServiceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateServiceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveServiceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveServiceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListServicesRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListServicesRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListServicesResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListServiceStatusesRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListServiceStatusesResponse) String() string { _ = "STUB: not implemented"; return "" }
+
 func (this *ListServiceStatusesResponse_ServiceStatus) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListServiceStatusesResponse_ServiceStatus{`,
-		`ServiceID:` + fmt.Sprintf("%v", this.ServiceID) + `,`,
-		`DesiredTasks:` + fmt.Sprintf("%v", this.DesiredTasks) + `,`,
-		`RunningTasks:` + fmt.Sprintf("%v", this.RunningTasks) + `,`,
-		`CompletedTasks:` + fmt.Sprintf("%v", this.CompletedTasks) + `,`,
-		`}`,
-	}, "")
-	return s
+	_ = "STUB: not implemented"
+	return ""
 }
-func (this *CreateNetworkRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateNetworkRequest{`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "NetworkSpec", "NetworkSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateNetworkResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateNetworkResponse{`,
-		`Network:` + strings.Replace(fmt.Sprintf("%v", this.Network), "Network", "Network", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetNetworkRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetNetworkRequest{`,
-		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
-		`NetworkID:` + fmt.Sprintf("%v", this.NetworkID) + `,`,
-		`Appdata:` + strings.Replace(fmt.Sprintf("%v", this.Appdata), "Any", "types.Any", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetNetworkResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetNetworkResponse{`,
-		`Network:` + strings.Replace(fmt.Sprintf("%v", this.Network), "Network", "Network", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveNetworkRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveNetworkRequest{`,
-		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
-		`NetworkID:` + fmt.Sprintf("%v", this.NetworkID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveNetworkResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveNetworkResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListNetworksRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListNetworksRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListNetworksRequest_Filters", "ListNetworksRequest_Filters", 1) + `,`,
-		`Appdata:` + strings.Replace(fmt.Sprintf("%v", this.Appdata), "Any", "types.Any", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListNetworksRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListNetworksRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListNetworksResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForNetworks := "[]*Network{"
-	for _, f := range this.Networks {
-		repeatedStringForNetworks += strings.Replace(fmt.Sprintf("%v", f), "Network", "Network", 1) + ","
-	}
-	repeatedStringForNetworks += "}"
-	s := strings.Join([]string{`&ListNetworksResponse{`,
-		`Networks:` + repeatedStringForNetworks + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetClusterRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetClusterRequest{`,
-		`ClusterID:` + fmt.Sprintf("%v", this.ClusterID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetClusterResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetClusterResponse{`,
-		`Cluster:` + strings.Replace(fmt.Sprintf("%v", this.Cluster), "Cluster", "Cluster", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListClustersRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListClustersRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListClustersRequest_Filters", "ListClustersRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListClustersRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListClustersRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListClustersResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForClusters := "[]*Cluster{"
-	for _, f := range this.Clusters {
-		repeatedStringForClusters += strings.Replace(fmt.Sprintf("%v", f), "Cluster", "Cluster", 1) + ","
-	}
-	repeatedStringForClusters += "}"
-	s := strings.Join([]string{`&ListClustersResponse{`,
-		`Clusters:` + repeatedStringForClusters + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *KeyRotation) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&KeyRotation{`,
-		`WorkerJoinToken:` + fmt.Sprintf("%v", this.WorkerJoinToken) + `,`,
-		`ManagerJoinToken:` + fmt.Sprintf("%v", this.ManagerJoinToken) + `,`,
-		`ManagerUnlockKey:` + fmt.Sprintf("%v", this.ManagerUnlockKey) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateClusterRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateClusterRequest{`,
-		`ClusterID:` + fmt.Sprintf("%v", this.ClusterID) + `,`,
-		`ClusterVersion:` + strings.Replace(fmt.Sprintf("%v", this.ClusterVersion), "Version", "Version", 1) + `,`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "ClusterSpec", "ClusterSpec", 1) + `,`,
-		`Rotation:` + strings.Replace(strings.Replace(this.Rotation.String(), "KeyRotation", "KeyRotation", 1), `&`, ``, 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateClusterResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateClusterResponse{`,
-		`Cluster:` + strings.Replace(fmt.Sprintf("%v", this.Cluster), "Cluster", "Cluster", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetSecretRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetSecretRequest{`,
-		`SecretID:` + fmt.Sprintf("%v", this.SecretID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetSecretResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetSecretResponse{`,
-		`Secret:` + strings.Replace(fmt.Sprintf("%v", this.Secret), "Secret", "Secret", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateSecretRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateSecretRequest{`,
-		`SecretID:` + fmt.Sprintf("%v", this.SecretID) + `,`,
-		`SecretVersion:` + strings.Replace(fmt.Sprintf("%v", this.SecretVersion), "Version", "Version", 1) + `,`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "SecretSpec", "SecretSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateSecretResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateSecretResponse{`,
-		`Secret:` + strings.Replace(fmt.Sprintf("%v", this.Secret), "Secret", "Secret", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListSecretsRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListSecretsRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListSecretsRequest_Filters", "ListSecretsRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListSecretsRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListSecretsRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListSecretsResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForSecrets := "[]*Secret{"
-	for _, f := range this.Secrets {
-		repeatedStringForSecrets += strings.Replace(fmt.Sprintf("%v", f), "Secret", "Secret", 1) + ","
-	}
-	repeatedStringForSecrets += "}"
-	s := strings.Join([]string{`&ListSecretsResponse{`,
-		`Secrets:` + repeatedStringForSecrets + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateSecretRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateSecretRequest{`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "SecretSpec", "SecretSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateSecretResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateSecretResponse{`,
-		`Secret:` + strings.Replace(fmt.Sprintf("%v", this.Secret), "Secret", "Secret", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveSecretRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveSecretRequest{`,
-		`SecretID:` + fmt.Sprintf("%v", this.SecretID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveSecretResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveSecretResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetConfigRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetConfigRequest{`,
-		`ConfigID:` + fmt.Sprintf("%v", this.ConfigID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetConfigResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetConfigResponse{`,
-		`Config:` + strings.Replace(fmt.Sprintf("%v", this.Config), "Config", "Config", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateConfigRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateConfigRequest{`,
-		`ConfigID:` + fmt.Sprintf("%v", this.ConfigID) + `,`,
-		`ConfigVersion:` + strings.Replace(fmt.Sprintf("%v", this.ConfigVersion), "Version", "Version", 1) + `,`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "ConfigSpec", "ConfigSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateConfigResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateConfigResponse{`,
-		`Config:` + strings.Replace(fmt.Sprintf("%v", this.Config), "Config", "Config", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListConfigsRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListConfigsRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListConfigsRequest_Filters", "ListConfigsRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListConfigsRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListConfigsRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListConfigsResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForConfigs := "[]*Config{"
-	for _, f := range this.Configs {
-		repeatedStringForConfigs += strings.Replace(fmt.Sprintf("%v", f), "Config", "Config", 1) + ","
-	}
-	repeatedStringForConfigs += "}"
-	s := strings.Join([]string{`&ListConfigsResponse{`,
-		`Configs:` + repeatedStringForConfigs + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateConfigRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateConfigRequest{`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "ConfigSpec", "ConfigSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateConfigResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateConfigResponse{`,
-		`Config:` + strings.Replace(fmt.Sprintf("%v", this.Config), "Config", "Config", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveConfigRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveConfigRequest{`,
-		`ConfigID:` + fmt.Sprintf("%v", this.ConfigID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveConfigResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveConfigResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateExtensionRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateExtensionRequest{`,
-		`Annotations:` + strings.Replace(fmt.Sprintf("%v", this.Annotations), "Annotations", "Annotations", 1) + `,`,
-		`Description:` + fmt.Sprintf("%v", this.Description) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateExtensionResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateExtensionResponse{`,
-		`Extension:` + strings.Replace(fmt.Sprintf("%v", this.Extension), "Extension", "Extension", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveExtensionRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveExtensionRequest{`,
-		`ExtensionID:` + fmt.Sprintf("%v", this.ExtensionID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveExtensionResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveExtensionResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetExtensionRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetExtensionRequest{`,
-		`ExtensionID:` + fmt.Sprintf("%v", this.ExtensionID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetExtensionResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetExtensionResponse{`,
-		`Extension:` + strings.Replace(fmt.Sprintf("%v", this.Extension), "Extension", "Extension", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateResourceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateResourceRequest{`,
-		`Annotations:` + strings.Replace(fmt.Sprintf("%v", this.Annotations), "Annotations", "Annotations", 1) + `,`,
-		`Kind:` + fmt.Sprintf("%v", this.Kind) + `,`,
-		`Payload:` + strings.Replace(fmt.Sprintf("%v", this.Payload), "Any", "types.Any", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateResourceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateResourceResponse{`,
-		`Resource:` + strings.Replace(fmt.Sprintf("%v", this.Resource), "Resource", "Resource", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveResourceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveResourceRequest{`,
-		`ResourceID:` + fmt.Sprintf("%v", this.ResourceID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveResourceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveResourceResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateResourceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateResourceRequest{`,
-		`ResourceID:` + fmt.Sprintf("%v", this.ResourceID) + `,`,
-		`ResourceVersion:` + strings.Replace(fmt.Sprintf("%v", this.ResourceVersion), "Version", "Version", 1) + `,`,
-		`Annotations:` + strings.Replace(fmt.Sprintf("%v", this.Annotations), "Annotations", "Annotations", 1) + `,`,
-		`Payload:` + strings.Replace(fmt.Sprintf("%v", this.Payload), "Any", "types.Any", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateResourceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateResourceResponse{`,
-		`Resource:` + strings.Replace(fmt.Sprintf("%v", this.Resource), "Resource", "Resource", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetResourceRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetResourceRequest{`,
-		`ResourceID:` + fmt.Sprintf("%v", this.ResourceID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetResourceResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetResourceResponse{`,
-		`Resource:` + strings.Replace(fmt.Sprintf("%v", this.Resource), "Resource", "Resource", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListResourcesRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListResourcesRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListResourcesRequest_Filters", "ListResourcesRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListResourcesRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListResourcesRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`Kind:` + fmt.Sprintf("%v", this.Kind) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListResourcesResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForResources := "[]*Resource{"
-	for _, f := range this.Resources {
-		repeatedStringForResources += strings.Replace(fmt.Sprintf("%v", f), "Resource", "Resource", 1) + ","
-	}
-	repeatedStringForResources += "}"
-	s := strings.Join([]string{`&ListResourcesResponse{`,
-		`Resources:` + repeatedStringForResources + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateVolumeRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateVolumeRequest{`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "VolumeSpec", "VolumeSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *CreateVolumeResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&CreateVolumeResponse{`,
-		`Volume:` + strings.Replace(fmt.Sprintf("%v", this.Volume), "Volume", "Volume", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetVolumeRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetVolumeRequest{`,
-		`VolumeID:` + fmt.Sprintf("%v", this.VolumeID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *GetVolumeResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&GetVolumeResponse{`,
-		`Volume:` + strings.Replace(fmt.Sprintf("%v", this.Volume), "Volume", "Volume", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateVolumeRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateVolumeRequest{`,
-		`VolumeID:` + fmt.Sprintf("%v", this.VolumeID) + `,`,
-		`VolumeVersion:` + strings.Replace(fmt.Sprintf("%v", this.VolumeVersion), "Version", "Version", 1) + `,`,
-		`Spec:` + strings.Replace(fmt.Sprintf("%v", this.Spec), "VolumeSpec", "VolumeSpec", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *UpdateVolumeResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&UpdateVolumeResponse{`,
-		`Volume:` + strings.Replace(fmt.Sprintf("%v", this.Volume), "Volume", "Volume", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListVolumesRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&ListVolumesRequest{`,
-		`Filters:` + strings.Replace(fmt.Sprintf("%v", this.Filters), "ListVolumesRequest_Filters", "ListVolumesRequest_Filters", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListVolumesRequest_Filters) String() string {
-	if this == nil {
-		return "nil"
-	}
-	keysForLabels := make([]string, 0, len(this.Labels))
-	for k, _ := range this.Labels {
-		keysForLabels = append(keysForLabels, k)
-	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForLabels)
-	mapStringForLabels := "map[string]string{"
-	for _, k := range keysForLabels {
-		mapStringForLabels += fmt.Sprintf("%v: %v,", k, this.Labels[k])
-	}
-	mapStringForLabels += "}"
-	s := strings.Join([]string{`&ListVolumesRequest_Filters{`,
-		`Names:` + fmt.Sprintf("%v", this.Names) + `,`,
-		`IDPrefixes:` + fmt.Sprintf("%v", this.IDPrefixes) + `,`,
-		`Labels:` + mapStringForLabels + `,`,
-		`NamePrefixes:` + fmt.Sprintf("%v", this.NamePrefixes) + `,`,
-		`Groups:` + fmt.Sprintf("%v", this.Groups) + `,`,
-		`Drivers:` + fmt.Sprintf("%v", this.Drivers) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ListVolumesResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForVolumes := "[]*Volume{"
-	for _, f := range this.Volumes {
-		repeatedStringForVolumes += strings.Replace(fmt.Sprintf("%v", f), "Volume", "Volume", 1) + ","
-	}
-	repeatedStringForVolumes += "}"
-	s := strings.Join([]string{`&ListVolumesResponse{`,
-		`Volumes:` + repeatedStringForVolumes + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveVolumeRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveVolumeRequest{`,
-		`VolumeID:` + fmt.Sprintf("%v", this.VolumeID) + `,`,
-		`Force:` + fmt.Sprintf("%v", this.Force) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *RemoveVolumeResponse) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&RemoveVolumeResponse{`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringControl(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *GetNodeRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetNodeRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetNodeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetNodeResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetNodeResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetNodeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Node", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Node == nil {
-				m.Node = &Node{}
-			}
-			if err := m.Node.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *CreateNetworkRequest) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListNodesRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListNodesRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListNodesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListNodesRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (this *CreateNetworkResponse) String() string { _ = "STUB: not implemented"; return "" }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (this *GetNetworkRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetNetworkResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveNetworkRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveNetworkResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListNetworksRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListNetworksRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListNetworksResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetClusterRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetClusterResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListClustersRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListClustersRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListClustersResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *KeyRotation) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateClusterRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateClusterResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetSecretRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetSecretResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateSecretRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateSecretResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListSecretsRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListSecretsRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListSecretsResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateSecretRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateSecretResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveSecretRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveSecretResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetConfigRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetConfigResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateConfigRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateConfigResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListConfigsRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListConfigsRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListConfigsResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateConfigRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateConfigResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveConfigRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveConfigResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateExtensionRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateExtensionResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveExtensionRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveExtensionResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetExtensionRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetExtensionResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateResourceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateResourceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveResourceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveResourceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateResourceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateResourceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetResourceRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetResourceResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListResourcesRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListResourcesRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListResourcesResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateVolumeRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *CreateVolumeResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetVolumeRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *GetVolumeResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateVolumeRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *UpdateVolumeResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListVolumesRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListVolumesRequest_Filters) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ListVolumesResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveVolumeRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *RemoveVolumeResponse) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringControl(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *GetNodeRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *GetNodeResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *ListNodesRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListNodesRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType == 0 {
-				var v NodeSpec_Membership
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= NodeSpec_Membership(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.Memberships = append(m.Memberships, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthControl
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthControl
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				if elementCount != 0 && len(m.Memberships) == 0 {
-					m.Memberships = make([]NodeSpec_Membership, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v NodeSpec_Membership
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= NodeSpec_Membership(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.Memberships = append(m.Memberships, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field Memberships", wireType)
-			}
-		case 5:
-			if wireType == 0 {
-				var v NodeRole
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= NodeRole(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.Roles = append(m.Roles, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthControl
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthControl
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				if elementCount != 0 && len(m.Roles) == 0 {
-					m.Roles = make([]NodeRole, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v NodeRole
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= NodeRole(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.Roles = append(m.Roles, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field Roles", wireType)
-			}
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeLabels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.NodeLabels == nil {
-				m.NodeLabels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.NodeLabels[mapkey] = mapvalue
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListNodesResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListNodesResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListNodesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Nodes", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Nodes = append(m.Nodes, &Node{})
-			if err := m.Nodes[len(m.Nodes)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateNodeRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateNodeRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateNodeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeVersion", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.NodeVersion == nil {
-				m.NodeVersion = &Version{}
-			}
-			if err := m.NodeVersion.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &NodeSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListNodesResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateNodeResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateNodeResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateNodeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Node", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Node == nil {
-				m.Node = &Node{}
-			}
-			if err := m.Node.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateNodeRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveNodeRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveNodeRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveNodeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Force", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Force = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateNodeResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveNodeResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveNodeResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveNodeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveNodeRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetTaskRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetTaskRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetTaskRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field TaskID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.TaskID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveNodeResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetTaskResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetTaskResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetTaskResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Task", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Task == nil {
-				m.Task = &Task{}
-			}
-			if err := m.Task.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetTaskRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveTaskRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveTaskRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveTaskRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field TaskID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.TaskID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetTaskResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveTaskResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveTaskResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveTaskResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveTaskRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListTasksRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListTasksRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListTasksRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListTasksRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveTaskResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListTasksRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListTasksRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceIDs", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceIDs = append(m.ServiceIDs, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeIDs", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NodeIDs = append(m.NodeIDs, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 6:
-			if wireType == 0 {
-				var v TaskState
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= TaskState(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.DesiredStates = append(m.DesiredStates, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthControl
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthControl
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				if elementCount != 0 && len(m.DesiredStates) == 0 {
-					m.DesiredStates = make([]TaskState, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v TaskState
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= TaskState(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.DesiredStates = append(m.DesiredStates, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field DesiredStates", wireType)
-			}
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 8:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field UpToDate", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.UpToDate = bool(v != 0)
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Runtimes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Runtimes = append(m.Runtimes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListTasksResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListTasksResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListTasksResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tasks", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Tasks = append(m.Tasks, &Task{})
-			if err := m.Tasks[len(m.Tasks)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateServiceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateServiceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateServiceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &ServiceSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListTasksResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateServiceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateServiceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateServiceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Service", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Service == nil {
-				m.Service = &Service{}
-			}
-			if err := m.Service.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateServiceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetServiceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetServiceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetServiceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field InsertDefaults", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.InsertDefaults = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateServiceResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetServiceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetServiceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetServiceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Service", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Service == nil {
-				m.Service = &Service{}
-			}
-			if err := m.Service.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetServiceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateServiceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateServiceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateServiceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceVersion", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.ServiceVersion == nil {
-				m.ServiceVersion = &Version{}
-			}
-			if err := m.ServiceVersion.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &ServiceSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Rollback", wireType)
-			}
-			m.Rollback = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Rollback |= UpdateServiceRequest_Rollback(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetServiceResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateServiceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateServiceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateServiceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Service", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Service == nil {
-				m.Service = &Service{}
-			}
-			if err := m.Service.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateServiceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveServiceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveServiceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveServiceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateServiceResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveServiceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveServiceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveServiceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveServiceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListServicesRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListServicesRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListServicesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListServicesRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveServiceResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListServicesRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListServicesRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Runtimes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Runtimes = append(m.Runtimes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListServicesResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListServicesResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListServicesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Services", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Services = append(m.Services, &Service{})
-			if err := m.Services[len(m.Services)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListServicesResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListServiceStatusesRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListServiceStatusesRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListServiceStatusesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Services", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Services = append(m.Services, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *ListServiceStatusesResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListServiceStatusesResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListServiceStatusesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Statuses", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Statuses = append(m.Statuses, &ListServiceStatusesResponse_ServiceStatus{})
-			if err := m.Statuses[len(m.Statuses)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *ListServiceStatusesResponse_ServiceStatus) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ServiceStatus: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ServiceStatus: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DesiredTasks", wireType)
-			}
-			m.DesiredTasks = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.DesiredTasks |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RunningTasks", wireType)
-			}
-			m.RunningTasks = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.RunningTasks |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 4:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CompletedTasks", wireType)
-			}
-			m.CompletedTasks = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.CompletedTasks |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *CreateNetworkRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateNetworkRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateNetworkRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &NetworkSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateNetworkResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateNetworkResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateNetworkResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Network", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Network == nil {
-				m.Network = &Network{}
-			}
-			if err := m.Network.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateNetworkRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetNetworkRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetNetworkRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetNetworkRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Name = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NetworkID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NetworkID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Appdata", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Appdata == nil {
-				m.Appdata = &types.Any{}
-			}
-			if err := m.Appdata.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateNetworkResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetNetworkResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetNetworkResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetNetworkResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Network", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Network == nil {
-				m.Network = &Network{}
-			}
-			if err := m.Network.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetNetworkRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveNetworkRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveNetworkRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveNetworkRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Name = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NetworkID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NetworkID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetNetworkResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveNetworkResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveNetworkResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveNetworkResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveNetworkRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListNetworksRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListNetworksRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListNetworksRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListNetworksRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Appdata", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Appdata == nil {
-				m.Appdata = &types.Any{}
-			}
-			if err := m.Appdata.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveNetworkResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListNetworksRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListNetworksRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListNetworksResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListNetworksResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListNetworksResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Networks", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Networks = append(m.Networks, &Network{})
-			if err := m.Networks[len(m.Networks)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetClusterRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetClusterRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetClusterRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ClusterID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ClusterID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListNetworksResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetClusterResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetClusterResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetClusterResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Cluster", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Cluster == nil {
-				m.Cluster = &Cluster{}
-			}
-			if err := m.Cluster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetClusterRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListClustersRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListClustersRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListClustersRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListClustersRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetClusterResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListClustersRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListClustersRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListClustersResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListClustersResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListClustersResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Clusters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Clusters = append(m.Clusters, &Cluster{})
-			if err := m.Clusters[len(m.Clusters)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *KeyRotation) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: KeyRotation: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: KeyRotation: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field WorkerJoinToken", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.WorkerJoinToken = bool(v != 0)
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ManagerJoinToken", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.ManagerJoinToken = bool(v != 0)
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ManagerUnlockKey", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.ManagerUnlockKey = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListClustersResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateClusterRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateClusterRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateClusterRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ClusterID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ClusterID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ClusterVersion", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.ClusterVersion == nil {
-				m.ClusterVersion = &Version{}
-			}
-			if err := m.ClusterVersion.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &ClusterSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Rotation", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Rotation.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *KeyRotation) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateClusterResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateClusterResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateClusterResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Cluster", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Cluster == nil {
-				m.Cluster = &Cluster{}
-			}
-			if err := m.Cluster.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateClusterRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetSecretRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetSecretRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetSecretRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SecretID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SecretID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateClusterResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetSecretResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetSecretResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetSecretResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secret", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Secret == nil {
-				m.Secret = &Secret{}
-			}
-			if err := m.Secret.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetSecretRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateSecretRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateSecretRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateSecretRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SecretID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SecretID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SecretVersion", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.SecretVersion == nil {
-				m.SecretVersion = &Version{}
-			}
-			if err := m.SecretVersion.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &SecretSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetSecretResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateSecretResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateSecretResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateSecretResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secret", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Secret == nil {
-				m.Secret = &Secret{}
-			}
-			if err := m.Secret.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateSecretRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListSecretsRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListSecretsRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListSecretsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListSecretsRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateSecretResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListSecretsRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListSecretsRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListSecretsResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListSecretsResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListSecretsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secrets", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Secrets = append(m.Secrets, &Secret{})
-			if err := m.Secrets[len(m.Secrets)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateSecretRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateSecretRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateSecretRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &SecretSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListSecretsResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateSecretResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateSecretResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateSecretResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secret", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Secret == nil {
-				m.Secret = &Secret{}
-			}
-			if err := m.Secret.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateSecretRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveSecretRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveSecretRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveSecretRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SecretID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SecretID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateSecretResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveSecretResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveSecretResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveSecretResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveSecretRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetConfigRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetConfigRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetConfigRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ConfigID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ConfigID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveSecretResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetConfigResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetConfigResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetConfigResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Config", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Config == nil {
-				m.Config = &Config{}
-			}
-			if err := m.Config.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetConfigRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateConfigRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateConfigRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateConfigRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ConfigID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ConfigID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ConfigVersion", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.ConfigVersion == nil {
-				m.ConfigVersion = &Version{}
-			}
-			if err := m.ConfigVersion.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &ConfigSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetConfigResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateConfigResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateConfigResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateConfigResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Config", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Config == nil {
-				m.Config = &Config{}
-			}
-			if err := m.Config.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateConfigRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListConfigsRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListConfigsRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListConfigsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListConfigsRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateConfigResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListConfigsRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListConfigsRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListConfigsResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListConfigsResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListConfigsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Configs", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Configs = append(m.Configs, &Config{})
-			if err := m.Configs[len(m.Configs)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateConfigRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateConfigRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateConfigRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &ConfigSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListConfigsResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateConfigResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateConfigResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateConfigResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Config", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Config == nil {
-				m.Config = &Config{}
-			}
-			if err := m.Config.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateConfigRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveConfigRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveConfigRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveConfigRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ConfigID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ConfigID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateConfigResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveConfigResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveConfigResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveConfigResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveConfigRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *RemoveConfigResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateExtensionRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateExtensionRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateExtensionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Annotations", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Annotations == nil {
-				m.Annotations = &Annotations{}
-			}
-			if err := m.Annotations.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Description", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Description = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *CreateExtensionResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateExtensionResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateExtensionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Extension", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Extension == nil {
-				m.Extension = &Extension{}
-			}
-			if err := m.Extension.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *RemoveExtensionRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveExtensionRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveExtensionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ExtensionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ExtensionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
+
 func (m *RemoveExtensionResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveExtensionResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveExtensionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *GetExtensionRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetExtensionRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetExtensionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ExtensionID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ExtensionID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetExtensionResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetExtensionResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetExtensionResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Extension", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Extension == nil {
-				m.Extension = &Extension{}
-			}
-			if err := m.Extension.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetExtensionRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateResourceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateResourceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateResourceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Annotations", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Annotations == nil {
-				m.Annotations = &Annotations{}
-			}
-			if err := m.Annotations.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Kind", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Kind = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Payload", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Payload == nil {
-				m.Payload = &types.Any{}
-			}
-			if err := m.Payload.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetExtensionResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *CreateResourceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *CreateResourceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateResourceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateResourceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Resource", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Resource == nil {
-				m.Resource = &Resource{}
-			}
-			if err := m.Resource.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *RemoveResourceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveResourceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveResourceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ResourceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ResourceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *RemoveResourceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *RemoveResourceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveResourceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveResourceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *UpdateResourceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateResourceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateResourceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ResourceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ResourceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ResourceVersion", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.ResourceVersion == nil {
-				m.ResourceVersion = &Version{}
-			}
-			if err := m.ResourceVersion.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Annotations", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Annotations == nil {
-				m.Annotations = &Annotations{}
-			}
-			if err := m.Annotations.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Payload", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Payload == nil {
-				m.Payload = &types.Any{}
-			}
-			if err := m.Payload.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *UpdateResourceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *UpdateResourceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateResourceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateResourceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Resource", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Resource == nil {
-				m.Resource = &Resource{}
-			}
-			if err := m.Resource.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *GetResourceRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetResourceRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetResourceRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ResourceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ResourceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetResourceResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetResourceResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetResourceResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Resource", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Resource == nil {
-				m.Resource = &Resource{}
-			}
-			if err := m.Resource.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetResourceRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListResourcesRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListResourcesRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListResourcesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListResourcesRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetResourceResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListResourcesRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListResourcesRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Kind", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Kind = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListResourcesResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListResourcesResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListResourcesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Resources", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Resources = append(m.Resources, &Resource{})
-			if err := m.Resources[len(m.Resources)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateVolumeRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateVolumeRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateVolumeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &VolumeSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListResourcesResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *CreateVolumeResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: CreateVolumeResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: CreateVolumeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volume", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Volume == nil {
-				m.Volume = &Volume{}
-			}
-			if err := m.Volume.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateVolumeRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetVolumeRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetVolumeRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetVolumeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VolumeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.VolumeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *CreateVolumeResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *GetVolumeResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: GetVolumeResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: GetVolumeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volume", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Volume == nil {
-				m.Volume = &Volume{}
-			}
-			if err := m.Volume.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetVolumeRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateVolumeRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateVolumeRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateVolumeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VolumeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.VolumeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VolumeVersion", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.VolumeVersion == nil {
-				m.VolumeVersion = &Version{}
-			}
-			if err := m.VolumeVersion.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Spec", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Spec == nil {
-				m.Spec = &VolumeSpec{}
-			}
-			if err := m.Spec.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *GetVolumeResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *UpdateVolumeResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: UpdateVolumeResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: UpdateVolumeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volume", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Volume == nil {
-				m.Volume = &Volume{}
-			}
-			if err := m.Volume.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateVolumeRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ListVolumesRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListVolumesRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListVolumesRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Filters == nil {
-				m.Filters = &ListVolumesRequest_Filters{}
-			}
-			if err := m.Filters.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *UpdateVolumeResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *ListVolumesRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ListVolumesRequest_Filters) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Filters: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Filters: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Names", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Names = append(m.Names, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.IDPrefixes = append(m.IDPrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Labels", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Labels == nil {
-				m.Labels = make(map[string]string)
-			}
-			var mapkey string
-			var mapvalue string
-			for iNdEx < postIndex {
-				entryPreIndex := iNdEx
-				var wire uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowControl
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					wire |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				fieldNum := int32(wire >> 3)
-				if fieldNum == 1 {
-					var stringLenmapkey uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapkey |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapkey := int(stringLenmapkey)
-					if intStringLenmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapkey := iNdEx + intStringLenmapkey
-					if postStringIndexmapkey < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapkey > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapkey = string(dAtA[iNdEx:postStringIndexmapkey])
-					iNdEx = postStringIndexmapkey
-				} else if fieldNum == 2 {
-					var stringLenmapvalue uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowControl
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						stringLenmapvalue |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					intStringLenmapvalue := int(stringLenmapvalue)
-					if intStringLenmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					postStringIndexmapvalue := iNdEx + intStringLenmapvalue
-					if postStringIndexmapvalue < 0 {
-						return ErrInvalidLengthControl
-					}
-					if postStringIndexmapvalue > l {
-						return io.ErrUnexpectedEOF
-					}
-					mapvalue = string(dAtA[iNdEx:postStringIndexmapvalue])
-					iNdEx = postStringIndexmapvalue
-				} else {
-					iNdEx = entryPreIndex
-					skippy, err := skipControl(dAtA[iNdEx:])
-					if err != nil {
-						return err
-					}
-					if (skippy < 0) || (iNdEx+skippy) < 0 {
-						return ErrInvalidLengthControl
-					}
-					if (iNdEx + skippy) > postIndex {
-						return io.ErrUnexpectedEOF
-					}
-					iNdEx += skippy
-				}
-			}
-			m.Labels[mapkey] = mapvalue
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefixes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.NamePrefixes = append(m.NamePrefixes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Groups", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Groups = append(m.Groups, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Drivers", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Drivers = append(m.Drivers, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *ListVolumesResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ListVolumesResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListVolumesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volumes", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Volumes = append(m.Volumes, &Volume{})
-			if err := m.Volumes[len(m.Volumes)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveVolumeRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveVolumeRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveVolumeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VolumeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthControl
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthControl
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.VolumeID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Force", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.Force = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *ListVolumesResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *RemoveVolumeResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: RemoveVolumeResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: RemoveVolumeResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipControl(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthControl
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *RemoveVolumeRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipControl(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowControl
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowControl
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthControl
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupControl
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthControl
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (m *RemoveVolumeResponse) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipControl(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthControl        = fmt.Errorf("proto: negative length found during unmarshaling")

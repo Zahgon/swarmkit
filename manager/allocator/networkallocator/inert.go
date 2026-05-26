@@ -4,8 +4,6 @@ import (
 	"errors"
 
 	"github.com/moby/swarmkit/v2/api"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 )
 
 // InertProvider is a network allocator [Provider] which does not allocate networks.
@@ -15,41 +13,39 @@ var _ Provider = InertProvider{}
 
 // NewAllocator returns an instance of [Inert].
 func (InertProvider) NewAllocator(*Config) (NetworkAllocator, error) {
-	return Inert{}, nil
+	_ = "STUB: not implemented"
+	return *
+
+	// PredefinedNetworks returns a nil slice.
+	new(NetworkAllocator), nil
 }
 
-// PredefinedNetworks returns a nil slice.
 func (InertProvider) PredefinedNetworks() []PredefinedNetworkData {
+	_ = "STUB: not implemented"
+
+	// SetDefaultVXLANUDPPort is a no-op.
 	return nil
 }
 
-// SetDefaultVXLANUDPPort is a no-op.
 func (InertProvider) SetDefaultVXLANUDPPort(uint32) error {
+	_ = "STUB: not implemented"
+
+	// ValidateIPAMDriver returns an InvalidArgument error unless d is nil.
 	return nil
 }
 
-// ValidateIPAMDriver returns an InvalidArgument error unless d is nil.
-func (InertProvider) ValidateIPAMDriver(d *api.Driver) error {
-	if d == nil {
-		return nil
-	}
-	return status.Errorf(codes.InvalidArgument, "IPAM drivers are unavailable")
-}
+func (InertProvider) ValidateIPAMDriver(d *api.Driver) error { _ = "STUB: not implemented"; return nil }
 
 // ValidateIngressNetworkDriver returns an InvalidArgument error unless d is nil.
 func (InertProvider) ValidateIngressNetworkDriver(d *api.Driver) error {
-	if d == nil {
-		return nil
-	}
-	return status.Errorf(codes.InvalidArgument, "ingress network drivers are unavailable")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // ValidateNetworkDriver returns an InvalidArgument error unless d is nil.
 func (InertProvider) ValidateNetworkDriver(d *api.Driver) error {
-	if d == nil {
-		return nil
-	}
-	return status.Errorf(codes.InvalidArgument, "ingress network drivers are unavailable")
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // Inert is a [NetworkAllocator] which does not allocate networks.
@@ -60,70 +56,64 @@ var _ NetworkAllocator = Inert{}
 var errUnavailable = errors.New("network support is unavailable")
 
 // Allocate returns an error unless n.Spec.Ingress is true.
-func (Inert) Allocate(n *api.Network) error {
-	if n.Spec.Ingress {
-		return nil
-	}
-	return errUnavailable
-}
+func (Inert) Allocate(n *api.Network) error { _ = "STUB: not implemented"; return nil }
 
 // AllocateAttachment unconditionally returns an error.
 func (Inert) AllocateAttachment(_ *api.Node, _ *api.NetworkAttachment) error {
-	return errUnavailable
+	_ = "STUB: not implemented"
+	return nil
+
+	// AllocateService succeeds iff the service specifies no network attachments.
 }
 
-// AllocateService succeeds iff the service specifies no network attachments.
-func (Inert) AllocateService(s *api.Service) error {
-	if len(s.Spec.Task.Networks) > 0 || len(s.Spec.Networks) > 0 {
-		return errUnavailable
-	}
-	return nil
-}
+func (Inert) AllocateService(s *api.Service) error { _ = "STUB: not implemented"; return nil }
 
 // AllocateTask succeeds iff the task specifies no network attachments.
-func (Inert) AllocateTask(t *api.Task) error {
-	if len(t.Spec.Networks) > 0 {
-		return errUnavailable
-	}
-	return nil
-}
+func (Inert) AllocateTask(t *api.Task) error { _ = "STUB: not implemented"; return nil }
 
 // Deallocate does nothing, successfully.
 func (Inert) Deallocate(_ *api.Network) error {
+	_ = "STUB: not implemented"
+
+	// DeallocateAttachment does nothing, successfully.
 	return nil
 }
 
-// DeallocateAttachment does nothing, successfully.
 func (Inert) DeallocateAttachment(_ *api.Node, _ *api.NetworkAttachment) error {
+	_ = "STUB: not implemented"
+
+	// DeallocateService does nothing, successfully.
 	return nil
 }
 
-// DeallocateService does nothing, successfully.
 func (Inert) DeallocateService(_ *api.Service) error {
+	_ = "STUB: not implemented"
+
+	// DeallocateTask does nothing, successfully.
 	return nil
 }
 
-// DeallocateTask does nothing, successfully.
 func (Inert) DeallocateTask(_ *api.Task) error {
+	_ = "STUB: not implemented"
+
+	// IsAllocated returns true iff [Inert.Allocate] would return nil.
 	return nil
 }
 
-// IsAllocated returns true iff [Inert.Allocate] would return nil.
-func (Inert) IsAllocated(n *api.Network) bool {
-	return (Inert{}).Allocate(n) == nil
-}
+func (Inert) IsAllocated(n *api.Network) bool { _ = "STUB: not implemented"; return false }
 
 // IsAttachmentAllocated returns false.
 func (Inert) IsAttachmentAllocated(_ *api.Node, _ *api.NetworkAttachment) bool {
+	_ = "STUB: not implemented"
+
+	// IsServiceAllocated returns true iff [Inert.AllocateService] would return nil.
 	return false
 }
 
-// IsServiceAllocated returns true iff [Inert.AllocateService] would return nil.
 func (Inert) IsServiceAllocated(s *api.Service, _ ...func(*ServiceAllocationOpts)) bool {
-	return (Inert{}).AllocateService(s) == nil
+	_ = "STUB: not implemented"
+	return false
 }
 
 // IsTaskAllocated returns true iff [Inert.AllocateTask] would return nil.
-func (Inert) IsTaskAllocated(t *api.Task) bool {
-	return (Inert{}).AllocateTask(t) == nil
-}
+func (Inert) IsTaskAllocated(t *api.Task) bool { _ = "STUB: not implemented"; return false }

@@ -2,8 +2,6 @@ package plugin
 
 import (
 	"context"
-	"fmt"
-	"path/filepath"
 	"sync"
 
 	"google.golang.org/grpc"
@@ -12,7 +10,6 @@ import (
 
 	"github.com/container-storage-interface/spec/lib/go/csi"
 	"github.com/moby/swarmkit/v2/api"
-	"github.com/moby/swarmkit/v2/internal/csi/capability"
 	"github.com/moby/swarmkit/v2/log"
 	"github.com/moby/swarmkit/v2/node/plugin"
 )
@@ -89,49 +86,32 @@ const (
 )
 
 func NewNodePlugin(name string, p plugin.AddrPlugin, secrets SecretGetter) NodePlugin {
-	return newNodePlugin(name, p, secrets)
+	_ = "STUB: not implemented"
+	return *new(NodePlugin)
 }
 
 // newNodePlugin returns a raw nodePlugin object, not behind an interface. this
 // is useful for testing.
 func newNodePlugin(name string, p plugin.AddrPlugin, secrets SecretGetter) *nodePlugin {
-	return &nodePlugin{
-		name:      name,
-		socket:    fmt.Sprintf("%s://%s", p.Addr().Network(), p.Addr().String()),
-		scopePath: p.ScopedPath,
-		secrets:   secrets,
-		volumeMap: map[string]*volumePublishStatus{},
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // connect is a private method that sets up the identity client and node
 // client from a grpc client. it exists separately so that testing code can
 // substitute in fake clients without a grpc connection
 func (np *nodePlugin) connect(ctx context.Context) error {
+	_ = "STUB: not implemented"
 	// even though this is a unix socket, we must set WithInsecure or the
 	// connection will not be allowed.
-	cc, err := grpc.DialContext(ctx, np.socket, grpc.WithInsecure())
-	if err != nil {
-		return err
-	}
-
-	np.cc = cc
-	// first, probe the plugin, to ensure that it exists and is ready to go
-	idc := csi.NewIdentityClient(cc)
-	np.idClient = idc
-
-	np.nodeClient = csi.NewNodeClient(cc)
-
-	return np.init(ctx)
+	return nil
 }
 
+// first, probe the plugin, to ensure that it exists and is ready to go
+
 func (np *nodePlugin) Client(ctx context.Context) (csi.NodeClient, error) {
-	if np.nodeClient == nil {
-		if err := np.connect(ctx); err != nil {
-			return nil, err
-		}
-	}
-	return np.nodeClient, nil
+	_ = "STUB: not implemented"
+	return *new(csi.NodeClient), nil
 }
 
 func (np *nodePlugin) init(ctx context.Context) error {
@@ -176,240 +156,75 @@ func (np *nodePlugin) init(ctx context.Context) error {
 //
 // Returns an empty string if the volume does not exist.
 func (np *nodePlugin) GetPublishedPath(volumeID string) string {
-	np.mu.RLock()
-	defer np.mu.RUnlock()
-	if volInfo, ok := np.volumeMap[volumeID]; ok {
-		if volInfo.isPublished {
-			return np.scopePath(volInfo.publishedPath)
-		}
-	}
+	_ = "STUB: not implemented"
 	return ""
 }
 
 func (np *nodePlugin) NodeGetInfo(ctx context.Context) (*api.NodeCSIInfo, error) {
-	c, err := np.Client(ctx)
-	if err != nil {
-		return nil, err
-	}
-	resp, err := c.NodeGetInfo(ctx, &csi.NodeGetInfoRequest{})
-	if err != nil {
-		return nil, err
-	}
-
-	i := makeNodeInfo(resp)
-	i.PluginName = np.name
-	return i, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (np *nodePlugin) NodeStageVolume(ctx context.Context, req *api.VolumeAssignment) error {
-	np.mu.Lock()
-	defer np.mu.Unlock()
-	if !np.staging {
-		return nil
-	}
-
-	stagingTarget := stagePath(req)
-	err := capability.CheckArguments(req)
-	if err != nil {
-		return err
-	}
-
-	c, err := np.Client(ctx)
-	if err != nil {
-		return err
-	}
-
-	_, err = c.NodeStageVolume(ctx, &csi.NodeStageVolumeRequest{
-		VolumeId:          req.VolumeID,
-		StagingTargetPath: stagingTarget,
-		Secrets:           np.makeSecrets(req),
-		VolumeCapability:  capability.MakeCapability(req.AccessMode),
-		VolumeContext:     req.VolumeContext,
-		PublishContext:    req.PublishContext,
-	})
-
-	if err != nil {
-		return err
-	}
-
-	v := &volumePublishStatus{
-		stagingPath: stagingTarget,
-	}
-
-	np.volumeMap[req.ID] = v
-
-	log.G(ctx).Infof("volume staged to path %s", stagingTarget)
+	_ = "STUB: not implemented"
 	return nil
 }
 
 func (np *nodePlugin) NodeUnstageVolume(ctx context.Context, req *api.VolumeAssignment) error {
-	np.mu.Lock()
-	defer np.mu.Unlock()
-	if !np.staging {
-		return nil
-	}
-
-	stagingTarget := stagePath(req)
-
-	// Check arguments
-	if len(req.VolumeID) == 0 {
-		return status.Error(codes.FailedPrecondition, "VolumeID missing in request")
-	}
-
-	c, err := np.Client(ctx)
-	if err != nil {
-		return err
-	}
-
-	// we must unpublish before we unstage. verify here that the volume is not
-	// published.
-	if v, ok := np.volumeMap[req.ID]; ok {
-		if v.isPublished {
-			return status.Errorf(codes.FailedPrecondition, "Volume %s is not unpublished", req.ID)
-		}
-		return nil
-	}
-
-	_, err = c.NodeUnstageVolume(ctx, &csi.NodeUnstageVolumeRequest{
-		VolumeId:          req.VolumeID,
-		StagingTargetPath: stagingTarget,
-	})
-	if err != nil {
-		return err
-	}
-
-	// if the volume doesn't exist in the volumeMap, deleting has no effect.
-	delete(np.volumeMap, req.ID)
-	log.G(ctx).Info("volume unstaged")
-
+	_ = "STUB: not implemented"
 	return nil
 }
+
+// Check arguments
+
+// we must unpublish before we unstage. verify here that the volume is not
+// published.
+
+// if the volume doesn't exist in the volumeMap, deleting has no effect.
 
 func (np *nodePlugin) NodePublishVolume(ctx context.Context, req *api.VolumeAssignment) error {
-	err := capability.CheckArguments(req)
-	if err != nil {
-		return err
-	}
-
-	np.mu.Lock()
-	defer np.mu.Unlock()
-
-	publishTarget := publishPath(req)
-
-	// Some volumes plugins require staging; we track this with a boolean, which
-	// also implies a staging path in the path map. If the plugin is marked as
-	// requiring staging but does not have a staging path in the map, that is an
-	// error.
-	var stagingPath string
-	if vs, ok := np.volumeMap[req.ID]; ok {
-		stagingPath = vs.stagingPath
-	} else if np.staging {
-		return status.Error(codes.FailedPrecondition, "volume requires staging but was not staged")
-	}
-
-	c, err := np.Client(ctx)
-	if err != nil {
-		return err
-	}
-
-	_, err = c.NodePublishVolume(ctx, &csi.NodePublishVolumeRequest{
-		VolumeId:          req.VolumeID,
-		TargetPath:        publishTarget,
-		StagingTargetPath: stagingPath,
-		VolumeCapability:  capability.MakeCapability(req.AccessMode),
-		Secrets:           np.makeSecrets(req),
-		VolumeContext:     req.VolumeContext,
-		PublishContext:    req.PublishContext,
-	})
-	if err != nil {
-		return err
-	}
-
-	status, ok := np.volumeMap[req.ID]
-	if !ok {
-		status = &volumePublishStatus{}
-		np.volumeMap[req.ID] = status
-	}
-
-	status.isPublished = true
-	status.publishedPath = publishTarget
-
-	log.G(ctx).Infof("volume published to path %s", publishTarget)
-
+	_ = "STUB: not implemented"
 	return nil
 }
 
+// Some volumes plugins require staging; we track this with a boolean, which
+// also implies a staging path in the path map. If the plugin is marked as
+// requiring staging but does not have a staging path in the map, that is an
+// error.
+
 func (np *nodePlugin) NodeUnpublishVolume(ctx context.Context, req *api.VolumeAssignment) error {
+	_ = "STUB: not implemented"
 	// Check arguments
-	if len(req.VolumeID) == 0 {
-		return status.Error(codes.InvalidArgument, "Volume ID missing in request")
-	}
-
-	np.mu.Lock()
-	defer np.mu.Unlock()
-	publishTarget := publishPath(req)
-
-	c, err := np.Client(ctx)
-	if err != nil {
-		return err
-	}
-
-	_, err = c.NodeUnpublishVolume(ctx, &csi.NodeUnpublishVolumeRequest{
-		VolumeId:   req.VolumeID,
-		TargetPath: publishTarget,
-	})
-
-	if err != nil {
-		return err
-	}
-
-	if v, ok := np.volumeMap[req.ID]; ok {
-		v.publishedPath = ""
-		v.isPublished = false
-		return nil
-	}
-
-	log.G(ctx).Info("volume unpublished")
 	return nil
 }
 
 func (np *nodePlugin) makeSecrets(v *api.VolumeAssignment) map[string]string {
+	_ = "STUB: not implemented"
 	// this should never happen, but program defensively.
-	if v == nil {
-		return nil
-	}
-
-	secrets := make(map[string]string, len(v.Secrets))
-	for _, secret := range v.Secrets {
-		// TODO(dperny): handle error from Get
-		value, _ := np.secrets.Get(secret.Secret)
-		if value != nil {
-			secrets[secret.Key] = string(value.Spec.Data)
-		}
-	}
-
-	return secrets
+	return nil
 }
+
+// TODO(dperny): handle error from Get
 
 // makeNodeInfo converts a csi.NodeGetInfoResponse object into a swarmkit NodeCSIInfo
 // object.
 func makeNodeInfo(csiNodeInfo *csi.NodeGetInfoResponse) *api.NodeCSIInfo {
-	return &api.NodeCSIInfo{
-		NodeID:            csiNodeInfo.NodeId,
-		MaxVolumesPerNode: csiNodeInfo.MaxVolumesPerNode,
-	}
+	_ = "STUB: not implemented"
+	return nil
 }
 
 // stagePath returns the staging path for a given volume assignment
 func stagePath(v *api.VolumeAssignment) string {
+	_ = "STUB: not implemented"
 	// this really just exists so we use the same trick to determine staging
 	// path across multiple methods and can't forget to change it in one place
 	// but not another
-	return filepath.Join(TargetStagePath, v.ID)
+	return ""
 }
 
 // publishPath returns the publishing path for a given volume assignment
 func publishPath(v *api.VolumeAssignment) string {
+	_ = "STUB: not implemented"
 	// ditto as stagePath
-	return filepath.Join(TargetPublishPath, v.ID)
+	return ""
 }

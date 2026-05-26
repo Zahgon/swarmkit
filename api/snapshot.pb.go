@@ -5,13 +5,9 @@ package api
 
 import (
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
-	io "io"
 	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
+
+	proto "github.com/gogo/protobuf/proto"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -40,12 +36,11 @@ var Snapshot_Version_value = map[string]int32{
 	"V0": 0,
 }
 
-func (x Snapshot_Version) String() string {
-	return proto.EnumName(Snapshot_Version_name, int32(x))
-}
+func (x Snapshot_Version) String() string { _ = "STUB: not implemented"; return "" }
 
 func (Snapshot_Version) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_c5cad0b62cecd9af, []int{2, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // StoreSnapshot is used to store snapshots of the store.
@@ -62,35 +57,22 @@ type StoreSnapshot struct {
 	Volumes    []*Volume    `protobuf:"bytes,10,rep,name=volumes,proto3" json:"volumes,omitempty"`
 }
 
-func (m *StoreSnapshot) Reset()      { *m = StoreSnapshot{} }
-func (*StoreSnapshot) ProtoMessage() {}
-func (*StoreSnapshot) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c5cad0b62cecd9af, []int{0}
-}
-func (m *StoreSnapshot) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *StoreSnapshot) Reset()                    { _ = "STUB: not implemented"; return }
+func (*StoreSnapshot) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*StoreSnapshot) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *StoreSnapshot) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *StoreSnapshot) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_StoreSnapshot.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *StoreSnapshot) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_StoreSnapshot.Merge(m, src)
-}
-func (m *StoreSnapshot) XXX_Size() int {
-	return m.Size()
-}
-func (m *StoreSnapshot) XXX_DiscardUnknown() {
-	xxx_messageInfo_StoreSnapshot.DiscardUnknown(m)
-}
+
+func (m *StoreSnapshot) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *StoreSnapshot) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *StoreSnapshot) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_StoreSnapshot proto.InternalMessageInfo
 
@@ -100,35 +82,22 @@ type ClusterSnapshot struct {
 	Removed []uint64      `protobuf:"varint,2,rep,name=removed,proto3" json:"removed,omitempty"`
 }
 
-func (m *ClusterSnapshot) Reset()      { *m = ClusterSnapshot{} }
-func (*ClusterSnapshot) ProtoMessage() {}
-func (*ClusterSnapshot) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c5cad0b62cecd9af, []int{1}
-}
-func (m *ClusterSnapshot) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *ClusterSnapshot) Reset()                    { _ = "STUB: not implemented"; return }
+func (*ClusterSnapshot) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*ClusterSnapshot) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *ClusterSnapshot) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *ClusterSnapshot) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_ClusterSnapshot.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *ClusterSnapshot) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ClusterSnapshot.Merge(m, src)
-}
-func (m *ClusterSnapshot) XXX_Size() int {
-	return m.Size()
-}
-func (m *ClusterSnapshot) XXX_DiscardUnknown() {
-	xxx_messageInfo_ClusterSnapshot.DiscardUnknown(m)
-}
+
+func (m *ClusterSnapshot) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *ClusterSnapshot) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *ClusterSnapshot) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_ClusterSnapshot proto.InternalMessageInfo
 
@@ -138,35 +107,22 @@ type Snapshot struct {
 	Store      StoreSnapshot    `protobuf:"bytes,3,opt,name=store,proto3" json:"store"`
 }
 
-func (m *Snapshot) Reset()      { *m = Snapshot{} }
-func (*Snapshot) ProtoMessage() {}
-func (*Snapshot) Descriptor() ([]byte, []int) {
-	return fileDescriptor_c5cad0b62cecd9af, []int{2}
-}
-func (m *Snapshot) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *Snapshot) Reset()                    { _ = "STUB: not implemented"; return }
+func (*Snapshot) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*Snapshot) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *Snapshot) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *Snapshot) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Snapshot.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *Snapshot) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Snapshot.Merge(m, src)
-}
-func (m *Snapshot) XXX_Size() int {
-	return m.Size()
-}
-func (m *Snapshot) XXX_DiscardUnknown() {
-	xxx_messageInfo_Snapshot.DiscardUnknown(m)
-}
+
+func (m *Snapshot) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *Snapshot) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *Snapshot) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_Snapshot proto.InternalMessageInfo
 
@@ -218,1391 +174,87 @@ var fileDescriptor_c5cad0b62cecd9af = []byte{
 	0x00, 0xff, 0xff, 0x27, 0xb3, 0xad, 0x75, 0x71, 0x04, 0x00, 0x00,
 }
 
-func (m *StoreSnapshot) Copy() *StoreSnapshot {
-	if m == nil {
-		return nil
-	}
-	o := &StoreSnapshot{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *StoreSnapshot) Copy() *StoreSnapshot { _ = "STUB: not implemented"; return nil }
 
-func (m *StoreSnapshot) CopyFrom(src interface{}) {
+func (m *StoreSnapshot) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*StoreSnapshot)
-	*m = *o
-	if o.Nodes != nil {
-		m.Nodes = make([]*Node, len(o.Nodes))
-		for i := range m.Nodes {
-			m.Nodes[i] = &Node{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Nodes[i], o.Nodes[i])
-		}
-	}
+func (m *ClusterSnapshot) Copy() *ClusterSnapshot { _ = "STUB: not implemented"; return nil }
 
-	if o.Services != nil {
-		m.Services = make([]*Service, len(o.Services))
-		for i := range m.Services {
-			m.Services[i] = &Service{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Services[i], o.Services[i])
-		}
-	}
+func (m *ClusterSnapshot) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	if o.Networks != nil {
-		m.Networks = make([]*Network, len(o.Networks))
-		for i := range m.Networks {
-			m.Networks[i] = &Network{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Networks[i], o.Networks[i])
-		}
-	}
+func (m *Snapshot) Copy() *Snapshot { _ = "STUB: not implemented"; return nil }
 
-	if o.Tasks != nil {
-		m.Tasks = make([]*Task, len(o.Tasks))
-		for i := range m.Tasks {
-			m.Tasks[i] = &Task{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Tasks[i], o.Tasks[i])
-		}
-	}
-
-	if o.Clusters != nil {
-		m.Clusters = make([]*Cluster, len(o.Clusters))
-		for i := range m.Clusters {
-			m.Clusters[i] = &Cluster{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Clusters[i], o.Clusters[i])
-		}
-	}
-
-	if o.Secrets != nil {
-		m.Secrets = make([]*Secret, len(o.Secrets))
-		for i := range m.Secrets {
-			m.Secrets[i] = &Secret{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Secrets[i], o.Secrets[i])
-		}
-	}
-
-	if o.Resources != nil {
-		m.Resources = make([]*Resource, len(o.Resources))
-		for i := range m.Resources {
-			m.Resources[i] = &Resource{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Resources[i], o.Resources[i])
-		}
-	}
-
-	if o.Extensions != nil {
-		m.Extensions = make([]*Extension, len(o.Extensions))
-		for i := range m.Extensions {
-			m.Extensions[i] = &Extension{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Extensions[i], o.Extensions[i])
-		}
-	}
-
-	if o.Configs != nil {
-		m.Configs = make([]*Config, len(o.Configs))
-		for i := range m.Configs {
-			m.Configs[i] = &Config{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Configs[i], o.Configs[i])
-		}
-	}
-
-	if o.Volumes != nil {
-		m.Volumes = make([]*Volume, len(o.Volumes))
-		for i := range m.Volumes {
-			m.Volumes[i] = &Volume{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Volumes[i], o.Volumes[i])
-		}
-	}
-
-}
-
-func (m *ClusterSnapshot) Copy() *ClusterSnapshot {
-	if m == nil {
-		return nil
-	}
-	o := &ClusterSnapshot{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *ClusterSnapshot) CopyFrom(src interface{}) {
-
-	o := src.(*ClusterSnapshot)
-	*m = *o
-	if o.Members != nil {
-		m.Members = make([]*RaftMember, len(o.Members))
-		for i := range m.Members {
-			m.Members[i] = &RaftMember{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Members[i], o.Members[i])
-		}
-	}
-
-	if o.Removed != nil {
-		m.Removed = make([]uint64, len(o.Removed))
-		copy(m.Removed, o.Removed)
-	}
-
-}
-
-func (m *Snapshot) Copy() *Snapshot {
-	if m == nil {
-		return nil
-	}
-	o := &Snapshot{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *Snapshot) CopyFrom(src interface{}) {
-
-	o := src.(*Snapshot)
-	*m = *o
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Membership, &o.Membership)
-	github_com_moby_swarmkit_v2_api_deepcopy.Copy(&m.Store, &o.Store)
-}
+func (m *Snapshot) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *StoreSnapshot) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *StoreSnapshot) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *StoreSnapshot) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Volumes) > 0 {
-		for iNdEx := len(m.Volumes) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Volumes[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x52
-		}
-	}
-	if len(m.Configs) > 0 {
-		for iNdEx := len(m.Configs) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Configs[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x4a
-		}
-	}
-	if len(m.Extensions) > 0 {
-		for iNdEx := len(m.Extensions) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Extensions[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x42
-		}
-	}
-	if len(m.Resources) > 0 {
-		for iNdEx := len(m.Resources) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Resources[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x3a
-		}
-	}
-	if len(m.Secrets) > 0 {
-		for iNdEx := len(m.Secrets) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Secrets[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x32
-		}
-	}
-	if len(m.Clusters) > 0 {
-		for iNdEx := len(m.Clusters) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Clusters[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x2a
-		}
-	}
-	if len(m.Tasks) > 0 {
-		for iNdEx := len(m.Tasks) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Tasks[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x22
-		}
-	}
-	if len(m.Networks) > 0 {
-		for iNdEx := len(m.Networks) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Networks[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.Services) > 0 {
-		for iNdEx := len(m.Services) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Services[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x12
-		}
-	}
-	if len(m.Nodes) > 0 {
-		for iNdEx := len(m.Nodes) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Nodes[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ClusterSnapshot) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *ClusterSnapshot) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *ClusterSnapshot) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Removed) > 0 {
-		for iNdEx := len(m.Removed) - 1; iNdEx >= 0; iNdEx-- {
-			i = encodeVarintSnapshot(dAtA, i, uint64(m.Removed[iNdEx]))
-			i--
-			dAtA[i] = 0x10
-		}
-	}
-	if len(m.Members) > 0 {
-		for iNdEx := len(m.Members) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Members[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintSnapshot(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *Snapshot) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *Snapshot) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *Snapshot) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *Snapshot) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *Snapshot) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	{
-		size, err := m.Store.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintSnapshot(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x1a
-	{
-		size, err := m.Membership.MarshalToSizedBuffer(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = encodeVarintSnapshot(dAtA, i, uint64(size))
-	}
-	i--
-	dAtA[i] = 0x12
-	if m.Version != 0 {
-		i = encodeVarintSnapshot(dAtA, i, uint64(m.Version))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func encodeVarintSnapshot(dAtA []byte, offset int, v uint64) int {
-	offset -= sovSnapshot(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
-}
-func (m *StoreSnapshot) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Nodes) > 0 {
-		for _, e := range m.Nodes {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Services) > 0 {
-		for _, e := range m.Services {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Networks) > 0 {
-		for _, e := range m.Networks {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Tasks) > 0 {
-		for _, e := range m.Tasks {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Clusters) > 0 {
-		for _, e := range m.Clusters {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Secrets) > 0 {
-		for _, e := range m.Secrets {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Resources) > 0 {
-		for _, e := range m.Resources {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Extensions) > 0 {
-		for _, e := range m.Extensions {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Configs) > 0 {
-		for _, e := range m.Configs {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Volumes) > 0 {
-		for _, e := range m.Volumes {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	return n
+	_ = "STUB: not implemented"
+	return 0
 }
 
-func (m *ClusterSnapshot) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Members) > 0 {
-		for _, e := range m.Members {
-			l = e.Size()
-			n += 1 + l + sovSnapshot(uint64(l))
-		}
-	}
-	if len(m.Removed) > 0 {
-		for _, e := range m.Removed {
-			n += 1 + sovSnapshot(uint64(e))
-		}
-	}
-	return n
-}
+func (m *StoreSnapshot) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *Snapshot) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Version != 0 {
-		n += 1 + sovSnapshot(uint64(m.Version))
-	}
-	l = m.Membership.Size()
-	n += 1 + l + sovSnapshot(uint64(l))
-	l = m.Store.Size()
-	n += 1 + l + sovSnapshot(uint64(l))
-	return n
-}
+func (m *ClusterSnapshot) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovSnapshot(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozSnapshot(x uint64) (n int) {
-	return sovSnapshot(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *StoreSnapshot) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForNodes := "[]*Node{"
-	for _, f := range this.Nodes {
-		repeatedStringForNodes += strings.Replace(fmt.Sprintf("%v", f), "Node", "Node", 1) + ","
-	}
-	repeatedStringForNodes += "}"
-	repeatedStringForServices := "[]*Service{"
-	for _, f := range this.Services {
-		repeatedStringForServices += strings.Replace(fmt.Sprintf("%v", f), "Service", "Service", 1) + ","
-	}
-	repeatedStringForServices += "}"
-	repeatedStringForNetworks := "[]*Network{"
-	for _, f := range this.Networks {
-		repeatedStringForNetworks += strings.Replace(fmt.Sprintf("%v", f), "Network", "Network", 1) + ","
-	}
-	repeatedStringForNetworks += "}"
-	repeatedStringForTasks := "[]*Task{"
-	for _, f := range this.Tasks {
-		repeatedStringForTasks += strings.Replace(fmt.Sprintf("%v", f), "Task", "Task", 1) + ","
-	}
-	repeatedStringForTasks += "}"
-	repeatedStringForClusters := "[]*Cluster{"
-	for _, f := range this.Clusters {
-		repeatedStringForClusters += strings.Replace(fmt.Sprintf("%v", f), "Cluster", "Cluster", 1) + ","
-	}
-	repeatedStringForClusters += "}"
-	repeatedStringForSecrets := "[]*Secret{"
-	for _, f := range this.Secrets {
-		repeatedStringForSecrets += strings.Replace(fmt.Sprintf("%v", f), "Secret", "Secret", 1) + ","
-	}
-	repeatedStringForSecrets += "}"
-	repeatedStringForResources := "[]*Resource{"
-	for _, f := range this.Resources {
-		repeatedStringForResources += strings.Replace(fmt.Sprintf("%v", f), "Resource", "Resource", 1) + ","
-	}
-	repeatedStringForResources += "}"
-	repeatedStringForExtensions := "[]*Extension{"
-	for _, f := range this.Extensions {
-		repeatedStringForExtensions += strings.Replace(fmt.Sprintf("%v", f), "Extension", "Extension", 1) + ","
-	}
-	repeatedStringForExtensions += "}"
-	repeatedStringForConfigs := "[]*Config{"
-	for _, f := range this.Configs {
-		repeatedStringForConfigs += strings.Replace(fmt.Sprintf("%v", f), "Config", "Config", 1) + ","
-	}
-	repeatedStringForConfigs += "}"
-	repeatedStringForVolumes := "[]*Volume{"
-	for _, f := range this.Volumes {
-		repeatedStringForVolumes += strings.Replace(fmt.Sprintf("%v", f), "Volume", "Volume", 1) + ","
-	}
-	repeatedStringForVolumes += "}"
-	s := strings.Join([]string{`&StoreSnapshot{`,
-		`Nodes:` + repeatedStringForNodes + `,`,
-		`Services:` + repeatedStringForServices + `,`,
-		`Networks:` + repeatedStringForNetworks + `,`,
-		`Tasks:` + repeatedStringForTasks + `,`,
-		`Clusters:` + repeatedStringForClusters + `,`,
-		`Secrets:` + repeatedStringForSecrets + `,`,
-		`Resources:` + repeatedStringForResources + `,`,
-		`Extensions:` + repeatedStringForExtensions + `,`,
-		`Configs:` + repeatedStringForConfigs + `,`,
-		`Volumes:` + repeatedStringForVolumes + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *ClusterSnapshot) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForMembers := "[]*RaftMember{"
-	for _, f := range this.Members {
-		repeatedStringForMembers += strings.Replace(fmt.Sprintf("%v", f), "RaftMember", "RaftMember", 1) + ","
-	}
-	repeatedStringForMembers += "}"
-	s := strings.Join([]string{`&ClusterSnapshot{`,
-		`Members:` + repeatedStringForMembers + `,`,
-		`Removed:` + fmt.Sprintf("%v", this.Removed) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Snapshot) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Snapshot{`,
-		`Version:` + fmt.Sprintf("%v", this.Version) + `,`,
-		`Membership:` + strings.Replace(strings.Replace(this.Membership.String(), "ClusterSnapshot", "ClusterSnapshot", 1), `&`, ``, 1) + `,`,
-		`Store:` + strings.Replace(strings.Replace(this.Store.String(), "StoreSnapshot", "StoreSnapshot", 1), `&`, ``, 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringSnapshot(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *StoreSnapshot) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowSnapshot
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: StoreSnapshot: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: StoreSnapshot: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Nodes", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Nodes = append(m.Nodes, &Node{})
-			if err := m.Nodes[len(m.Nodes)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Services", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Services = append(m.Services, &Service{})
-			if err := m.Services[len(m.Services)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Networks", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Networks = append(m.Networks, &Network{})
-			if err := m.Networks[len(m.Networks)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Tasks", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Tasks = append(m.Tasks, &Task{})
-			if err := m.Tasks[len(m.Tasks)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Clusters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Clusters = append(m.Clusters, &Cluster{})
-			if err := m.Clusters[len(m.Clusters)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secrets", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Secrets = append(m.Secrets, &Secret{})
-			if err := m.Secrets[len(m.Secrets)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Resources", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Resources = append(m.Resources, &Resource{})
-			if err := m.Resources[len(m.Resources)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Extensions", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Extensions = append(m.Extensions, &Extension{})
-			if err := m.Extensions[len(m.Extensions)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Configs", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Configs = append(m.Configs, &Config{})
-			if err := m.Configs[len(m.Configs)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 10:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volumes", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Volumes = append(m.Volumes, &Volume{})
-			if err := m.Volumes[len(m.Volumes)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipSnapshot(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *Snapshot) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *ClusterSnapshot) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowSnapshot
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: ClusterSnapshot: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ClusterSnapshot: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Members", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Members = append(m.Members, &RaftMember{})
-			if err := m.Members[len(m.Members)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType == 0 {
-				var v uint64
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowSnapshot
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.Removed = append(m.Removed, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowSnapshot
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthSnapshot
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthSnapshot
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				var count int
-				for _, integer := range dAtA[iNdEx:postIndex] {
-					if integer < 128 {
-						count++
-					}
-				}
-				elementCount = count
-				if elementCount != 0 && len(m.Removed) == 0 {
-					m.Removed = make([]uint64, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v uint64
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowSnapshot
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= uint64(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.Removed = append(m.Removed, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field Removed", wireType)
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipSnapshot(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func sovSnapshot(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Snapshot) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowSnapshot
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Snapshot: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Snapshot: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Version", wireType)
-			}
-			m.Version = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Version |= Snapshot_Version(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Membership", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Membership.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Store", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if err := m.Store.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipSnapshot(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthSnapshot
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func sozSnapshot(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipSnapshot(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowSnapshot
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowSnapshot
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthSnapshot
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupSnapshot
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthSnapshot
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (this *StoreSnapshot) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *ClusterSnapshot) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Snapshot) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringSnapshot(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *StoreSnapshot) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *ClusterSnapshot) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *Snapshot) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipSnapshot(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthSnapshot        = fmt.Errorf("proto: negative length found during unmarshaling")

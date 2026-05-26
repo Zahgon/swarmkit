@@ -6,22 +6,13 @@ package api
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_moby_swarmkit_v2_api_deepcopy "github.com/moby/swarmkit/v2/api/deepcopy"
 	raftselector "github.com/moby/swarmkit/v2/manager/raftselector"
 	_ "github.com/moby/swarmkit/v2/protobuf/plugin"
 	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	metadata "google.golang.org/grpc/metadata"
-	peer "google.golang.org/grpc/peer"
-	status "google.golang.org/grpc/status"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
-	rafttime "time"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -61,13 +52,9 @@ var WatchActionKind_value = map[string]int32{
 	"WATCH_ACTION_REMOVE":  4,
 }
 
-func (x WatchActionKind) String() string {
-	return proto.EnumName(WatchActionKind_name, int32(x))
-}
+func (x WatchActionKind) String() string { _ = "STUB: not implemented"; return "" }
 
-func (WatchActionKind) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{0}
-}
+func (WatchActionKind) EnumDescriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
 
 type Object struct {
 	// Types that are valid to be assigned to Object:
@@ -84,35 +71,22 @@ type Object struct {
 	Object isObject_Object `protobuf_oneof:"Object"`
 }
 
-func (m *Object) Reset()      { *m = Object{} }
-func (*Object) ProtoMessage() {}
-func (*Object) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{0}
-}
-func (m *Object) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *Object) Reset()                    { _ = "STUB: not implemented"; return }
+func (*Object) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*Object) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *Object) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *Object) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Object.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *Object) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Object.Merge(m, src)
-}
-func (m *Object) XXX_Size() int {
-	return m.Size()
-}
-func (m *Object) XXX_DiscardUnknown() {
-	xxx_messageInfo_Object.DiscardUnknown(m)
-}
+
+func (m *Object) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *Object) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *Object) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_Object proto.InternalMessageInfo
 
@@ -153,109 +127,44 @@ type Object_Volume struct {
 	Volume *Volume `protobuf:"bytes,10,opt,name=volume,proto3,oneof" json:"volume,omitempty"`
 }
 
-func (*Object_Node) isObject_Object()      {}
-func (*Object_Service) isObject_Object()   {}
-func (*Object_Network) isObject_Object()   {}
-func (*Object_Task) isObject_Object()      {}
-func (*Object_Cluster) isObject_Object()   {}
-func (*Object_Secret) isObject_Object()    {}
-func (*Object_Resource) isObject_Object()  {}
-func (*Object_Extension) isObject_Object() {}
-func (*Object_Config) isObject_Object()    {}
-func (*Object_Volume) isObject_Object()    {}
+func (*Object_Node) isObject_Object()      { _ = "STUB: not implemented"; return }
+func (*Object_Service) isObject_Object()   { _ = "STUB: not implemented"; return }
+func (*Object_Network) isObject_Object()   { _ = "STUB: not implemented"; return }
+func (*Object_Task) isObject_Object()      { _ = "STUB: not implemented"; return }
+func (*Object_Cluster) isObject_Object()   { _ = "STUB: not implemented"; return }
+func (*Object_Secret) isObject_Object()    { _ = "STUB: not implemented"; return }
+func (*Object_Resource) isObject_Object()  { _ = "STUB: not implemented"; return }
+func (*Object_Extension) isObject_Object() { _ = "STUB: not implemented"; return }
+func (*Object_Config) isObject_Object()    { _ = "STUB: not implemented"; return }
+func (*Object_Volume) isObject_Object()    { _ = "STUB: not implemented"; return }
 
 func (m *Object) GetObject() isObject_Object {
-	if m != nil {
-		return m.Object
-	}
-	return nil
+	_ = "STUB: not implemented"
+	return *new(isObject_Object)
 }
 
-func (m *Object) GetNode() *Node {
-	if x, ok := m.GetObject().(*Object_Node); ok {
-		return x.Node
-	}
-	return nil
-}
+func (m *Object) GetNode() *Node { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetService() *Service {
-	if x, ok := m.GetObject().(*Object_Service); ok {
-		return x.Service
-	}
-	return nil
-}
+func (m *Object) GetService() *Service { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetNetwork() *Network {
-	if x, ok := m.GetObject().(*Object_Network); ok {
-		return x.Network
-	}
-	return nil
-}
+func (m *Object) GetNetwork() *Network { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetTask() *Task {
-	if x, ok := m.GetObject().(*Object_Task); ok {
-		return x.Task
-	}
-	return nil
-}
+func (m *Object) GetTask() *Task { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetCluster() *Cluster {
-	if x, ok := m.GetObject().(*Object_Cluster); ok {
-		return x.Cluster
-	}
-	return nil
-}
+func (m *Object) GetCluster() *Cluster { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetSecret() *Secret {
-	if x, ok := m.GetObject().(*Object_Secret); ok {
-		return x.Secret
-	}
-	return nil
-}
+func (m *Object) GetSecret() *Secret { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetResource() *Resource {
-	if x, ok := m.GetObject().(*Object_Resource); ok {
-		return x.Resource
-	}
-	return nil
-}
+func (m *Object) GetResource() *Resource { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetExtension() *Extension {
-	if x, ok := m.GetObject().(*Object_Extension); ok {
-		return x.Extension
-	}
-	return nil
-}
+func (m *Object) GetExtension() *Extension { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetConfig() *Config {
-	if x, ok := m.GetObject().(*Object_Config); ok {
-		return x.Config
-	}
-	return nil
-}
+func (m *Object) GetConfig() *Config { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) GetVolume() *Volume {
-	if x, ok := m.GetObject().(*Object_Volume); ok {
-		return x.Volume
-	}
-	return nil
-}
+func (m *Object) GetVolume() *Volume { _ = "STUB: not implemented"; return nil }
 
 // XXX_OneofWrappers is for the internal use of the proto package.
-func (*Object) XXX_OneofWrappers() []interface{} {
-	return []interface{}{
-		(*Object_Node)(nil),
-		(*Object_Service)(nil),
-		(*Object_Network)(nil),
-		(*Object_Task)(nil),
-		(*Object_Cluster)(nil),
-		(*Object_Secret)(nil),
-		(*Object_Resource)(nil),
-		(*Object_Extension)(nil),
-		(*Object_Config)(nil),
-		(*Object_Volume)(nil),
-	}
-}
+func (*Object) XXX_OneofWrappers() []interface{} { _ = "STUB: not implemented"; return nil }
 
 // FIXME(aaronl): These messages should ideally be embedded in SelectBy, but
 // protoc generates bad code for that.
@@ -264,35 +173,22 @@ type SelectBySlot struct {
 	Slot      uint64 `protobuf:"varint,2,opt,name=slot,proto3" json:"slot,omitempty"`
 }
 
-func (m *SelectBySlot) Reset()      { *m = SelectBySlot{} }
-func (*SelectBySlot) ProtoMessage() {}
-func (*SelectBySlot) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{1}
-}
-func (m *SelectBySlot) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *SelectBySlot) Reset()                    { _ = "STUB: not implemented"; return }
+func (*SelectBySlot) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*SelectBySlot) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *SelectBySlot) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SelectBySlot) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SelectBySlot.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SelectBySlot) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SelectBySlot.Merge(m, src)
-}
-func (m *SelectBySlot) XXX_Size() int {
-	return m.Size()
-}
-func (m *SelectBySlot) XXX_DiscardUnknown() {
-	xxx_messageInfo_SelectBySlot.DiscardUnknown(m)
-}
+
+func (m *SelectBySlot) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SelectBySlot) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBySlot) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SelectBySlot proto.InternalMessageInfo
 
@@ -302,35 +198,22 @@ type SelectByCustom struct {
 	Value string `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
 }
 
-func (m *SelectByCustom) Reset()      { *m = SelectByCustom{} }
-func (*SelectByCustom) ProtoMessage() {}
-func (*SelectByCustom) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{2}
-}
-func (m *SelectByCustom) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *SelectByCustom) Reset()                    { _ = "STUB: not implemented"; return }
+func (*SelectByCustom) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*SelectByCustom) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *SelectByCustom) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SelectByCustom) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SelectByCustom.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SelectByCustom) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SelectByCustom.Merge(m, src)
-}
-func (m *SelectByCustom) XXX_Size() int {
-	return m.Size()
-}
-func (m *SelectByCustom) XXX_DiscardUnknown() {
-	xxx_messageInfo_SelectByCustom.DiscardUnknown(m)
-}
+
+func (m *SelectByCustom) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SelectByCustom) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectByCustom) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SelectByCustom proto.InternalMessageInfo
 
@@ -359,35 +242,22 @@ type SelectBy struct {
 	By isSelectBy_By `protobuf_oneof:"By"`
 }
 
-func (m *SelectBy) Reset()      { *m = SelectBy{} }
-func (*SelectBy) ProtoMessage() {}
-func (*SelectBy) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{3}
-}
-func (m *SelectBy) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *SelectBy) Reset()                    { _ = "STUB: not implemented"; return }
+func (*SelectBy) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*SelectBy) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *SelectBy) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *SelectBy) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_SelectBy.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *SelectBy) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SelectBy.Merge(m, src)
-}
-func (m *SelectBy) XXX_Size() int {
-	return m.Size()
-}
-func (m *SelectBy) XXX_DiscardUnknown() {
-	xxx_messageInfo_SelectBy.DiscardUnknown(m)
-}
+
+func (m *SelectBy) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *SelectBy) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_SelectBy proto.InternalMessageInfo
 
@@ -446,163 +316,62 @@ type SelectBy_Kind struct {
 	Kind string `protobuf:"bytes,15,opt,name=kind,proto3,oneof" json:"kind,omitempty"`
 }
 
-func (*SelectBy_ID) isSelectBy_By()                  {}
-func (*SelectBy_IDPrefix) isSelectBy_By()            {}
-func (*SelectBy_Name) isSelectBy_By()                {}
-func (*SelectBy_NamePrefix) isSelectBy_By()          {}
-func (*SelectBy_Custom) isSelectBy_By()              {}
-func (*SelectBy_CustomPrefix) isSelectBy_By()        {}
-func (*SelectBy_ServiceID) isSelectBy_By()           {}
-func (*SelectBy_NodeID) isSelectBy_By()              {}
-func (*SelectBy_Slot) isSelectBy_By()                {}
-func (*SelectBy_DesiredState) isSelectBy_By()        {}
-func (*SelectBy_Role) isSelectBy_By()                {}
-func (*SelectBy_Membership) isSelectBy_By()          {}
-func (*SelectBy_ReferencedNetworkID) isSelectBy_By() {}
-func (*SelectBy_ReferencedSecretID) isSelectBy_By()  {}
-func (*SelectBy_ReferencedConfigID) isSelectBy_By()  {}
-func (*SelectBy_Kind) isSelectBy_By()                {}
+func (*SelectBy_ID) isSelectBy_By()                  { _ = "STUB: not implemented"; return }
+func (*SelectBy_IDPrefix) isSelectBy_By()            { _ = "STUB: not implemented"; return }
+func (*SelectBy_Name) isSelectBy_By()                { _ = "STUB: not implemented"; return }
+func (*SelectBy_NamePrefix) isSelectBy_By()          { _ = "STUB: not implemented"; return }
+func (*SelectBy_Custom) isSelectBy_By()              { _ = "STUB: not implemented"; return }
+func (*SelectBy_CustomPrefix) isSelectBy_By()        { _ = "STUB: not implemented"; return }
+func (*SelectBy_ServiceID) isSelectBy_By()           { _ = "STUB: not implemented"; return }
+func (*SelectBy_NodeID) isSelectBy_By()              { _ = "STUB: not implemented"; return }
+func (*SelectBy_Slot) isSelectBy_By()                { _ = "STUB: not implemented"; return }
+func (*SelectBy_DesiredState) isSelectBy_By()        { _ = "STUB: not implemented"; return }
+func (*SelectBy_Role) isSelectBy_By()                { _ = "STUB: not implemented"; return }
+func (*SelectBy_Membership) isSelectBy_By()          { _ = "STUB: not implemented"; return }
+func (*SelectBy_ReferencedNetworkID) isSelectBy_By() { _ = "STUB: not implemented"; return }
+func (*SelectBy_ReferencedSecretID) isSelectBy_By()  { _ = "STUB: not implemented"; return }
+func (*SelectBy_ReferencedConfigID) isSelectBy_By()  { _ = "STUB: not implemented"; return }
+func (*SelectBy_Kind) isSelectBy_By()                { _ = "STUB: not implemented"; return }
 
-func (m *SelectBy) GetBy() isSelectBy_By {
-	if m != nil {
-		return m.By
-	}
-	return nil
-}
+func (m *SelectBy) GetBy() isSelectBy_By { _ = "STUB: not implemented"; return *new(isSelectBy_By) }
 
-func (m *SelectBy) GetID() string {
-	if x, ok := m.GetBy().(*SelectBy_ID); ok {
-		return x.ID
-	}
-	return ""
-}
+func (m *SelectBy) GetID() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetIDPrefix() string {
-	if x, ok := m.GetBy().(*SelectBy_IDPrefix); ok {
-		return x.IDPrefix
-	}
-	return ""
-}
+func (m *SelectBy) GetIDPrefix() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetName() string {
-	if x, ok := m.GetBy().(*SelectBy_Name); ok {
-		return x.Name
-	}
-	return ""
-}
+func (m *SelectBy) GetName() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetNamePrefix() string {
-	if x, ok := m.GetBy().(*SelectBy_NamePrefix); ok {
-		return x.NamePrefix
-	}
-	return ""
-}
+func (m *SelectBy) GetNamePrefix() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetCustom() *SelectByCustom {
-	if x, ok := m.GetBy().(*SelectBy_Custom); ok {
-		return x.Custom
-	}
-	return nil
-}
+func (m *SelectBy) GetCustom() *SelectByCustom { _ = "STUB: not implemented"; return nil }
 
-func (m *SelectBy) GetCustomPrefix() *SelectByCustom {
-	if x, ok := m.GetBy().(*SelectBy_CustomPrefix); ok {
-		return x.CustomPrefix
-	}
-	return nil
-}
+func (m *SelectBy) GetCustomPrefix() *SelectByCustom { _ = "STUB: not implemented"; return nil }
 
-func (m *SelectBy) GetServiceID() string {
-	if x, ok := m.GetBy().(*SelectBy_ServiceID); ok {
-		return x.ServiceID
-	}
-	return ""
-}
+func (m *SelectBy) GetServiceID() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetNodeID() string {
-	if x, ok := m.GetBy().(*SelectBy_NodeID); ok {
-		return x.NodeID
-	}
-	return ""
-}
+func (m *SelectBy) GetNodeID() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetSlot() *SelectBySlot {
-	if x, ok := m.GetBy().(*SelectBy_Slot); ok {
-		return x.Slot
-	}
-	return nil
-}
+func (m *SelectBy) GetSlot() *SelectBySlot { _ = "STUB: not implemented"; return nil }
 
-func (m *SelectBy) GetDesiredState() TaskState {
-	if x, ok := m.GetBy().(*SelectBy_DesiredState); ok {
-		return x.DesiredState
-	}
-	return TaskStateNew
-}
+func (m *SelectBy) GetDesiredState() TaskState { _ = "STUB: not implemented"; return *new(TaskState) }
 
-func (m *SelectBy) GetRole() NodeRole {
-	if x, ok := m.GetBy().(*SelectBy_Role); ok {
-		return x.Role
-	}
-	return NodeRoleWorker
-}
+func (m *SelectBy) GetRole() NodeRole { _ = "STUB: not implemented"; return *new(NodeRole) }
 
 func (m *SelectBy) GetMembership() NodeSpec_Membership {
-	if x, ok := m.GetBy().(*SelectBy_Membership); ok {
-		return x.Membership
-	}
-	return NodeMembershipPending
+	_ = "STUB: not implemented"
+	return *new(NodeSpec_Membership)
 }
 
-func (m *SelectBy) GetReferencedNetworkID() string {
-	if x, ok := m.GetBy().(*SelectBy_ReferencedNetworkID); ok {
-		return x.ReferencedNetworkID
-	}
-	return ""
-}
+func (m *SelectBy) GetReferencedNetworkID() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetReferencedSecretID() string {
-	if x, ok := m.GetBy().(*SelectBy_ReferencedSecretID); ok {
-		return x.ReferencedSecretID
-	}
-	return ""
-}
+func (m *SelectBy) GetReferencedSecretID() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetReferencedConfigID() string {
-	if x, ok := m.GetBy().(*SelectBy_ReferencedConfigID); ok {
-		return x.ReferencedConfigID
-	}
-	return ""
-}
+func (m *SelectBy) GetReferencedConfigID() string { _ = "STUB: not implemented"; return "" }
 
-func (m *SelectBy) GetKind() string {
-	if x, ok := m.GetBy().(*SelectBy_Kind); ok {
-		return x.Kind
-	}
-	return ""
-}
+func (m *SelectBy) GetKind() string { _ = "STUB: not implemented"; return "" }
 
 // XXX_OneofWrappers is for the internal use of the proto package.
-func (*SelectBy) XXX_OneofWrappers() []interface{} {
-	return []interface{}{
-		(*SelectBy_ID)(nil),
-		(*SelectBy_IDPrefix)(nil),
-		(*SelectBy_Name)(nil),
-		(*SelectBy_NamePrefix)(nil),
-		(*SelectBy_Custom)(nil),
-		(*SelectBy_CustomPrefix)(nil),
-		(*SelectBy_ServiceID)(nil),
-		(*SelectBy_NodeID)(nil),
-		(*SelectBy_Slot)(nil),
-		(*SelectBy_DesiredState)(nil),
-		(*SelectBy_Role)(nil),
-		(*SelectBy_Membership)(nil),
-		(*SelectBy_ReferencedNetworkID)(nil),
-		(*SelectBy_ReferencedSecretID)(nil),
-		(*SelectBy_ReferencedConfigID)(nil),
-		(*SelectBy_Kind)(nil),
-	}
-}
+func (*SelectBy) XXX_OneofWrappers() []interface{} { _ = "STUB: not implemented"; return nil }
 
 type WatchRequest struct {
 	// Multiple entries are combined using OR logic - i.e. if an event
@@ -622,35 +391,22 @@ type WatchRequest struct {
 	IncludeOldObject bool `protobuf:"varint,3,opt,name=include_old_object,json=includeOldObject,proto3" json:"include_old_object,omitempty"`
 }
 
-func (m *WatchRequest) Reset()      { *m = WatchRequest{} }
-func (*WatchRequest) ProtoMessage() {}
-func (*WatchRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{4}
-}
-func (m *WatchRequest) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *WatchRequest) Reset()                    { _ = "STUB: not implemented"; return }
+func (*WatchRequest) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*WatchRequest) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *WatchRequest) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *WatchRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_WatchRequest.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *WatchRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WatchRequest.Merge(m, src)
-}
-func (m *WatchRequest) XXX_Size() int {
-	return m.Size()
-}
-func (m *WatchRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_WatchRequest.DiscardUnknown(m)
-}
+
+func (m *WatchRequest) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *WatchRequest) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchRequest) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_WatchRequest proto.InternalMessageInfo
 
@@ -666,35 +422,28 @@ type WatchRequest_WatchEntry struct {
 	Filters []*SelectBy `protobuf:"bytes,3,rep,name=filters,proto3" json:"filters,omitempty"`
 }
 
-func (m *WatchRequest_WatchEntry) Reset()      { *m = WatchRequest_WatchEntry{} }
-func (*WatchRequest_WatchEntry) ProtoMessage() {}
+func (m *WatchRequest_WatchEntry) Reset()      { _ = "STUB: not implemented"; return }
+func (*WatchRequest_WatchEntry) ProtoMessage() { _ = "STUB: not implemented"; return }
 func (*WatchRequest_WatchEntry) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{4, 0}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
+
 func (m *WatchRequest_WatchEntry) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
+	_ = "STUB: not implemented"
+	return nil
 }
+
 func (m *WatchRequest_WatchEntry) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_WatchRequest_WatchEntry.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *WatchRequest_WatchEntry) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WatchRequest_WatchEntry.Merge(m, src)
-}
-func (m *WatchRequest_WatchEntry) XXX_Size() int {
-	return m.Size()
-}
-func (m *WatchRequest_WatchEntry) XXX_DiscardUnknown() {
-	xxx_messageInfo_WatchRequest_WatchEntry.DiscardUnknown(m)
-}
+
+func (m *WatchRequest_WatchEntry) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *WatchRequest_WatchEntry) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchRequest_WatchEntry) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_WatchRequest_WatchEntry proto.InternalMessageInfo
 
@@ -708,35 +457,22 @@ type WatchMessage struct {
 	Version *Version `protobuf:"bytes,2,opt,name=version,proto3" json:"version,omitempty"`
 }
 
-func (m *WatchMessage) Reset()      { *m = WatchMessage{} }
-func (*WatchMessage) ProtoMessage() {}
-func (*WatchMessage) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{5}
-}
-func (m *WatchMessage) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *WatchMessage) Reset()                    { _ = "STUB: not implemented"; return }
+func (*WatchMessage) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*WatchMessage) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *WatchMessage) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *WatchMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_WatchMessage.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *WatchMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WatchMessage.Merge(m, src)
-}
-func (m *WatchMessage) XXX_Size() int {
-	return m.Size()
-}
-func (m *WatchMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_WatchMessage.DiscardUnknown(m)
-}
+
+func (m *WatchMessage) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *WatchMessage) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchMessage) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_WatchMessage proto.InternalMessageInfo
 
@@ -753,35 +489,22 @@ type WatchMessage_Event struct {
 	OldObject *Object `protobuf:"bytes,3,opt,name=old_object,json=oldObject,proto3" json:"old_object,omitempty"`
 }
 
-func (m *WatchMessage_Event) Reset()      { *m = WatchMessage_Event{} }
-func (*WatchMessage_Event) ProtoMessage() {}
-func (*WatchMessage_Event) Descriptor() ([]byte, []int) {
-	return fileDescriptor_da25266013800cd9, []int{5, 0}
-}
-func (m *WatchMessage_Event) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
+func (m *WatchMessage_Event) Reset()                    { _ = "STUB: not implemented"; return }
+func (*WatchMessage_Event) ProtoMessage()               { _ = "STUB: not implemented"; return }
+func (*WatchMessage_Event) Descriptor() ([]byte, []int) { _ = "STUB: not implemented"; return nil, nil }
+
+func (m *WatchMessage_Event) XXX_Unmarshal(b []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *WatchMessage_Event) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_WatchMessage_Event.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
-func (m *WatchMessage_Event) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WatchMessage_Event.Merge(m, src)
-}
-func (m *WatchMessage_Event) XXX_Size() int {
-	return m.Size()
-}
-func (m *WatchMessage_Event) XXX_DiscardUnknown() {
-	xxx_messageInfo_WatchMessage_Event.DiscardUnknown(m)
-}
+
+func (m *WatchMessage_Event) XXX_Merge(src proto.Message) { _ = "STUB: not implemented"; return }
+
+func (m *WatchMessage_Event) XXX_Size() int { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchMessage_Event) XXX_DiscardUnknown() { _ = "STUB: not implemented"; return }
 
 var xxx_messageInfo_WatchMessage_Event proto.InternalMessageInfo
 
@@ -887,332 +610,49 @@ type authenticatedWrapperWatchServer struct {
 }
 
 func NewAuthenticatedWrapperWatchServer(local WatchServer, authorize func(context.Context, []string) error) WatchServer {
-	return &authenticatedWrapperWatchServer{
-		local:     local,
-		authorize: authorize,
-	}
+	_ = "STUB: not implemented"
+	return *new(WatchServer)
 }
 
 func (p *authenticatedWrapperWatchServer) Watch(r *WatchRequest, stream Watch_WatchServer) error {
-
-	if err := p.authorize(stream.Context(), []string{"swarm-manager"}); err != nil {
-		return err
-	}
-	return p.local.Watch(r, stream)
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *Object) Copy() *Object {
-	if m == nil {
-		return nil
-	}
-	o := &Object{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *Object) Copy() *Object { _ = "STUB: not implemented"; return nil }
 
-func (m *Object) CopyFrom(src interface{}) {
+func (m *Object) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*Object)
-	*m = *o
-	if o.Object != nil {
-		switch o.Object.(type) {
-		case *Object_Node:
-			v := Object_Node{
-				Node: &Node{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Node, o.GetNode())
-			m.Object = &v
-		case *Object_Service:
-			v := Object_Service{
-				Service: &Service{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Service, o.GetService())
-			m.Object = &v
-		case *Object_Network:
-			v := Object_Network{
-				Network: &Network{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Network, o.GetNetwork())
-			m.Object = &v
-		case *Object_Task:
-			v := Object_Task{
-				Task: &Task{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Task, o.GetTask())
-			m.Object = &v
-		case *Object_Cluster:
-			v := Object_Cluster{
-				Cluster: &Cluster{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Cluster, o.GetCluster())
-			m.Object = &v
-		case *Object_Secret:
-			v := Object_Secret{
-				Secret: &Secret{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Secret, o.GetSecret())
-			m.Object = &v
-		case *Object_Resource:
-			v := Object_Resource{
-				Resource: &Resource{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Resource, o.GetResource())
-			m.Object = &v
-		case *Object_Extension:
-			v := Object_Extension{
-				Extension: &Extension{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Extension, o.GetExtension())
-			m.Object = &v
-		case *Object_Config:
-			v := Object_Config{
-				Config: &Config{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Config, o.GetConfig())
-			m.Object = &v
-		case *Object_Volume:
-			v := Object_Volume{
-				Volume: &Volume{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Volume, o.GetVolume())
-			m.Object = &v
-		}
-	}
+func (m *SelectBySlot) Copy() *SelectBySlot { _ = "STUB: not implemented"; return nil }
 
-}
+func (m *SelectBySlot) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *SelectBySlot) Copy() *SelectBySlot {
-	if m == nil {
-		return nil
-	}
-	o := &SelectBySlot{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *SelectByCustom) Copy() *SelectByCustom { _ = "STUB: not implemented"; return nil }
 
-func (m *SelectBySlot) CopyFrom(src interface{}) {
+func (m *SelectByCustom) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*SelectBySlot)
-	*m = *o
-}
+func (m *SelectBy) Copy() *SelectBy { _ = "STUB: not implemented"; return nil }
 
-func (m *SelectByCustom) Copy() *SelectByCustom {
-	if m == nil {
-		return nil
-	}
-	o := &SelectByCustom{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *SelectBy) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *SelectByCustom) CopyFrom(src interface{}) {
+func (m *WatchRequest) Copy() *WatchRequest { _ = "STUB: not implemented"; return nil }
 
-	o := src.(*SelectByCustom)
-	*m = *o
-}
-
-func (m *SelectBy) Copy() *SelectBy {
-	if m == nil {
-		return nil
-	}
-	o := &SelectBy{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *SelectBy) CopyFrom(src interface{}) {
-
-	o := src.(*SelectBy)
-	*m = *o
-	if o.By != nil {
-		switch o.By.(type) {
-		case *SelectBy_ID:
-			v := SelectBy_ID{
-				ID: o.GetID(),
-			}
-			m.By = &v
-		case *SelectBy_IDPrefix:
-			v := SelectBy_IDPrefix{
-				IDPrefix: o.GetIDPrefix(),
-			}
-			m.By = &v
-		case *SelectBy_Name:
-			v := SelectBy_Name{
-				Name: o.GetName(),
-			}
-			m.By = &v
-		case *SelectBy_NamePrefix:
-			v := SelectBy_NamePrefix{
-				NamePrefix: o.GetNamePrefix(),
-			}
-			m.By = &v
-		case *SelectBy_Custom:
-			v := SelectBy_Custom{
-				Custom: &SelectByCustom{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Custom, o.GetCustom())
-			m.By = &v
-		case *SelectBy_CustomPrefix:
-			v := SelectBy_CustomPrefix{
-				CustomPrefix: &SelectByCustom{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.CustomPrefix, o.GetCustomPrefix())
-			m.By = &v
-		case *SelectBy_ServiceID:
-			v := SelectBy_ServiceID{
-				ServiceID: o.GetServiceID(),
-			}
-			m.By = &v
-		case *SelectBy_NodeID:
-			v := SelectBy_NodeID{
-				NodeID: o.GetNodeID(),
-			}
-			m.By = &v
-		case *SelectBy_Slot:
-			v := SelectBy_Slot{
-				Slot: &SelectBySlot{},
-			}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(v.Slot, o.GetSlot())
-			m.By = &v
-		case *SelectBy_DesiredState:
-			v := SelectBy_DesiredState{
-				DesiredState: o.GetDesiredState(),
-			}
-			m.By = &v
-		case *SelectBy_Role:
-			v := SelectBy_Role{
-				Role: o.GetRole(),
-			}
-			m.By = &v
-		case *SelectBy_Membership:
-			v := SelectBy_Membership{
-				Membership: o.GetMembership(),
-			}
-			m.By = &v
-		case *SelectBy_ReferencedNetworkID:
-			v := SelectBy_ReferencedNetworkID{
-				ReferencedNetworkID: o.GetReferencedNetworkID(),
-			}
-			m.By = &v
-		case *SelectBy_ReferencedSecretID:
-			v := SelectBy_ReferencedSecretID{
-				ReferencedSecretID: o.GetReferencedSecretID(),
-			}
-			m.By = &v
-		case *SelectBy_ReferencedConfigID:
-			v := SelectBy_ReferencedConfigID{
-				ReferencedConfigID: o.GetReferencedConfigID(),
-			}
-			m.By = &v
-		case *SelectBy_Kind:
-			v := SelectBy_Kind{
-				Kind: o.GetKind(),
-			}
-			m.By = &v
-		}
-	}
-
-}
-
-func (m *WatchRequest) Copy() *WatchRequest {
-	if m == nil {
-		return nil
-	}
-	o := &WatchRequest{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *WatchRequest) CopyFrom(src interface{}) {
-
-	o := src.(*WatchRequest)
-	*m = *o
-	if o.Entries != nil {
-		m.Entries = make([]*WatchRequest_WatchEntry, len(o.Entries))
-		for i := range m.Entries {
-			m.Entries[i] = &WatchRequest_WatchEntry{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Entries[i], o.Entries[i])
-		}
-	}
-
-	if o.ResumeFrom != nil {
-		m.ResumeFrom = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.ResumeFrom, o.ResumeFrom)
-	}
-}
+func (m *WatchRequest) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 func (m *WatchRequest_WatchEntry) Copy() *WatchRequest_WatchEntry {
-	if m == nil {
-		return nil
-	}
-	o := &WatchRequest_WatchEntry{}
-	o.CopyFrom(m)
-	return o
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func (m *WatchRequest_WatchEntry) CopyFrom(src interface{}) {
+func (m *WatchRequest_WatchEntry) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-	o := src.(*WatchRequest_WatchEntry)
-	*m = *o
-	if o.Filters != nil {
-		m.Filters = make([]*SelectBy, len(o.Filters))
-		for i := range m.Filters {
-			m.Filters[i] = &SelectBy{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Filters[i], o.Filters[i])
-		}
-	}
+func (m *WatchMessage) Copy() *WatchMessage { _ = "STUB: not implemented"; return nil }
 
-}
+func (m *WatchMessage) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
-func (m *WatchMessage) Copy() *WatchMessage {
-	if m == nil {
-		return nil
-	}
-	o := &WatchMessage{}
-	o.CopyFrom(m)
-	return o
-}
+func (m *WatchMessage_Event) Copy() *WatchMessage_Event { _ = "STUB: not implemented"; return nil }
 
-func (m *WatchMessage) CopyFrom(src interface{}) {
-
-	o := src.(*WatchMessage)
-	*m = *o
-	if o.Events != nil {
-		m.Events = make([]*WatchMessage_Event, len(o.Events))
-		for i := range m.Events {
-			m.Events[i] = &WatchMessage_Event{}
-			github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Events[i], o.Events[i])
-		}
-	}
-
-	if o.Version != nil {
-		m.Version = &Version{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Version, o.Version)
-	}
-}
-
-func (m *WatchMessage_Event) Copy() *WatchMessage_Event {
-	if m == nil {
-		return nil
-	}
-	o := &WatchMessage_Event{}
-	o.CopyFrom(m)
-	return o
-}
-
-func (m *WatchMessage_Event) CopyFrom(src interface{}) {
-
-	o := src.(*WatchMessage_Event)
-	*m = *o
-	if o.Object != nil {
-		m.Object = &Object{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.Object, o.Object)
-	}
-	if o.OldObject != nil {
-		m.OldObject = &Object{}
-		github_com_moby_swarmkit_v2_api_deepcopy.Copy(m.OldObject, o.OldObject)
-	}
-}
+func (m *WatchMessage_Event) CopyFrom(src interface{}) { _ = "STUB: not implemented"; return }
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
@@ -1239,22 +679,13 @@ type watchClient struct {
 }
 
 func NewWatchClient(cc *grpc.ClientConn) WatchClient {
-	return &watchClient{cc}
+	_ = "STUB: not implemented"
+	return *new(WatchClient)
 }
 
 func (c *watchClient) Watch(ctx context.Context, in *WatchRequest, opts ...grpc.CallOption) (Watch_WatchClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_Watch_serviceDesc.Streams[0], "/docker.swarmkit.v1.Watch/Watch", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &watchWatchClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
+	_ = "STUB: not implemented"
+	return *new(Watch_WatchClient), nil
 }
 
 type Watch_WatchClient interface {
@@ -1267,11 +698,8 @@ type watchWatchClient struct {
 }
 
 func (x *watchWatchClient) Recv() (*WatchMessage, error) {
-	m := new(WatchMessage)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 // WatchServer is the server API for Watch service.
@@ -1289,19 +717,15 @@ type UnimplementedWatchServer struct {
 }
 
 func (*UnimplementedWatchServer) Watch(req *WatchRequest, srv Watch_WatchServer) error {
-	return status.Errorf(codes.Unimplemented, "method Watch not implemented")
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func RegisterWatchServer(s *grpc.Server, srv WatchServer) {
-	s.RegisterService(&_Watch_serviceDesc, srv)
-}
+func RegisterWatchServer(s *grpc.Server, srv WatchServer) { _ = "STUB: not implemented"; return }
 
 func _Watch_Watch_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(WatchRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(WatchServer).Watch(m, &watchWatchServer{stream})
+	_ = "STUB: not implemented"
+	return nil
 }
 
 type Watch_WatchServer interface {
@@ -1313,9 +737,7 @@ type watchWatchServer struct {
 	grpc.ServerStream
 }
 
-func (x *watchWatchServer) Send(m *WatchMessage) error {
-	return x.ServerStream.SendMsg(m)
-}
+func (x *watchWatchServer) Send(m *WatchMessage) error { _ = "STUB: not implemented"; return nil }
 
 var _Watch_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "docker.swarmkit.v1.Watch",
@@ -1331,820 +753,366 @@ var _Watch_serviceDesc = grpc.ServiceDesc{
 	Metadata: "github.com/docker/swarmkit/api/watch.proto",
 }
 
-func (m *Object) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *Object) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *Object) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *Object) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *Object) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Object != nil {
-		{
-			size := m.Object.Size()
-			i -= size
-			if _, err := m.Object.MarshalTo(dAtA[i:]); err != nil {
-				return 0, err
-			}
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *Object_Node) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *Object_Node) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *Object_Node) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Node != nil {
-		{
-			size, err := m.Node.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Service) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Service) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Service != nil {
-		{
-			size, err := m.Service.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Network) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Network) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Network != nil {
-		{
-			size, err := m.Network.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	return len(dAtA) - i, nil
-}
-func (m *Object_Task) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
+func (m *Object_Task) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
+
 func (m *Object_Task) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Task != nil {
-		{
-			size, err := m.Task.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Cluster) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Cluster) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Cluster != nil {
-		{
-			size, err := m.Cluster.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Secret) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Secret) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Secret != nil {
-		{
-			size, err := m.Secret.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Resource) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Resource) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Resource != nil {
-		{
-			size, err := m.Resource.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Extension) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Extension) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Extension != nil {
-		{
-			size, err := m.Extension.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x42
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Config) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Config) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Config != nil {
-		{
-			size, err := m.Config.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x4a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *Object_Volume) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *Object_Volume) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Volume != nil {
-		{
-			size, err := m.Volume.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x52
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBySlot) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *SelectBySlot) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBySlot) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Slot != 0 {
-		i = encodeVarintWatch(dAtA, i, uint64(m.Slot))
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.ServiceID) > 0 {
-		i -= len(m.ServiceID)
-		copy(dAtA[i:], m.ServiceID)
-		i = encodeVarintWatch(dAtA, i, uint64(len(m.ServiceID)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectByCustom) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *SelectByCustom) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectByCustom) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Value) > 0 {
-		i -= len(m.Value)
-		copy(dAtA[i:], m.Value)
-		i = encodeVarintWatch(dAtA, i, uint64(len(m.Value)))
-		i--
-		dAtA[i] = 0x1a
-	}
-	if len(m.Index) > 0 {
-		i -= len(m.Index)
-		copy(dAtA[i:], m.Index)
-		i = encodeVarintWatch(dAtA, i, uint64(len(m.Index)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Kind) > 0 {
-		i -= len(m.Kind)
-		copy(dAtA[i:], m.Kind)
-		i = encodeVarintWatch(dAtA, i, uint64(len(m.Kind)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *SelectBy) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
+func (m *SelectBy) Marshal() (dAtA []byte, err error) { _ = "STUB: not implemented"; return nil, nil }
 
-func (m *SelectBy) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *SelectBy) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *SelectBy) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.By != nil {
-		{
-			size := m.By.Size()
-			i -= size
-			if _, err := m.By.MarshalTo(dAtA[i:]); err != nil {
-				return 0, err
-			}
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func (m *SelectBy_ID) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
+func (m *SelectBy_ID) MarshalTo(dAtA []byte) (int, error) { _ = "STUB: not implemented"; return 0, nil }
 
 func (m *SelectBy_ID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.ID)
-	copy(dAtA[i:], m.ID)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.ID)))
-	i--
-	dAtA[i] = 0xa
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_IDPrefix) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_IDPrefix) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.IDPrefix)
-	copy(dAtA[i:], m.IDPrefix)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.IDPrefix)))
-	i--
-	dAtA[i] = 0x12
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_Name) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_Name) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.Name)
-	copy(dAtA[i:], m.Name)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.Name)))
-	i--
-	dAtA[i] = 0x1a
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_NamePrefix) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_NamePrefix) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.NamePrefix)
-	copy(dAtA[i:], m.NamePrefix)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.NamePrefix)))
-	i--
-	dAtA[i] = 0x22
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_Custom) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_Custom) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Custom != nil {
-		{
-			size, err := m.Custom.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_CustomPrefix) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_CustomPrefix) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.CustomPrefix != nil {
-		{
-			size, err := m.CustomPrefix.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_ServiceID) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_ServiceID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.ServiceID)
-	copy(dAtA[i:], m.ServiceID)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.ServiceID)))
-	i--
-	dAtA[i] = 0x3a
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_NodeID) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_NodeID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.NodeID)
-	copy(dAtA[i:], m.NodeID)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.NodeID)))
-	i--
-	dAtA[i] = 0x42
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_Slot) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_Slot) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	if m.Slot != nil {
-		{
-			size, err := m.Slot.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x4a
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_DesiredState) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_DesiredState) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i = encodeVarintWatch(dAtA, i, uint64(m.DesiredState))
-	i--
-	dAtA[i] = 0x50
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_Role) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_Role) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i = encodeVarintWatch(dAtA, i, uint64(m.Role))
-	i--
-	dAtA[i] = 0x58
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_Membership) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_Membership) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i = encodeVarintWatch(dAtA, i, uint64(m.Membership))
-	i--
-	dAtA[i] = 0x60
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_ReferencedNetworkID) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_ReferencedNetworkID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.ReferencedNetworkID)
-	copy(dAtA[i:], m.ReferencedNetworkID)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.ReferencedNetworkID)))
-	i--
-	dAtA[i] = 0x6a
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_ReferencedSecretID) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_ReferencedSecretID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.ReferencedSecretID)
-	copy(dAtA[i:], m.ReferencedSecretID)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.ReferencedSecretID)))
-	i--
-	dAtA[i] = 0x72
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_Kind) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_Kind) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.Kind)
-	copy(dAtA[i:], m.Kind)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.Kind)))
-	i--
-	dAtA[i] = 0x7a
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *SelectBy_ReferencedConfigID) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *SelectBy_ReferencedConfigID) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	i -= len(m.ReferencedConfigID)
-	copy(dAtA[i:], m.ReferencedConfigID)
-	i = encodeVarintWatch(dAtA, i, uint64(len(m.ReferencedConfigID)))
-	i--
-	dAtA[i] = 0x1
-	i--
-	dAtA[i] = 0x82
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
+
 func (m *WatchRequest) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *WatchRequest) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.IncludeOldObject {
-		i--
-		if m.IncludeOldObject {
-			dAtA[i] = 1
-		} else {
-			dAtA[i] = 0
-		}
-		i--
-		dAtA[i] = 0x18
-	}
-	if m.ResumeFrom != nil {
-		{
-			size, err := m.ResumeFrom.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Entries) > 0 {
-		for iNdEx := len(m.Entries) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Entries[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintWatch(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchRequest_WatchEntry) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *WatchRequest_WatchEntry) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchRequest_WatchEntry) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.Filters) > 0 {
-		for iNdEx := len(m.Filters) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Filters[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintWatch(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if m.Action != 0 {
-		i = encodeVarintWatch(dAtA, i, uint64(m.Action))
-		i--
-		dAtA[i] = 0x10
-	}
-	if len(m.Kind) > 0 {
-		i -= len(m.Kind)
-		copy(dAtA[i:], m.Kind)
-		i = encodeVarintWatch(dAtA, i, uint64(len(m.Kind)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchMessage) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *WatchMessage) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchMessage) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.Version != nil {
-		{
-			size, err := m.Version.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Events) > 0 {
-		for iNdEx := len(m.Events) - 1; iNdEx >= 0; iNdEx-- {
-			{
-				size, err := m.Events[iNdEx].MarshalToSizedBuffer(dAtA[:i])
-				if err != nil {
-					return 0, err
-				}
-				i -= size
-				i = encodeVarintWatch(dAtA, i, uint64(size))
-			}
-			i--
-			dAtA[i] = 0xa
-		}
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchMessage_Event) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 func (m *WatchMessage_Event) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
 func (m *WatchMessage_Event) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.OldObject != nil {
-		{
-			size, err := m.OldObject.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.Object != nil {
-		{
-			size, err := m.Object.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintWatch(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.Action != 0 {
-		i = encodeVarintWatch(dAtA, i, uint64(m.Action))
-		i--
-		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
+	_ = "STUB: not implemented"
+	return 0, nil
 }
 
-func encodeVarintWatch(dAtA []byte, offset int, v uint64) int {
-	offset -= sovWatch(v)
-	base := offset
-	for v >= 1<<7 {
-		dAtA[offset] = uint8(v&0x7f | 0x80)
-		v >>= 7
-		offset++
-	}
-	dAtA[offset] = uint8(v)
-	return base
-}
+func encodeVarintWatch(dAtA []byte, offset int, v uint64) int { _ = "STUB: not implemented"; return 0 }
 
 type raftProxyWatchServer struct {
 	local                       WatchServer
@@ -2153,69 +1121,18 @@ type raftProxyWatchServer struct {
 }
 
 func NewRaftProxyWatchServer(local WatchServer, connSelector raftselector.ConnProvider, localCtxMod, remoteCtxMod func(context.Context) (context.Context, error)) WatchServer {
-	redirectChecker := func(ctx context.Context) (context.Context, error) {
-		p, ok := peer.FromContext(ctx)
-		if !ok {
-			return ctx, status.Errorf(codes.InvalidArgument, "remote addr is not found in context")
-		}
-		addr := p.Addr.String()
-		md, ok := metadata.FromIncomingContext(ctx)
-		if ok && len(md["redirect"]) != 0 {
-			return ctx, status.Errorf(codes.ResourceExhausted, "more than one redirect to leader from: %s", md["redirect"])
-		}
-		if !ok {
-			md = metadata.New(map[string]string{})
-		}
-		md["redirect"] = append(md["redirect"], addr)
-		return metadata.NewOutgoingContext(ctx, md), nil
-	}
-	remoteMods := []func(context.Context) (context.Context, error){redirectChecker}
-	remoteMods = append(remoteMods, remoteCtxMod)
-
-	var localMods []func(context.Context) (context.Context, error)
-	if localCtxMod != nil {
-		localMods = []func(context.Context) (context.Context, error){localCtxMod}
-	}
-
-	return &raftProxyWatchServer{
-		local:         local,
-		connSelector:  connSelector,
-		localCtxMods:  localMods,
-		remoteCtxMods: remoteMods,
-	}
+	_ = "STUB: not implemented"
+	return *new(WatchServer)
 }
+
 func (p *raftProxyWatchServer) runCtxMods(ctx context.Context, ctxMods []func(context.Context) (context.Context, error)) (context.Context, error) {
-	var err error
-	for _, mod := range ctxMods {
-		ctx, err = mod(ctx)
-		if err != nil {
-			return ctx, err
-		}
-	}
-	return ctx, nil
+	_ = "STUB: not implemented"
+	return *new(context.Context), nil
 }
+
 func (p *raftProxyWatchServer) pollNewLeaderConn(ctx context.Context) (*grpc.ClientConn, error) {
-	ticker := rafttime.NewTicker(500 * rafttime.Millisecond)
-	defer ticker.Stop()
-	for {
-		select {
-		case <-ticker.C:
-			conn, err := p.connSelector.LeaderConn(ctx)
-			if err != nil {
-				return nil, err
-			}
-
-			client := NewHealthClient(conn)
-
-			resp, err := client.Check(ctx, &HealthCheckRequest{Service: "Raft"})
-			if err != nil || resp.Status != HealthCheckResponse_SERVING {
-				continue
-			}
-			return conn, nil
-		case <-ctx.Done():
-			return nil, ctx.Err()
-		}
-	}
+	_ = "STUB: not implemented"
+	return nil, nil
 }
 
 type Watch_WatchServerWrapper struct {
@@ -2224,2653 +1141,177 @@ type Watch_WatchServerWrapper struct {
 }
 
 func (s Watch_WatchServerWrapper) Context() context.Context {
-	return s.ctx
+	_ = "STUB: not implemented"
+	return *new(context.Context)
 }
 
 func (p *raftProxyWatchServer) Watch(r *WatchRequest, stream Watch_WatchServer) error {
-	ctx := stream.Context()
-	conn, err := p.connSelector.LeaderConn(ctx)
-	if err != nil {
-		if err == raftselector.ErrIsLeader {
-			ctx, err = p.runCtxMods(ctx, p.localCtxMods)
-			if err != nil {
-				return err
-			}
-			streamWrapper := Watch_WatchServerWrapper{
-				Watch_WatchServer: stream,
-				ctx:               ctx,
-			}
-			return p.local.Watch(r, streamWrapper)
-		}
-		return err
-	}
-	ctx, err = p.runCtxMods(ctx, p.remoteCtxMods)
-	if err != nil {
-		return err
-	}
-	clientStream, err := NewWatchClient(conn).Watch(ctx, r)
-
-	if err != nil {
-		return err
-	}
-
-	for {
-		msg, err := clientStream.Recv()
-		if err == io.EOF {
-			break
-		}
-		if err != nil {
-			return err
-		}
-		if err := stream.Send(msg); err != nil {
-			return err
-		}
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
 
-func (m *Object) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Object != nil {
-		n += m.Object.Size()
-	}
-	return n
-}
+func (m *Object) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *Object_Node) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Node != nil {
-		l = m.Node.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Service) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Service != nil {
-		l = m.Service.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Network) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Network != nil {
-		l = m.Network.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Task) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Task != nil {
-		l = m.Task.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Cluster) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Cluster != nil {
-		l = m.Cluster.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Secret) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Secret != nil {
-		l = m.Secret.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Resource) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Resource != nil {
-		l = m.Resource.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Extension) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Extension != nil {
-		l = m.Extension.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Config) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Config != nil {
-		l = m.Config.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *Object_Volume) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Volume != nil {
-		l = m.Volume.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *SelectBySlot) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ServiceID)
-	if l > 0 {
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	if m.Slot != 0 {
-		n += 1 + sovWatch(uint64(m.Slot))
-	}
-	return n
-}
+func (m *Object_Node) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *SelectByCustom) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Kind)
-	if l > 0 {
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	l = len(m.Index)
-	if l > 0 {
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	l = len(m.Value)
-	if l > 0 {
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
+func (m *Object_Service) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *SelectBy) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.By != nil {
-		n += m.By.Size()
-	}
-	return n
-}
+func (m *Object_Network) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *SelectBy_ID) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ID)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_IDPrefix) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.IDPrefix)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_Name) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Name)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_NamePrefix) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.NamePrefix)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_Custom) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Custom != nil {
-		l = m.Custom.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *SelectBy_CustomPrefix) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.CustomPrefix != nil {
-		l = m.CustomPrefix.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *SelectBy_ServiceID) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ServiceID)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_NodeID) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.NodeID)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_Slot) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Slot != nil {
-		l = m.Slot.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
-func (m *SelectBy_DesiredState) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	n += 1 + sovWatch(uint64(m.DesiredState))
-	return n
-}
-func (m *SelectBy_Role) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	n += 1 + sovWatch(uint64(m.Role))
-	return n
-}
-func (m *SelectBy_Membership) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	n += 1 + sovWatch(uint64(m.Membership))
-	return n
-}
-func (m *SelectBy_ReferencedNetworkID) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ReferencedNetworkID)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_ReferencedSecretID) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ReferencedSecretID)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_Kind) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Kind)
-	n += 1 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *SelectBy_ReferencedConfigID) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.ReferencedConfigID)
-	n += 2 + l + sovWatch(uint64(l))
-	return n
-}
-func (m *WatchRequest) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Entries) > 0 {
-		for _, e := range m.Entries {
-			l = e.Size()
-			n += 1 + l + sovWatch(uint64(l))
-		}
-	}
-	if m.ResumeFrom != nil {
-		l = m.ResumeFrom.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	if m.IncludeOldObject {
-		n += 2
-	}
-	return n
-}
+func (m *Object_Task) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *WatchRequest_WatchEntry) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Kind)
-	if l > 0 {
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	if m.Action != 0 {
-		n += 1 + sovWatch(uint64(m.Action))
-	}
-	if len(m.Filters) > 0 {
-		for _, e := range m.Filters {
-			l = e.Size()
-			n += 1 + l + sovWatch(uint64(l))
-		}
-	}
-	return n
-}
+func (m *Object_Cluster) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *WatchMessage) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.Events) > 0 {
-		for _, e := range m.Events {
-			l = e.Size()
-			n += 1 + l + sovWatch(uint64(l))
-		}
-	}
-	if m.Version != nil {
-		l = m.Version.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
+func (m *Object_Secret) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func (m *WatchMessage_Event) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.Action != 0 {
-		n += 1 + sovWatch(uint64(m.Action))
-	}
-	if m.Object != nil {
-		l = m.Object.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	if m.OldObject != nil {
-		l = m.OldObject.Size()
-		n += 1 + l + sovWatch(uint64(l))
-	}
-	return n
-}
+func (m *Object_Resource) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-func sovWatch(x uint64) (n int) {
-	return (math_bits.Len64(x|1) + 6) / 7
-}
-func sozWatch(x uint64) (n int) {
-	return sovWatch(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *Object) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object{`,
-		`Object:` + fmt.Sprintf("%v", this.Object) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Node) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Node{`,
-		`Node:` + strings.Replace(fmt.Sprintf("%v", this.Node), "Node", "Node", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Service) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Service{`,
-		`Service:` + strings.Replace(fmt.Sprintf("%v", this.Service), "Service", "Service", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Network) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Network{`,
-		`Network:` + strings.Replace(fmt.Sprintf("%v", this.Network), "Network", "Network", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Task) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Task{`,
-		`Task:` + strings.Replace(fmt.Sprintf("%v", this.Task), "Task", "Task", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Cluster) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Cluster{`,
-		`Cluster:` + strings.Replace(fmt.Sprintf("%v", this.Cluster), "Cluster", "Cluster", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Secret) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Secret{`,
-		`Secret:` + strings.Replace(fmt.Sprintf("%v", this.Secret), "Secret", "Secret", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Resource) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Resource{`,
-		`Resource:` + strings.Replace(fmt.Sprintf("%v", this.Resource), "Resource", "Resource", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Extension) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Extension{`,
-		`Extension:` + strings.Replace(fmt.Sprintf("%v", this.Extension), "Extension", "Extension", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Config) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Config{`,
-		`Config:` + strings.Replace(fmt.Sprintf("%v", this.Config), "Config", "Config", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *Object_Volume) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&Object_Volume{`,
-		`Volume:` + strings.Replace(fmt.Sprintf("%v", this.Volume), "Volume", "Volume", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBySlot) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBySlot{`,
-		`ServiceID:` + fmt.Sprintf("%v", this.ServiceID) + `,`,
-		`Slot:` + fmt.Sprintf("%v", this.Slot) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectByCustom) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectByCustom{`,
-		`Kind:` + fmt.Sprintf("%v", this.Kind) + `,`,
-		`Index:` + fmt.Sprintf("%v", this.Index) + `,`,
-		`Value:` + fmt.Sprintf("%v", this.Value) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy{`,
-		`By:` + fmt.Sprintf("%v", this.By) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_ID) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_ID{`,
-		`ID:` + fmt.Sprintf("%v", this.ID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_IDPrefix) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_IDPrefix{`,
-		`IDPrefix:` + fmt.Sprintf("%v", this.IDPrefix) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_Name) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_Name{`,
-		`Name:` + fmt.Sprintf("%v", this.Name) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_NamePrefix) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_NamePrefix{`,
-		`NamePrefix:` + fmt.Sprintf("%v", this.NamePrefix) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_Custom) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_Custom{`,
-		`Custom:` + strings.Replace(fmt.Sprintf("%v", this.Custom), "SelectByCustom", "SelectByCustom", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_CustomPrefix) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_CustomPrefix{`,
-		`CustomPrefix:` + strings.Replace(fmt.Sprintf("%v", this.CustomPrefix), "SelectByCustom", "SelectByCustom", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_ServiceID) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_ServiceID{`,
-		`ServiceID:` + fmt.Sprintf("%v", this.ServiceID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_NodeID) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_NodeID{`,
-		`NodeID:` + fmt.Sprintf("%v", this.NodeID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_Slot) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_Slot{`,
-		`Slot:` + strings.Replace(fmt.Sprintf("%v", this.Slot), "SelectBySlot", "SelectBySlot", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_DesiredState) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_DesiredState{`,
-		`DesiredState:` + fmt.Sprintf("%v", this.DesiredState) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_Role) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_Role{`,
-		`Role:` + fmt.Sprintf("%v", this.Role) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_Membership) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_Membership{`,
-		`Membership:` + fmt.Sprintf("%v", this.Membership) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_ReferencedNetworkID) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_ReferencedNetworkID{`,
-		`ReferencedNetworkID:` + fmt.Sprintf("%v", this.ReferencedNetworkID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_ReferencedSecretID) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_ReferencedSecretID{`,
-		`ReferencedSecretID:` + fmt.Sprintf("%v", this.ReferencedSecretID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_Kind) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_Kind{`,
-		`Kind:` + fmt.Sprintf("%v", this.Kind) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *SelectBy_ReferencedConfigID) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&SelectBy_ReferencedConfigID{`,
-		`ReferencedConfigID:` + fmt.Sprintf("%v", this.ReferencedConfigID) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WatchRequest) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForEntries := "[]*WatchRequest_WatchEntry{"
-	for _, f := range this.Entries {
-		repeatedStringForEntries += strings.Replace(fmt.Sprintf("%v", f), "WatchRequest_WatchEntry", "WatchRequest_WatchEntry", 1) + ","
-	}
-	repeatedStringForEntries += "}"
-	s := strings.Join([]string{`&WatchRequest{`,
-		`Entries:` + repeatedStringForEntries + `,`,
-		`ResumeFrom:` + strings.Replace(fmt.Sprintf("%v", this.ResumeFrom), "Version", "Version", 1) + `,`,
-		`IncludeOldObject:` + fmt.Sprintf("%v", this.IncludeOldObject) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WatchRequest_WatchEntry) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForFilters := "[]*SelectBy{"
-	for _, f := range this.Filters {
-		repeatedStringForFilters += strings.Replace(f.String(), "SelectBy", "SelectBy", 1) + ","
-	}
-	repeatedStringForFilters += "}"
-	s := strings.Join([]string{`&WatchRequest_WatchEntry{`,
-		`Kind:` + fmt.Sprintf("%v", this.Kind) + `,`,
-		`Action:` + fmt.Sprintf("%v", this.Action) + `,`,
-		`Filters:` + repeatedStringForFilters + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WatchMessage) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForEvents := "[]*WatchMessage_Event{"
-	for _, f := range this.Events {
-		repeatedStringForEvents += strings.Replace(fmt.Sprintf("%v", f), "WatchMessage_Event", "WatchMessage_Event", 1) + ","
-	}
-	repeatedStringForEvents += "}"
-	s := strings.Join([]string{`&WatchMessage{`,
-		`Events:` + repeatedStringForEvents + `,`,
-		`Version:` + strings.Replace(fmt.Sprintf("%v", this.Version), "Version", "Version", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WatchMessage_Event) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WatchMessage_Event{`,
-		`Action:` + fmt.Sprintf("%v", this.Action) + `,`,
-		`Object:` + strings.Replace(this.Object.String(), "Object", "Object", 1) + `,`,
-		`OldObject:` + strings.Replace(this.OldObject.String(), "Object", "Object", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringWatch(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
-}
-func (m *Object) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Object: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Object: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Node", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Node{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Node{v}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Service", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Service{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Service{v}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Network", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Network{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Network{v}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Task", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Task{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Task{v}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Cluster", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Cluster{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Cluster{v}
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Secret", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Secret{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Secret{v}
-			iNdEx = postIndex
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Resource", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Resource{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Resource{v}
-			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Extension", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Extension{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Extension{v}
-			iNdEx = postIndex
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Config", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Config{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Config{v}
-			iNdEx = postIndex
-		case 10:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Volume", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &Volume{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.Object = &Object_Volume{v}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *Object_Extension) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *SelectBySlot) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SelectBySlot: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SelectBySlot: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ServiceID = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Slot", wireType)
-			}
-			m.Slot = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Slot |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *Object_Config) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *SelectByCustom) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SelectByCustom: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SelectByCustom: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Kind", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Kind = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Index", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Index = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Value", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Value = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *Object_Volume) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *SelectBy) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: SelectBy: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: SelectBy: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_ID{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IDPrefix", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_IDPrefix{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Name", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_Name{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NamePrefix", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_NamePrefix{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Custom", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &SelectByCustom{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.By = &SelectBy_Custom{v}
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CustomPrefix", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &SelectByCustom{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.By = &SelectBy_CustomPrefix{v}
-			iNdEx = postIndex
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ServiceID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_ServiceID{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field NodeID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_NodeID{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 9:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Slot", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			v := &SelectBySlot{}
-			if err := v.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			m.By = &SelectBy_Slot{v}
-			iNdEx = postIndex
-		case 10:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DesiredState", wireType)
-			}
-			var v TaskState
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= TaskState(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.By = &SelectBy_DesiredState{v}
-		case 11:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Role", wireType)
-			}
-			var v NodeRole
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= NodeRole(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.By = &SelectBy_Role{v}
-		case 12:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Membership", wireType)
-			}
-			var v NodeSpec_Membership
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= NodeSpec_Membership(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.By = &SelectBy_Membership{v}
-		case 13:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ReferencedNetworkID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_ReferencedNetworkID{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 14:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ReferencedSecretID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_ReferencedSecretID{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 15:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Kind", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_Kind{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		case 16:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ReferencedConfigID", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.By = &SelectBy_ReferencedConfigID{string(dAtA[iNdEx:postIndex])}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *SelectBySlot) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *WatchRequest) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: WatchRequest: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: WatchRequest: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Entries", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Entries = append(m.Entries, &WatchRequest_WatchEntry{})
-			if err := m.Entries[len(m.Entries)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ResumeFrom", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.ResumeFrom == nil {
-				m.ResumeFrom = &Version{}
-			}
-			if err := m.ResumeFrom.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field IncludeOldObject", wireType)
-			}
-			var v int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				v |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			m.IncludeOldObject = bool(v != 0)
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *SelectByCustom) Size() (n int) { _ = "STUB: not implemented"; return 0 }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
+func (m *SelectBy) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_ID) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_IDPrefix) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_Name) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_NamePrefix) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_Custom) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_CustomPrefix) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_ServiceID) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_NodeID) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_Slot) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_DesiredState) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_Role) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_Membership) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_ReferencedNetworkID) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_ReferencedSecretID) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_Kind) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *SelectBy_ReferencedConfigID) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchRequest) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchRequest_WatchEntry) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchMessage) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (m *WatchMessage_Event) Size() (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sovWatch(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func sozWatch(x uint64) (n int) { _ = "STUB: not implemented"; return 0 }
+
+func (this *Object) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Node) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Service) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Network) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Task) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Cluster) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Secret) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Resource) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Extension) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Config) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *Object_Volume) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBySlot) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectByCustom) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_ID) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_IDPrefix) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_Name) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_NamePrefix) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_Custom) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_CustomPrefix) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_ServiceID) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_NodeID) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_Slot) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_DesiredState) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_Role) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_Membership) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_ReferencedNetworkID) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_ReferencedSecretID) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_Kind) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *SelectBy_ReferencedConfigID) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *WatchRequest) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *WatchRequest_WatchEntry) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *WatchMessage) String() string { _ = "STUB: not implemented"; return "" }
+
+func (this *WatchMessage_Event) String() string { _ = "STUB: not implemented"; return "" }
+
+func valueToStringWatch(v interface{}) string { _ = "STUB: not implemented"; return "" }
+
+func (m *Object) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *SelectBySlot) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *SelectByCustom) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *SelectBy) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func (m *WatchRequest) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
 func (m *WatchRequest_WatchEntry) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: WatchEntry: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: WatchEntry: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Kind", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Kind = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Action", wireType)
-			}
-			m.Action = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Action |= WatchActionKind(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Filters", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Filters = append(m.Filters, &SelectBy{})
-			if err := m.Filters[len(m.Filters)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
+	_ = "STUB: not implemented"
 	return nil
 }
-func (m *WatchMessage) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: WatchMessage: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: WatchMessage: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Events", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Events = append(m.Events, &WatchMessage_Event{})
-			if err := m.Events[len(m.Events)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Version", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Version == nil {
-				m.Version = &Version{}
-			}
-			if err := m.Version.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *WatchMessage_Event) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Event: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Event: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Action", wireType)
-			}
-			m.Action = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Action |= WatchActionKind(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Object", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Object == nil {
-				m.Object = &Object{}
-			}
-			if err := m.Object.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field OldObject", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthWatch
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.OldObject == nil {
-				m.OldObject = &Object{}
-			}
-			if err := m.OldObject.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipWatch(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthWatch
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
+func (m *WatchMessage) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
 
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func skipWatch(dAtA []byte) (n int, err error) {
-	l := len(dAtA)
-	iNdEx := 0
-	depth := 0
-	for iNdEx < l {
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return 0, ErrIntOverflowWatch
-			}
-			if iNdEx >= l {
-				return 0, io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		wireType := int(wire & 0x7)
-		switch wireType {
-		case 0:
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				iNdEx++
-				if dAtA[iNdEx-1] < 0x80 {
-					break
-				}
-			}
-		case 1:
-			iNdEx += 8
-		case 2:
-			var length int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return 0, ErrIntOverflowWatch
-				}
-				if iNdEx >= l {
-					return 0, io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				length |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if length < 0 {
-				return 0, ErrInvalidLengthWatch
-			}
-			iNdEx += length
-		case 3:
-			depth++
-		case 4:
-			if depth == 0 {
-				return 0, ErrUnexpectedEndOfGroupWatch
-			}
-			depth--
-		case 5:
-			iNdEx += 4
-		default:
-			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
-		}
-		if iNdEx < 0 {
-			return 0, ErrInvalidLengthWatch
-		}
-		if depth == 0 {
-			return iNdEx, nil
-		}
-	}
-	return 0, io.ErrUnexpectedEOF
-}
+func (m *WatchMessage_Event) Unmarshal(dAtA []byte) error { _ = "STUB: not implemented"; return nil }
+
+func skipWatch(dAtA []byte) (n int, err error) { _ = "STUB: not implemented"; return 0, nil }
 
 var (
 	ErrInvalidLengthWatch        = fmt.Errorf("proto: negative length found during unmarshaling")
